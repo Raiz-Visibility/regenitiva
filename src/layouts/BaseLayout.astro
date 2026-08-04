@@ -13,6 +13,8 @@ const {
   description = 'Regenitiva — regenerative medicine practice development and management services for physician-owned practices.',
 } = Astro.props;
 
+const noindex = import.meta.env.PUBLIC_NOINDEX !== 'false';
+
 // Derive active page from URL pathname
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const activePage = pathname === '/' ? 'home'
@@ -34,6 +36,7 @@ const activePage = pathname === '/' ? 'home'
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

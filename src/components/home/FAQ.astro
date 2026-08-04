@@ -1,0 +1,116 @@
+---
+const faqs = [
+  {
+    q: "Does this work clinically?",
+    a: "PRP is used widely in musculoskeletal medicine, and the evidence base continues to develop. We're candid about what the research supports and what it doesn't. Our protocols are built on current literature, and we track your patient outcomes so you can see how your own program performs.",
+  },
+  {
+    q: "How is this billed?",
+    a: "That depends on your payer mix, your state, and your patient population. For practices treating motor vehicle accident patients, lien management is often central. We build a billing and documentation approach appropriate to your situation and within accepted standards.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Every engagement is scoped to the practice, so there isn't a list price. A single physician adding a service line is a different build than a multi-site group standardizing across locations. What drives the number is the scope of the program, how much clinical and staff infrastructure already exists, and whether you want ongoing management or a one-time implementation. We put a specific figure and a projected return in front of you during the assessment — before you're asked to commit to anything.",
+  },
+  {
+    q: "How long until we're treating patients?",
+    a: "Timeline depends on your space, staffing, and state requirements. We'll give you a realistic schedule during the assessment, not an optimistic one.",
+  },
+  {
+    q: "Do I give up control of my practice?",
+    a: "No. You retain clinical authority and ownership. We manage operations, compliance, and business infrastructure.",
+  },
+  {
+    q: "What happens to my existing staff and workflows?",
+    a: "We build around your team. Competency training brings existing staff into the program rather than replacing them, and workflow design starts from how your practice already runs.",
+  },
+];
+---
+
+<section id="faq" class="faq">
+  <div class="faq-inner">
+    <h2 class="faq-headline">Frequently asked questions.</h2>
+    <div class="faq-list">
+      {faqs.map((item, i) => (
+        <details class="faq-item" open={i === 0 ? true : undefined}>
+          <summary class="faq-question">
+            <span>{item.q}</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: 56px var(--rg-space-5);
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-headline {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--rg-space-4);
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-body);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-primary);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::marker {
+    display: none;
+    content: '';
+  }
+
+  .faq-icon {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-lead);
+    color: var(--rg-text-accent);
+    flex: 0 0 auto;
+    transition: transform var(--rg-duration-slow) ease-out;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: 70ch;
+    padding-bottom: 26px;
+  }
+
+  @media (min-width: 768px) {
+    .faq {
+      padding: var(--rg-space-9) var(--rg-space-7);
+    }
+  }
+</style>

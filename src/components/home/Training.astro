@@ -1,0 +1,142 @@
+---
+const states = [
+  { label: "California", href: "/contact" },
+  { label: "Florida", href: "/contact" },
+  { label: "Tennessee", href: "/contact" },
+];
+---
+
+<section id="availability" class="training-section">
+  <div class="training">
+  <div class="training-left">
+    <div class="training-eyebrow">Training</div>
+    <h2>Want your clinic trained on this treatment?</h2>
+    <p class="training-body">Training is delivered remotely, to your whole team at once — physician, medical assistants, and front desk — on your own equipment, in the rooms where the work will happen. No travel, no closed clinic days, and no one learning it secondhand.</p>
+    <p class="training-body-last">Training runs until your team is signed off, with the documentation to show it.</p>
+  </div>
+  <div class="training-right">
+    <h3 class="training-subhead">Where is your clinic located?</h3>
+    <p class="training-sub-body">Compliance requirements, licensing, and billing vary by state, so we build your program around the one you practice in.</p>
+    <div class="training-states">
+      {states.map((s) => (
+        <a href={s.href} class="training-state">{s.label}</a>
+      ))}
+      <a href="/service-areas" class="training-state training-state-cta">View all locations →</a>
+    </div>
+    <p class="training-catch-all">Practicing somewhere else? We work with practices nationwide — <a href="/contact">start a conversation</a> and we'll build the program around your state.</p>
+  </div>
+  </div>
+</section>
+
+<style>
+  .training-section {
+    background: var(--rg-bg-subtle);
+  }
+
+  .training {
+    padding: var(--rg-space-8) var(--rg-space-5);
+    max-width: var(--rg-container);
+    margin: 0 auto;
+  }
+
+  .training-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-muted);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .training-left h2 {
+    margin-bottom: 20px;
+  }
+
+  .training-body {
+    color: var(--rg-text-secondary);
+    margin-bottom: 20px;
+  }
+
+  .training-body-last {
+    color: var(--rg-text-secondary);
+  }
+
+  .training-right {
+    border-top: 1px solid var(--rg-stone-400);
+    padding-top: 40px;
+    margin-top: var(--rg-space-7);
+  }
+
+  .training-subhead {
+    margin-bottom: var(--rg-space-3);
+  }
+
+  .training-sub-body {
+    font-size: var(--rg-size-button);
+    line-height: var(--rg-lh-small);
+    color: var(--rg-text-secondary);
+    margin-bottom: var(--rg-space-6);
+  }
+
+  .training-states {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .training-state {
+    display: flex;
+    border-top: 1px solid var(--rg-stone-400);
+    padding: 18px 0;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-lead);
+    color: var(--rg-text-primary);
+    text-decoration: none;
+    transition: transform var(--rg-duration-slow) ease,
+      background var(--rg-duration-slow) ease;
+  }
+
+  .training-state:hover {
+    transform: translateX(4px);
+    text-decoration: none;
+    color: var(--rg-text-primary);
+  }
+
+  .training-state-cta {
+    border-bottom: 1px solid var(--rg-stone-400);
+    color: var(--rg-text-accent);
+  }
+
+  .training-state-cta:hover {
+    color: var(--rg-text-accent);
+  }
+
+  .training-catch-all {
+    font-size: var(--rg-size-button);
+    line-height: var(--rg-lh-small);
+    color: var(--rg-text-secondary);
+    margin-top: var(--rg-space-6);
+  }
+
+  .training-catch-all a {
+    color: var(--rg-text-accent);
+  }
+
+  @media (min-width: 768px) {
+    .training {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: 140px var(--rg-space-7);
+    }
+
+    .training-right {
+      border-top: none;
+      border-left: 1px solid var(--rg-stone-400);
+      padding-top: 0;
+      padding-left: 56px;
+      margin-top: 0;
+    }
+  }
+</style>

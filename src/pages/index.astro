@@ -1,7 +1,225 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import WhyCards from '../components/home/WhyCards.astro';
+import WhoWeWorkWith from '../components/home/WhoWeWorkWith.astro';
+import Compliance from '../components/home/Compliance.astro';
+import Protocol from '../components/home/Protocol.astro';
+import About from '../components/home/About.astro';
+import Training from '../components/home/Training.astro';
+import FAQ from '../components/home/FAQ.astro';
 ---
 
 <BaseLayout title="Regenitiva — Regenerative medicine practice development">
-  <h1>Astro</h1>
+
+  <Hero />
+
+  <!-- Intro -->
+  <section id="what-we-do" class="intro">
+    <p class="intro-text">Regenitiva is a management services organization and practice development partner for physicians adding or expanding regenerative medicine. We build the operational backbone — proprietary PRP protocols, AAAHC-aligned policies, documented workflows, staff training, and billing strategy — so the program runs correctly from the first patient. You keep clinical control. We handle the structure around it.</p>
+  </section>
+
+  <WhyCards />
+
+  <WhoWeWorkWith />
+
+  <Compliance />
+
+  <Protocol />
+
+  <!-- Patient Story -->
+  <section class="story">
+    <div class="story-photo">
+      <img src="/images/patient-story-photo.webp" alt="Patient story" class="story-img" />
+    </div>
+    <div class="story-text">
+      <div class="story-eyebrow">The patients you can help</div>
+      <h2 class="story-headline">She came in as a surgical candidate. She left pain free and without surgery.</h2>
+      <p class="story-body">A 45-year-old woman had been told her back would need surgery. She was treated in the office instead, and today she's pain-free — without ever going to the operating room.</p>
+      <p class="story-body">Not every patient is a candidate, and not every case ends this way. But this is what a properly built program makes possible: real options for the people sitting in your waiting room right now.</p>
+    </div>
+  </section>
+
+  <About />
+
+  <Training />
+
+  <FAQ />
+
+  <!-- Closing CTA -->
+  <section id="book" class="closing">
+    <div class="closing-inner">
+      <h2 class="closing-headline">Let's look at your practice.</h2>
+      <p class="closing-body">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you — and what it would take to build.</p>
+      <a href="tel:8058967983" class="closing-btn">Schedule a Consultation</a>
+      <div class="closing-phone">Call: <a href="tel:8058967983">805-896-7983</a></div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  /* ----------------------------------------------------------------
+     Intro
+     ---------------------------------------------------------------- */
+  .intro {
+    padding: 40px var(--rg-space-5) var(--rg-space-6);
+    max-width: var(--rg-container);
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .intro {
+      padding: var(--rg-space-8) var(--rg-space-7) var(--rg-space-7);
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Patient Story
+     ---------------------------------------------------------------- */
+  .story {
+    display: flex;
+    flex-direction: column;
+    background: var(--rg-bg-subtle);
+  }
+
+  .story-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-text {
+    padding: var(--rg-space-6) var(--rg-space-5) var(--rg-space-7);
+  }
+
+  .story-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-muted);
+    margin-bottom: var(--rg-space-6);
+  }
+
+  .story-headline {
+    font-size: var(--rg-size-h3);
+    font-weight: var(--rg-weight-medium);
+    line-height: var(--rg-lh-h3);
+    letter-spacing: var(--rg-ls-h3);
+    max-width: 620px;
+    margin-bottom: var(--rg-space-6);
+  }
+
+  .story-body {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: 620px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .story {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 42%;
+      aspect-ratio: auto;
+    }
+
+    .story-text {
+      margin-right: 42%;
+      padding: 140px var(--rg-space-8) 140px max(var(--rg-space-8), calc((100% - var(--rg-container)) / 2 + var(--rg-space-7)));
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Closing CTA
+     ---------------------------------------------------------------- */
+  .closing {
+    padding: var(--rg-space-8) var(--rg-space-5);
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+    text-align: center;
+  }
+
+  .closing-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .closing-headline {
+    color: var(--rg-text-on-inverse);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .closing-body {
+    color: var(--rg-stone-300);
+    margin: 0 auto var(--rg-space-7);
+  }
+
+  .closing-btn {
+    display: inline-block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    letter-spacing: var(--rg-ls-button);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: var(--rg-space-4) 30px;
+    text-decoration: none;
+    margin-bottom: var(--rg-space-5);
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .closing-btn:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+    color: var(--rg-ink-900);
+    text-decoration: none;
+  }
+
+  .closing-phone {
+    font-size: var(--rg-size-small);
+    color: var(--rg-stone-400);
+  }
+
+  .closing-phone a {
+    color: var(--rg-amber-300);
+    text-decoration: none;
+  }
+
+  .closing-phone a:hover {
+    text-decoration: underline;
+    color: var(--rg-amber-300);
+  }
+
+  @media (min-width: 768px) {
+    .closing {
+      padding: 100px var(--rg-space-7);
+    }
+  }
+</style>

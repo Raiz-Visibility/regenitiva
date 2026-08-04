@@ -1,0 +1,181 @@
+---
+const rows = [
+  {
+    label: "Matched to the indication",
+    headline: "Spine, cervical, and joint are not the same problem.",
+    body: "Our preparation and delivery are specified by indication rather than applied uniformly. Each protocol defines the preparation, the approach, and the documentation that goes with it.",
+  },
+  {
+    label: "Built for your office",
+    headline: "It runs inside the practice you already have.",
+    body: "Equipment, room setup, chair time, and staff roles are defined before you start. Your team is trained to competency and signed off, so the protocol runs the same whoever is in the room.",
+  },
+  {
+    label: "A step before the operating room",
+    headline: "Options for the patients who've run out of them.",
+    body: "Many patients arrive having exhausted conservative care but not ready for surgery — and today they get referred out or told to wait. An office-based regenerative program gives you something to offer that group, in your practice, without a hospital referral.",
+  },
+];
+---
+
+<section id="protocol" class="protocol">
+  <div class="protocol-inner">
+    <div class="protocol-header">
+      <div class="protocol-image">
+        <img src="/images/protocol-image.webp" alt="Clinical procedure detail" />
+      </div>
+      <div class="protocol-top">
+        <div class="protocol-eyebrow">The protocol</div>
+        <h2>A protocol, not a kit.</h2>
+        <p class="protocol-intro">Most practices offering PRP are running a bedside kit and a technique that lives in one person's head. Regenitiva delivers a defined preparation, a documented technique, and a program built to run inside the practice you already have.</p>
+      </div>
+    </div>
+    {rows.map((row, i) => (
+      <div class:list={["protocol-row", { "protocol-row-last": i === rows.length - 1 }]}>
+        <div class="protocol-row-grid">
+          <div class="protocol-row-label">{row.label}</div>
+          <div>
+            <h3>{row.headline}</h3>
+            <p class="protocol-row-body">{row.body}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+    <a href="/protocol" class="protocol-link">See the full protocol →</a>
+  </div>
+</section>
+
+<style>
+  .protocol {
+    padding: var(--rg-space-8) var(--rg-space-5);
+  }
+
+  .protocol-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+  }
+
+  .protocol-header {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .protocol-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: var(--rg-space-6);
+  }
+
+  .protocol-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .protocol-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-muted);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .protocol-top h2 {
+    margin-bottom: 20px;
+  }
+
+  .protocol-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: 620px;
+    margin-bottom: var(--rg-space-7);
+  }
+
+  .protocol-row {
+    border-top: 1px solid var(--rg-border);
+    padding: var(--rg-space-6) 0;
+  }
+
+  .protocol-row-last {
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .protocol-row-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-3);
+  }
+
+  .protocol-row-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-muted);
+  }
+
+  .protocol-row-grid h3 {
+    margin-bottom: var(--rg-space-3);
+  }
+
+  .protocol-row-body {
+    color: var(--rg-text-secondary);
+  }
+
+  .protocol-link {
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: var(--rg-space-2);
+  }
+
+  .protocol-link:hover {
+    color: var(--rg-amber-900);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .protocol {
+      padding: 140px var(--rg-space-7);
+    }
+
+    .protocol-header {
+      --_img-size: clamp(260px, 32%, 400px);
+    }
+
+    .protocol-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: var(--_img-size);
+      height: var(--_img-size);
+      margin-bottom: 0;
+    }
+
+    .protocol-top {
+      max-width: calc(100% - var(--_img-size) - var(--rg-space-7));
+      min-height: var(--_img-size);
+      box-sizing: border-box;
+    }
+
+    .protocol-intro {
+      margin-bottom: var(--rg-space-8);
+    }
+
+    .protocol-row {
+      padding: 40px 0;
+    }
+
+    .protocol-row-grid {
+      display: grid;
+      grid-template-columns: 28% 72%;
+      gap: var(--rg-space-6);
+    }
+  }
+</style>

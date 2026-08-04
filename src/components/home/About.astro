@@ -1,0 +1,178 @@
+<section id="about" class="about-section">
+  <div class="about">
+    <div class="about-photo">
+      <img src="/images/about-founder-photo.webp" alt="Dr. Lagattuta portrait" />
+    </div>
+    <div class="about-content">
+      <h2>Who we are.</h2>
+      <p class="about-body">Regenitiva was founded on a straightforward observation: there are patients who aren't getting the best available care, and physicians who would offer it if the path were clearer.</p>
+      <p class="about-body">We exist to close that gap — making regenerative medicine practical for real practices, with the protocols, training, and compliance structure that let a physician offer it confidently.</p>
+      <a href="/about" class="about-section-link">Learn more about Regenitiva →</a>
+      <div class="about-founder">
+        <h3 class="about-name">Francis P. Lagattuta, MD</h3>
+        <p class="about-title">Founder, Regenitiva</p>
+      </div>
+      <p class="about-credential">Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship from 1994 to 2015, training more than 60 physicians. More than 2,000 regenerative procedures performed.</p>
+      <a href="#" class="about-bio-link">Read Dr. Lagattuta's full background →</a>
+    </div>
+    <div class="about-values">
+    <div class="about-value">
+      <div class="about-value-label">Integrity</div>
+      <p class="about-value-body">We tell physicians what's actually true about outcomes, costs, and risk.</p>
+    </div>
+    <div class="about-value">
+      <div class="about-value-label">Patient Safety</div>
+      <p class="about-value-body">Every protocol we write starts here.</p>
+    </div>
+    <div class="about-value">
+      <div class="about-value-label">Client Support</div>
+      <p class="about-value-body">Your program is our responsibility, not just our project.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background: var(--rg-bg-surface);
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-content {
+    padding: var(--rg-space-6) var(--rg-space-5) 0;
+  }
+
+  .about-content h2 {
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .about-body {
+    color: var(--rg-text-secondary);
+    margin-bottom: 20px;
+  }
+
+  .about-section-link {
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: var(--rg-space-2);
+  }
+
+  .about-section-link:hover {
+    color: var(--rg-amber-900);
+    text-decoration: underline;
+  }
+
+  .about-founder {
+    margin-top: 40px;
+  }
+
+  .about-name {
+    font-size: var(--rg-size-h4);
+    margin-bottom: 0;
+  }
+
+  .about-title {
+    color: var(--rg-text-secondary);
+    margin-top: var(--rg-space-1);
+  }
+
+  .about-credential {
+    color: var(--rg-text-secondary);
+    margin-top: 14px;
+  }
+
+  .about-bio-link {
+    font-size: var(--rg-size-body);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 18px;
+  }
+
+  .about-bio-link:hover {
+    color: var(--rg-amber-900);
+  }
+
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+    padding: var(--rg-space-7) var(--rg-space-5) var(--rg-space-7);
+  }
+
+  .about-value {
+    border-left: 2px solid var(--rg-border);
+    padding-left: var(--rg-space-4);
+  }
+
+  .about-value-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: 10px;
+  }
+
+  .about-value-body {
+    color: var(--rg-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .about {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      gap: var(--rg-space-8);
+      align-items: start;
+      max-width: var(--rg-container);
+      margin: 0 auto;
+      padding: 72px var(--rg-space-7);
+    }
+
+    .about-photo {
+      height: auto;
+      aspect-ratio: 4 / 5;
+      max-width: 420px;
+      border-radius: var(--rg-radius-lg);
+    }
+
+    .about-photo .placeholder {
+      border-radius: var(--rg-radius-lg);
+    }
+
+    .about-content {
+      padding: 0;
+    }
+
+    .about-values {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: var(--rg-space-6);
+      padding: 0;
+    }
+  }
+
+</style>

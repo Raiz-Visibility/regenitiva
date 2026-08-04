@@ -1,0 +1,185 @@
+<section class="hero">
+  <div class="hero-photo">
+    <img src="/images/hero-physician.png" alt="Physician in a clinical setting" />
+    <div class="hero-fade"></div>
+  </div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-eyebrow">For physiatrists, sports medicine, and pain physicians</div>
+      <h1 class="hero-h1">Practice medicine.<br />We'll handle the rest.</h1>
+      <p class="hero-sub">Regenitiva builds and runs the operational backbone of office-based regenerative medicine programs — AAAHC-aligned policies, documented protocols, trained staff, and a defensible billing approach.</p>
+      <div class="hero-cta-row">
+        <a href="/contact" class="hero-btn">Schedule a Consultation</a>
+        <a href="#protocol" class="hero-link">See the protocol →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--rg-bg-inverse);
+    min-height: 580px;
+  }
+
+  /* Stack photo and text in the same grid cell */
+  .hero-photo,
+  .hero-container {
+    grid-area: 1 / 1;
+  }
+
+  /* Photo layer — fills the grid cell */
+  .hero-photo {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .hero-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(28, 26, 23, 0.5) 0%,
+      rgba(28, 26, 23, 0.72) 55%,
+      rgba(28, 26, 23, 0.9) 100%
+    );
+  }
+
+  /* Text layer */
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-text {
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--rg-space-6) var(--rg-space-5) 40px;
+    box-sizing: border-box;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-amber-400);
+    margin-bottom: 20px;
+  }
+
+  .hero-h1 {
+    font-size: var(--rg-size-display);
+    font-weight: var(--rg-weight-regular);
+    line-height: var(--rg-lh-display);
+    letter-spacing: var(--rg-ls-display);
+    color: var(--rg-text-on-inverse);
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .hero-sub {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-stone-300);
+    max-width: 480px;
+    margin-bottom: var(--rg-space-7);
+  }
+
+  .hero-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    letter-spacing: var(--rg-ls-button);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: 15px 26px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .hero-btn:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+    color: var(--rg-ink-900);
+    text-decoration: none;
+  }
+
+  .hero-link {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-amber-300);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .hero-link:hover {
+    color: var(--rg-amber-300);
+    text-decoration: underline;
+  }
+
+  /* ---- md (768px) ---- */
+  @media (min-width: 768px) {
+    .hero {
+      height: clamp(560px, 43.75vw, 720px);
+    }
+
+    .hero-fade {
+      background: linear-gradient(
+        90deg,
+        rgba(28, 26, 23, 0.82) 0%,
+        rgba(28, 26, 23, 0.55) 38%,
+        rgba(28, 26, 23, 0.08) 60%,
+        rgba(28, 26, 23, 0) 68%
+      );
+    }
+
+    .hero-container {
+      max-width: var(--rg-container);
+      margin: 0 auto;
+      padding: 0 var(--rg-space-7);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero-text {
+      height: 100%;
+      min-height: 0;
+      max-width: 640px;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .hero-cta-row {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--rg-space-6);
+    }
+  }
+</style>

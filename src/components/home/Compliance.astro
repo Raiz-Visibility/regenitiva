@@ -1,0 +1,125 @@
+---
+const items = [
+  "AAAHC-aligned policies and procedures, written for your practice rather than adapted from a template",
+  "Documented clinical protocols and technique standards",
+  "Staff competency records and ongoing training documentation",
+  "Internal audits and a quality management program",
+  "Billing and documentation practices structured within accepted standards for your state and payer mix",
+  "Lien documentation strategy for motor vehicle accident populations",
+];
+---
+
+<section id="compliance" class="compliance">
+  <div class="compliance-grid">
+    <div>
+      <div class="compliance-eyebrow">The part most consultants leave with you</div>
+      <h2 class="compliance-headline">Compliance &amp; Operations</h2>
+      <p class="compliance-body">Compliance is what Regenitiva is known for, and it's the reason our programs hold up.</p>
+      <p class="compliance-body">A regenerative medicine service line touches documentation, staff competency, procedure standards, coding, and — for practices treating accident patients — lien handling. Most practice-development firms design the clinical program and hand the operational risk back to the physician. We build the operational structure first and treat the clinical program as something that has to run inside it.</p>
+      <p class="compliance-body-last">When your program is reviewed — internally, by a payer, or by anyone else — the documentation exists and it's current.</p>
+      <a href="/compliance" class="compliance-link">See our full compliance program →</a>
+    </div>
+    <ul class="compliance-list">
+      {items.map((item) => (
+        <li class="compliance-card">
+          <span class="compliance-dash" aria-hidden="true">—</span>{item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .compliance {
+    padding: 56px var(--rg-space-5);
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+    border-bottom: 1px solid var(--rg-border-inverse);
+  }
+
+  .compliance-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .compliance-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-amber-400);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .compliance-headline {
+    color: var(--rg-text-on-inverse);
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .compliance-body {
+    color: var(--rg-stone-300);
+    margin-bottom: 20px;
+  }
+
+  .compliance-body-last {
+    color: var(--rg-stone-300);
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .compliance-link {
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: var(--rg-space-2);
+  }
+
+  .compliance-link:hover {
+    color: var(--rg-amber-300);
+    text-decoration: underline;
+  }
+
+  .compliance-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-4);
+  }
+
+  .compliance-card {
+    display: flex;
+    gap: 14px;
+    padding: 18px 20px;
+    background: var(--rg-ink-700);
+    border: 1px solid rgba(250, 247, 242, 0.14);
+    border-radius: var(--rg-radius-lg);
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-on-inverse);
+  }
+
+  .compliance-dash {
+    flex: 0 0 auto;
+    color: var(--rg-amber-400);
+  }
+
+  @media (min-width: 768px) {
+    .compliance {
+      padding: 120px var(--rg-space-7);
+    }
+
+    .compliance-grid {
+      max-width: var(--rg-container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: var(--rg-space-8);
+      align-items: start;
+    }
+  }
+</style>
