@@ -289,7 +289,7 @@ const { activePage = '' } = Astro.props;
     font-family: var(--rg-font-display);
     font-size: var(--rg-size-eyebrow);
     font-weight: var(--rg-weight-bold);
-    letter-spacing: 0.1em;
+    letter-spacing: var(--rg-ls-eyebrow);
     text-transform: uppercase;
     color: var(--rg-text-accent);
     margin-bottom: var(--rg-space-4);
@@ -498,9 +498,9 @@ const { activePage = '' } = Astro.props;
 
   .mobile-group-label {
     font-family: var(--rg-font-display);
-    font-size: 11px;
+    font-size: var(--rg-size-eyebrow);
     font-weight: var(--rg-weight-bold);
-    letter-spacing: 0.09em;
+    letter-spacing: var(--rg-ls-eyebrow);
     text-transform: uppercase;
     color: var(--rg-text-accent);
     margin-bottom: 10px;

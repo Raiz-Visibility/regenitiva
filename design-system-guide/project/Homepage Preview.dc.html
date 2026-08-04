@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F1EBDF;font-family:Roboto,Helvetica,sans-serif}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:auto;padding:40px 32px 96px">
+<div style="margin-bottom:32px">
+<div style="font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8F520B;margin-bottom:8px">Regenitiva — Responsive Preview</div>
+<h1 style="font-family:Archivo,sans-serif;font-size:30px;font-weight:600;letter-spacing:-0.02em;color:#1C1A17;margin:0">Homepage — Desktop &amp; Mobile</h1>
+</div>
+<div style="display:flex;align-items:flex-start;gap:40px">
+<div>
+<div style="font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Desktop — 1440px</div>
+<div style="width:1440px;height:900px;overflow-y:auto;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:10px;box-shadow:0 12px 28px rgba(28,26,23,0.08)">
+<dc-import name="Regenitiva Homepage" force-mode="desktop" hint-size="1440px,3600px"></dc-import>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Mobile — 375px</div>
+<div style="width:375px;height:900px;overflow-y:auto;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:20px;box-shadow:0 12px 28px rgba(28,26,23,0.08)">
+<dc-import name="Regenitiva Homepage" force-mode="mobile" hint-size="375px,5200px"></dc-import>
+</div>
+</div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

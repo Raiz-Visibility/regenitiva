@@ -69,7 +69,7 @@
   --rg-size-small: 0.9375rem;   /* 15px */
   --rg-size-caption: 0.8125rem; /* 13px */
   --rg-size-button: 1rem;       /* 16px */
-  --rg-size-eyebrow: 0.75rem;   /* 12px */
+  --rg-size-eyebrow: 0.75rem;   /* 12px · weight-bold (700) */
 
   --rg-lh-display: 1.02;
   --rg-lh-h1: 1.06;
@@ -92,7 +92,7 @@
   --rg-ls-h6: 0;          /* derived */
   --rg-ls-body: 0;
   --rg-ls-button: 0.01em;
-  --rg-ls-eyebrow: 0.14em;
+  --rg-ls-eyebrow: 0.1em;
 
   --rg-weight-regular: 400;
   --rg-weight-medium: 500;
@@ -223,21 +223,21 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--rg-size-h1);
-  font-weight: var(--rg-weight-bold);
+  font-weight: var(--rg-weight-regular);
   line-height: var(--rg-lh-h1);
   letter-spacing: var(--rg-ls-h1);
 }
 
 h2 {
   font-size: var(--rg-size-h2);
-  font-weight: var(--rg-weight-semibold);
+  font-weight: var(--rg-weight-regular);
   line-height: var(--rg-lh-h2);
   letter-spacing: var(--rg-ls-h2);
 }
 
 h3 {
   font-size: var(--rg-size-h3);
-  font-weight: var(--rg-weight-semibold);
+  font-weight: var(--rg-weight-medium);
   line-height: var(--rg-lh-h3);
   letter-spacing: var(--rg-ls-h3);
 }

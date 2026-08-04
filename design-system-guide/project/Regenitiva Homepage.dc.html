@@ -7,6 +7,7 @@
 </head>
 <body>
 <x-dc>
+
 <helmet>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
@@ -30,19 +31,6 @@ a:hover{color:#6E3F08;text-decoration:underline}
 <img src="images/hero-physician.png" alt="Physician in a clinical setting" style="width:100%;height:100%;object-fit:cover;object-position:center"></img>
 <div style="{{ heroFadeStyle }}"></div>
 </div>
-<nav style="{{ heroNavStyle }}">
-<a href="#top" style="display:flex;align-items:center;gap:10px">
-<img src="logo/regenitiva-mark-bone.svg" alt="Regenitiva" style="height:28px;width:auto"></img>
-<span style="font-family:Archivo;font-weight:600;font-size:18px;letter-spacing:-0.01em;color:#FAF7F2">Regenitiva</span>
-</a>
-<div style="{{ heroNavLinksStyle }}">
-<a href="#what-changes" style="{{ heroNavLinkStyle }}">Why Regenitiva</a>
-<a href="#protocol" style="{{ heroNavLinkStyle }}">The Protocol</a>
-<a href="#about" style="{{ heroNavLinkStyle }}">About</a>
-<a href="#faq" style="{{ heroNavLinkStyle }}">FAQ</a>
-</div>
-<a href="#book" style="font-family:Roboto;font-size:15px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:12px 22px;white-space:nowrap">Schedule a Consultation</a>
-</nav>
 <div style="{{ heroTextWrapStyle }}">
 <div style="{{ eyebrowStyle }}">For physiatrists, sports medicine, and pain physicians</div>
 <h1 style="{{ headlineStyle }}">Practice medicine.<br>We'll handle the rest.</h1>
@@ -111,25 +99,27 @@ a:hover{color:#6E3F08;text-decoration:underline}
 <p style="{{ whoListItemStyle }}"><strong>Multi-site groups</strong> standardizing regenerative medicine across locations</p>
 </div>
 <p style="{{ whoClosingStyle }}">If you're seeing patients who are running out of conservative options and aren't ready for surgery, there's a program here for you.</p>
+<a href="/who-we-work-with" style="{{ sectionLinkStyle }}" style-hover="color:#6E3F08">See how we support your specialty →</a>
 </div>
 </section>
 
-<section id="compliance" data-screen-label="Compliance and Operations" style="padding:100px 48px;background:#1C1A17;color:#FAF7F2;border-bottom:1px solid #DDD4C7">
-<div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:start">
+<section id="compliance" data-screen-label="Compliance and Operations" style="{{ complianceSectionStyle }}">
+<div style="{{ complianceGridStyle }}">
 <div>
-<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FAAF33;margin-bottom:16px">The part most consultants leave with you</div>
-<h2 style="font-family:Archivo;font-size:38px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 24px 0">Compliance &amp; Operations</h2>
-<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 20px 0">Compliance is what Regenitiva is known for, and it's the reason our programs hold up.</p>
-<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 20px 0">A regenerative medicine service line touches documentation, staff competency, procedure standards, coding, and — for practices treating accident patients — lien handling. Most practice-development firms design the clinical program and hand the operational risk back to the physician. We build the operational structure first and treat the clinical program as something that has to run inside it.</p>
-<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0">When your program is reviewed — internally, by a payer, or by anyone else — the documentation exists and it's current.</p>
+<div style="{{ complianceEyebrowStyle }}">The part most consultants leave with you</div>
+<h2 style="{{ complianceHeadlineStyle }}">Compliance &amp; Operations</h2>
+<p style="{{ complianceBodyStyle }}">Compliance is what Regenitiva is known for, and it's the reason our programs hold up.</p>
+<p style="{{ complianceBodyStyle }}">A regenerative medicine service line touches documentation, staff competency, procedure standards, coding, and — for practices treating accident patients — lien handling. Most practice-development firms design the clinical program and hand the operational risk back to the physician. We build the operational structure first and treat the clinical program as something that has to run inside it.</p>
+<p style="{{ complianceBodyLastStyle }}">When your program is reviewed — internally, by a payer, or by anyone else — the documentation exists and it's current.</p>
+<a href="/compliance" style="{{ sectionLinkStyle }}" style-hover="color:#FFCD4D">See our full compliance program →</a>
 </div>
-<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>AAAHC-aligned policies and procedures, written for your practice rather than adapted from a template</li>
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Documented clinical protocols and technique standards</li>
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Staff competency records and ongoing training documentation</li>
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Internal audits and a quality management program</li>
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Billing and documentation practices structured within accepted standards for your state and payer mix</li>
-<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Lien documentation strategy for motor vehicle accident populations</li>
+<ul style="{{ complianceListStyle }}">
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>AAAHC-aligned policies and procedures, written for your practice rather than adapted from a template</li>
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>Documented clinical protocols and technique standards</li>
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>Staff competency records and ongoing training documentation</li>
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>Internal audits and a quality management program</li>
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>Billing and documentation practices structured within accepted standards for your state and payer mix</li>
+<li style="{{ complianceCardStyle }}"><span style="{{ complianceDashStyle }}">—</span>Lien documentation strategy for motor vehicle accident populations</li>
 </ul>
 </div>
 </section>
@@ -170,6 +160,7 @@ a:hover{color:#6E3F08;text-decoration:underline}
 </div>
 </div>
 </div>
+<a href="/protocol" style="{{ sectionLinkStyle }}" style-hover="color:#6E3F08">See the full protocol →</a>
 </section>
 
 <section data-screen-label="Patient Story" style="{{ storyWrapStyle }}">
@@ -192,7 +183,8 @@ a:hover{color:#6E3F08;text-decoration:underline}
 <h2 style="{{ aboutHeadlineStyle }}">Who we are.</h2>
 <p style="{{ aboutBodyStyle }}">Regenitiva was founded on a straightforward observation: there are patients who aren't getting the best available care, and physicians who would offer it if the path were clearer.</p>
 <p style="{{ aboutBodyLastStyle }}">We exist to close that gap — making regenerative medicine practical for real practices, with the protocols, training, and compliance structure that let a physician offer it confidently.</p>
-<div>
+<a href="/about" style="{{ sectionLinkStyle }}" style-hover="color:#6E3F08">Learn more about Regenitiva →</a>
+<div style="{{ aboutFounderBlockStyle }}">
 <h3 style="{{ aboutNameStyle }}">Francis P. Lagattuta, MD</h3>
 <p style="{{ aboutTitleStyle }}">Founder, Regenitiva</p>
 </div>
@@ -235,9 +227,9 @@ a:hover{color:#6E3F08;text-decoration:underline}
 </div>
 </section>
 
-<section id="faq" data-screen-label="FAQ" style="padding:96px 48px;border-bottom:1px solid #DDD4C7">
-<div style="max-width:800px;margin:0 auto">
-<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 44px 0;text-align:center">Frequently asked questions.</h2>
+<section id="faq" data-screen-label="FAQ" style="{{ faqSectionStyle }}">
+<div style="{{ faqInnerStyle }}">
+<h2 style="{{ faqHeadlineStyle }}">Frequently asked questions.</h2>
 <div style="display:flex;flex-direction:column;gap:0">
 <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="6">
 <div style="border-bottom:1px solid #DDD4C7">
@@ -246,7 +238,7 @@ a:hover{color:#6E3F08;text-decoration:underline}
 <span style="font-family:Roboto;font-size:20px;color:#8F520B;flex:0 0 auto">{{ item.sign }}</span>
 </button>
 <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
-<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#3D3831;margin:0 0 26px 0;max-width:70ch">{{ item.a }}</p>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 26px 0;max-width:70ch">{{ item.a }}</p>
 </sc-if>
 </div>
 </sc-for>
@@ -254,50 +246,41 @@ a:hover{color:#6E3F08;text-decoration:underline}
 </div>
 </section>
 
-<section id="book" data-screen-label="Closing CTA" style="padding:100px 48px;background:#1C1A17;color:#FAF7F2;text-align:center">
-<div style="max-width:640px;margin:0 auto">
-<h2 style="font-family:Archivo;font-size:38px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 20px 0">Let's look at your practice.</h2>
-<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 36px 0">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you — and what it would take to build.</p>
-<a href="tel:8058967983" style="display:inline-block;font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:16px 30px;margin-bottom:24px">Schedule a Consultation</a>
-<div style="font-family:Roboto;font-size:15px;color:#B8AE9F">Call: <a href="tel:8058967983" style="color:#FFCD4D">805-896-7983</a></div>
+<section id="book" data-screen-label="Closing CTA" style="{{ closingSectionStyle }}">
+<div style="{{ closingInnerStyle }}">
+<h2 style="{{ closingHeadlineStyle }}">Let's look at your practice.</h2>
+<p style="{{ closingBodyStyle }}">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you — and what it would take to build.</p>
+<a href="tel:8058967983" style="{{ closingBtnStyle }}">Schedule a Consultation</a>
+<div style="{{ closingPhoneStyle }}">Call: <a href="tel:8058967983" style="color:#FFCD4D">805-896-7983</a></div>
 </div>
 </section>
 
 </main>
 
-<footer data-screen-label="Footer" style="padding:44px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:#FAF7F2">
-<div style="display:flex;align-items:center;gap:10px">
-<img src="logo/regenitiva-mark.svg" alt="Regenitiva" style="height:22px;width:auto"></img>
-<span style="font-family:Roboto;font-size:13px;color:#6B6358">Regenitiva LLC — Regenerative medicine practice development and management services.</span>
 </div>
-<nav style="display:flex;gap:24px;flex-wrap:wrap">
-<a href="#book" style="font-family:Roboto;font-size:13px;color:#6B6358">Contact</a>
-<a href="#what-changes" style="font-family:Roboto;font-size:13px;color:#6B6358">Why Regenitiva</a>
-<a href="#protocol" style="font-family:Roboto;font-size:13px;color:#6B6358">The Protocol</a>
-<a href="#about" style="font-family:Roboto;font-size:13px;color:#6B6358">About</a>
-<a href="#" style="font-family:Roboto;font-size:13px;color:#6B6358">Privacy</a>
-<a href="#" style="font-family:Roboto;font-size:13px;color:#6B6358">Terms</a>
-</nav>
-</footer>
 
-</div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
 class Component extends DCLogic {
   state = {
     open: {0: true},
-    isMobile: typeof window !== 'undefined' && window.innerWidth <= 600
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023
   };
 
   componentDidMount() {
-    this.mq = window.matchMedia('(max-width:600px)');
-    this.onMq = e => this.setState({ isMobile: e.matches });
-    this.mq.addEventListener('change', this.onMq);
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
   }
 
   componentWillUnmount() {
-    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
   }
 
   faqData = [
@@ -309,6 +292,21 @@ class Component extends DCLogic {
     {q:"What happens to my existing staff and workflows?", a:"We build around your team. Competency training brings existing staff into the program rather than replacing them, and workflow design starts from how your practice already runs."}
   ];
 
+  eyebrow(color) {
+    return { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color, margin: '0 0 16px 0' };
+  }
+  h2(color, isMobile, mb = 24) {
+    return { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` };
+  }
+  h3(color, isMobile, mb = 12) {
+    return { fontFamily: 'Archivo', fontWeight: 500, fontSize: isMobile ? 22 : 26, lineHeight: 1.3, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` };
+  }
+  body(color, mb, maxWidth) {
+    const s = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color, margin: mb != null ? `0 0 ${mb}px 0` : 0 };
+    if (maxWidth) s.maxWidth = maxWidth;
+    return s;
+  }
+
   renderVals() {
     const open = this.state.open;
     const faqs = this.faqData.map((f, i) => ({
@@ -319,41 +317,42 @@ class Component extends DCLogic {
       toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } }))
     }));
 
-    const isMobile = this.state.isMobile;
-    const margin = isMobile ? 32 : 120;
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
 
+    const sectionLinkStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, color: '#8F520B', display: 'inline-block', marginTop: 8 };
+
+    // Hero — no nav; a real header sits above this section on the page.
     const heroSectionStyle = isMobile
-      ? { position: 'relative', overflow: 'hidden', background: '#1C1A17', display: 'flex', flexDirection: 'column' }
-      : { position: 'relative', overflow: 'hidden', background: '#1C1A17', width: '100%', boxSizing: 'border-box', aspectRatio: '16/7', minHeight: '620px', maxHeight: '760px' };
+      ? { position: 'relative', overflow: 'hidden', background: '#1C1A17', minHeight: 580 }
+      : { position: 'relative', overflow: 'hidden', background: '#1C1A17', width: '100%', boxSizing: 'border-box', aspectRatio: '16/7', minHeight: '560px', maxHeight: '720px' };
     const heroPhotoWrapStyle = isMobile
-      ? { position: 'relative', width: '100%', height: '420px', flex: '0 0 auto' }
+      ? { position: 'absolute', inset: 0, width: '100%', height: '100%' }
       : { position: 'absolute', inset: 0, width: '100%', height: '100%' };
     const heroFadeStyle = isMobile
-      ? { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(28,26,23,0) 55%, rgba(28,26,23,0.6) 100%)' }
+      ? { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(28,26,23,0.5) 0%, rgba(28,26,23,0.72) 55%, rgba(28,26,23,0.9) 100%)' }
       : { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(28,26,23,0.82) 0%, rgba(28,26,23,0.55) 38%, rgba(28,26,23,0.08) 60%, rgba(28,26,23,0) 68%)' };
-    const heroNavStyle = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3, minHeight: '88px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `16px ${margin}px`, gap: 16, flexWrap: isMobile ? 'wrap' : 'nowrap', background: 'transparent' };
-    const heroNavLinksStyle = { display: 'flex', alignItems: 'center', gap: isMobile ? 16 : 20, flexWrap: isMobile ? 'wrap' : 'nowrap' };
-    const heroNavLinkStyle = { fontFamily: 'Roboto', fontSize: 14, fontWeight: 500, color: '#FAF7F2', whiteSpace: 'nowrap' };
     const heroTextWrapStyle = isMobile
-      ? { position: 'relative', zIndex: 2, padding: `32px ${margin}px 48px ${margin}px`, background: '#1C1A17' }
-      : { position: 'absolute', zIndex: 2, top: 0, left: margin, height: '100%', width: 'clamp(420px, 60vw, 640px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 100, paddingBottom: 40, boxSizing: 'border-box' };
-    const eyebrowStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FAAF33', marginBottom: 20 };
-    const headlineStyle = { fontFamily: 'Archivo', fontWeight: isMobile ? 400 : 300, fontSize: isMobile ? 38 : 'clamp(34px, 5.2vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em', color: '#FAF7F2', margin: '0 0 24px 0' };
-    const subheadStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#DDD4C7', maxWidth: 480, margin: '0 0 36px 0' };
-    const ctaRowStyle = { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' };
+      ? { position: 'relative', zIndex: 2, minHeight: 580, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: `32px ${margin}px 40px ${margin}px`, boxSizing: 'border-box' }
+      : { position: 'absolute', zIndex: 2, top: 0, left: margin, height: '100%', width: 'clamp(420px, 60vw, 640px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 40, paddingBottom: 40, boxSizing: 'border-box' };
+    const eyebrowStyle = { ...this.eyebrow('#FAAF33'), margin: '0 0 20px 0' };
+    const headlineStyle = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 38 : 'clamp(34px, 5.2vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em', color: '#FAF7F2', margin: '0 0 24px 0' };
+    const subheadStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#DDD4C7', maxWidth: 480, margin: '0 0 36px 0' };
+    const ctaRowStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }
+      : { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' };
     const primaryBtnStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, letterSpacing: '0.01em', background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '15px 26px', display: 'inline-block', whiteSpace: 'nowrap', flexShrink: 0 };
     const secondaryLinkStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, color: '#FFCD4D', whiteSpace: 'nowrap', flexShrink: 0 };
-    const trustBarStyle = { minHeight: 64, background: '#EFE9E0', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 16, padding: `${isMobile ? 16 : 20}px ${margin}px`, borderBottom: '1px solid #DDD4C7', boxSizing: 'border-box' };
-    const trustItemStyle = { fontFamily: 'Roboto', fontSize: 14, color: '#3D3831' };
-    const trustDotStyle = { color: '#B8AE9F' };
 
     const introSectionStyle = { padding: isMobile ? `40px ${margin}px 28px ${margin}px` : `64px ${margin}px 48px ${margin}px`, background: '#FAF7F2' };
-    const introTextStyle = { fontFamily: 'Roboto', fontWeight: 400, fontSize: 17, lineHeight: 1.5, color: '#3D3831', maxWidth: 1100, margin: 0 };
+    const introTextStyle = this.body('#3D3831', 0, 1100);
 
     const whySectionStyle = { padding: `0 ${margin}px ${isMobile ? 64 : 140}px ${margin}px`, background: '#FAF7F2' };
     const whyHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 700, fontSize: isMobile ? 28 : 40, color: '#8F520B', margin: `0 0 ${isMobile ? 24 : 32}px 0` };
     const whyGridStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: 48 }
+      ? { display: 'flex', flexDirection: 'column', gap: 40 }
       : { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, alignItems: 'start' };
     const cardIconStyle = { display: 'block', marginBottom: 16 };
     const cardHeadlineInlineStyle = { fontFamily: 'Archivo', fontWeight: 700, fontSize: 17, color: '#1C1A17', margin: '0 0 16px 0' };
@@ -369,28 +368,40 @@ class Component extends DCLogic {
     const whoTextOuterStyle = isMobile
       ? { padding: `32px ${margin}px 48px ${margin}px` }
       : { marginLeft: '45%', padding: `88px ${margin}px 88px 64px`, boxSizing: 'border-box' };
-    const whoHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
-    const whoIntroStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', maxWidth: 460, margin: '0 0 36px 0' };
+    const whoHeadlineStyle = this.h2('#1C1A17', isMobile, 20);
+    const whoIntroStyle = this.body('#3D3831', 36, 460);
     const whoListStyle = { display: 'flex', flexDirection: 'column', gap: isMobile ? 16 : 18, margin: '0 0 32px 0' };
-    const whoListItemStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#1C1A17', margin: 0 };
-    const whoClosingStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+    const whoListItemStyle = this.body('#1C1A17', 0);
+    const whoClosingStyle = this.body('#3D3831', 16);
+
+    const complianceSectionStyle = { padding: isMobile ? `56px ${margin}px` : `120px ${margin}px`, background: '#1C1A17', color: '#FAF7F2', borderBottom: '1px solid #3D3831' };
+    const complianceGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 40 }
+      : { maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 64, alignItems: 'start' };
+    const complianceEyebrowStyle = this.eyebrow('#FAAF33');
+    const complianceHeadlineStyle = this.h2('#FAF7F2', isMobile, 24);
+    const complianceBodyStyle = this.body('#DDD4C7', 20);
+    const complianceBodyLastStyle = this.body('#DDD4C7', 24);
+    const complianceListStyle = { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 16 };
+    const complianceCardStyle = { display: 'flex', gap: 14, padding: '18px 20px', background: '#3D3831', border: '1px solid rgba(250,247,242,0.14)', borderRadius: 8, fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#FAF7F2' };
+    const complianceDashStyle = { flex: '0 0 auto', color: '#FAAF33' };
 
     const protocolSectionStyle = { position: 'relative', overflow: 'hidden', padding: isMobile ? `64px ${margin}px` : `140px ${margin}px`, background: '#FAF7F2' };
-    const protocolTopWrapStyle = isMobile ? {} : { maxWidth: 'calc(100% - clamp(300px, 34vw, 460px) - 48px)' };
+    const protocolTopWrapStyle = isMobile ? {} : { maxWidth: 'calc(100% - clamp(300px, 34vw, 460px) - 48px)', minHeight: 'clamp(300px, 34vw, 460px)', boxSizing: 'border-box' };
     const protocolImageWrapStyle = isMobile
       ? { width: '100%', aspectRatio: '1/1', marginBottom: 32 }
       : { position: 'absolute', top: 0, right: 0, width: 'clamp(300px, 34vw, 460px)', height: 'clamp(300px, 34vw, 460px)' };
-    const protocolEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 16px 0' };
-    const protocolHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
-    const protocolIntroStyle = { fontFamily: 'Roboto', fontSize: 18, lineHeight: 1.55, color: '#3D3831', maxWidth: 620, margin: `0 0 ${isMobile ? 48 : 64}px 0` };
+    const protocolEyebrowStyle = this.eyebrow('#6B6358');
+    const protocolHeadlineStyle = this.h2('#1C1A17', isMobile, 20);
+    const protocolIntroStyle = this.body('#3D3831', isMobile ? 48 : 64, 620);
     const rowWrapStyle = { borderTop: '1px solid #DDD4C7', padding: isMobile ? '32px 0' : '40px 0' };
     const rowLastStyle = { ...rowWrapStyle, borderBottom: '1px solid #DDD4C7' };
     const rowGridStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', gap: 12 }
       : { display: 'grid', gridTemplateColumns: '28% 72%', gap: 32 };
     const rowLabelStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358' };
-    const rowHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 500, fontSize: 24, color: '#1C1A17', margin: '0 0 12px 0' };
-    const rowBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+    const rowHeadlineStyle = this.h3('#1C1A17', isMobile);
+    const rowBodyStyle = this.body('#3D3831', 0);
 
     const storyWrapStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', background: '#EFE9E0' }
@@ -401,9 +412,9 @@ class Component extends DCLogic {
     const storyPhotoStyle = isMobile
       ? { width: '100%', aspectRatio: '1/1' }
       : { position: 'absolute', top: 0, right: 0, height: '100%', width: '42%' };
-    const storyEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 28px 0' };
-    const storyHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 24 : 32, lineHeight: 1.3, letterSpacing: '-0.01em', color: '#1C1A17', maxWidth: 620, margin: '0 0 28px 0' };
-    const storyBodyStyle = { fontFamily: 'Roboto', fontSize: 18, lineHeight: 1.55, color: '#3D3831', maxWidth: 620, margin: '0 0 20px 0' };
+    const storyEyebrowStyle = this.eyebrow('#6B6358');
+    const storyHeadlineStyle = { ...this.h3('#1C1A17', isMobile, 28), maxWidth: 620 };
+    const storyBodyStyle = this.body('#3D3831', 20, 620);
 
     const aboutSectionStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', background: '#FFFFFF' }
@@ -412,55 +423,73 @@ class Component extends DCLogic {
       ? { width: '100%', height: 420, borderRadius: 8, overflow: 'hidden' }
       : { width: '100%', maxWidth: 420, aspectRatio: '4/5', borderRadius: 8, overflow: 'hidden' };
     const aboutContentOuterStyle = isMobile
-      ? { padding: `32px ${margin}px 48px ${margin}px` }
+      ? { padding: `32px ${margin}px 0 ${margin}px` }
       : {};
-    const aboutHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 24px 0' };
-    const aboutBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '0 0 20px 0' };
-    const aboutBodyLastStyle = { ...aboutBodyStyle, margin: '0 0 40px 0' };
+    const aboutHeadlineStyle = this.h2('#1C1A17', isMobile);
+    const aboutBodyStyle = this.body('#3D3831', 20);
+    const aboutBodyLastStyle = this.body('#3D3831', 20);
+    const aboutFounderBlockStyle = { marginTop: 40 };
     const aboutNameStyle = { fontFamily: 'Archivo', fontSize: 22, fontWeight: 500, color: '#1C1A17', margin: 0 };
-    const aboutTitleStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '4px 0 0 0' };
-    const aboutCredentialStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '14px 0 0 0' };
+    const aboutTitleStyle = this.body('#3D3831', 0);
+    Object.assign(aboutTitleStyle, { margin: '4px 0 0 0' });
+    const aboutCredentialStyle = this.body('#3D3831', 0);
+    Object.assign(aboutCredentialStyle, { margin: '14px 0 0 0' });
     const aboutLinkStyle = { fontFamily: 'Roboto', fontSize: 17, fontWeight: 500, color: '#8F520B', textDecoration: 'underline', display: 'inline-block', margin: '18px 0 0 0' };
     const aboutValuesRowStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: 28, marginTop: 56 }
+      ? { display: 'flex', flexDirection: 'column', gap: 28, margin: `48px ${margin}px 48px ${margin}px` }
       : { gridColumn: '1 / -1', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 32 };
     const aboutValueItemStyle = { borderLeft: '2px solid #DDD4C7', paddingLeft: 16 };
     const aboutValueLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', marginBottom: 10 };
-    const aboutValueBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+    const aboutValueBodyStyle = this.body('#3D3831', 0);
 
     const trainingSectionStyle = isMobile
       ? { padding: `64px ${margin}px`, background: '#EFE9E0' }
       : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'start', padding: `140px ${margin}px`, background: '#EFE9E0', boxSizing: 'border-box' };
-    const trainingEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 16px 0' };
-    const trainingHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
-    const trainingBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '0 0 20px 0' };
-    const trainingBodyLastStyle = { ...trainingBodyStyle, margin: 0 };
+    const trainingEyebrowStyle = this.eyebrow('#6B6358');
+    const trainingHeadlineStyle = this.h2('#1C1A17', isMobile);
+    const trainingBodyStyle = this.body('#3D3831', 20);
+    const trainingBodyLastStyle = this.body('#3D3831', 0);
     const trainingRightColStyle = isMobile
       ? { borderTop: '0.5px solid #B8AE9F', paddingTop: 40, marginTop: 48 }
       : { borderLeft: '0.5px solid #B8AE9F', paddingLeft: 56 };
-    const trainingSubheadStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 22 : 26, lineHeight: 1.3, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 12px 0' };
-    const trainingSubBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4, color: '#3D3831', margin: '0 0 32px 0' };
+    const trainingSubheadStyle = this.h3('#1C1A17', isMobile);
+    const trainingSubBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.5, color: '#3D3831', margin: '0 0 32px 0' };
     const trainingStateRowWrapStyle = { display: 'flex', flexDirection: 'column' };
     const trainingStateRowStyle = { display: 'flex', borderTop: '0.5px solid #B8AE9F', padding: '18px 0', fontFamily: 'Roboto', fontSize: 20, fontWeight: 400, color: '#1C1A17', transition: 'transform 0.15s ease, background 0.15s ease' };
     const trainingStateRowLastStyle = { ...trainingStateRowStyle, borderBottom: '0.5px solid #B8AE9F', color: '#8F520B' };
-    const trainingCatchAllStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4, color: '#3D3831', margin: '28px 0 0 0' };
+    const trainingCatchAllStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.5, color: '#3D3831', margin: '28px 0 0 0' };
+
+    const faqSectionStyle = { padding: isMobile ? `56px ${margin}px` : `96px ${margin}px`, borderBottom: '1px solid #DDD4C7' };
+    const faqInnerStyle = { maxWidth: 800, margin: '0 auto' };
+    const faqHeadlineStyle = { ...this.h2('#1C1A17', isMobile, 44), textAlign: 'center' };
+
+    const closingSectionStyle = { padding: isMobile ? `64px ${margin}px` : `100px ${margin}px`, background: '#1C1A17', color: '#FAF7F2', textAlign: 'center' };
+    const closingInnerStyle = { maxWidth: 640, margin: '0 auto' };
+    const closingHeadlineStyle = { ...this.h2('#FAF7F2', isMobile, 20), textAlign: 'center' };
+    const closingBodyStyle = { ...this.body('#DDD4C7', 36), margin: '0 auto 36px auto' };
+    const closingBtnStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, letterSpacing: '0.01em', background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '16px 30px', display: 'inline-block', marginBottom: 24 };
+    const closingPhoneStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#B8AE9F' };
 
     return {
-      faqs, heroSectionStyle, heroPhotoWrapStyle, heroFadeStyle, heroNavStyle, heroNavLinksStyle, heroNavLinkStyle,
+      faqs, sectionLinkStyle,
+      heroSectionStyle, heroPhotoWrapStyle, heroFadeStyle,
       heroTextWrapStyle, eyebrowStyle, headlineStyle, subheadStyle, ctaRowStyle, primaryBtnStyle, secondaryLinkStyle,
-      trustBarStyle, trustItemStyle, trustDotStyle,
       introSectionStyle, introTextStyle,
       whySectionStyle, whyHeadlineStyle, whyGridStyle, cardIconStyle, cardHeadlineInlineStyle, cardBodyStyle, cardLinkStyle,
       whoWrapStyle, whoPhotoWrapStyle, whoTextOuterStyle, whoHeadlineStyle, whoIntroStyle, whoListStyle, whoListItemStyle, whoClosingStyle,
+      complianceSectionStyle, complianceGridStyle, complianceEyebrowStyle, complianceHeadlineStyle, complianceBodyStyle, complianceBodyLastStyle,
+      complianceListStyle, complianceCardStyle, complianceDashStyle,
       protocolSectionStyle, protocolTopWrapStyle, protocolImageWrapStyle, protocolEyebrowStyle, protocolHeadlineStyle, protocolIntroStyle,
       rowWrapStyle, rowLastStyle, rowGridStyle, rowLabelStyle, rowHeadlineStyle, rowBodyStyle,
       storyWrapStyle, storyTextOuterStyle, storyPhotoStyle, storyEyebrowStyle, storyHeadlineStyle, storyBodyStyle,
-      aboutSectionStyle, aboutPhotoStyle, aboutContentOuterStyle, aboutHeadlineStyle, aboutBodyStyle, aboutBodyLastStyle,
+      aboutSectionStyle, aboutPhotoStyle, aboutContentOuterStyle, aboutHeadlineStyle, aboutBodyStyle, aboutBodyLastStyle, aboutFounderBlockStyle,
       aboutNameStyle, aboutTitleStyle, aboutCredentialStyle, aboutLinkStyle,
       aboutValuesRowStyle, aboutValueItemStyle, aboutValueLabelStyle, aboutValueBodyStyle,
       trainingSectionStyle, trainingEyebrowStyle, trainingHeadlineStyle, trainingBodyStyle, trainingBodyLastStyle,
       trainingRightColStyle, trainingSubheadStyle, trainingSubBodyStyle, trainingStateRowWrapStyle,
-      trainingStateRowStyle, trainingStateRowLastStyle, trainingCatchAllStyle
+      trainingStateRowStyle, trainingStateRowLastStyle, trainingCatchAllStyle,
+      faqSectionStyle, faqInnerStyle, faqHeadlineStyle,
+      closingSectionStyle, closingInnerStyle, closingHeadlineStyle, closingBodyStyle, closingBtnStyle, closingPhoneStyle
     };
   }
 }
