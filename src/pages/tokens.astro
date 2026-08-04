@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const ambers = [
   { token: '--rg-amber-300', hex: '#FFCD4D', name: 'amber-300' },
@@ -14,6 +14,7 @@ const neutrals = [
   { token: '--rg-ink-900', hex: '#1C1A17', name: 'ink-900', light: true },
   { token: '--rg-ink-700', hex: '#3D3831', name: 'ink-700', light: true },
   { token: '--rg-stone-600', hex: '#6B6358', name: 'stone-600', light: true },
+  { token: '--rg-stone-400', hex: '#B8AE9F', name: 'stone-400', light: true },
   { token: '--rg-stone-300', hex: '#DDD4C7', name: 'stone-300' },
   { token: '--rg-stone-100', hex: '#EFE9E0', name: 'stone-100' },
   { token: '--rg-bone', hex: '#FAF7F2', name: 'bone' },
@@ -74,15 +75,8 @@ const shadows = [
 ];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="noindex" />
-    <title>Token test — Regenitiva</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <style>
+<BaseLayout title="Token test — Regenitiva" description="Design token visual verification page.">
+    <style is:global>
       .tt-wrap { max-width: 1180px; margin: 0 auto; padding: var(--rg-space-7) var(--rg-page-margin); }
       .tt-section { margin-bottom: var(--rg-space-9); }
       .tt-section-title {
@@ -159,8 +153,6 @@ const shadows = [
       .tt-body-sample { max-width: var(--rg-measure-body); }
       .tt-gradient-bar { height: 6px; background: var(--rg-gradient-amber); border-radius: var(--rg-radius-xs); margin-bottom: var(--rg-space-7); }
     </style>
-  </head>
-  <body>
     <div class="tt-wrap">
       <div class="tt-gradient-bar"></div>
 
@@ -371,5 +363,4 @@ const shadows = [
       </section>
 
     </div>
-  </body>
-</html>
+</BaseLayout>

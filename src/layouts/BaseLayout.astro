@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Regenitiva — regenerative medicine practice development and management services for physician-owned practices.',
+} = Astro.props;
+
+// Derive active page from URL pathname
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const activePage = pathname === '/' ? 'home'
+  : pathname.startsWith('/about') ? 'about'
+  : pathname.startsWith('/services') && !pathname.startsWith('/service-areas') ? 'services'
+  : pathname.startsWith('/service-areas') ? 'service-areas'
+  : pathname.startsWith('/blog') ? 'blog'
+  : pathname.startsWith('/contact') ? 'contact'
+  : '';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header activePage={activePage} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

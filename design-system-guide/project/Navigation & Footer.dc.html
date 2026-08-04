@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F1EBDF;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:auto;padding:56px 0 96px">
+<div style="max-width:1560px;margin:0 auto;padding:0 32px">
+
+<div style="margin-bottom:48px">
+<div style="font-family:Archivo;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">Regenitiva — Component Design</div>
+<h1 style="font-family:Archivo;font-size:34px;font-weight:600;letter-spacing:-0.02em;margin:0 0 8px 0">Navigation &amp; Footer</h1>
+<p style="font-family:Roboto;font-size:16px;line-height:1.5;color:#6B6358;margin:0;max-width:640px">Live components at 1440px and 375px. Hover "Services" on desktop or tap the menu icon on mobile to see the interactive states.</p>
+</div>
+
+<div style="font-family:Archivo;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Desktop navigation — 1440px</div>
+<div style="width:1440px;max-width:none;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:10px;box-shadow:0 12px 28px rgba(28,26,23,0.08);position:relative;margin-bottom:56px;overflow:visible">
+<nav style="height:84px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #DDD4C7;position:relative;z-index:5;background:#FAF7F2;border-radius:10px 10px 0 0">
+<a href="#" style="display:flex;align-items:center;gap:10px">
+<img src="logo/regenitiva-mark.svg" alt="Regenitiva" style="height:26px;width:auto"></img>
+<span style="font-family:Archivo;font-weight:600;font-size:18px;letter-spacing:-0.01em;color:#1C1A17">Regenitiva</span>
+</a>
+<div style="display:flex;align-items:center;gap:40px">
+<a href="/about" style="{{ aboutLinkStyle }}" style-hover="color:#8F520B">About</a>
+<div style="position:relative" onMouseEnter="{{ openMega }}" onMouseLeave="{{ closeMega }}">
+<a href="/services" style="{{ servicesLinkStyle }}" style-hover="color:#8F520B">Services<span style="{{ chevronStyle }}">▾</span></a>
+<sc-if value="{{ desktopMegaOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:32px;left:50%;transform:translateX(-50%);width:920px;background:#FFFFFF;border:1px solid #DDD4C7;border-top:2px solid #F59621;border-radius:0 0 10px 10px;box-shadow:0 20px 40px rgba(28,26,23,0.14);padding:40px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px;z-index:10">
+<sc-for list="{{ servicesGroups }}" as="group" hint-placeholder-count="3">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">{{ group.label }}</div>
+<div style="display:flex;flex-direction:column;gap:13px">
+<sc-for list="{{ group.items }}" as="item" hint-placeholder-count="3">
+<a href="{{ item.href }}" style="display:block;font-family:Roboto;font-size:15px;line-height:1.4;color:#3D3831" style-hover="color:#8F520B;transform:translateX(3px)">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<a href="/service-areas" style="{{ serviceAreasLinkStyle }}" style-hover="color:#8F520B">Service Areas</a>
+<a href="/blog" style="{{ blogLinkStyle }}" style-hover="color:#8F520B">Blog</a>
+<a href="/contact" style="{{ contactLinkStyle }}" style-hover="color:#6E3F08;text-decoration:underline">Contact</a>
+</div>
+<a href="#book" style="font-family:Roboto;font-size:15px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:12px 22px;white-space:nowrap" style-hover="background:#E08415;border-color:#E08415">Get Started</a>
+</nav>
+<div style="height:420px;display:flex;align-items:center;justify-content:center;color:#B8AE9F;font-family:Roboto;font-size:14px">Page content area</div>
+</div>
+
+<div style="font-family:Archivo;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Mobile navigation — 375px</div>
+<div style="width:375px;height:667px;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:20px;box-shadow:0 12px 28px rgba(28,26,23,0.08);margin-bottom:56px;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<nav style="height:64px;flex:0 0 auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #DDD4C7">
+<a href="#" style="display:flex;align-items:center;gap:8px">
+<img src="logo/regenitiva-mark.svg" alt="Regenitiva" style="height:22px;width:auto"></img>
+<span style="font-family:Archivo;font-weight:600;font-size:16px;letter-spacing:-0.01em;color:#1C1A17">Regenitiva</span>
+</a>
+<button type="button" onClick="{{ toggleMobileMenu }}" style="width:40px;height:40px;border:1px solid #DDD4C7;border-radius:8px;background:#FAF7F2;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+<line x1="1" y1="9" x2="17" y2="9" stroke="#1C1A17" stroke-width="2" stroke-linecap="round" style="{{ hamburgerMidStyle }}"></line>
+<line x1="{{ hamburgerTopX1 }}" y1="{{ hamburgerTopY1 }}" x2="{{ hamburgerTopX2 }}" y2="{{ hamburgerTopY2 }}" stroke="#1C1A17" stroke-width="2" stroke-linecap="round" style="{{ hamburgerTransition }}"></line>
+<line x1="{{ hamburgerBotX1 }}" y1="{{ hamburgerBotY1 }}" x2="{{ hamburgerBotX2 }}" y2="{{ hamburgerBotY2 }}" stroke="#1C1A17" stroke-width="2" stroke-linecap="round" style="{{ hamburgerTransition }}"></line>
+</svg>
+</button>
+</nav>
+<div style="flex:1 1 auto;overflow-y:auto">
+<sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ true }}">
+<div style="padding:8px 18px 28px;display:flex;flex-direction:column">
+<a href="/about" style="{{ mAboutLinkStyle }}">About</a>
+<div style="border-bottom:1px solid #DDD4C7">
+<button type="button" onClick="{{ toggleMobileServices }}" style="width:100%;background:none;border:none;padding:16px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:Roboto;font-size:17px;font-weight:500;color:#1C1A17">
+<span>Services</span>
+<span style="{{ mChevronStyle }}">▾</span>
+</button>
+<sc-if value="{{ mobileServicesOpen }}" hint-placeholder-val="{{ true }}">
+<div style="padding:0 0 18px 4px;display:flex;flex-direction:column;gap:20px">
+<sc-for list="{{ servicesGroups }}" as="group" hint-placeholder-count="3">
+<div>
+<div style="font-family:Archivo;font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">{{ group.label }}</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ group.items }}" as="item" hint-placeholder-count="3">
+<a href="{{ item.href }}" style="font-family:Roboto;font-size:15px;color:#3D3831">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<a href="/service-areas" style="{{ mServiceAreasLinkStyle }}">Service Areas</a>
+<a href="/blog" style="{{ mBlogLinkStyle }}">Blog</a>
+<a href="/contact" style="font-family:Roboto;font-size:17px;font-weight:500;color:#8F520B;padding:16px 0" style-hover="color:#6E3F08">Contact</a>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 0 auto;padding:14px 18px calc(14px + env(safe-area-inset-bottom));border-top:1px solid #DDD4C7;background:#FAF7F2">
+<a href="#book" style="display:block;text-align:center;font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:14px 22px" style-hover="background:#E08415;border-color:#E08415">Get Started</a>
+</div>
+</div>
+
+<div style="font-family:Archivo;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Desktop footer — 1440px</div>
+<footer style="width:1440px;background:#1C1A17;border-radius:10px;box-shadow:0 12px 28px rgba(28,26,23,0.08);padding:72px 48px 0;margin-bottom:56px">
+<div style="display:grid;grid-template-columns:1.4fr 0.9fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid #3D3831">
+<div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+<img src="logo/regenitiva-mark-bone.svg" alt="Regenitiva" style="height:24px;width:auto"></img>
+<span style="font-family:Archivo;font-weight:600;font-size:17px;color:#FAF7F2">Regenitiva</span>
+</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#B8AE9F;margin:0 0 22px 0;max-width:280px">{{ footerBlurb }}</p>
+<div style="font-family:Roboto;font-size:14px;color:#DDD4C7;line-height:1.8">
+<div>Call: <a href="tel:8058967983" style="color:#FFCD4D">805-896-7983</a></div>
+<div>Email: <a href="mailto:hello@regenitiva.com" style="color:#FFCD4D">hello@regenitiva.com</a></div>
+<div style="color:#B8AE9F">Serving practices nationwide</div>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#DDD4C7;margin-bottom:18px">Company</div>
+<div style="display:flex;flex-direction:column;gap:13px">
+<a href="/" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">Home</a>
+<a href="/about" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">About</a>
+<a href="/services" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">Services</a>
+<a href="/service-areas" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">Service Areas</a>
+<a href="/blog" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">Blog</a>
+<a href="/contact" style="font-family:Roboto;font-size:15px;color:#B8AE9F" style-hover="color:#FFCD4D">Contact</a>
+</div>
+</div>
+<sc-for list="{{ servicesGroups }}" as="group" hint-placeholder-count="3">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#DDD4C7;margin-bottom:18px">{{ group.label }}</div>
+<div style="display:flex;flex-direction:column;gap:13px">
+<sc-for list="{{ group.items }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="font-family:Roboto;font-size:15px;line-height:1.4;color:#B8AE9F" style-hover="color:#FFCD4D">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="padding:22px 0;display:flex;align-items:center;justify-content:space-between">
+<span style="font-family:Roboto;font-size:13px;color:#6B6358">© 2026 Regenitiva LLC. All rights reserved.</span>
+<div style="display:flex;gap:28px">
+<a href="/privacy" style="font-family:Roboto;font-size:13px;color:#B8AE9F" style-hover="color:#FFCD4D">Privacy Policy</a>
+<a href="/terms" style="font-family:Roboto;font-size:13px;color:#B8AE9F" style-hover="color:#FFCD4D">Terms of Service</a>
+</div>
+</div>
+</footer>
+
+<div style="font-family:Archivo;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3D3831;margin-bottom:14px">Mobile footer — 375px</div>
+<footer style="width:375px;background:#1C1A17;border-radius:20px;box-shadow:0 12px 28px rgba(28,26,23,0.08);padding:48px 22px 0">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+<img src="logo/regenitiva-mark-bone.svg" alt="Regenitiva" style="height:22px;width:auto"></img>
+<span style="font-family:Archivo;font-weight:600;font-size:16px;color:#FAF7F2">Regenitiva</span>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.55;color:#B8AE9F;margin:0 0 20px 0">{{ footerBlurb }}</p>
+<div style="font-family:Roboto;font-size:14px;color:#DDD4C7;line-height:1.8;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #3D3831">
+<div>Call: <a href="tel:8058967983" style="color:#FFCD4D">805-896-7983</a></div>
+<div>Email: <a href="mailto:hello@regenitiva.com" style="color:#FFCD4D">hello@regenitiva.com</a></div>
+<div style="color:#B8AE9F">Serving practices nationwide</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:28px;padding-bottom:32px;border-bottom:1px solid #3D3831">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#DDD4C7;margin-bottom:14px">Company</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<a href="/" style="font-family:Roboto;font-size:15px;color:#B8AE9F">Home</a>
+<a href="/about" style="font-family:Roboto;font-size:15px;color:#B8AE9F">About</a>
+<a href="/services" style="font-family:Roboto;font-size:15px;color:#B8AE9F">Services</a>
+<a href="/service-areas" style="font-family:Roboto;font-size:15px;color:#B8AE9F">Service Areas</a>
+<a href="/blog" style="font-family:Roboto;font-size:15px;color:#B8AE9F">Blog</a>
+<a href="/contact" style="font-family:Roboto;font-size:15px;color:#B8AE9F">Contact</a>
+</div>
+</div>
+<sc-for list="{{ servicesGroups }}" as="group" hint-placeholder-count="3">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#DDD4C7;margin-bottom:14px">{{ group.label }}</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ group.items }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="font-family:Roboto;font-size:15px;color:#B8AE9F">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="padding:22px 0;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:24px">
+<a href="/privacy" style="font-family:Roboto;font-size:13px;color:#B8AE9F">Privacy Policy</a>
+<a href="/terms" style="font-family:Roboto;font-size:13px;color:#B8AE9F">Terms of Service</a>
+</div>
+<span style="font-family:Roboto;font-size:12px;color:#6B6358">© 2026 Regenitiva LLC. All rights reserved.</span>
+</div>
+</footer>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1560,&quot;height&quot;:1400},&quot;navActiveItem&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Home&quot;,&quot;options&quot;:[&quot;Home&quot;,&quot;About&quot;,&quot;Services&quot;,&quot;Service Areas&quot;,&quot;Blog&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navigation&quot;},&quot;footerBlurb&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Regenitiva builds and runs the operational backbone of office-based regenerative medicine programs for physiatrists, sports medicine, and pain management physicians.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Footer&quot;}}">
+class Component extends DCLogic {
+  state = { desktopMegaOpen: true, mobileMenuOpen: true, mobileServicesOpen: true };
+
+  servicesGroups = [
+    { label: "Build & Launch", items: [
+      { label: "Regenerative Medicine Practice Development", href: "/services/practice-development" },
+      { label: "Clinical Program Implementation", href: "/services/clinical-program-implementation" },
+      { label: "Credentialing & Provider Support", href: "/services/credentialing-provider-support" }
+    ]},
+    { label: "Run & Comply", items: [
+      { label: "Management Services Organization (MSO)", href: "/services/mso" },
+      { label: "Practice Operations & Compliance", href: "/services/operations-compliance" },
+      { label: "Multi-Clinic Management", href: "/services/multi-clinic-management" }
+    ]},
+    { label: "Grow & Optimize", items: [
+      { label: "Practice Growth & Marketing", href: "/services/growth-marketing" },
+      { label: "Revenue Optimization", href: "/services/revenue-optimization" },
+      { label: "Outcome Tracking & Data Analytics", href: "/services/outcome-tracking" },
+      { label: "Strategic Consulting", href: "/services/strategic-consulting" }
+    ]}
+  ];
+
+  navLinkStyle(name, isActive) {
+    return {
+      fontFamily: "Roboto", fontSize: "16px", fontWeight: isActive ? "600" : "400",
+      color: isActive ? "#1C1A17" : "#3D3831",
+      borderBottom: isActive ? "2px solid #F59621" : "2px solid transparent",
+      paddingBottom: "4px", display: "flex", alignItems: "center", gap: "4px"
+    };
+  }
+
+  mNavLinkStyle(isActive) {
+    return {
+      fontFamily: "Roboto", fontSize: "17px", fontWeight: isActive ? "600" : "500",
+      color: isActive ? "#8F520B" : "#1C1A17",
+      padding: "16px 0", borderBottom: "1px solid #DDD4C7"
+    };
+  }
+
+  renderVals() {
+    const active = this.props.navActiveItem ?? "Home";
+    const s = this.state;
+    return {
+      servicesGroups: this.servicesGroups,
+      footerBlurb: this.props.footerBlurb ?? "Regenitiva builds and runs the operational backbone of office-based regenerative medicine programs for physiatrists, sports medicine, and pain management physicians.",
+      desktopMegaOpen: s.desktopMegaOpen,
+      openMega: () => this.setState({ desktopMegaOpen: true }),
+      closeMega: () => this.setState({ desktopMegaOpen: false }),
+      chevronStyle: { display: "inline-block", fontSize: "12px", marginLeft: "2px", transform: s.desktopMegaOpen ? "rotate(180deg)" : "none", transition: "transform 0.15s" },
+      homeLinkStyle: this.navLinkStyle("Home", active === "Home"),
+      aboutLinkStyle: this.navLinkStyle("About", active === "About"),
+      servicesLinkStyle: this.navLinkStyle("Services", active === "Services"),
+      serviceAreasLinkStyle: this.navLinkStyle("Service Areas", active === "Service Areas"),
+      blogLinkStyle: this.navLinkStyle("Blog", active === "Blog"),
+      contactLinkStyle: { fontFamily: "Roboto", fontSize: "16px", fontWeight: "400", color: "#8F520B" },
+      mobileMenuOpen: s.mobileMenuOpen,
+      toggleMobileMenu: () => this.setState({ mobileMenuOpen: !s.mobileMenuOpen }),
+      hamburgerMidStyle: { opacity: s.mobileMenuOpen ? 0 : 1, transition: "opacity 0.15s" },
+      hamburgerTransition: { transition: "x1 0.15s, y1 0.15s, x2 0.15s, y2 0.15s" },
+      hamburgerTopX1: s.mobileMenuOpen ? 2 : 1, hamburgerTopY1: s.mobileMenuOpen ? 2 : 1,
+      hamburgerTopX2: s.mobileMenuOpen ? 16 : 17, hamburgerTopY2: s.mobileMenuOpen ? 16 : 1,
+      hamburgerBotX1: s.mobileMenuOpen ? 2 : 1, hamburgerBotY1: s.mobileMenuOpen ? 16 : 17,
+      hamburgerBotX2: s.mobileMenuOpen ? 16 : 17, hamburgerBotY2: s.mobileMenuOpen ? 2 : 17,
+      mobileServicesOpen: s.mobileServicesOpen,
+      toggleMobileServices: () => this.setState({ mobileServicesOpen: !s.mobileServicesOpen }),
+      mChevronStyle: { display: "inline-block", fontSize: "13px", transform: s.mobileServicesOpen ? "rotate(180deg)" : "none", transition: "transform 0.15s", color: "#6B6358" },
+      mHomeLinkStyle: this.mNavLinkStyle(active === "Home"),
+      mAboutLinkStyle: this.mNavLinkStyle(active === "About"),
+      mServiceAreasLinkStyle: this.mNavLinkStyle(active === "Service Areas"),
+      mBlogLinkStyle: this.mNavLinkStyle(active === "Blog")
+    };
+  }
+}
+</script>
+</body>
+</html>

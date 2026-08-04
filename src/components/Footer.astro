@@ -1,0 +1,272 @@
+---
+import { serviceGroups, companyLinks } from '../data/navigation';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/logo/regenitiva-mark-bone.svg" alt="" width="24" height="24" />
+          <span>Regenitiva</span>
+        </a>
+        <p class="footer-blurb">
+          Regenitiva builds and runs the operational backbone of office-based
+          regenerative medicine programs for physiatrists, sports medicine, and
+          pain management physicians.
+        </p>
+        <div class="footer-contact">
+          <div>Call: <a href="tel:8058967983" class="footer-contact-link">805-896-7983</a></div>
+          <div>Email: <a href="mailto:hello@regenitiva.com" class="footer-contact-link">hello@regenitiva.com</a></div>
+          <div class="footer-contact-note">Serving practices nationwide</div>
+        </div>
+      </div>
+
+      <!-- Company column -->
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <div class="footer-col-links">
+          {companyLinks.map((link) => (
+            <a href={link.href} class="footer-link">{link.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Service group columns -->
+      {serviceGroups.map((group) => (
+        <div class="footer-col">
+          <div class="footer-col-label">{group.label}</div>
+          <div class="footer-col-links">
+            {group.items.map((item) => (
+              <a href={item.href} class="footer-link">{item.label}</a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="footer-legal">
+      <span class="footer-copyright">&copy; {year} Regenitiva LLC. All rights reserved.</span>
+      <div class="footer-legal-links">
+        <a href="/privacy" class="footer-legal-link">Privacy Policy</a>
+        <a href="/terms" class="footer-legal-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+  }
+
+  .footer-inner {
+    max-width: var(--rg-container-wide);
+    margin: 0 auto;
+    padding: var(--rg-space-7) 22px 0;
+  }
+
+  /* ----------------------------------------------------------------
+     Grid — stacked on mobile, 5 columns on desktop
+     ---------------------------------------------------------------- */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+    padding-bottom: var(--rg-space-6);
+    border-bottom: 1px solid var(--rg-border-inverse);
+  }
+
+  /* ----------------------------------------------------------------
+     Brand column
+     ---------------------------------------------------------------- */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  .footer-logo:hover {
+    text-decoration: none;
+  }
+
+  .footer-logo img {
+    height: 22px;
+    width: auto;
+  }
+
+  .footer-logo span {
+    font-family: var(--rg-font-display);
+    font-weight: var(--rg-weight-semibold);
+    font-size: 16px;
+    color: var(--rg-text-on-inverse);
+  }
+
+  .footer-blurb {
+    font-family: var(--rg-font-body);
+    font-size: 14px;
+    line-height: var(--rg-lh-small);
+    color: var(--rg-stone-400);
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact {
+    font-family: var(--rg-font-body);
+    font-size: 14px;
+    color: var(--rg-stone-300);
+    line-height: 1.8;
+  }
+
+  .footer-contact-link {
+    color: var(--rg-amber-300);
+    text-decoration: none;
+  }
+
+  .footer-contact-link:hover {
+    color: var(--rg-amber-300);
+    text-decoration: underline;
+  }
+
+  .footer-contact-note {
+    color: var(--rg-stone-400);
+  }
+
+  /* ----------------------------------------------------------------
+     Link columns
+     ---------------------------------------------------------------- */
+  .footer-col-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rg-stone-300);
+    margin-bottom: 14px;
+  }
+
+  .footer-col-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-3);
+  }
+
+  .footer-link {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-small);
+    line-height: 1.4;
+    color: var(--rg-stone-400);
+    text-decoration: none;
+    transition: color var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .footer-link:hover {
+    color: var(--rg-amber-300);
+    text-decoration: none;
+  }
+
+  /* ----------------------------------------------------------------
+     Legal bar
+     ---------------------------------------------------------------- */
+  .footer-legal {
+    padding: 22px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: var(--rg-space-5);
+  }
+
+  .footer-legal-link {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-caption);
+    color: var(--rg-stone-400);
+    text-decoration: none;
+    transition: color var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .footer-legal-link:hover {
+    color: var(--rg-amber-300);
+    text-decoration: none;
+  }
+
+  .footer-copyright {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-caption);
+    color: var(--rg-stone-600);
+    order: 1;
+  }
+
+  /* ----------------------------------------------------------------
+     Desktop (lg: 1024px)
+     ---------------------------------------------------------------- */
+  @media (min-width: 1024px) {
+    .footer-inner {
+      padding: 72px var(--rg-space-7) 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 56px;
+    }
+
+    .footer-brand .footer-contact {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .footer-logo img {
+      height: 24px;
+    }
+
+    .footer-logo span {
+      font-size: 17px;
+    }
+
+    .footer-blurb {
+      font-size: var(--rg-size-small);
+      margin-bottom: 22px;
+    }
+
+    .footer-col-label {
+      margin-bottom: 18px;
+    }
+
+    .footer-col-links {
+      gap: 13px;
+    }
+
+    .footer-legal {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      order: 0;
+      font-size: var(--rg-size-caption);
+    }
+  }
+
+  /* Mobile contact divider */
+  @media (max-width: 1023px) {
+    .footer-contact {
+      margin-bottom: var(--rg-space-6);
+      padding-bottom: var(--rg-space-6);
+      border-bottom: 1px solid var(--rg-border-inverse);
+    }
+  }
+</style>

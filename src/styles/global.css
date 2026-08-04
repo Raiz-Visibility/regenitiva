@@ -17,6 +17,7 @@
   --rg-ink-900: #1C1A17;
   --rg-ink-700: #3D3831;
   --rg-stone-600: #6B6358;
+  --rg-stone-400: #B8AE9F; /* from nav/footer component design — muted text on dark surfaces */
   --rg-stone-300: #DDD4C7;
   --rg-stone-100: #EFE9E0;
   --rg-bone: #FAF7F2;
