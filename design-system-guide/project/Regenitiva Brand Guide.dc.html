@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+table{border-collapse:collapse;width:100%}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="display:flex;align-items:flex-start;width:100%;min-height:100vh;background:#FAF7F2">
+
+<nav style="position:sticky;top:0;flex:0 0 268px;height:100vh;padding:36px 28px;background:#1C1A17;color:#FAF7F2;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:center;gap:12px">
+<img src="logo/regenitiva-mark-bone.svg" alt="" style="width:28px;flex:0 0 auto"></img>
+<div>
+<div style="font-family:Roboto;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#FAF7F2">Regenitiva</div>
+<div style="font-family:Archivo;font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#FFCD4D">Brand Guide v1.0</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px" data-nav="1">
+<a href="#overview" data-navlink="overview" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">01 &nbsp;Brand Overview</a>
+<a href="#voice" data-navlink="voice" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">02 &nbsp;Voice &amp; Messaging</a>
+<a href="#logo" data-navlink="logo" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">03 &nbsp;Logo</a>
+<a href="#color" data-navlink="color" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">04 &nbsp;Color</a>
+<a href="#type" data-navlink="type" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">05 &nbsp;Typography</a>
+<a href="#grid" data-navlink="grid" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">06 &nbsp;Spacing &amp; Grid</a>
+<a href="#components" data-navlink="components" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">07 &nbsp;Components</a>
+<a href="#imagery" data-navlink="imagery" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">08 &nbsp;Imagery</a>
+<a href="#dos" data-navlink="dos" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">09 &nbsp;Do's &amp; Don'ts</a>
+<a href="#tokens" data-navlink="tokens" style="font-size:14px;color:#DDD4C7;padding:8px 12px;border-left:2px solid #3D3831;border-radius:0 4px 4px 0">10 &nbsp;Design Tokens</a>
+</div>
+<div style="margin-top:auto;font-size:12px;line-height:1.5;color:#6B6358">Click any hex value to copy it.</div>
+</nav>
+
+<main style="flex:1 1 auto;min-width:0;max-width:1180px;padding:0 0 120px 0">
+
+<header id="overview" data-screen-label="Brand Overview" style="padding:88px 56px 64px 56px;background:#1C1A17;color:#FAF7F2;position:relative;overflow:hidden">
+<div style="height:3px;width:180px;background:linear-gradient(90deg,#FFCD4D,#F59621);margin-bottom:40px"></div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:20px">Brand Standards · Regenitiva LLC · 2026</div>
+<h1 style="font-family:Archivo;font-size:64px;font-weight:700;line-height:1.02;letter-spacing:-0.03em;margin:0 0 24px 0;max-width:16ch">The system behind the practice.</h1>
+<p style="font-family:Roboto;font-size:20px;line-height:1.55;color:#DDD4C7;margin:0;max-width:62ch">This guide is the working reference for anyone building or writing for Regenitiva. Every color, size, and rule here is production-ready. Follow it exactly; the restraint is the point.</p>
+</header>
+
+<section style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">Who we are</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:24ch">A regenerative medicine MSO built for physicians who already have a practice.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 40px 0;max-width:72ch">Regenitiva does not treat patients. We give physiatrists, sports medicine physicians, and pain management physicians a turnkey way to add office-based PRP injection services — spine, cervical, and joint — to the practice they already run. Proprietary PRP, AAAHC-aligned compliance programs, clinical protocols, staff training, credentialing, outcome tracking, and revenue operations. The physician performs medicine. We run the business and compliance apparatus behind it.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px;box-shadow:0 1px 2px rgba(28,26,23,0.06)">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Mission</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0;color:#1C1A17">Improve people's lives.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px;box-shadow:0 1px 2px rgba(28,26,23,0.06)">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Vision</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0;color:#1C1A17">Patients get better while physicians practice without hesitation.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px;box-shadow:0 1px 2px rgba(28,26,23,0.06)">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Values</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0;color:#1C1A17">Integrity. Patient safety. Client support.</p>
+</div>
+</div>
+
+<div style="background:#EFE9E0;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:28px 32px;margin-bottom:44px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Core value proposition</div>
+<p style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0;color:#1C1A17;max-width:26ch">A proven method for improving patient outcomes and physician reimbursement.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">The three things every prospect walks away with</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 24px 0">In this order. Clinical capability first; economics as the consequence, never the opening.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:24px">
+<div style="font-family:Archivo;font-size:36px;font-weight:700;color:#F59621;line-height:1;margin-bottom:14px">01</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;margin:0 0 10px 0">You can treat patients more effectively.</p>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0">A modality your practice does not have today, delivered in your own office.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:24px">
+<div style="font-family:Archivo;font-size:36px;font-weight:700;color:#F59621;line-height:1;margin-bottom:14px">02</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;margin:0 0 10px 0">You do medicine. We handle the compliance.</p>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0">AAAHC-aligned policies, documented protocols, audit-ready charts.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:24px">
+<div style="font-family:Archivo;font-size:36px;font-weight:700;color:#F59621;line-height:1;margin-bottom:14px">03</div>
+<p style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;margin:0 0 10px 0">The economics work.</p>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0">Better modality, better outcomes, defensible reimbursement. In that order.</p>
+</div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Position</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden">
+<table style="font-family:Roboto;font-size:15px">
+<tbody>
+<tr><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;width:220px;color:#6B6358;vertical-align:top">Category</td><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Regenerative medicine practice development and management services organization (MSO)</td></tr>
+<tr><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#6B6358;vertical-align:top">Customer</td><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Musculoskeletal physicians — physiatry, sports medicine, pain management — frequently treating auto-accident patients</td></tr>
+<tr><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#6B6358;vertical-align:top">Signature offering</td><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Practice Operations and Compliance</td></tr>
+<tr><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#6B6358;vertical-align:top">Competitors</td><td style="padding:16px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Regenexx, Performance Resource Partners</td></tr>
+<tr><td style="padding:16px 20px;color:#6B6358;vertical-align:top">Differentiator</td><td style="padding:16px 20px;color:#1C1A17">Proprietary PRP paired with the compliance tooling to bill it defensibly</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="voice" data-screen-label="Voice" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">02 · Voice &amp; Messaging</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:26ch">The emotion belongs to the reader, not the copy.</h2>
+<p style="font-family:Roboto;font-size:20px;line-height:1.55;color:#3D3831;margin:0 0 40px 0;max-width:70ch">Regenitiva is restrained and authoritative — trustworthy, expert, innovative, honest. Economical, certain, never raised. Write calm, declarative, specific sentences and let the implications land on their own. The physician should finish the paragraph excited; the paragraph itself never is.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:48px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Sentence length</div><p style="font-family:Roboto;font-size:16px;line-height:1.55;color:#1C1A17;margin:0">Short. Average 14 words. One idea per sentence.</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Punctuation</div><p style="font-family:Roboto;font-size:16px;line-height:1.55;color:#1C1A17;margin:0">Periods. No exclamation points anywhere, in any asset.</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Person</div><p style="font-family:Roboto;font-size:16px;line-height:1.55;color:#1C1A17;margin:0">&ldquo;You&rdquo; is the physician. &ldquo;We&rdquo; is Regenitiva. Never &ldquo;our clients.&rdquo;</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Proof</div><p style="font-family:Roboto;font-size:16px;line-height:1.55;color:#1C1A17;margin:0">Name the mechanism instead of the adjective. Protocol, audit, chart, outcome.</p></div>
+</div>
+
+<div style="background:#1C1A17;border-radius:8px;padding:32px;margin-bottom:48px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:14px">The money rule — hard constraint</div>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#DDD4C7;margin:0 0 14px 0;max-width:74ch">Improved reimbursement is a core message and it is never the opening. Lead with clinical capability; economics follow as the consequence. Better modality &rarr; better outcomes &rarr; better reimbursement.</p>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#DDD4C7;margin:0;max-width:74ch"><strong style="color:#FAF7F2">Placement rule:</strong> &ldquo;reimbursement,&rdquo; &ldquo;revenue,&rdquo; &ldquo;profitable,&rdquo; and &ldquo;ROI&rdquo; may appear in body copy and in a dedicated business-case section. They may never appear in a hero headline, a page title, a meta title, a nav label, or an email subject line.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">We write this, not this</h3>
+<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:48px">
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">Office-based PRP for spine, cervical, and joint indications.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">States the modality and the sites. The physician does the math.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Revolutionary regenerative therapy that is changing medicine.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">You add a modality. We add the compliance program behind it.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Division of labor, stated plainly. No promise of ease.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Unlock a powerful new revenue stream for your practice today.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">AAAHC-aligned policies, written for your practice and audited on a schedule.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Names the standard and the cadence. Verifiable.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Best-in-class, world-class compliance solutions you can trust.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">A 45-year-old patient scheduled for lumbar surgery went on to be pain-free without it.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">One patient, described accurately. No extrapolation to a rate.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Patients avoid surgery and walk out pain-free.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">Documented indications and standardized protocols make the claim defensible.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Compliance framing. The subject is the chart, not the check.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Bill more per visit with our proven coding strategy.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">We track outcomes because evidence should decide what stays in the protocol.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Open-minded and research-forward without claiming a result.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Our cutting-edge proprietary science delivers superior results.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">You perform the procedure. We handle credentialing, documentation, and audit readiness.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Three concrete nouns beat one abstraction.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">We take care of everything so you can finally relax.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">We write</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 8px 0">PRP is performed in your office, on your schedule, by your staff — trained and competency-checked by us.</p><p style="font-family:Roboto;font-size:14px;line-height:1.5;color:#6B6358;margin:0">Specific about who does what and where.</p></div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px"><div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:10px">Not this</div><p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#6B6358;margin:0;text-decoration:line-through;text-decoration-color:#DDD4C7">Seamless, effortless integration into any practice, guaranteed.</p></div>
+</div>
+
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">Preferred vocabulary</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">innovative</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">continued research</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">open-minded</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">patient-focused</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">evidence</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">protocol</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">defensible</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">standardized</span>
+<span style="font-family:Roboto;font-size:14px;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">outcomes</span>
+</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8C3A2B;margin-bottom:14px">Banned words</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">fraud</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">overpriced</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">unnecessary</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">money-focused</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">revolutionary</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">game-changing</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">cutting-edge</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">miracle</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">guaranteed</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">maximize revenue</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">upcode</span>
+<span style="font-family:Roboto;font-size:14px;color:#8C3A2B;background:#FAF7F2;border:1px solid #DDD4C7;border-radius:4px;padding:6px 10px">easy money</span>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.55;color:#6B6358;margin:0">Also banned: exclamation points, any phrasing that implies billing for care that was not indicated, and any claim of a result rate we have not published.</p>
+</div>
+</div>
+</section>
+
+<section id="logo" data-screen-label="Logo" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">03 · Logo</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:26ch">A droplet with a circular arrow: platelet-rich plasma, regenerating.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 40px 0;max-width:72ch">The mark is an open droplet drawn in the amber gradient (#FFCD4D at the tip &rarr; #F59621 at the base) with a circular arrow completing the loop inside it — platelet-rich plasma and regeneration in one form. It sits beside the wordmark, set in Roboto SemiBold, in #231F20. The gradient belongs to the mark; the wordmark is always solid.</p>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Lockups</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:44px">
+
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden">
+<div style="padding:48px 32px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;min-height:180px">
+<img src="logo/regenitiva-lockup.svg" alt="Regenitiva" style="width:300px"></img>
+</div>
+<div style="padding:16px 20px;border-top:1px solid #DDD4C7;background:#FAF7F2"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">Primary horizontal lockup</div><p style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin:0">Default. Header, footer, documents, email signature. Minimum width 140px.</p></div>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden">
+<div style="padding:36px 32px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;min-height:180px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<img src="logo/regenitiva-mark.svg" alt="" style="width:56px"></img>
+<span style="font-family:Roboto;font-weight:700;font-size:28px;letter-spacing:-0.01em;color:#231F20">Regenitiva</span>
+</div>
+</div>
+<div style="padding:16px 20px;border-top:1px solid #DDD4C7;background:#FAF7F2"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">Stacked variant</div><p style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin:0">Narrow columns, square placements, conference badges. Minimum width 96px.</p></div>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden">
+<div style="padding:48px 32px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;min-height:180px">
+<img src="logo/regenitiva-mark.svg" alt="Regenitiva mark" style="width:66px"></img>
+</div>
+<div style="padding:16px 20px;border-top:1px solid #DDD4C7;background:#FAF7F2"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">Mark only</div><p style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin:0">Only where the name already appears within the same view. Minimum 32px.</p></div>
+</div>
+
+<div style="background:#1C1A17;border:1px solid #3D3831;border-radius:8px;overflow:hidden">
+<div style="padding:48px 32px;display:flex;align-items:center;justify-content:center;background:#1C1A17;min-height:180px">
+<img src="logo/regenitiva-lockup-bone.svg" alt="Regenitiva" style="width:300px"></img>
+</div>
+<div style="padding:16px 20px;border-top:1px solid #3D3831;background:#1C1A17"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px;color:#FAF7F2">One-color reversed (bone)</div><p style="font-family:Roboto;font-size:13px;line-height:1.5;color:#DDD4C7;margin:0">Required on ink-900 and on photography. The gradient mark is never used on dark.</p></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Clear space</div>
+<div style="background:#EFE9E0;border:1px dashed #F59621;border-radius:6px;padding:44px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+<img src="logo/regenitiva-lockup.svg" alt="Regenitiva" style="width:240px"></img>
+</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0">Clear space on all four sides is a minimum of <strong>1&times; the width of the droplet</strong>. Nothing enters that field — no type, no rules, no image edges, no other logos.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Minimum sizes &amp; backgrounds</div>
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Horizontal lockup, screen</td><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;text-align:right;color:#1C1A17">140px wide</td></tr>
+<tr><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Horizontal lockup, print</td><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;text-align:right;color:#1C1A17">1.25 in wide</td></tr>
+<tr><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Stacked lockup</td><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;text-align:right;color:#1C1A17">96px wide</td></tr>
+<tr><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Mark only</td><td style="padding:10px 0;border-bottom:1px solid #DDD4C7;text-align:right;color:#1C1A17">32px</td></tr>
+<tr><td style="padding:10px 0;color:#6B6358">Approved backgrounds</td><td style="padding:10px 0;text-align:right;color:#1C1A17">bone, white, stone-100, ink-900, ink-700</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div style="background:#1C1A17;border-radius:8px;padding:32px;margin-bottom:44px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:14px">Small-size warning — read before shipping a favicon</div>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#DDD4C7;margin:0 0 24px 0;max-width:74ch">The arrow detail inside the droplet loses legibility below roughly 32px — the counters fill in and it reads as a smudge. The favicon and app icon are always the actual mark, never a redrawn substitute: crop the padding to a tight square so the mark occupies the full canvas, and below 32px place it reversed on a solid tile so the interior detail holds.</p>
+<div style="display:flex;gap:32px;flex-wrap:wrap;align-items:flex-end">
+<div style="text-align:center">
+<div style="background:#3D3831;border-radius:6px;padding:20px;display:flex;gap:20px;align-items:flex-end;justify-content:center;margin-bottom:10px">
+<img src="logo/regenitiva-mark.svg" alt="" style="width:16px"></img>
+<img src="logo/regenitiva-mark.svg" alt="" style="width:24px"></img>
+</div>
+<div style="font-family:Roboto;font-size:13px;color:#8C3A2B;background:#DDD4C7;border-radius:4px;padding:4px 8px">Bare mark at 16px / 24px — do not use</div>
+</div>
+<div style="text-align:center">
+<div style="background:#3D3831;border-radius:6px;padding:20px;display:flex;gap:20px;align-items:flex-end;justify-content:center;margin-bottom:10px">
+<img src="logo/regenitiva-appicon.svg" alt="" style="width:16px;border-radius:3px"></img>
+<img src="logo/regenitiva-appicon.svg" alt="" style="width:24px;border-radius:4px"></img>
+<img src="logo/regenitiva-appicon.svg" alt="" style="width:32px;border-radius:6px"></img>
+<img src="logo/regenitiva-appicon.svg" alt="" style="width:44px;border-radius:8px"></img>
+</div>
+<div style="font-family:Roboto;font-size:13px;color:#DDD4C7">The actual mark, reversed in bone on an ink-900 tile — the correct icon at every size</div>
+</div>
+</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#DDD4C7;margin:24px 0 0 0;max-width:74ch">Favicon set: 16, 32, 48, 180 (apple-touch), 512 (maskable). Export from <strong style="color:#FAF7F2">regenitiva-appicon.svg</strong> — the mark in bone on an ink-900 tile — for 32 and below and for every app-icon slot; the tight-cropped gradient mark (<strong style="color:#FAF7F2">regenitiva-favicon.svg</strong>) is fine at 48 and up. An amber-tile variant exists for light home screens. Never redraw or simplify the mark to make it fit.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Misuse</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FFFFFF"><img src="logo/regenitiva-mark.svg" alt="" style="width:44px;filter:grayscale(1)"></img></div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't recolor the mark. Amber gradient or bone only.</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FFFFFF"><img src="logo/regenitiva-mark.svg" alt="" style="width:44px;transform:scaleX(1.75)"></img></div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't stretch or condense. Scale proportionally.</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FFFFFF"><img src="logo/regenitiva-mark.svg" alt="" style="width:44px;filter:drop-shadow(0 6px 6px rgba(28,26,23,0.55))"></img></div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't add drop shadows, glows, bevels, or outlines.</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FAAF33"><img src="logo/regenitiva-mark.svg" alt="" style="width:44px"></img></div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't place the gradient mark on a mid-amber field. It disappears.</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;font-family:Fraunces,Georgia,serif;font-size:26px;color:#231F20">Regenitiva</div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't rebuild the wordmark in another typeface. Roboto SemiBold only.</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="height:110px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;gap:4px"><img src="logo/regenitiva-mark.svg" alt="" style="width:44px"></img><span style="font-family:Roboto;font-weight:700;font-size:22px;color:#231F20">Regenitiva</span></div><div style="padding:14px 16px;border-top:1px solid #DDD4C7;background:#FAF7F2;font-family:Roboto;font-size:13px;line-height:1.5;color:#8C3A2B">Don't crowd the lockup. Hold the full droplet-width clear space.</div></div>
+</div>
+</section>
+
+<section id="color" data-screen-label="Color" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">04 · Color</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:24ch">Amber is an accent, never a field.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 24px 0;max-width:72ch">Amber should occupy roughly 5–10% of any screen. The other 90% is warm dark neutrals and bone. That ratio is what keeps a bright hue reading as premium and confident rather than loud. Every neutral in this system is warm-biased; there are no cool greys anywhere in the brand.</p>
+<div style="display:flex;height:44px;border-radius:6px;overflow:hidden;border:1px solid #DDD4C7;margin-bottom:12px">
+<div style="flex:0 0 62%;background:#FAF7F2;display:flex;align-items:center;padding-left:14px;font-family:Roboto;font-size:13px;color:#6B6358">bone / white surfaces</div>
+<div style="flex:0 0 30%;background:#1C1A17;display:flex;align-items:center;padding-left:14px;font-family:Roboto;font-size:13px;color:#DDD4C7">ink / stone</div>
+<div style="flex:0 0 8%;background:#F59621"></div>
+</div>
+<p style="font-family:Roboto;font-size:13px;line-height:1.45;color:#6B6358;margin:0 0 40px 0">Target screen ratio. The amber sliver at right is the entire allowance.</p>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">Brand amber</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 22px 0">Click any card to copy its hex.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;margin-bottom:44px">
+<div data-hex="#FFCD4D" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#FFCD4D"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">amber-300</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#FFCD4D</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(255, 205, 77)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Logo gradient start. Accents on dark surfaces only.</div></div></div>
+<div data-hex="#FAAF33" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#FAAF33"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">amber-400</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#FAAF33</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(250, 175, 51)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Logo gradient midpoint. Hover state for amber fills.</div></div></div>
+<div data-hex="#F59621" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#F59621"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">amber-500 <span style="font-family:Roboto;font-size:11px;font-weight:500;color:#8F520B;border:1px solid #DDD4C7;border-radius:4px;padding:2px 6px;margin-left:4px">Primary</span></div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#F59621</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(245, 150, 33)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Button fills, rules, icon accents, data highlights. Never as text on light.</div></div></div>
+<div data-hex="#8F520B" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#8F520B"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">amber-800</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#8F520B</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(143, 82, 11)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">All amber-colored text and links on light backgrounds.</div></div></div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">Neutrals</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 22px 0">Warm-biased throughout. No cool greys anywhere.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;margin-bottom:44px">
+<div data-hex="#1C1A17" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#1C1A17"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">ink-900</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#1C1A17</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(28, 26, 23)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Primary text. Dark section backgrounds. Replaces black everywhere.</div></div></div>
+<div data-hex="#3D3831" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#3D3831"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">ink-700</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#3D3831</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(61, 56, 49)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Secondary text. Elevated surfaces on dark sections.</div></div></div>
+<div data-hex="#6B6358" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#6B6358"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">stone-600</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#6B6358</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(107, 99, 88)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Muted text, captions, metadata. The lightest text allowed on bone.</div></div></div>
+<div data-hex="#DDD4C7" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#DDD4C7"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">stone-300</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#DDD4C7</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(221, 212, 199)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Borders, dividers, disabled fills and disabled text.</div></div></div>
+<div data-hex="#EFE9E0" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#EFE9E0"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">stone-100</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#EFE9E0</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(239, 233, 224)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Subtle section backgrounds, quiet cards, table header rows.</div></div></div>
+<div data-hex="#FAF7F2" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#FAF7F2;border-bottom:1px solid #DDD4C7"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">bone</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#FAF7F2</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(250, 247, 242)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Default page background. Never use pure white as the page field.</div></div></div>
+<div data-hex="#FFFFFF" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#FFFFFF;border-bottom:1px solid #DDD4C7"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">white</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#FFFFFF</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(255, 255, 255)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Card surfaces on bone. Surfaces only, never full-page.</div></div></div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">System colors</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 22px 0">No red anywhere in this brand, including error states. Errors use a deep desaturated brick.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;margin-bottom:44px">
+<div data-hex="#8C3A2B" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#8C3A2B"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">brick-700 · error</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#8C3A2B</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(140, 58, 43)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Validation errors, destructive confirmations. 7.13:1 on bone.</div></div></div>
+<div data-hex="#F3E4DF" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#F3E4DF"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">brick-100</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#F3E4DF</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(243, 228, 223)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Error field tint and inline error banner background.</div></div></div>
+<div data-hex="#4F6B3A" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#4F6B3A"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">moss-700 · success</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#4F6B3A</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(79, 107, 58)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Validated fields, completed steps. 5.56:1 on bone. Warm, not clinical green.</div></div></div>
+<div data-hex="#8F520B" style="cursor:pointer;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,0.06)"><div style="height:104px;background:#8F520B"></div><div style="padding:18px"><div style="font-family:Archivo;font-size:15px;font-weight:600;margin-bottom:6px">amber-800 · warning</div><div style="font-family:Roboto;font-size:15px;color:#3D3831">#8F520B</div><div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:2px">rgb(143, 82, 11)</div><div style="font-family:Roboto;font-size:13px;line-height:1.5;color:#6B6358;margin-top:12px">Warnings reuse amber-800 text on a stone-100 field. No second yellow.</div></div></div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">Contrast rules — non-negotiable</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 22px 0">Tested pairings. Anything not listed here must be measured before it ships.</p>
+
+<div style="background:#F3E4DF;border:1px solid #8C3A2B;border-radius:8px;padding:24px;margin-bottom:20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+<div style="flex:1 1 300px">
+<div style="font-family:Archivo;font-size:14px;font-weight:600;color:#8C3A2B;margin-bottom:8px">amber-500 is never text on a light background</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0">It measures 2.27:1 on white and fails WCAG outright at every size. Use amber-800 for any amber-colored type on light surfaces.</p>
+</div>
+<div style="flex:0 0 auto;display:flex;gap:12px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:6px;padding:14px 18px;text-align:center"><div style="font-family:Roboto;font-size:18px;color:#F59621;margin-bottom:6px">Wrong</div><div style="font-family:Roboto;font-size:12px;color:#8C3A2B">2.27:1 fail</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:6px;padding:14px 18px;text-align:center"><div style="font-family:Roboto;font-size:18px;color:#8F520B;margin-bottom:6px">Right</div><div style="font-family:Roboto;font-size:12px;color:#4F6B3A">6.21:1 AA</div></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="padding:28px;display:flex;align-items:center;justify-content:center;background:#FAF7F2"><span style="display:inline-flex;align-items:center;justify-content:center;background:#F59621;color:#1C1A17;font-family:Roboto;font-weight:500;font-size:16px;padding:14px 24px;border-radius:6px">Request a practice review</span></div><div style="padding:16px 18px;border-top:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">amber-500 fill / ink-900 text</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">7.66:1 — AAA. The only correct amber button.</div></div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="padding:28px;display:flex;align-items:center;justify-content:center;background:#1C1A17"><span style="font-family:Archivo;font-size:22px;font-weight:600;color:#FFCD4D">Outcome tracking</span></div><div style="padding:16px 18px;border-top:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">amber-300 on ink-900</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">11.65:1 — AAA. The accent color for dark surfaces.</div></div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="padding:28px;display:flex;align-items:center;justify-content:center;background:#FAF7F2"><span style="font-family:Roboto;font-size:17px;color:#1C1A17">Protocols, documented</span></div><div style="padding:16px 18px;border-top:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">ink-900 on bone</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">16.25:1 — AAA. Default body and heading text.</div></div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden"><div style="padding:28px;display:flex;align-items:center;justify-content:center;background:#FAF7F2"><span style="font-family:Roboto;font-size:17px;color:#6B6358">Updated quarterly</span></div><div style="padding:16px 18px;border-top:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:4px">stone-600 on bone</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">5.53:1 — AA. Body-size minimum. Do not go lighter for body copy.</div></div></div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Gradient use</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="height:3px;width:100%;background:linear-gradient(90deg,#FFCD4D,#F59621);margin-bottom:20px"></div>
+<div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:8px;color:#4F6B3A">Allowed</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0">The logo mark. And, sparingly, a single hairline rule or one hero element per page — at most one gradient instance in any viewport.</p>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:14px">linear-gradient(90deg, #FFCD4D, #F59621)</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="height:56px;width:100%;background:linear-gradient(90deg,#FFCD4D,#F59621);border-radius:6px;margin-bottom:20px;opacity:0.45"></div>
+<div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:8px;color:#8C3A2B">Never</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0">Never gradient a button. Never gradient a large background panel, card, or section. A gradient field breaks the 10% amber ceiling on its own.</p>
+</div>
+</div>
+</section>
+
+<section id="type" data-screen-label="Typography" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">05 · Typography</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:26ch">Archivo for structure. Roboto for everything you read.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 40px 0;max-width:72ch">Roboto is the wordmark face and the right choice for body and UI — neutral where neutrality is an asset. It is also the most-used interface font on earth, so headlines use Archivo instead: a grotesque with more structural character that still pairs cleanly with the lockup. No Light weights anywhere in this brand.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Headlines — Archivo</div>
+<div style="font-family:Archivo;font-size:52px;font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px">Aa Rg</div>
+<div style="font-family:Archivo;font-size:20px;font-weight:600;letter-spacing:-0.01em;line-height:1.4;color:#3D3831;margin-bottom:16px">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.55;color:#6B6358;margin:0">Google Fonts. Weights loaded: 400, 500, 600, 700. Headlines set in 600 or 700 only.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Body &amp; UI — Roboto</div>
+<div style="font-family:Roboto;font-size:52px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px">Aa Rg</div>
+<div style="font-family:Roboto;font-size:20px;font-weight:400;line-height:1.4;color:#3D3831;margin-bottom:16px">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.55;color:#6B6358;margin:0">Google Fonts. Weights loaded: 400, 500, 700. The wordmark is Roboto 600 (SemiBold).</p>
+</div>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Type scale</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;margin-bottom:24px">
+<div style="padding:30px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:64px;font-weight:700;line-height:1.02;letter-spacing:-0.03em;margin-bottom:12px">Practice without hesitation</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">display · Archivo 700 · 64px / 4rem · line-height 1.02 · tracking -0.03em · hero headlines only, one per page</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:48px;font-weight:700;line-height:1.06;letter-spacing:-0.025em;margin-bottom:12px">Office-based PRP</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">h1 · Archivo 700 · 48px / 3rem · line-height 1.06 · tracking -0.025em</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin-bottom:12px">Practice Operations and Compliance</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">h2 · Archivo 600 · 36px / 2.25rem · line-height 1.12 · tracking -0.02em</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin-bottom:12px">Credentialing and provider support</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">h3 · Archivo 600 · 28px / 1.75rem · line-height 1.2 · tracking -0.015em</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin-bottom:12px">Competency training for your staff</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">h4 · Archivo 600 · 22px / 1.375rem · line-height 1.3 · tracking -0.01em</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Roboto;font-size:20px;font-weight:400;line-height:1.55;color:#3D3831;margin-bottom:12px;max-width:62ch">You add a modality your practice does not have today. We add the compliance program that stands behind it.</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">lead · Roboto 400 · 20px / 1.25rem · line-height 1.55 · tracking 0 · max 62ch</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Roboto;font-size:17px;font-weight:400;line-height:1.65;color:#1C1A17;margin-bottom:12px;max-width:72ch">Regenitiva builds the operational layer around an office-based PRP service line: AAAHC-aligned policies, written clinical protocols, staff competency checks, credentialing support, and outcome tracking that feeds back into the protocol.</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">body · Roboto 400 · 17px / 1.0625rem · line-height 1.65 · tracking 0 · max 72ch</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Roboto;font-size:15px;font-weight:400;line-height:1.55;color:#3D3831;margin-bottom:12px">Supporting detail, table cells, card descriptions, and form help text.</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">small · Roboto 400 · 15px / 0.9375rem · line-height 1.55</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="font-family:Roboto;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0.01em;color:#6B6358;margin-bottom:12px">Outcome data reflects a single practice cohort and is not a projection.</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">caption · Roboto 400 · 13px / 0.8125rem · line-height 1.45 · tracking 0.01em · stone-600</div></div>
+<div style="padding:26px 30px 22px 30px;border-bottom:1px solid #DDD4C7"><div style="margin-bottom:14px"><span style="display:inline-flex;font-family:Roboto;font-size:16px;font-weight:500;line-height:1;letter-spacing:0.01em;background:#F59621;color:#1C1A17;padding:15px 24px;border-radius:6px">Request a practice review</span></div><div style="font-family:Roboto;font-size:13px;color:#6B6358">button label · Roboto 500 · 16px / 1rem · line-height 1 · tracking 0.01em · sentence case, never all-caps</div></div>
+<div style="padding:26px 30px 24px 30px"><div style="font-family:Archivo;font-size:12px;font-weight:600;line-height:1.2;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Compliance &amp; accreditation</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">eyebrow / label · Archivo 600 · 12px / 0.75rem · line-height 1.2 · tracking 0.14em · uppercase · amber-800 on light, amber-300 on dark</div></div>
+</div>
+
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:24px;margin-bottom:44px">
+<div style="font-family:Archivo;font-size:14px;font-weight:600;margin-bottom:10px">Rules</div>
+<ul style="font-family:Roboto;font-size:15px;line-height:1.7;color:#3D3831;margin:0;padding-left:20px">
+<li>Never use Roboto Light, Archivo Light, or any weight below 400. This brand should never look delicate.</li>
+<li>Headlines are tightly tracked. Body copy is tracked at 0; do not letter-space running text.</li>
+<li>Body measure caps at 72ch; lead paragraphs at 62ch.</li>
+<li>Sentence case for headlines, buttons, and nav. Uppercase is reserved for the eyebrow style.</li>
+<li>Mobile: display drops to 40px, h1 to 34px, h2 to 27px, h3 to 23px. Body stays 17px.</li>
+</ul>
+</div>
+
+<sc-if value="{{ editorialAccent }}" hint-placeholder-val="{{ true }}">
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 8px 0">Optional editorial accent — Fraunces</h3>
+<p style="font-family:Roboto;font-size:15px;line-height:1.55;color:#6B6358;margin:0 0 22px 0;max-width:72ch">An option, not a default. Fraunces is permitted only in pull quotes and patient outcome stories, where a warmer editorial voice helps. It never appears in navigation, buttons, headings, or body copy. If in doubt, don't load it.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:30px">
+<p style="font-family:Fraunces,Georgia,serif;font-size:26px;font-weight:400;line-height:1.35;color:#1C1A17;margin:0 0 16px 0">She was scheduled for a lumbar fusion. Two months after the injection series she was back at work, and the surgery came off the calendar.</p>
+<div style="font-family:Roboto;font-size:14px;color:#6B6358">Fraunces 400 · 26px · line-height 1.35 — pull quote</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px">
+<p style="font-family:Roboto;font-size:19px;font-weight:400;line-height:1.5;color:#1C1A17;margin:0 0 16px 0">She was scheduled for a lumbar fusion. Two months after the injection series she was back at work, and the surgery came off the calendar.</p>
+<div style="font-family:Roboto;font-size:14px;color:#6B6358">Roboto 400 · 19px — the default treatment for the same quote</div>
+</div>
+</div>
+</sc-if>
+</section>
+
+<section id="grid" data-screen-label="Spacing and Grid" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">06 · Spacing &amp; Grid</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 40px 0;max-width:26ch">A 4px base, a 12-column grid, and modest radii.</h2>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Spacing scale</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px;margin-bottom:44px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-1</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">4px</div><div style="height:14px;width:4px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-2</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">8px</div><div style="height:14px;width:8px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-3</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">12px</div><div style="height:14px;width:12px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-4</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">16px</div><div style="height:14px;width:16px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-5</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">24px</div><div style="height:14px;width:24px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-6</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">32px</div><div style="height:14px;width:32px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-7</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">48px</div><div style="height:14px;width:48px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-8</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">64px</div><div style="height:14px;width:64px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-9</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">96px</div><div style="height:14px;width:96px;background:#F59621"></div></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="font-family:Roboto;font-size:13px;color:#6B6358;width:88px">space-10</div><div style="font-family:Roboto;font-size:13px;color:#1C1A17;width:64px">128px</div><div style="height:14px;width:128px;background:#F59621"></div></div>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.55;color:#6B6358;margin:22px 0 0 0">Section vertical rhythm: 96px desktop, 64px tablet, 48px mobile. Card padding: 24–32px. Never use a value off this scale.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Containers &amp; breakpoints</div>
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">container-narrow</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">720px — long-form reading</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">container</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">1180px — default page width</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">container-wide</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">1440px — full-bleed media bands</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">sm</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">480px</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">md</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">768px</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">lg</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">1024px</td></tr>
+<tr><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">xl</td><td style="padding:9px 0;border-bottom:1px solid #DDD4C7;text-align:right">1280px</td></tr>
+<tr><td style="padding:9px 0;color:#6B6358">2xl</td><td style="padding:9px 0;text-align:right">1440px</td></tr>
+</tbody>
+</table>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">12-column grid</div>
+<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin-bottom:16px">
+<div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div><div style="height:120px;background:#EFE9E0;border-top:2px solid #F59621"></div>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">12 columns, 24px gutters. Page margins: 32px desktop, 24px tablet, 16px mobile. Collapses to 8 columns below lg and 4 below md. Standard content spans: full 12, 8+4 for text-with-sidebar, 6+6 for split heroes, 4+4+4 for card rows.</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:18px">Radii</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px">
+<div style="text-align:center"><div style="width:76px;height:56px;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:2px;margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">xs · 2px</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">sm · 4px</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:6px;margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">md · 6px</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">lg · 8px</div></div>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Chips and badges 4px, inputs and buttons 6px, cards and panels 8px. Nothing above 8px, nothing pill-shaped, nothing fully round except a photographic avatar.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:18px">Elevation — warm-tinted only</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px">
+<div style="text-align:center"><div style="width:76px;height:56px;background:#FFFFFF;border-radius:6px;box-shadow:0 1px 2px rgba(28,26,23,0.06);margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">shadow-1</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#FFFFFF;border-radius:6px;box-shadow:0 2px 6px rgba(28,26,23,0.08);margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">shadow-2</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#FFFFFF;border-radius:6px;box-shadow:0 8px 24px rgba(28,26,23,0.10);margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">shadow-3</div></div>
+<div style="text-align:center"><div style="width:76px;height:56px;background:#FFFFFF;border-radius:6px;box-shadow:0 20px 48px rgba(28,26,23,0.14);margin-bottom:8px"></div><div style="font-family:Roboto;font-size:12px;color:#6B6358">shadow-4</div></div>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Shadows are cast in ink-900 at low alpha, never pure black. shadow-1 for resting cards, 2 for hover, 3 for dropdowns and sticky headers, 4 for modals. Focus ring: 0 0 0 3px rgba(245,150,33,0.35).</p>
+</div>
+</div>
+</section>
+
+<section id="components" data-screen-label="Components" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">07 · Components</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 40px 0;max-width:26ch">Live specs. Build from these, not from a screenshot.</h2>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Buttons</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px;margin-bottom:20px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:14px">Primary</div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:14px 24px;cursor:pointer" style-hover="background:#FAAF33;border-color:#FAAF33">Request a practice review</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">default · #F59621 fill, #1C1A17 label, 7.66:1</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#FAAF33;color:#1C1A17;border:1px solid #FAAF33;border-radius:6px;padding:14px 24px;cursor:pointer">Request a practice review</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">hover · #FAAF33</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#E08411;color:#1C1A17;border:1px solid #E08411;border-radius:6px;padding:14px 24px;cursor:pointer;transform:translateY(1px)">Request a practice review</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">active · #E08411, translateY(1px)</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:14px 24px;cursor:pointer;box-shadow:0 0 0 3px rgba(245,150,33,0.35)">Request a practice review</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">focus-visible · 3px amber ring at 35%</div>
+<button type="button" disabled="disabled" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#DDD4C7;color:#6B6358;border:1px solid #DDD4C7;border-radius:6px;padding:14px 24px;cursor:not-allowed">Request a practice review</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">disabled · #DDD4C7 fill, #6B6358 label</div>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:14px">Secondary</div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#1C1A17;border:1px solid #1C1A17;border-radius:6px;padding:14px 24px;cursor:pointer" style-hover="background:#EFE9E0">See the compliance program</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">default · 1px #1C1A17 border, transparent fill</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#EFE9E0;color:#1C1A17;border:1px solid #1C1A17;border-radius:6px;padding:14px 24px;cursor:pointer">See the compliance program</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">hover · #EFE9E0 fill</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#DDD4C7;color:#1C1A17;border:1px solid #1C1A17;border-radius:6px;padding:14px 24px;cursor:pointer;transform:translateY(1px)">See the compliance program</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">active · #DDD4C7 fill</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#1C1A17;border:1px solid #1C1A17;border-radius:6px;padding:14px 24px;cursor:pointer;box-shadow:0 0 0 3px rgba(245,150,33,0.35)">See the compliance program</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">focus-visible</div>
+<button type="button" disabled="disabled" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#DDD4C7;border:1px solid #DDD4C7;border-radius:6px;padding:14px 24px;cursor:not-allowed">See the compliance program</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">disabled</div>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:14px">Tertiary (text)</div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#8F520B;border:1px solid transparent;border-radius:6px;padding:14px 12px;cursor:pointer" style-hover="color:#6E3F08;background:#EFE9E0">Download the protocol summary</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">default · #8F520B label, no border</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#EFE9E0;color:#6E3F08;border:1px solid transparent;border-radius:6px;padding:14px 12px;cursor:pointer;text-decoration:underline">Download the protocol summary</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">hover · underline, #6E3F08</div>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#8F520B;border:1px solid transparent;border-radius:6px;padding:14px 12px;cursor:pointer;box-shadow:0 0 0 3px rgba(245,150,33,0.35)">Download the protocol summary</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">focus-visible</div>
+<button type="button" disabled="disabled" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#DDD4C7;border:1px solid transparent;border-radius:6px;padding:14px 12px;cursor:not-allowed">Download the protocol summary</button>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358">disabled</div>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#6B6358;margin-bottom:14px">On dark surfaces</div>
+<div style="background:#1C1A17;border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:14px 24px;cursor:pointer">Request a practice review</button>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#FAF7F2;border:1px solid #6B6358;border-radius:6px;padding:14px 24px;cursor:pointer">See the compliance program</button>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#FFCD4D;border:1px solid transparent;border-radius:6px;padding:14px 12px;cursor:pointer">Download the summary</button>
+</div>
+<div style="font-family:Roboto;font-size:12px;color:#6B6358;margin-top:12px">Tertiary on dark uses amber-300, never amber-800.</div>
+</div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:8px 0;color:#6B6358;width:180px">Padding</td><td style="padding:8px 0">14px 24px (default) · 10px 16px (small) · 18px 32px (large)</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Radius</td><td style="padding:8px 0">6px</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Min height</td><td style="padding:8px 0">48px default, 44px small — never below 44px on touch</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Transition</td><td style="padding:8px 0">background 120ms ease-out, transform 80ms ease-out</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Label</td><td style="padding:8px 0">Roboto 500, 16px, sentence case. Verb-first. Never all-caps.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Form inputs</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px;margin-bottom:20px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">Practice name</label>
+<input type="text" placeholder="Coastal Spine &amp; Sports Medicine" style="width:100%;font-family:Roboto;font-size:16px;color:#1C1A17;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:6px;padding:13px 14px"></input>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:7px">Default · 1px #DDD4C7 border</div>
+</div>
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">Practice name</label>
+<input type="text" value="Coastal Spine &amp; Sports Medicine" readonly="readonly" style="width:100%;font-family:Roboto;font-size:16px;color:#1C1A17;background:#FFFFFF;border:1px solid #F59621;border-radius:6px;padding:13px 14px;box-shadow:0 0 0 3px rgba(245,150,33,0.35)"></input>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:7px">Focus · #F59621 border + 3px ring</div>
+</div>
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">NPI number</label>
+<input type="text" value="12345" readonly="readonly" style="width:100%;font-family:Roboto;font-size:16px;color:#1C1A17;background:#F3E4DF;border:1px solid #8C3A2B;border-radius:6px;padding:13px 14px"></input>
+<div style="font-family:Roboto;font-size:13px;color:#8C3A2B;margin-top:7px">Error · NPI must be 10 digits.</div>
+</div>
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">NPI number</label>
+<input type="text" value="1234567890" readonly="readonly" style="width:100%;font-family:Roboto;font-size:16px;color:#1C1A17;background:#FFFFFF;border:1px solid #4F6B3A;border-radius:6px;padding:13px 14px"></input>
+<div style="font-family:Roboto;font-size:13px;color:#4F6B3A;margin-top:7px">Valid · verified against the NPPES registry.</div>
+</div>
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#6B6358;margin-bottom:8px">Group TIN</label>
+<input type="text" placeholder="Available after verification" disabled="disabled" style="width:100%;font-family:Roboto;font-size:16px;color:#6B6358;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:6px;padding:13px 14px"></input>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:7px">Disabled · #EFE9E0 fill</div>
+</div>
+<div>
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">Specialty</label>
+<select style="width:100%;font-family:Roboto;font-size:16px;color:#1C1A17;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:6px;padding:13px 14px"><option>Physical medicine &amp; rehabilitation</option><option>Sports medicine</option><option>Pain management</option><option>Orthopedics</option></select>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:7px">Select · same box metrics as text input</div>
+</div>
+</div>
+<div style="margin-top:24px">
+<label style="display:block;font-family:Roboto;font-size:14px;font-weight:500;color:#1C1A17;margin-bottom:8px">What are you hoping to add to the practice?</label>
+<textarea rows="3" placeholder="Spine and joint PRP, starting with two half-days a week." style="width:100%;font-family:Roboto;font-size:16px;line-height:1.55;color:#1C1A17;background:#FFFFFF;border:1px solid #DDD4C7;border-radius:6px;padding:13px 14px;resize:vertical"></textarea>
+<div style="font-family:Roboto;font-size:13px;color:#6B6358;margin-top:7px">Textarea · min height 96px</div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:8px 0;color:#6B6358;width:180px">Height / padding</td><td style="padding:8px 0">50px · 13px 14px</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Radius / border</td><td style="padding:8px 0">6px · 1px #DDD4C7 (rest), #F59621 (focus), #8C3A2B (error), #4F6B3A (valid)</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Label</td><td style="padding:8px 0">Roboto 500 · 14px · #1C1A17 · 8px above the field. Always visible; never placeholder-only.</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Help &amp; error text</td><td style="padding:8px 0">13px · 7px below the field · #6B6358 help, #8C3A2B error, #4F6B3A valid</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Error copy</td><td style="padding:8px 0">Says what to do, not what went wrong. &ldquo;NPI must be 10 digits.&rdquo;</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Cards</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:28px;box-shadow:0 1px 2px rgba(28,26,23,0.06)">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59621" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px" aria-hidden="true"><path d="M9 3h6l1 3h3a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3z"></path><path d="M9 13l2 2 4-4"></path></svg>
+<h4 style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0 0 10px 0">Practice Operations &amp; Compliance</h4>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0 0 18px 0">AAAHC-aligned policies, scheduled internal audits, and a quality management program your staff can actually run.</p>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#8F520B">Review the program &rarr;</a>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:28px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8F520B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15l4-5 3 3 4-6"></path></svg>
+<h4 style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0 0 10px 0">Outcome Tracking</h4>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0 0 18px 0">Structured intake, follow-up intervals, and dashboards that show what the protocol is producing.</p>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#8F520B">Review the program &rarr;</a>
+</div>
+<div style="background:#1C1A17;border:1px solid #3D3831;border-radius:8px;padding:28px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFCD4D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9.5 12l2 2 3.5-4"></path></svg>
+<h4 style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-0.01em;margin:0 0 10px 0;color:#FAF7F2">Credentialing Support</h4>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#DDD4C7;margin:0 0 18px 0">Provider onboarding, privileging, and licensing support so a new service line opens on schedule.</p>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#FFCD4D">Review the program &rarr;</a>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:8px 0;color:#6B6358;width:180px">Surface</td><td style="padding:8px 0">#FFFFFF on bone · #EFE9E0 for quiet cards · #1C1A17 for one emphasis card per row</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Border / radius</td><td style="padding:8px 0">1px #DDD4C7 (#3D3831 on dark) · 8px</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Padding</td><td style="padding:8px 0">28px desktop · 24px mobile</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Hover (linked cards)</td><td style="padding:8px 0">box-shadow 0 2px 6px rgba(28,26,23,0.08), border-color #6B6358, 120ms ease-out. No lift, no scale.</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Icons</td><td style="padding:8px 0">28px · 1.75px stroke · amber-500 on white, amber-800 on stone-100, amber-300 on ink-900</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Badges &amp; pills</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px;margin-bottom:44px">
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:5px 10px">Neutral</span>
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#8F520B;background:#FAF7F2;border:1px solid #F59621;border-radius:4px;padding:5px 10px">Accent</span>
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#1C1A17;background:#F59621;border:1px solid #F59621;border-radius:4px;padding:5px 10px">Solid</span>
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#4F6B3A;background:#FFFFFF;border:1px solid #4F6B3A;border-radius:4px;padding:5px 10px">Accredited</span>
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#8C3A2B;background:#F3E4DF;border:1px solid #8C3A2B;border-radius:4px;padding:5px 10px">Action required</span>
+<span style="font-family:Roboto;font-size:13px;font-weight:500;color:#FAF7F2;background:#3D3831;border:1px solid #3D3831;border-radius:4px;padding:5px 10px">On dark</span>
+</div>
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Roboto 500 · 13px · 5px 10px padding · 4px radius. Never pill-shaped. Sentence case. Badges label state or category; they are never used as buttons.</p>
+</div>
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Navigation bar</h3>
+<div style="border:1px solid #DDD4C7;border-radius:8px;overflow-x:auto;margin-bottom:20px">
+<div style="min-width:1020px;background:#FAF7F2;border-bottom:1px solid #DDD4C7;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<img src="logo/regenitiva-lockup.svg" alt="Regenitiva" style="width:180px;flex:0 0 auto"></img>
+<div style="display:flex;align-items:center;gap:28px">
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#1C1A17;padding-bottom:3px;border-bottom:2px solid #F59621">Services</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#3D3831">Compliance</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#3D3831">Outcomes</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#3D3831">About</a>
+<button type="button" style="font-family:Roboto;font-size:15px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:11px 18px;cursor:pointer">Request a practice review</button>
+</div>
+</div>
+<div style="min-width:1020px;background:#1C1A17;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<img src="logo/regenitiva-lockup-bone.svg" alt="Regenitiva" style="width:180px;flex:0 0 auto"></img>
+<div style="display:flex;align-items:center;gap:28px">
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#FAF7F2;padding-bottom:3px;border-bottom:2px solid #FFCD4D">Services</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#DDD4C7">Compliance</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#DDD4C7">Outcomes</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;font-weight:500;color:#DDD4C7">About</a>
+<button type="button" style="font-family:Roboto;font-size:15px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:11px 18px;cursor:pointer">Request a practice review</button>
+</div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:8px 0;color:#6B6358;width:180px">Height</td><td style="padding:8px 0">76px desktop · 64px mobile · sticky with 0 8px 24px rgba(28,26,23,0.10) once scrolled</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Links</td><td style="padding:8px 0">Roboto 500 · 15px · #3D3831 · active gets #1C1A17 and a 2px amber-500 underline (amber-300 on dark)</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Hover</td><td style="padding:8px 0">Color to #1C1A17. No background change, no underline animation.</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">CTA</td><td style="padding:8px 0">One primary button, always the same label sitewide.</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Mobile</td><td style="padding:8px 0">Links collapse to a full-height ink-900 drawer; CTA stays visible in the bar.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Statistic callouts</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin-bottom:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px"><div style="font-family:Archivo;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.025em;color:#1C1A17;margin-bottom:10px">3<span style="color:#F59621">.</span></div><div style="font-family:Roboto;font-size:15px;line-height:1.5;color:#3D3831">Injection sites supported in-office: spine, cervical, joint</div></div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px"><div style="font-family:Archivo;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.025em;color:#1C1A17;margin-bottom:10px">10<span style="color:#F59621">.</span></div><div style="font-family:Roboto;font-size:15px;line-height:1.5;color:#3D3831">Service lines in the MSO, from credentialing to multi-clinic management</div></div>
+<div style="background:#1C1A17;border-radius:8px;padding:26px"><div style="font-family:Archivo;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.025em;color:#FAF7F2;margin-bottom:10px">AAAHC<span style="color:#FFCD4D">.</span></div><div style="font-family:Roboto;font-size:15px;line-height:1.5;color:#DDD4C7">The standard our policies and audits are written against</div></div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Archivo 700 · 48px · tracking -0.025em, with a single amber period as the accent. Label is Roboto 400 · 15px. <strong>Only publish numbers Regenitiva can source.</strong> No projected revenue figures, no invented success rates, no &ldquo;up to&rdquo; claims. If a number needs a footnote, use the caption style directly beneath it.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Testimonial &amp; outcome story</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-left:3px solid #F59621;border-radius:0 8px 8px 0;padding:30px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:16px">Physician testimonial</div>
+<p style="font-family:Roboto;font-size:19px;line-height:1.55;color:#1C1A17;margin:0 0 22px 0">We added the service line in a quarter. The part I did not have to build was the part I was dreading — the policies, the documentation, the audit file.</p>
+<div style="display:flex;align-items:center;gap:14px">
+<div style="width:48px;height:48px;border-radius:50%;overflow:hidden;flex:0 0 auto"><image-slot id="rg-testimonial-avatar" shape="circle" placeholder="Physician headshot"></image-slot></div>
+<div><div style="font-family:Roboto;font-size:15px;font-weight:500;color:#1C1A17">Attributed physician name, MD</div><div style="font-family:Roboto;font-size:13px;color:#6B6358">Physiatry · practice name · city, state</div></div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#DDD4C7">
+<div style="position:relative;min-width:0;height:150px;background:#FFFFFF"><image-slot id="rg-outcome-before" shape="rect" placeholder="Before — mobility, ordinary setting"></image-slot></div>
+<div style="position:relative;min-width:0;height:150px;background:#FFFFFF"><image-slot id="rg-outcome-after" shape="rect" placeholder="After — mobility, ordinary setting"></image-slot></div>
+</div>
+<div style="padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:12px">Patient outcome story</div>
+<p style="font-family:Roboto;font-size:17px;line-height:1.6;color:#1C1A17;margin:0 0 12px 0">A 45-year-old patient was scheduled for lumbar surgery. After the injection series she was pain-free, and the surgery came off the calendar.</p>
+<p style="font-family:Roboto;font-size:13px;line-height:1.45;color:#6B6358;margin:0">Single patient outcome. Individual results vary; this is not a projection of results in any other patient. Used with written consent.</p>
+</div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Testimonials are attributed — name, specialty, practice, market — or they are not published. Outcome stories always carry the caption-style disclaimer and require written patient consent on file. Never imply a typical result from a single case.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Table</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;margin-bottom:20px">
+<table style="font-family:Roboto;font-size:15px">
+<thead>
+<tr style="background:#EFE9E0">
+<th style="text-align:left;font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3D3831;padding:14px 20px;border-bottom:1px solid #DDD4C7">Program element</th>
+<th style="text-align:left;font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3D3831;padding:14px 20px;border-bottom:1px solid #DDD4C7">Owner</th>
+<th style="text-align:left;font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3D3831;padding:14px 20px;border-bottom:1px solid #DDD4C7">Cadence</th>
+<th style="text-align:right;font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3D3831;padding:14px 20px;border-bottom:1px solid #DDD4C7">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Policy &amp; procedure manual</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Regenitiva</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Annual review</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;text-align:right"><span style="font-family:Roboto;font-size:13px;font-weight:500;color:#4F6B3A;background:#FFFFFF;border:1px solid #4F6B3A;border-radius:4px;padding:4px 9px">Current</span></td></tr>
+<tr style="background:#FAF7F2"><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Injection protocol — cervical</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Medical director</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Semiannual</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;text-align:right"><span style="font-family:Roboto;font-size:13px;font-weight:500;color:#4F6B3A;background:#FFFFFF;border:1px solid #4F6B3A;border-radius:4px;padding:4px 9px">Current</span></td></tr>
+<tr><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#1C1A17">Staff competency checks</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Practice manager</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;color:#3D3831">Quarterly</td><td style="padding:15px 20px;border-bottom:1px solid #DDD4C7;text-align:right"><span style="font-family:Roboto;font-size:13px;font-weight:500;color:#8C3A2B;background:#F3E4DF;border:1px solid #8C3A2B;border-radius:4px;padding:4px 9px">Action required</span></td></tr>
+<tr style="background:#FAF7F2"><td style="padding:15px 20px;color:#1C1A17">Outcome data submission</td><td style="padding:15px 20px;color:#3D3831">Clinical staff</td><td style="padding:15px 20px;color:#3D3831">Per visit</td><td style="padding:15px 20px;text-align:right"><span style="font-family:Roboto;font-size:13px;font-weight:500;color:#1C1A17;background:#EFE9E0;border:1px solid #DDD4C7;border-radius:4px;padding:4px 9px">In progress</span></td></tr>
+</tbody>
+</table>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Header row: stone-100 fill, eyebrow type. Cells: 15px Roboto, 15px 20px padding, 1px stone-300 rules. Zebra rows in bone. Numerics right-aligned and tabular. Row hover: stone-100. No vertical rules.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Accordion — FAQ</h3>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;margin-bottom:20px">
+<div data-acc="1" style="cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #DDD4C7">
+<span style="font-family:Archivo;font-size:19px;font-weight:600;color:#1C1A17">Who performs the injections?</span>
+<span data-accicon="1" style="font-family:Roboto;font-size:24px;color:#F59621;line-height:1;transform:rotate(45deg);transition:transform 150ms ease-out">+</span>
+</div>
+<div style="padding:0 26px 24px 26px;border-bottom:1px solid #DDD4C7;display:block"><p style="font-family:Roboto;font-size:16px;line-height:1.65;color:#3D3831;margin:0;max-width:72ch">You do. Regenitiva does not treat patients. We train and competency-check your staff, supply the protocol, and maintain the documentation the procedure generates.</p></div>
+<div data-acc="1" style="cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #DDD4C7">
+<span style="font-family:Archivo;font-size:19px;font-weight:600;color:#1C1A17">How is this billed defensibly?</span>
+<span data-accicon="1" style="font-family:Roboto;font-size:24px;color:#F59621;line-height:1;transition:transform 150ms ease-out">+</span>
+</div>
+<div style="padding:0 26px 24px 26px;border-bottom:1px solid #DDD4C7;display:none"><p style="font-family:Roboto;font-size:16px;line-height:1.65;color:#3D3831;margin:0;max-width:72ch">Documented indications, standardized protocols, and a chart that supports what was done. Our compliance program is written to AAAHC standards and audited on a schedule, so the record stands on its own.</p></div>
+<div data-acc="1" style="cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #DDD4C7">
+<span style="font-family:Archivo;font-size:19px;font-weight:600;color:#1C1A17">What does the practice have to provide?</span>
+<span data-accicon="1" style="font-family:Roboto;font-size:24px;color:#F59621;line-height:1;transition:transform 150ms ease-out">+</span>
+</div>
+<div style="padding:0 26px 24px 26px;border-bottom:1px solid #DDD4C7;display:none"><p style="font-family:Roboto;font-size:16px;line-height:1.65;color:#3D3831;margin:0;max-width:72ch">A procedure room, staff time for training, and a physician willing to follow the protocol. Equipment, policies, workflows, and reporting come from us.</p></div>
+<div data-acc="1" style="cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+<span style="font-family:Archivo;font-size:19px;font-weight:600;color:#1C1A17">How long until the service line is running?</span>
+<span data-accicon="1" style="font-family:Roboto;font-size:24px;color:#F59621;line-height:1;transition:transform 150ms ease-out">+</span>
+</div>
+<div style="padding:0 26px 24px 26px;display:none"><p style="font-family:Roboto;font-size:16px;line-height:1.65;color:#3D3831;margin:0;max-width:72ch">It depends on credentialing and room readiness. We scope that in the practice review before anything is committed to a date.</p></div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">Row padding 22px 26px, 1px stone-300 divider, no radius on rows. Trigger is Archivo 600 · 19px. Indicator is a 24px amber-500 plus that rotates 45&deg; over 150ms when open. First item open by default; the rest closed. Answers cap at 72ch.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">CTA band</h3>
+<div style="background:#1C1A17;border-radius:8px;padding:56px 48px;margin-bottom:20px;position:relative;overflow:hidden">
+<div style="height:3px;width:120px;background:linear-gradient(90deg,#FFCD4D,#F59621);margin-bottom:28px"></div>
+<h3 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;color:#FAF7F2;margin:0 0 14px 0;max-width:20ch">Add the modality. Keep your practice.</h3>
+<p style="font-family:Roboto;font-size:19px;line-height:1.55;color:#DDD4C7;margin:0 0 30px 0;max-width:58ch">A practice review covers your rooms, your staff, your credentialing, and what an office-based PRP service line would take to open.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:15px 26px;cursor:pointer">Request a practice review</button>
+<button type="button" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:transparent;color:#FAF7F2;border:1px solid #6B6358;border-radius:6px;padding:15px 26px;cursor:pointer">See the compliance program</button>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px;margin-bottom:44px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">ink-900 field, 56px 48px padding, 8px radius. One gradient hairline — this is the per-page gradient allowance if the hero has not used it. One primary and one secondary action, never three. The headline is capability, not economics.</p>
+</div>
+
+<h3 style="font-family:Archivo;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin:0 0 20px 0">Footer</h3>
+<div style="background:#1C1A17;border-radius:8px;padding:48px;margin-bottom:20px;overflow-x:auto">
+<div style="min-width:820px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid #3D3831">
+<div>
+<img src="logo/regenitiva-lockup-bone.svg" alt="Regenitiva" style="width:168px;margin-bottom:18px"></img>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#DDD4C7;margin:0;max-width:36ch">Regenerative medicine practice development and management services for physician-owned practices.</p>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:14px">Services</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Practice development</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Operations &amp; compliance</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Clinical implementation</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Outcome tracking</a>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:14px">Company</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">About</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Physician resources</a>
+<a href="#components" style="font-family:Roboto;font-size:15px;color:#DDD4C7">Contact</a>
+</div>
+</div>
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFCD4D;margin-bottom:14px">Contact</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="https://www.regenitiva.com" style="font-family:Roboto;font-size:15px;color:#DDD4C7">www.regenitiva.com</a>
+<a href="tel:+18058967983" style="font-family:Roboto;font-size:15px;color:#DDD4C7">805-896-7983</a>
+</div>
+</div>
+</div>
+<div style="min-width:820px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<div style="font-family:Roboto;font-size:13px;color:#6B6358">&copy; 2026 Regenitiva LLC. All rights reserved.</div>
+<div style="display:flex;gap:22px"><a href="#components" style="font-family:Roboto;font-size:13px;color:#6B6358">Privacy</a><a href="#components" style="font-family:Roboto;font-size:13px;color:#6B6358">Terms</a><a href="#components" style="font-family:Roboto;font-size:13px;color:#6B6358">Accessibility</a></div>
+</div>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:22px">
+<p style="font-family:Roboto;font-size:14px;line-height:1.6;color:#3D3831;margin:0">ink-900 field, 48px padding, 2fr 1fr 1fr 1fr columns collapsing to two at md and one at sm. Column headings use the eyebrow style in amber-300. Links stone-300, hover bone. Legal row 13px stone-600 above a 1px ink-700 rule. The reversed bone lockup only — never the gradient mark here.</p>
+</div>
+
+</section>
+
+<section id="imagery" data-screen-label="Imagery" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">08 · Imagery</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px 0;max-width:26ch">Two tracks. Keep them separate.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 40px 0;max-width:72ch">Physician-facing imagery carries most of the site. Patient-outcome imagery appears only in evidence modules, where it functions as proof a physician can show a patient. Never mix the two tracks inside one section.</p>
+
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;margin-bottom:24px">
+<div style="padding:26px 28px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">Track one · Physician-facing</div>
+<h4 style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;margin:0 0 10px 0">Clinical environments, procedure detail, documentation</h4>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0;max-width:76ch">Physicians in practice. Rooms that look like real offices, not sets. Warm natural light, shallow depth of field, muted and slightly desaturated so amber accents stay dominant on the page.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#DDD4C7">
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-phys-1" shape="rect" placeholder="Procedure room, physician preparing an injection tray"></image-slot></div>
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-phys-2" shape="rect" placeholder="Close detail — PRP preparation, gloved hands, shallow focus"></image-slot></div>
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-phys-3" shape="rect" placeholder="Physician reviewing a protocol binder at a workstation"></image-slot></div>
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-phys-4" shape="rect" placeholder="Practice manager and staff in a real office corridor"></image-slot></div>
+</div>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;overflow:hidden;margin-bottom:24px">
+<div style="padding:26px 28px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:10px">Track two · Patient outcome (evidence modules only)</div>
+<h4 style="font-family:Archivo;font-size:22px;font-weight:600;line-height:1.3;margin:0 0 10px 0">Before-and-after, mobility, ordinary life</h4>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0;max-width:76ch">Real people in ordinary settings. No glamour lighting, no styled wardrobe, no gym-hero framing. Every use requires written patient consent and the caption-style disclaimer.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#DDD4C7">
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-pat-1" shape="rect" placeholder="Patient walking outdoors, ordinary clothes, natural light"></image-slot></div>
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-pat-2" shape="rect" placeholder="Range-of-motion detail, home or clinic hallway"></image-slot></div>
+<div style="position:relative;min-width:0;height:190px;background:#FAF7F2"><image-slot id="rg-img-pat-3" shape="rect" placeholder="Patient at work or with family, unposed"></image-slot></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#4F6B3A;margin-bottom:14px">Shoot for</div>
+<ul style="font-family:Roboto;font-size:15px;line-height:1.7;color:#3D3831;margin:0;padding-left:20px">
+<li>Warm natural light, single source, soft falloff</li>
+<li>Shallow depth of field — one subject in focus</li>
+<li>Real rooms, real staff, real paperwork</li>
+<li>Muted, slightly desaturated color so amber stays the brightest thing on screen</li>
+<li>Horizon-level framing; the physician is a peer, not a subject</li>
+</ul>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8C3A2B;margin-bottom:14px">Never</div>
+<ul style="font-family:Roboto;font-size:15px;line-height:1.7;color:#3D3831;margin:0;padding-left:20px">
+<li>Stock-photo handshakes</li>
+<li>Rows of smiling models in lab coats</li>
+<li>Glowing-blue &ldquo;science&rdquo; abstractions, DNA helices, particle renders</li>
+<li>Cool-toned or clinical-white grading</li>
+<li>Any image with visible PHI, or a patient without written consent</li>
+</ul>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">Photo treatment recipe</div>
+<table style="font-family:Roboto;font-size:14px">
+<tbody>
+<tr><td style="padding:8px 0;border-bottom:1px solid #DDD4C7;color:#6B6358;width:150px">Saturation</td><td style="padding:8px 0;border-bottom:1px solid #DDD4C7">&minus;12%</td></tr>
+<tr><td style="padding:8px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Temperature</td><td style="padding:8px 0;border-bottom:1px solid #DDD4C7">+200K toward warm</td></tr>
+<tr><td style="padding:8px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Contrast</td><td style="padding:8px 0;border-bottom:1px solid #DDD4C7">Gentle S-curve; lift blacks to #1C1A17, never to 0</td></tr>
+<tr><td style="padding:8px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">Highlights</td><td style="padding:8px 0;border-bottom:1px solid #DDD4C7">&minus;10, hold detail in window light</td></tr>
+<tr><td style="padding:8px 0;border-bottom:1px solid #DDD4C7;color:#6B6358">CSS equivalent</td><td style="padding:8px 0;border-bottom:1px solid #DDD4C7">filter: saturate(0.88) contrast(1.04) brightness(1.01)</td></tr>
+<tr><td style="padding:8px 0;color:#6B6358">Dark overlay</td><td style="padding:8px 0">linear-gradient(90deg, rgba(28,26,23,0.86), rgba(28,26,23,0.20)) for text over photography</td></tr>
+</tbody>
+</table>
+</div>
+<div style="background:#EFE9E0;border:1px solid #DDD4C7;border-radius:8px;padding:26px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">Icon style</div>
+<div style="display:flex;gap:22px;flex-wrap:wrap;margin-bottom:20px">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#F59621" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9.5 12l2 2 3.5-4"></path></svg>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#F59621" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l1 3h3a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3z"></path><path d="M8.5 13h7"></path><path d="M8.5 16.5h4"></path></svg>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15l4-5 3 3 4-6"></path></svg>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c0 0 6 6.5 6 9.5a6 6 0 0 1-12 0C6 10.5 12 4 12 4z"></path></svg>
+</div>
+<p style="font-family:Roboto;font-size:15px;line-height:1.6;color:#3D3831;margin:0">1.5–2px stroke, rounded caps and joins, geometric construction on a 24px grid. Amber-500 or ink-900 only on light; amber-300 or bone on dark. No filled icons, no duotone, no illustration sets.</p>
+</div>
+</div>
+</section>
+
+<section id="dos" data-screen-label="Dos and Donts" style="padding:72px 56px;border-bottom:1px solid #DDD4C7">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">09 · Do's &amp; Don'ts</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 40px 0;max-width:26ch">The short list. If a page breaks one of these, it is off-brand.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#4F6B3A;margin-bottom:18px">Do</div>
+<ul style="font-family:Roboto;font-size:16px;line-height:1.75;color:#1C1A17;margin:0;padding-left:20px">
+<li>Keep amber to roughly 5–10% of any screen.</li>
+<li>Use amber-800 for amber-colored type on light; amber-300 on ink-900.</li>
+<li>Lead with clinical capability; let economics follow in body copy.</li>
+<li>Write short declarative sentences with specific nouns.</li>
+<li>Set headlines in Archivo 600 or 700, tightly tracked.</li>
+<li>Keep radii between 4 and 8px.</li>
+<li>Cast shadows in warm ink-900 at low alpha.</li>
+<li>Attribute every testimonial and disclaim every outcome story.</li>
+<li>Warm, muted, slightly desaturated photography.</li>
+<li>Use the reversed bone lockup on dark surfaces and photography.</li>
+</ul>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDD4C7;border-radius:8px;padding:30px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8C3A2B;margin-bottom:18px">Don't</div>
+<ul style="font-family:Roboto;font-size:16px;line-height:1.75;color:#1C1A17;margin:0;padding-left:20px">
+<li>Don't fill a section or a button with the amber gradient.</li>
+<li>Don't set amber-500 as text on a light background — 2.27:1, fails.</li>
+<li>Don't put revenue, ROI, or profit in a headline, page title, or nav label.</li>
+<li>Don't use exclamation points or hype adjectives, anywhere.</li>
+<li>Don't imply care that was not indicated, or aggressive billing.</li>
+<li>Don't introduce a cool grey, a pure black, or any red.</li>
+<li>Don't use Light weights or set body copy below 15px.</li>
+<li>Don't round anything into a pill or a bubble.</li>
+<li>Don't run the gradient mark below 32px — use the simplified icon.</li>
+<li>Don't publish a statistic Regenitiva cannot source.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="tokens" data-screen-label="Design Tokens" style="padding:72px 56px">
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8F520B;margin-bottom:14px">10 · Design Tokens</div>
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 0 12px 0;max-width:26ch">Paste this into the stylesheet.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.65;color:#3D3831;margin:0 0 24px 0;max-width:72ch">Every value in this guide, as CSS custom properties. Nothing in the build should hardcode a hex, a size, or a shadow that is not defined here.</p>
+<button type="button" onClick="{{ copyTokens }}" style="font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:14px 24px;cursor:pointer;margin-bottom:24px">Copy all tokens</button>
+<div style="background:#1C1A17;border-radius:8px;padding:32px;overflow:auto">
+<pre id="rg-token-block" style="font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.75;color:#DDD4C7;margin:0;white-space:pre">:root {
+  /* Brand amber — accent only, 5–10% of any screen */
+  --rg-amber-300: #FFCD4D;
+  --rg-amber-400: #FAAF33;
+  --rg-amber-500: #F59621;
+  --rg-amber-600: #E08411;
+  --rg-amber-800: #8F520B;
+  --rg-amber-900: #6E3F08;
+  --rg-gradient-amber: linear-gradient(90deg, #FFCD4D, #F59621);
+
+  /* Warm neutrals — no cool greys */
+  --rg-ink-900: #1C1A17;
+  --rg-ink-700: #3D3831;
+  --rg-stone-600: #6B6358;
+  --rg-stone-300: #DDD4C7;
+  --rg-stone-100: #EFE9E0;
+  --rg-bone: #FAF7F2;
+  --rg-white: #FFFFFF;
+  --rg-wordmark: #231F20;
+
+  /* System — no red anywhere */
+  --rg-error: #8C3A2B;
+  --rg-error-bg: #F3E4DF;
+  --rg-success: #4F6B3A;
+  --rg-warning: #8F520B;
+  --rg-warning-bg: #EFE9E0;
+
+  /* Semantic */
+  --rg-bg-page: var(--rg-bone);
+  --rg-bg-surface: var(--rg-white);
+  --rg-bg-subtle: var(--rg-stone-100);
+  --rg-bg-inverse: var(--rg-ink-900);
+  --rg-text-primary: var(--rg-ink-900);
+  --rg-text-secondary: var(--rg-ink-700);
+  --rg-text-muted: var(--rg-stone-600);
+  --rg-text-accent: var(--rg-amber-800);
+  --rg-text-on-inverse: var(--rg-bone);
+  --rg-text-accent-on-inverse: var(--rg-amber-300);
+  --rg-border: var(--rg-stone-300);
+  --rg-border-strong: var(--rg-stone-600);
+  --rg-border-inverse: var(--rg-ink-700);
+
+  /* Type families */
+  --rg-font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --rg-font-body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --rg-font-editorial: 'Fraunces', Georgia, serif;
+
+  /* Type scale */
+  --rg-size-display: 4rem;      /* 64px */
+  --rg-size-h1: 3rem;           /* 48px */
+  --rg-size-h2: 2.25rem;        /* 36px */
+  --rg-size-h3: 1.75rem;        /* 28px */
+  --rg-size-h4: 1.375rem;       /* 22px */
+  --rg-size-lead: 1.25rem;      /* 20px */
+  --rg-size-body: 1.0625rem;    /* 17px */
+  --rg-size-small: 0.9375rem;   /* 15px */
+  --rg-size-caption: 0.8125rem; /* 13px */
+  --rg-size-button: 1rem;       /* 16px */
+  --rg-size-eyebrow: 0.75rem;   /* 12px */
+
+  --rg-lh-display: 1.02;
+  --rg-lh-h1: 1.06;
+  --rg-lh-h2: 1.12;
+  --rg-lh-h3: 1.2;
+  --rg-lh-h4: 1.3;
+  --rg-lh-lead: 1.55;
+  --rg-lh-body: 1.65;
+  --rg-lh-small: 1.55;
+  --rg-lh-caption: 1.45;
+
+  --rg-ls-display: -0.03em;
+  --rg-ls-h1: -0.025em;
+  --rg-ls-h2: -0.02em;
+  --rg-ls-h3: -0.015em;
+  --rg-ls-h4: -0.01em;
+  --rg-ls-body: 0;
+  --rg-ls-button: 0.01em;
+  --rg-ls-eyebrow: 0.14em;
+
+  --rg-weight-regular: 400;
+  --rg-weight-medium: 500;
+  --rg-weight-semibold: 600;
+  --rg-weight-bold: 700;
+
+  --rg-measure-body: 72ch;
+  --rg-measure-lead: 62ch;
+
+  /* Spacing — 4px base */
+  --rg-space-1: 4px;
+  --rg-space-2: 8px;
+  --rg-space-3: 12px;
+  --rg-space-4: 16px;
+  --rg-space-5: 24px;
+  --rg-space-6: 32px;
+  --rg-space-7: 48px;
+  --rg-space-8: 64px;
+  --rg-space-9: 96px;
+  --rg-space-10: 128px;
+
+  /* Layout */
+  --rg-container-narrow: 720px;
+  --rg-container: 1180px;
+  --rg-container-wide: 1440px;
+  --rg-grid-columns: 12;
+  --rg-grid-gutter: 24px;
+  --rg-page-margin: 32px;
+  --rg-bp-sm: 480px;
+  --rg-bp-md: 768px;
+  --rg-bp-lg: 1024px;
+  --rg-bp-xl: 1280px;
+  --rg-bp-2xl: 1440px;
+
+  /* Radii — modest, never pill */
+  --rg-radius-xs: 2px;
+  --rg-radius-sm: 4px;
+  --rg-radius-md: 6px;
+  --rg-radius-lg: 8px;
+
+  /* Elevation — warm-tinted, never pure black */
+  --rg-shadow-1: 0 1px 2px rgba(28, 26, 23, 0.06);
+  --rg-shadow-2: 0 2px 6px rgba(28, 26, 23, 0.08);
+  --rg-shadow-3: 0 8px 24px rgba(28, 26, 23, 0.10);
+  --rg-shadow-4: 0 20px 48px rgba(28, 26, 23, 0.14);
+  --rg-focus-ring: 0 0 0 3px rgba(245, 150, 33, 0.35);
+
+  /* Motion */
+  --rg-duration-fast: 80ms;
+  --rg-duration-base: 120ms;
+  --rg-duration-slow: 150ms;
+  --rg-ease: cubic-bezier(0.2, 0, 0.2, 1);
+
+  /* Imagery */
+  --rg-photo-filter: saturate(0.88) contrast(1.04) brightness(1.01);
+  --rg-photo-scrim: linear-gradient(90deg, rgba(28,26,23,0.86), rgba(28,26,23,0.20));
+  --rg-icon-stroke: 1.75px;
+}</pre>
+</div>
+</section>
+
+</main>
+</div>
+<sc-if value="{{ copied }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;left:50%;bottom:32px;transform:translateX(-50%);background:#1C1A17;color:#FAF7F2;font-family:Roboto;font-size:14px;padding:12px 20px;border-radius:6px;box-shadow:0 20px 48px rgba(28,26,23,0.14);z-index:99">Copied {{ copied }}</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;editorialAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Guide options&quot;}}">
+class Component extends DCLogic {
+  state = { copied: null };
+
+  componentDidMount() {
+    this._onClick = (e) => {
+      const hex = e.target.closest && e.target.closest('[data-hex]');
+      if (hex) {
+        const v = hex.getAttribute('data-hex');
+        try { navigator.clipboard.writeText(v); } catch (err) {}
+        this.setState({ copied: v });
+        clearTimeout(this._t);
+        this._t = setTimeout(() => this.setState({ copied: null }), 1400);
+        return;
+      }
+      const acc = e.target.closest && e.target.closest('[data-acc]');
+      if (acc) {
+        const panel = acc.nextElementSibling;
+        const icon = acc.querySelector('[data-accicon]');
+        const open = panel.style.display !== 'none';
+        panel.style.display = open ? 'none' : 'block';
+        if (icon) icon.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
+      }
+    };
+    document.addEventListener('click', this._onClick);
+
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        const link = document.querySelector('[data-navlink="' + en.target.id + '"]');
+        if (!link) return;
+        if (en.isIntersecting) {
+          link.style.color = '#FFCD4D';
+          link.style.borderLeftColor = '#F59621';
+          link.style.background = '#3D3831';
+        } else {
+          link.style.color = '#DDD4C7';
+          link.style.borderLeftColor = '#3D3831';
+          link.style.background = 'transparent';
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+    setTimeout(() => {
+      document.querySelectorAll('[id]').forEach((el) => {
+        if (document.querySelector('[data-navlink="' + el.id + '"]')) this._io.observe(el);
+      });
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this._onClick);
+    if (this._io) this._io.disconnect();
+    clearTimeout(this._t);
+  }
+
+  renderVals() {
+    return {
+      copied: this.state.copied,
+      editorialAccent: this.props.editorialAccent ?? true,
+      copyTokens: () => {
+        const el = document.getElementById('rg-token-block');
+        if (!el) return;
+        try { navigator.clipboard.writeText(el.textContent); } catch (err) {}
+        this.setState({ copied: 'all design tokens' });
+        clearTimeout(this._t);
+        this._t = setTimeout(() => this.setState({ copied: null }), 1600);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

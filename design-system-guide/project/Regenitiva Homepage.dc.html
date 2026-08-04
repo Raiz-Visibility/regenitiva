@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<main id="top">
+
+<section data-screen-label="Hero" style="{{ heroSectionStyle }}">
+<div style="{{ heroPhotoWrapStyle }}">
+<img src="images/hero-physician.png" alt="Physician in a clinical setting" style="width:100%;height:100%;object-fit:cover;object-position:center"></img>
+<div style="{{ heroFadeStyle }}"></div>
+</div>
+<nav style="{{ heroNavStyle }}">
+<a href="#top" style="display:flex;align-items:center;gap:10px">
+<img src="logo/regenitiva-mark-bone.svg" alt="Regenitiva" style="height:28px;width:auto"></img>
+<span style="font-family:Archivo;font-weight:600;font-size:18px;letter-spacing:-0.01em;color:#FAF7F2">Regenitiva</span>
+</a>
+<div style="{{ heroNavLinksStyle }}">
+<a href="#what-changes" style="{{ heroNavLinkStyle }}">Why Regenitiva</a>
+<a href="#protocol" style="{{ heroNavLinkStyle }}">The Protocol</a>
+<a href="#about" style="{{ heroNavLinkStyle }}">About</a>
+<a href="#faq" style="{{ heroNavLinkStyle }}">FAQ</a>
+</div>
+<a href="#book" style="font-family:Roboto;font-size:15px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:12px 22px;white-space:nowrap">Schedule a Consultation</a>
+</nav>
+<div style="{{ heroTextWrapStyle }}">
+<div style="{{ eyebrowStyle }}">For physiatrists, sports medicine, and pain physicians</div>
+<h1 style="{{ headlineStyle }}">Practice medicine.<br>We'll handle the rest.</h1>
+<p style="{{ subheadStyle }}">Regenitiva builds and runs the operational backbone of office-based regenerative medicine programs — AAAHC-aligned policies, documented protocols, trained staff, and a defensible billing approach.</p>
+<div style="{{ ctaRowStyle }}">
+<a href="#book" style="{{ primaryBtnStyle }}">Schedule a Consultation</a>
+<a href="#protocol" style="{{ secondaryLinkStyle }}">See the protocol →</a>
+</div>
+</div>
+</section>
+
+<section id="what-we-do" data-screen-label="Intro" style="{{ introSectionStyle }}">
+<p style="{{ introTextStyle }}">Regenitiva is a management services organization and practice development partner for physicians adding or expanding regenerative medicine. We build the operational backbone — proprietary PRP protocols, AAAHC-aligned policies, documented workflows, staff training, and billing strategy — so the program runs correctly from the first patient. You keep clinical control. We handle the structure around it.</p>
+</section>
+
+<section id="what-changes" data-screen-label="Why Regenitiva" style="{{ whySectionStyle }}">
+<h2 style="{{ whyHeadlineStyle }}">Why Regenitiva?</h2>
+<div style="{{ whyGridStyle }}">
+<div>
+<div style="{{ cardIconStyle }}">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 9H24M4 14H20M4 19H16" stroke="#3D3831" stroke-width="1.5" stroke-linecap="round"></path></svg>
+</div>
+<h3 style="{{ cardHeadlineInlineStyle }}">Proprietary PRP</h3>
+<p style="{{ cardBodyStyle }}">Our preparation and delivery protocols for spine, cervical, and joint conditions are our own — developed, documented, and taught, not licensed off a shelf.</p>
+<a href="#what-changes" style="{{ cardLinkStyle }}">See our approach →</a>
+</div>
+<div>
+<div style="{{ cardIconStyle }}">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4L23 7.5V13C23 19 19 23 14 25C9 23 5 19 5 13V7.5L14 4Z" stroke="#3D3831" stroke-width="1.5" stroke-linejoin="round"></path><path d="M10 14L13 17L18.5 11" stroke="#3D3831" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 style="{{ cardHeadlineInlineStyle }}">Compliance Built In</h3>
+<p style="{{ cardBodyStyle }}">AAAHC-aligned policies and procedures, internal audits, competency records, and quality management — maintained as standards change.</p>
+<a href="#compliance" style="{{ cardLinkStyle }}">Learn about compliance →</a>
+</div>
+<div>
+<div style="{{ cardIconStyle }}">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20L10 13L15 17L24 6" stroke="#3D3831" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 6H24V12" stroke="#3D3831" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 style="{{ cardHeadlineInlineStyle }}">A Sustainable Service</h3>
+<p style="{{ cardBodyStyle }}">We structure pricing, billing, and lien management so regenerative medicine performed in-office is built to last, not experimental.</p>
+<a href="#protocol" style="{{ cardLinkStyle }}">See how it works →</a>
+</div>
+<div>
+<div style="{{ cardIconStyle }}">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="7" cy="8" r="3" stroke="#3D3831" stroke-width="1.5"></circle><circle cx="21" cy="20" r="3" stroke="#3D3831" stroke-width="1.5"></circle><path d="M9.5 10.2L18.5 17.8" stroke="#3D3831" stroke-width="1.5" stroke-linecap="round"></path></svg>
+</div>
+<h3 style="{{ cardHeadlineInlineStyle }}">We Stay In It</h3>
+<p style="{{ cardBodyStyle }}">Ongoing training, auditing, outcome tracking, and refinement as your program grows. Not a binder and a handshake.</p>
+<a href="#about" style="{{ cardLinkStyle }}">About Regenitiva →</a>
+</div>
+</div>
+</section>
+
+<section id="who-we-work-with" data-screen-label="Who We Work With" style="{{ whoWrapStyle }}">
+<div style="{{ whoPhotoWrapStyle }}">
+<image-slot id="who-we-work-with-photo" shape="rect" placeholder="Physiatrist consulting with a patient" style="width:100%;height:100%"></image-slot>
+</div>
+<div style="{{ whoTextOuterStyle }}">
+<h2 style="{{ whoHeadlineStyle }}">Built for musculoskeletal physicians.</h2>
+<p style="{{ whoIntroStyle }}">We work with physicians who already treat pain and injury every day, and who want a better set of tools for the patients in front of them.</p>
+<div style="{{ whoListStyle }}">
+<p style="{{ whoListItemStyle }}"><strong>Physiatrists</strong> expanding non-surgical treatment options</p>
+<p style="{{ whoListItemStyle }}"><strong>Sports medicine physicians</strong> treating joint, tendon, and soft tissue injury</p>
+<p style="{{ whoListItemStyle }}"><strong>Pain management physicians</strong> looking beyond injections and medication</p>
+<p style="{{ whoListItemStyle }}"><strong>Practices treating motor vehicle accident patients</strong>, where documentation and lien strategy matter as much as the clinical work</p>
+<p style="{{ whoListItemStyle }}"><strong>Multi-site groups</strong> standardizing regenerative medicine across locations</p>
+</div>
+<p style="{{ whoClosingStyle }}">If you're seeing patients who are running out of conservative options and aren't ready for surgery, there's a program here for you.</p>
+</div>
+</section>
+
+<section id="compliance" data-screen-label="Compliance and Operations" style="padding:100px 48px;background:#1C1A17;color:#FAF7F2;border-bottom:1px solid #DDD4C7">
+<div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:start">
+<div>
+<div style="font-family:Archivo;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FAAF33;margin-bottom:16px">The part most consultants leave with you</div>
+<h2 style="font-family:Archivo;font-size:38px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 24px 0">Compliance &amp; Operations</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 20px 0">Compliance is what Regenitiva is known for, and it's the reason our programs hold up.</p>
+<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 20px 0">A regenerative medicine service line touches documentation, staff competency, procedure standards, coding, and — for practices treating accident patients — lien handling. Most practice-development firms design the clinical program and hand the operational risk back to the physician. We build the operational structure first and treat the clinical program as something that has to run inside it.</p>
+<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0">When your program is reviewed — internally, by a payer, or by anyone else — the documentation exists and it's current.</p>
+</div>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>AAAHC-aligned policies and procedures, written for your practice rather than adapted from a template</li>
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Documented clinical protocols and technique standards</li>
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Staff competency records and ongoing training documentation</li>
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Internal audits and a quality management program</li>
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Billing and documentation practices structured within accepted standards for your state and payer mix</li>
+<li style="display:flex;gap:14px;padding:18px 20px;background:#26221D;border:1px solid #3D3831;border-radius:8px;font-family:Roboto;font-size:17px;line-height:1.5;color:#FAF7F2"><span style="flex:0 0 auto;color:#FAAF33">—</span>Lien documentation strategy for motor vehicle accident populations</li>
+</ul>
+</div>
+</section>
+
+<section id="protocol" data-screen-label="The Protocol" style="{{ protocolSectionStyle }}">
+<div style="{{ protocolImageWrapStyle }}">
+<image-slot id="protocol-image" shape="rect" placeholder="Clinical procedure detail" style="width:100%;height:100%"></image-slot>
+</div>
+<div style="{{ protocolTopWrapStyle }}">
+<div style="{{ protocolEyebrowStyle }}">THE PROTOCOL</div>
+<h2 style="{{ protocolHeadlineStyle }}">A protocol, not a kit.</h2>
+<p style="{{ protocolIntroStyle }}">Most practices offering PRP are running a bedside kit and a technique that lives in one person's head. Regenitiva delivers a defined preparation, a documented technique, and a program built to run inside the practice you already have.</p>
+</div>
+<div style="{{ rowWrapStyle }}">
+<div style="{{ rowGridStyle }}">
+<div style="{{ rowLabelStyle }}">MATCHED TO THE INDICATION</div>
+<div>
+<h3 style="{{ rowHeadlineStyle }}">Spine, cervical, and joint are not the same problem.</h3>
+<p style="{{ rowBodyStyle }}">Our preparation and delivery are specified by indication rather than applied uniformly. Each protocol defines the preparation, the approach, and the documentation that goes with it.</p>
+</div>
+</div>
+</div>
+<div style="{{ rowWrapStyle }}">
+<div style="{{ rowGridStyle }}">
+<div style="{{ rowLabelStyle }}">BUILT FOR YOUR OFFICE</div>
+<div>
+<h3 style="{{ rowHeadlineStyle }}">It runs inside the practice you already have.</h3>
+<p style="{{ rowBodyStyle }}">Equipment, room setup, chair time, and staff roles are defined before you start. Your team is trained to competency and signed off, so the protocol runs the same whoever is in the room.</p>
+</div>
+</div>
+</div>
+<div style="{{ rowLastStyle }}">
+<div style="{{ rowGridStyle }}">
+<div style="{{ rowLabelStyle }}">A STEP BEFORE THE OPERATING ROOM</div>
+<div>
+<h3 style="{{ rowHeadlineStyle }}">Options for the patients who've run out of them.</h3>
+<p style="{{ rowBodyStyle }}">Many patients arrive having exhausted conservative care but not ready for surgery — and today they get referred out or told to wait. An office-based regenerative program gives you something to offer that group, in your practice, without a hospital referral.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Patient Story" style="{{ storyWrapStyle }}">
+<div style="{{ storyPhotoStyle }}">
+<image-slot id="patient-story-photo" shape="rect" placeholder="Patient story — pending clearance" style="width:100%;height:100%"></image-slot>
+</div>
+<div style="{{ storyTextOuterStyle }}">
+<div style="{{ storyEyebrowStyle }}">THE PATIENTS YOU CAN HELP</div>
+<h2 style="{{ storyHeadlineStyle }}">She came in as a surgical candidate. She left pain free and without surgery.</h2>
+<p style="{{ storyBodyStyle }}">A 45-year-old woman had been told her back would need surgery. She was treated in the office instead, and today she's pain-free — without ever going to the operating room.</p>
+<p style="{{ storyBodyStyle }}">Not every patient is a candidate, and not every case ends this way. But this is what a properly built program makes possible: real options for the people sitting in your waiting room right now.</p>
+</div>
+</section>
+
+<section id="about" data-screen-label="About" style="{{ aboutSectionStyle }}">
+<div style="{{ aboutPhotoStyle }}">
+<image-slot id="about-founder-photo" shape="rect" placeholder="Dr. Lagattuta portrait" style="width:100%;height:100%"></image-slot>
+</div>
+<div style="{{ aboutContentOuterStyle }}">
+<h2 style="{{ aboutHeadlineStyle }}">Who we are.</h2>
+<p style="{{ aboutBodyStyle }}">Regenitiva was founded on a straightforward observation: there are patients who aren't getting the best available care, and physicians who would offer it if the path were clearer.</p>
+<p style="{{ aboutBodyLastStyle }}">We exist to close that gap — making regenerative medicine practical for real practices, with the protocols, training, and compliance structure that let a physician offer it confidently.</p>
+<div>
+<h3 style="{{ aboutNameStyle }}">Francis P. Lagattuta, MD</h3>
+<p style="{{ aboutTitleStyle }}">Founder, Regenitiva</p>
+</div>
+<p style="{{ aboutCredentialStyle }}">Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship from 1994 to 2015, training more than 60 physicians. More than 2,000 regenerative procedures performed.</p>
+<a href="#" style="{{ aboutLinkStyle }}">Read Dr. Lagattuta's full background →</a>
+</div>
+<div style="{{ aboutValuesRowStyle }}">
+<div style="{{ aboutValueItemStyle }}">
+<div style="{{ aboutValueLabelStyle }}">Integrity</div>
+<p style="{{ aboutValueBodyStyle }}">We tell physicians what's actually true about outcomes, costs, and risk.</p>
+</div>
+<div style="{{ aboutValueItemStyle }}">
+<div style="{{ aboutValueLabelStyle }}">Patient Safety</div>
+<p style="{{ aboutValueBodyStyle }}">Every protocol we write starts here.</p>
+</div>
+<div style="{{ aboutValueItemStyle }}">
+<div style="{{ aboutValueLabelStyle }}">Client Support</div>
+<p style="{{ aboutValueBodyStyle }}">Your program is our responsibility, not just our project.</p>
+</div>
+</div>
+</section>
+
+<section id="availability" data-screen-label="Training and Location" style="{{ trainingSectionStyle }}">
+<div>
+<div style="{{ trainingEyebrowStyle }}">TRAINING</div>
+<h2 style="{{ trainingHeadlineStyle }}">Want your clinic trained on this treatment?</h2>
+<p style="{{ trainingBodyStyle }}">Training is delivered remotely, to your whole team at once — physician, medical assistants, and front desk — on your own equipment, in the rooms where the work will happen. No travel, no closed clinic days, and no one learning it secondhand.</p>
+<p style="{{ trainingBodyLastStyle }}">Training runs until your team is signed off, with the documentation to show it.</p>
+</div>
+<div style="{{ trainingRightColStyle }}">
+<h3 style="{{ trainingSubheadStyle }}">Where is your clinic located?</h3>
+<p style="{{ trainingSubBodyStyle }}">Compliance requirements, licensing, and billing vary by state, so we build your program around the one you practice in.</p>
+<div style="{{ trainingStateRowWrapStyle }}">
+<a href="#book" style="{{ trainingStateRowStyle }}" style-hover="background:#E4DBCC;transform:translateX(4px)">California</a>
+<a href="#book" style="{{ trainingStateRowStyle }}" style-hover="background:#E4DBCC;transform:translateX(4px)">Florida</a>
+<a href="#book" style="{{ trainingStateRowStyle }}" style-hover="background:#E4DBCC;transform:translateX(4px)">Tennessee</a>
+<a href="#book" style="{{ trainingStateRowLastStyle }}" style-hover="background:#E4DBCC;transform:translateX(4px)">View all locations →</a>
+</div>
+<p style="{{ trainingCatchAllStyle }}">Practicing somewhere else? We work with practices nationwide — <a href="#book" style="color:#8F520B">start a conversation</a> and we'll build the program around your state.</p>
+</div>
+</section>
+
+<section id="faq" data-screen-label="FAQ" style="padding:96px 48px;border-bottom:1px solid #DDD4C7">
+<div style="max-width:800px;margin:0 auto">
+<h2 style="font-family:Archivo;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 44px 0;text-align:center">Frequently asked questions.</h2>
+<div style="display:flex;flex-direction:column;gap:0">
+<sc-for list="{{ faqs }}" as="item" hint-placeholder-count="6">
+<div style="border-bottom:1px solid #DDD4C7">
+<button type="button" onClick="{{ item.toggle }}" style="width:100%;text-align:left;background:none;border:none;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer">
+<span style="font-family:Archivo;font-size:17px;font-weight:600;color:#1C1A17">{{ item.q }}</span>
+<span style="font-family:Roboto;font-size:20px;color:#8F520B;flex:0 0 auto">{{ item.sign }}</span>
+</button>
+<sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#3D3831;margin:0 0 26px 0;max-width:70ch">{{ item.a }}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="book" data-screen-label="Closing CTA" style="padding:100px 48px;background:#1C1A17;color:#FAF7F2;text-align:center">
+<div style="max-width:640px;margin:0 auto">
+<h2 style="font-family:Archivo;font-size:38px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin:0 0 20px 0">Let's look at your practice.</h2>
+<p style="font-family:Roboto;font-size:17px;line-height:1.5;color:#DDD4C7;margin:0 0 36px 0">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you — and what it would take to build.</p>
+<a href="tel:8058967983" style="display:inline-block;font-family:Roboto;font-size:16px;font-weight:500;letter-spacing:0.01em;background:#F59621;color:#1C1A17;border:1px solid #F59621;border-radius:6px;padding:16px 30px;margin-bottom:24px">Schedule a Consultation</a>
+<div style="font-family:Roboto;font-size:15px;color:#B8AE9F">Call: <a href="tel:8058967983" style="color:#FFCD4D">805-896-7983</a></div>
+</div>
+</section>
+
+</main>
+
+<footer data-screen-label="Footer" style="padding:44px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:#FAF7F2">
+<div style="display:flex;align-items:center;gap:10px">
+<img src="logo/regenitiva-mark.svg" alt="Regenitiva" style="height:22px;width:auto"></img>
+<span style="font-family:Roboto;font-size:13px;color:#6B6358">Regenitiva LLC — Regenerative medicine practice development and management services.</span>
+</div>
+<nav style="display:flex;gap:24px;flex-wrap:wrap">
+<a href="#book" style="font-family:Roboto;font-size:13px;color:#6B6358">Contact</a>
+<a href="#what-changes" style="font-family:Roboto;font-size:13px;color:#6B6358">Why Regenitiva</a>
+<a href="#protocol" style="font-family:Roboto;font-size:13px;color:#6B6358">The Protocol</a>
+<a href="#about" style="font-family:Roboto;font-size:13px;color:#6B6358">About</a>
+<a href="#" style="font-family:Roboto;font-size:13px;color:#6B6358">Privacy</a>
+<a href="#" style="font-family:Roboto;font-size:13px;color:#6B6358">Terms</a>
+</nav>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    open: {0: true},
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 600
+  };
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width:600px)');
+    this.onMq = e => this.setState({ isMobile: e.matches });
+    this.mq.addEventListener('change', this.onMq);
+  }
+
+  componentWillUnmount() {
+    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+  }
+
+  faqData = [
+    {q:"Does this work clinically?", a:"PRP is used widely in musculoskeletal medicine, and the evidence base continues to develop. We're candid about what the research supports and what it doesn't. Our protocols are built on current literature, and we track your patient outcomes so you can see how your own program performs."},
+    {q:"How is this billed?", a:"That depends on your payer mix, your state, and your patient population. For practices treating motor vehicle accident patients, lien management is often central. We build a billing and documentation approach appropriate to your situation and within accepted standards."},
+    {q:"What does it cost?", a:"Every engagement is scoped to the practice, so there isn't a list price. A single physician adding a service line is a different build than a multi-site group standardizing across locations. What drives the number is the scope of the program, how much clinical and staff infrastructure already exists, and whether you want ongoing management or a one-time implementation. We put a specific figure and a projected return in front of you during the assessment — before you're asked to commit to anything."},
+    {q:"How long until we're treating patients?", a:"Timeline depends on your space, staffing, and state requirements. We'll give you a realistic schedule during the assessment, not an optimistic one."},
+    {q:"Do I give up control of my practice?", a:"No. You retain clinical authority and ownership. We manage operations, compliance, and business infrastructure."},
+    {q:"What happens to my existing staff and workflows?", a:"We build around your team. Competency training brings existing staff into the program rather than replacing them, and workflow design starts from how your practice already runs."}
+  ];
+
+  renderVals() {
+    const open = this.state.open;
+    const faqs = this.faqData.map((f, i) => ({
+      q: f.q,
+      a: f.a,
+      open: !!open[i],
+      sign: open[i] ? "−" : "+",
+      toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } }))
+    }));
+
+    const isMobile = this.state.isMobile;
+    const margin = isMobile ? 32 : 120;
+
+    const heroSectionStyle = isMobile
+      ? { position: 'relative', overflow: 'hidden', background: '#1C1A17', display: 'flex', flexDirection: 'column' }
+      : { position: 'relative', overflow: 'hidden', background: '#1C1A17', width: '100%', boxSizing: 'border-box', aspectRatio: '16/7', minHeight: '620px', maxHeight: '760px' };
+    const heroPhotoWrapStyle = isMobile
+      ? { position: 'relative', width: '100%', height: '420px', flex: '0 0 auto' }
+      : { position: 'absolute', inset: 0, width: '100%', height: '100%' };
+    const heroFadeStyle = isMobile
+      ? { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(28,26,23,0) 55%, rgba(28,26,23,0.6) 100%)' }
+      : { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(28,26,23,0.82) 0%, rgba(28,26,23,0.55) 38%, rgba(28,26,23,0.08) 60%, rgba(28,26,23,0) 68%)' };
+    const heroNavStyle = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3, minHeight: '88px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `16px ${margin}px`, gap: 16, flexWrap: isMobile ? 'wrap' : 'nowrap', background: 'transparent' };
+    const heroNavLinksStyle = { display: 'flex', alignItems: 'center', gap: isMobile ? 16 : 20, flexWrap: isMobile ? 'wrap' : 'nowrap' };
+    const heroNavLinkStyle = { fontFamily: 'Roboto', fontSize: 14, fontWeight: 500, color: '#FAF7F2', whiteSpace: 'nowrap' };
+    const heroTextWrapStyle = isMobile
+      ? { position: 'relative', zIndex: 2, padding: `32px ${margin}px 48px ${margin}px`, background: '#1C1A17' }
+      : { position: 'absolute', zIndex: 2, top: 0, left: margin, height: '100%', width: 'clamp(420px, 60vw, 640px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 100, paddingBottom: 40, boxSizing: 'border-box' };
+    const eyebrowStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FAAF33', marginBottom: 20 };
+    const headlineStyle = { fontFamily: 'Archivo', fontWeight: isMobile ? 400 : 300, fontSize: isMobile ? 38 : 'clamp(34px, 5.2vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em', color: '#FAF7F2', margin: '0 0 24px 0' };
+    const subheadStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#DDD4C7', maxWidth: 480, margin: '0 0 36px 0' };
+    const ctaRowStyle = { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' };
+    const primaryBtnStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, letterSpacing: '0.01em', background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '15px 26px', display: 'inline-block', whiteSpace: 'nowrap', flexShrink: 0 };
+    const secondaryLinkStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, color: '#FFCD4D', whiteSpace: 'nowrap', flexShrink: 0 };
+    const trustBarStyle = { minHeight: 64, background: '#EFE9E0', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 16, padding: `${isMobile ? 16 : 20}px ${margin}px`, borderBottom: '1px solid #DDD4C7', boxSizing: 'border-box' };
+    const trustItemStyle = { fontFamily: 'Roboto', fontSize: 14, color: '#3D3831' };
+    const trustDotStyle = { color: '#B8AE9F' };
+
+    const introSectionStyle = { padding: isMobile ? `40px ${margin}px 28px ${margin}px` : `64px ${margin}px 48px ${margin}px`, background: '#FAF7F2' };
+    const introTextStyle = { fontFamily: 'Roboto', fontWeight: 400, fontSize: 17, lineHeight: 1.5, color: '#3D3831', maxWidth: 1100, margin: 0 };
+
+    const whySectionStyle = { padding: `0 ${margin}px ${isMobile ? 64 : 140}px ${margin}px`, background: '#FAF7F2' };
+    const whyHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 700, fontSize: isMobile ? 28 : 40, color: '#8F520B', margin: `0 0 ${isMobile ? 24 : 32}px 0` };
+    const whyGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 48 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, alignItems: 'start' };
+    const cardIconStyle = { display: 'block', marginBottom: 16 };
+    const cardHeadlineInlineStyle = { fontFamily: 'Archivo', fontWeight: 700, fontSize: 17, color: '#1C1A17', margin: '0 0 16px 0' };
+    const cardBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.25, color: '#3D3831', margin: '0 0 20px 0' };
+    const cardLinkStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#8F520B', textDecoration: 'underline' };
+
+    const whoWrapStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', background: '#EFE9E0' }
+      : { position: 'relative', background: '#EFE9E0', overflow: 'hidden' };
+    const whoPhotoWrapStyle = isMobile
+      ? { width: '100%', height: '360px' }
+      : { position: 'absolute', top: 0, left: 0, height: '100%', width: '45%' };
+    const whoTextOuterStyle = isMobile
+      ? { padding: `32px ${margin}px 48px ${margin}px` }
+      : { marginLeft: '45%', padding: `88px ${margin}px 88px 64px`, boxSizing: 'border-box' };
+    const whoHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
+    const whoIntroStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', maxWidth: 460, margin: '0 0 36px 0' };
+    const whoListStyle = { display: 'flex', flexDirection: 'column', gap: isMobile ? 16 : 18, margin: '0 0 32px 0' };
+    const whoListItemStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#1C1A17', margin: 0 };
+    const whoClosingStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+
+    const protocolSectionStyle = { position: 'relative', overflow: 'hidden', padding: isMobile ? `64px ${margin}px` : `140px ${margin}px`, background: '#FAF7F2' };
+    const protocolTopWrapStyle = isMobile ? {} : { maxWidth: 'calc(100% - clamp(300px, 34vw, 460px) - 48px)' };
+    const protocolImageWrapStyle = isMobile
+      ? { width: '100%', aspectRatio: '1/1', marginBottom: 32 }
+      : { position: 'absolute', top: 0, right: 0, width: 'clamp(300px, 34vw, 460px)', height: 'clamp(300px, 34vw, 460px)' };
+    const protocolEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 16px 0' };
+    const protocolHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
+    const protocolIntroStyle = { fontFamily: 'Roboto', fontSize: 18, lineHeight: 1.55, color: '#3D3831', maxWidth: 620, margin: `0 0 ${isMobile ? 48 : 64}px 0` };
+    const rowWrapStyle = { borderTop: '1px solid #DDD4C7', padding: isMobile ? '32px 0' : '40px 0' };
+    const rowLastStyle = { ...rowWrapStyle, borderBottom: '1px solid #DDD4C7' };
+    const rowGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 12 }
+      : { display: 'grid', gridTemplateColumns: '28% 72%', gap: 32 };
+    const rowLabelStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358' };
+    const rowHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 500, fontSize: 24, color: '#1C1A17', margin: '0 0 12px 0' };
+    const rowBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+
+    const storyWrapStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', background: '#EFE9E0' }
+      : { position: 'relative', background: '#EFE9E0', overflow: 'hidden' };
+    const storyTextOuterStyle = isMobile
+      ? { padding: `32px ${margin}px 48px ${margin}px` }
+      : { marginRight: '42%', padding: `140px 64px 140px ${margin}px`, boxSizing: 'border-box' };
+    const storyPhotoStyle = isMobile
+      ? { width: '100%', aspectRatio: '1/1' }
+      : { position: 'absolute', top: 0, right: 0, height: '100%', width: '42%' };
+    const storyEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 28px 0' };
+    const storyHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 24 : 32, lineHeight: 1.3, letterSpacing: '-0.01em', color: '#1C1A17', maxWidth: 620, margin: '0 0 28px 0' };
+    const storyBodyStyle = { fontFamily: 'Roboto', fontSize: 18, lineHeight: 1.55, color: '#3D3831', maxWidth: 620, margin: '0 0 20px 0' };
+
+    const aboutSectionStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', background: '#FFFFFF' }
+      : { display: 'grid', gridTemplateColumns: '40% 60%', gap: 64, alignItems: 'start', background: '#FFFFFF', padding: `72px ${margin}px` };
+    const aboutPhotoStyle = isMobile
+      ? { width: '100%', height: 420, borderRadius: 8, overflow: 'hidden' }
+      : { width: '100%', maxWidth: 420, aspectRatio: '4/5', borderRadius: 8, overflow: 'hidden' };
+    const aboutContentOuterStyle = isMobile
+      ? { padding: `32px ${margin}px 48px ${margin}px` }
+      : {};
+    const aboutHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 24px 0' };
+    const aboutBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '0 0 20px 0' };
+    const aboutBodyLastStyle = { ...aboutBodyStyle, margin: '0 0 40px 0' };
+    const aboutNameStyle = { fontFamily: 'Archivo', fontSize: 22, fontWeight: 500, color: '#1C1A17', margin: 0 };
+    const aboutTitleStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '4px 0 0 0' };
+    const aboutCredentialStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '14px 0 0 0' };
+    const aboutLinkStyle = { fontFamily: 'Roboto', fontSize: 17, fontWeight: 500, color: '#8F520B', textDecoration: 'underline', display: 'inline-block', margin: '18px 0 0 0' };
+    const aboutValuesRowStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 28, marginTop: 56 }
+      : { gridColumn: '1 / -1', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 32 };
+    const aboutValueItemStyle = { borderLeft: '2px solid #DDD4C7', paddingLeft: 16 };
+    const aboutValueLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', marginBottom: 10 };
+    const aboutValueBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: 0 };
+
+    const trainingSectionStyle = isMobile
+      ? { padding: `64px ${margin}px`, background: '#EFE9E0' }
+      : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'start', padding: `140px ${margin}px`, background: '#EFE9E0', boxSizing: 'border-box' };
+    const trainingEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B6358', margin: '0 0 16px 0' };
+    const trainingHeadlineStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
+    const trainingBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.5, color: '#3D3831', margin: '0 0 20px 0' };
+    const trainingBodyLastStyle = { ...trainingBodyStyle, margin: 0 };
+    const trainingRightColStyle = isMobile
+      ? { borderTop: '0.5px solid #B8AE9F', paddingTop: 40, marginTop: 48 }
+      : { borderLeft: '0.5px solid #B8AE9F', paddingLeft: 56 };
+    const trainingSubheadStyle = { fontFamily: 'Archivo', fontWeight: 300, fontSize: isMobile ? 22 : 26, lineHeight: 1.3, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 12px 0' };
+    const trainingSubBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4, color: '#3D3831', margin: '0 0 32px 0' };
+    const trainingStateRowWrapStyle = { display: 'flex', flexDirection: 'column' };
+    const trainingStateRowStyle = { display: 'flex', borderTop: '0.5px solid #B8AE9F', padding: '18px 0', fontFamily: 'Roboto', fontSize: 20, fontWeight: 400, color: '#1C1A17', transition: 'transform 0.15s ease, background 0.15s ease' };
+    const trainingStateRowLastStyle = { ...trainingStateRowStyle, borderBottom: '0.5px solid #B8AE9F', color: '#8F520B' };
+    const trainingCatchAllStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4, color: '#3D3831', margin: '28px 0 0 0' };
+
+    return {
+      faqs, heroSectionStyle, heroPhotoWrapStyle, heroFadeStyle, heroNavStyle, heroNavLinksStyle, heroNavLinkStyle,
+      heroTextWrapStyle, eyebrowStyle, headlineStyle, subheadStyle, ctaRowStyle, primaryBtnStyle, secondaryLinkStyle,
+      trustBarStyle, trustItemStyle, trustDotStyle,
+      introSectionStyle, introTextStyle,
+      whySectionStyle, whyHeadlineStyle, whyGridStyle, cardIconStyle, cardHeadlineInlineStyle, cardBodyStyle, cardLinkStyle,
+      whoWrapStyle, whoPhotoWrapStyle, whoTextOuterStyle, whoHeadlineStyle, whoIntroStyle, whoListStyle, whoListItemStyle, whoClosingStyle,
+      protocolSectionStyle, protocolTopWrapStyle, protocolImageWrapStyle, protocolEyebrowStyle, protocolHeadlineStyle, protocolIntroStyle,
+      rowWrapStyle, rowLastStyle, rowGridStyle, rowLabelStyle, rowHeadlineStyle, rowBodyStyle,
+      storyWrapStyle, storyTextOuterStyle, storyPhotoStyle, storyEyebrowStyle, storyHeadlineStyle, storyBodyStyle,
+      aboutSectionStyle, aboutPhotoStyle, aboutContentOuterStyle, aboutHeadlineStyle, aboutBodyStyle, aboutBodyLastStyle,
+      aboutNameStyle, aboutTitleStyle, aboutCredentialStyle, aboutLinkStyle,
+      aboutValuesRowStyle, aboutValueItemStyle, aboutValueLabelStyle, aboutValueBodyStyle,
+      trainingSectionStyle, trainingEyebrowStyle, trainingHeadlineStyle, trainingBodyStyle, trainingBodyLastStyle,
+      trainingRightColStyle, trainingSubheadStyle, trainingSubBodyStyle, trainingStateRowWrapStyle,
+      trainingStateRowStyle, trainingStateRowLastStyle, trainingCatchAllStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>
