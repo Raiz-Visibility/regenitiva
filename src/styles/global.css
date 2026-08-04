@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Regenitiva Design System — global.css
+   Source: Regenitiva Brand Guide v1.0, Section 10 (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* Brand amber — accent only, 5-10% of any screen */
+  --rg-amber-300: #FFCD4D;
+  --rg-amber-400: #FAAF33;
+  --rg-amber-500: #F59621;
+  --rg-amber-600: #E08411;
+  --rg-amber-800: #8F520B;
+  --rg-amber-900: #6E3F08;
+  --rg-gradient-amber: linear-gradient(90deg, #FFCD4D, #F59621);
+
+  /* Warm neutrals — no cool greys */
+  --rg-ink-900: #1C1A17;
+  --rg-ink-700: #3D3831;
+  --rg-stone-600: #6B6358;
+  --rg-stone-300: #DDD4C7;
+  --rg-stone-100: #EFE9E0;
+  --rg-bone: #FAF7F2;
+  --rg-white: #FFFFFF;
+  --rg-wordmark: #231F20;
+
+  /* System — no red anywhere */
+  --rg-error: #8C3A2B;
+  --rg-error-bg: #F3E4DF;
+  --rg-success: #4F6B3A;
+  --rg-warning: #8F520B;
+  --rg-warning-bg: #EFE9E0;
+
+  /* Semantic */
+  --rg-bg-page: var(--rg-bone);
+  --rg-bg-surface: var(--rg-white);
+  --rg-bg-subtle: var(--rg-stone-100);
+  --rg-bg-inverse: var(--rg-ink-900);
+  --rg-text-primary: var(--rg-ink-900);
+  --rg-text-secondary: var(--rg-ink-700);
+  --rg-text-muted: var(--rg-stone-600);
+  --rg-text-accent: var(--rg-amber-800);
+  --rg-text-on-inverse: var(--rg-bone);
+  --rg-text-accent-on-inverse: var(--rg-amber-300);
+  --rg-border: var(--rg-stone-300);
+  --rg-border-strong: var(--rg-stone-600);
+  --rg-border-inverse: var(--rg-ink-700);
+
+  /* Type families */
+  --rg-font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --rg-font-body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --rg-font-editorial: 'Fraunces', Georgia, serif;
+
+  /* Type scale — fluid between 480px and 1280px viewports
+     Guide specifies mobile sizes: display 40px, h1 34px, h2 27px, h3 23px.
+     clamp(mobile, fluid-mid, desktop) to avoid hard snaps. */
+  --rg-size-display: clamp(2.5rem, 1.6rem + 3vw, 4rem);            /* 40px → 64px */
+  --rg-size-h1: clamp(2.125rem, 1.6rem + 1.75vw, 3rem);            /* 34px → 48px */
+  --rg-size-h2: clamp(1.6875rem, 1.35rem + 1.125vw, 2.25rem);      /* 27px → 36px */
+  --rg-size-h3: clamp(1.4375rem, 1.25rem + 0.625vw, 1.75rem);      /* 23px → 28px */
+  --rg-size-h4: 1.375rem;       /* 22px */
+  /* h5 and h6 are derived, not specified in the brand guide.
+     Scale differences: 16, 12, 8, 6 → continuing: 4, 2.
+     h5 = 18px, h6 = 16px. */
+  --rg-size-h5: 1.125rem;       /* 18px — derived */
+  --rg-size-h6: 1rem;           /* 16px — derived */
+  --rg-size-lead: 1.25rem;      /* 20px */
+  --rg-size-body: 1.0625rem;    /* 17px */
+  --rg-size-small: 0.9375rem;   /* 15px */
+  --rg-size-caption: 0.8125rem; /* 13px */
+  --rg-size-button: 1rem;       /* 16px */
+  --rg-size-eyebrow: 0.75rem;   /* 12px */
+
+  --rg-lh-display: 1.02;
+  --rg-lh-h1: 1.06;
+  --rg-lh-h2: 1.12;
+  --rg-lh-h3: 1.2;
+  --rg-lh-h4: 1.3;
+  --rg-lh-h5: 1.35;  /* derived */
+  --rg-lh-h6: 1.4;   /* derived */
+  --rg-lh-lead: 1.55;
+  --rg-lh-body: 1.65;
+  --rg-lh-small: 1.55;
+  --rg-lh-caption: 1.45;
+
+  --rg-ls-display: -0.03em;
+  --rg-ls-h1: -0.025em;
+  --rg-ls-h2: -0.02em;
+  --rg-ls-h3: -0.015em;
+  --rg-ls-h4: -0.01em;
+  --rg-ls-h5: -0.005em;  /* derived */
+  --rg-ls-h6: 0;          /* derived */
+  --rg-ls-body: 0;
+  --rg-ls-button: 0.01em;
+  --rg-ls-eyebrow: 0.14em;
+
+  --rg-weight-regular: 400;
+  --rg-weight-medium: 500;
+  --rg-weight-semibold: 600;
+  --rg-weight-bold: 700;
+
+  --rg-measure-body: 72ch;
+  --rg-measure-lead: 62ch;
+
+  /* Spacing — 4px base */
+  --rg-space-1: 4px;
+  --rg-space-2: 8px;
+  --rg-space-3: 12px;
+  --rg-space-4: 16px;
+  --rg-space-5: 24px;
+  --rg-space-6: 32px;
+  --rg-space-7: 48px;
+  --rg-space-8: 64px;
+  --rg-space-9: 96px;
+  --rg-space-10: 128px;
+
+  /* Layout */
+  --rg-container-narrow: 720px;
+  --rg-container: 1180px;
+  --rg-container-wide: 1440px;
+  --rg-grid-columns: 12;
+  --rg-grid-gutter: 24px;
+  --rg-page-margin: 32px;
+
+  /* Breakpoints — documented here for reference; CSS custom properties
+     cannot be used inside @media queries. Use these raw values instead:
+     --rg-bp-sm:  480px
+     --rg-bp-md:  768px
+     --rg-bp-lg:  1024px
+     --rg-bp-xl:  1280px
+     --rg-bp-2xl: 1440px
+     Grid: 12 cols at lg+, 8 cols below lg, 4 cols below md.
+     Page margins: 32px desktop, 24px tablet, 16px mobile. */
+
+  /* Radii — modest, never pill */
+  --rg-radius-xs: 2px;
+  --rg-radius-sm: 4px;
+  --rg-radius-md: 6px;
+  --rg-radius-lg: 8px;
+
+  /* Elevation — warm-tinted, never pure black */
+  --rg-shadow-1: 0 1px 2px rgba(28, 26, 23, 0.06);
+  --rg-shadow-2: 0 2px 6px rgba(28, 26, 23, 0.08);
+  --rg-shadow-3: 0 8px 24px rgba(28, 26, 23, 0.10);
+  --rg-shadow-4: 0 20px 48px rgba(28, 26, 23, 0.14);
+  --rg-focus-ring: 0 0 0 3px rgba(245, 150, 33, 0.35);
+
+  /* Motion */
+  --rg-duration-fast: 80ms;
+  --rg-duration-base: 120ms;
+  --rg-duration-slow: 150ms;
+  --rg-ease: cubic-bezier(0.2, 0, 0.2, 1);
+
+  /* Imagery */
+  --rg-photo-filter: saturate(0.88) contrast(1.04) brightness(1.01);
+  --rg-photo-scrim: linear-gradient(90deg, rgba(28, 26, 23, 0.86), rgba(28, 26, 23, 0.20));
+  --rg-icon-stroke: 1.75px;
+}
+
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+body {
+  background: var(--rg-bg-page);
+  color: var(--rg-text-primary);
+  font-family: var(--rg-font-body);
+  font-size: var(--rg-size-body);
+  font-weight: var(--rg-weight-regular);
+  line-height: var(--rg-lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--rg-amber-300);
+  color: var(--rg-ink-900);
+}
+
+
+/* Headings — Archivo, tightly tracked */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--rg-font-display);
+}
+
+h1 {
+  font-size: var(--rg-size-h1);
+  font-weight: var(--rg-weight-bold);
+  line-height: var(--rg-lh-h1);
+  letter-spacing: var(--rg-ls-h1);
+}
+
+h2 {
+  font-size: var(--rg-size-h2);
+  font-weight: var(--rg-weight-semibold);
+  line-height: var(--rg-lh-h2);
+  letter-spacing: var(--rg-ls-h2);
+}
+
+h3 {
+  font-size: var(--rg-size-h3);
+  font-weight: var(--rg-weight-semibold);
+  line-height: var(--rg-lh-h3);
+  letter-spacing: var(--rg-ls-h3);
+}
+
+h4 {
+  font-size: var(--rg-size-h4);
+  font-weight: var(--rg-weight-semibold);
+  line-height: var(--rg-lh-h4);
+  letter-spacing: var(--rg-ls-h4);
+}
+
+/* h5, h6: derived from the guide's scale — not specified in the brand guide */
+
+h5 {
+  font-size: var(--rg-size-h5);
+  font-weight: var(--rg-weight-semibold);
+  line-height: var(--rg-lh-h5);
+  letter-spacing: var(--rg-ls-h5);
+}
+
+h6 {
+  font-size: var(--rg-size-h6);
+  font-weight: var(--rg-weight-semibold);
+  line-height: var(--rg-lh-h6);
+  letter-spacing: var(--rg-ls-h6);
+}
+
+
+/* Paragraphs */
+
+p {
+  max-width: var(--rg-measure-body);
+}
+
+
+/* Links — amber-800 default, amber-900 hover */
+
+a {
+  color: var(--rg-text-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--rg-amber-900);
+  text-decoration: underline;
+}
+
+
+/* Responsive page margins */
+
+@media (max-width: 1023px) {
+  :root {
+    --rg-page-margin: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --rg-page-margin: 16px;
+  }
+}
