@@ -1,0 +1,139 @@
+---
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+---
+
+<div class="app-form-card">
+  <div class="app-form-label">Ready to talk?</div>
+<form class="app-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+    <label class="app-field">
+      Name
+      <input type="text" name="name" required />
+    </label>
+    <label class="app-field">
+      Email
+      <input type="email" name="email" required />
+    </label>
+    <label class="app-field">
+      Phone
+      <input type="tel" name="phone" />
+    </label>
+    <label class="app-field">
+      Practice Type
+      <select name="practiceType" class="app-select">
+        <option value="">Select one…</option>
+        <option value="Physiatry / PM&R">Physiatry / PM&R</option>
+        <option value="Sports Medicine">Sports Medicine</option>
+        <option value="Pain Management">Pain Management</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+        <option value="Multi-Site Group">Multi-Site Group</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label class="app-field app-field-other" hidden>
+      Please specify
+      <input type="text" name="practiceTypeOther" placeholder="Tell us about your practice" />
+    </label>
+    <button type="submit" class="app-submit">Request a Consultation</button>
+  </form>
+</div>
+
+<style>
+  .app-form-card {
+    padding: var(--rg-space-5);
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+  }
+
+  .app-form-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-primary);
+    margin-bottom: var(--rg-space-4);
+  }
+
+.app-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .app-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-2);
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-secondary);
+  }
+
+  .app-field-other[hidden] {
+    display: none;
+  }
+
+  .app-field input,
+  .app-field select {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-small);
+    color: var(--rg-text-primary);
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-md);
+    padding: 10px var(--rg-space-3);
+    background: var(--rg-bone);
+    outline: none;
+    transition: border-color var(--rg-duration-base) var(--rg-ease),
+      box-shadow var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .app-field input:focus,
+  .app-field select:focus {
+    border-color: var(--rg-amber-500);
+    box-shadow: var(--rg-focus-ring);
+  }
+
+  .app-select {
+    appearance: auto;
+  }
+
+  .app-submit {
+    margin-top: var(--rg-space-2);
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: 13px 20px;
+    cursor: pointer;
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .app-submit:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLSelectElement>('.app-select').forEach((select) => {
+      const form = select.closest('.app-form');
+      if (!form) return;
+      const otherField = form.querySelector('.app-field-other') as HTMLElement | null;
+      if (!otherField) return;
+
+      select.addEventListener('change', () => {
+        const show = select.value === 'Other';
+        otherField.hidden = !show;
+        const input = otherField.querySelector('input') as HTMLInputElement | null;
+        if (input) input.required = show;
+      });
+    });
+</script>

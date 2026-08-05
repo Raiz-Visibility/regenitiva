@@ -118,6 +118,7 @@
   --rg-container-narrow: 720px;
   --rg-container: 1180px;
   --rg-container-wide: 1440px;
+  --rg-container-article: 1360px; /* service/blog layouts: article + sidebar */
   --rg-grid-columns: 12;
   --rg-grid-gutter: 24px;
   --rg-page-margin: 32px;

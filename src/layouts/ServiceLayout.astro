@@ -1,0 +1,418 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ApplicationForm from '../components/ApplicationForm.astro';
+import '../styles/prose.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  heroEyebrow?: string;
+  heroTitle: string;
+  heroPromise?: string;
+  heroSupport?: string;
+  heroImage?: string;
+}
+
+const {
+  title,
+  description,
+  heroEyebrow = 'Services',
+  heroTitle,
+  heroPromise,
+  heroSupport,
+  heroImage,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <div class="svc-hero-text">
+        <div class="svc-hero-eyebrow">{heroEyebrow}</div>
+        <h1 class="svc-hero-h1">{heroTitle}</h1>
+        {heroPromise && <p class="svc-hero-promise">{heroPromise}</p>}
+        {heroSupport && <p class="svc-hero-support">{heroSupport}</p>}
+      </div>
+      <div class="svc-hero-photo">
+        {heroImage
+          ? <img src={heroImage} alt="" />
+          : <div class="svc-hero-placeholder"></div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile TOC -->
+  <details class="svc-mobile-toc">
+    <summary class="svc-mobile-toc-toggle">
+      <span>On this page</span>
+      <span class="svc-mobile-toc-chevron" aria-hidden="true">&#9662;</span>
+    </summary>
+    <nav class="svc-mobile-toc-links" data-toc-target></nav>
+  </details>
+
+  <!-- Layout grid -->
+  <div class="svc-grid">
+    <article class="prose">
+      <slot />
+    </article>
+    <aside class="svc-sidebar">
+      <div class="svc-toc-card">
+        <div class="svc-sidebar-label">On This Page</div>
+        <nav class="svc-toc-links" data-toc-target></nav>
+      </div>
+      <ApplicationForm />
+      <div class="svc-blog-card">
+        <div class="svc-sidebar-label">From the Blog</div>
+        <a href="/blog/aaahc-alignment-checklist" class="svc-blog-link">
+          <div class="svc-blog-thumb"></div>
+          <div class="svc-blog-title">A Practical Checklist for AAAHC Alignment</div>
+          <div class="svc-blog-date">July 22, 2026</div>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* ----------------------------------------------------------------
+     Hero
+     ---------------------------------------------------------------- */
+  .svc-hero {
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .svc-hero-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .svc-hero-photo {
+    order: -1;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .svc-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .svc-hero-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--rg-stone-300);
+  }
+
+  .svc-hero-text {
+    padding: var(--rg-space-5) var(--rg-space-5) 40px;
+  }
+
+  .svc-hero-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .svc-hero-h1 {
+    font-size: var(--rg-size-h1);
+    line-height: var(--rg-lh-h1);
+    letter-spacing: var(--rg-ls-h1);
+    margin-bottom: 20px;
+    max-width: 820px;
+  }
+
+  .svc-hero-promise {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-h4);
+    font-weight: var(--rg-weight-medium);
+    line-height: var(--rg-lh-h4);
+    color: var(--rg-text-accent);
+    max-width: 700px;
+    margin-bottom: 20px;
+  }
+
+  .svc-hero-support {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: 700px;
+  }
+
+  @media (min-width: 768px) {
+    .svc-hero {
+      overflow: hidden;
+    }
+
+    .svc-hero-inner {
+      position: relative;
+      max-width: var(--rg-container-article);
+      margin: 0 auto;
+      padding: 72px var(--rg-space-7) 56px;
+    }
+
+    .svc-hero-text {
+      padding: 0;
+      max-width: calc(100% - 400px);
+    }
+
+    .svc-hero-photo {
+      order: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      height: 100%;
+      aspect-ratio: 1;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Mobile TOC
+     ---------------------------------------------------------------- */
+  .svc-mobile-toc {
+    margin: var(--rg-space-5) var(--rg-space-5) 0;
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+  }
+
+  .svc-mobile-toc-toggle {
+    width: 100%;
+    padding: var(--rg-space-4) 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-primary);
+  }
+
+  .svc-mobile-toc-toggle::-webkit-details-marker { display: none; }
+  .svc-mobile-toc-toggle::marker { display: none; content: ''; }
+
+  .svc-mobile-toc-chevron {
+    font-size: 14px;
+    color: var(--rg-text-accent);
+    transition: transform var(--rg-duration-slow) var(--rg-ease);
+  }
+
+  .svc-mobile-toc[open] .svc-mobile-toc-chevron {
+    transform: rotate(180deg);
+  }
+
+  .svc-mobile-toc-links {
+    padding: 0 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  @media (min-width: 768px) {
+    .svc-mobile-toc {
+      display: none;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Layout grid
+     ---------------------------------------------------------------- */
+  .svc-grid {
+    display: flex;
+    flex-direction: column;
+    padding: var(--rg-space-6) var(--rg-space-5) 0;
+  }
+
+  @media (min-width: 768px) {
+    .svc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: var(--rg-space-8);
+      max-width: var(--rg-container-article);
+      margin: 0 auto;
+      padding: 72px var(--rg-space-7);
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Sidebar
+     ---------------------------------------------------------------- */
+  .svc-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-5);
+    margin-top: var(--rg-space-7);
+    padding-bottom: var(--rg-space-7);
+  }
+
+  .svc-toc-card {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .svc-sidebar {
+      position: sticky;
+      top: var(--rg-space-6);
+      align-self: start;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    .svc-toc-card {
+      display: block;
+      padding: var(--rg-space-5);
+      border: 1px solid var(--rg-border);
+      border-radius: var(--rg-radius-lg);
+      background: var(--rg-bg-surface);
+    }
+  }
+
+  .svc-sidebar-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-primary);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .svc-toc-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ----------------------------------------------------------------
+     Blog card
+     ---------------------------------------------------------------- */
+  .svc-blog-card {
+    padding: 20px;
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+  }
+
+  .svc-blog-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .svc-blog-link:hover {
+    text-decoration: none;
+  }
+
+  .svc-blog-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--rg-radius-md);
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: var(--rg-stone-300);
+  }
+
+  .svc-blog-title {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-primary);
+    line-height: 1.3;
+    margin-bottom: var(--rg-space-2);
+  }
+
+  .svc-blog-date {
+    font-size: var(--rg-size-caption);
+    color: var(--rg-text-muted);
+  }
+</style>
+
+<script>
+  // Build TOC from h2[id] elements in the article
+  const article = document.querySelector('.svc-grid article');
+  const tocTargets = document.querySelectorAll('[data-toc-target]');
+  if (article && tocTargets.length) {
+    const headings = article.querySelectorAll('h2[id]');
+
+    headings.forEach((h2) => {
+      tocTargets.forEach((target) => {
+        const link = document.createElement('a');
+        link.textContent = h2.textContent;
+        link.href = '#' + h2.id;
+        link.className = 'svc-toc-link';
+        link.dataset.section = h2.id;
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          h2.scrollIntoView({ behavior: 'smooth' });
+          // Close mobile TOC if open
+          const details = link.closest('details');
+          if (details) details.open = false;
+        });
+
+        target.appendChild(link);
+      });
+    });
+
+    // Scroll-spy
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.svc-toc-link').forEach((link) => {
+              const active = (link as HTMLElement).dataset.section === entry.target.id;
+              link.classList.toggle('active', active);
+            });
+          }
+        });
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: 0 }
+    );
+
+    headings.forEach((h2) => observer.observe(h2));
+  }
+</script>
+
+<style is:global>
+  /* TOC link styles — need to be global since links are JS-generated */
+  .svc-toc-link {
+    display: block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-small);
+    line-height: 1.4;
+    padding: 9px 0 9px var(--rg-space-4);
+    border-left: 2px solid var(--rg-border);
+    color: var(--rg-text-muted);
+    text-decoration: none;
+    transition: color var(--rg-duration-slow) var(--rg-ease),
+      border-color var(--rg-duration-slow) var(--rg-ease);
+  }
+
+  .svc-toc-link:hover {
+    color: var(--rg-text-primary);
+    text-decoration: none;
+  }
+
+  .svc-toc-link.active {
+    color: var(--rg-text-primary);
+    font-weight: var(--rg-weight-semibold);
+    border-left-color: var(--rg-text-accent);
+  }
+
+  /* Mobile TOC links — slightly larger */
+  .svc-mobile-toc-links .svc-toc-link {
+    font-size: var(--rg-size-button);
+    padding: var(--rg-space-3) 0 var(--rg-space-3) var(--rg-space-4);
+  }
+</style>

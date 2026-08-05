@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<section data-screen-label="Service Hero" ref="{{ heroRef }}" style="{{ heroSectionStyle }}">
+<div style="{{ heroTextColStyle }}">
+<div style="{{ heroEyebrowStyle }}">SERVICES</div>
+<h1 style="{{ heroH1Style }}">Regenerative Medicine Practice Development</h1>
+<p style="{{ heroPromiseStyle }}">A complete, compliant program built around your existing practice — not a kit and a handshake.</p>
+<p style="{{ heroSupportStyle }}">This service covers everything required to add regenerative medicine to your practice: protocol design, staff training, compliance documentation, and the operational structure to run it every day. Below is a full walkthrough of what's included, how the build works, and what it costs.</p>
+</div>
+<div style="{{ heroPhotoWrapStyle }}">
+<image-slot id="service-template-hero-photo" shape="rect" placeholder="Service hero photo" style="width:100%;height:100%"></image-slot>
+</div>
+</section>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+<div style="{{ mTocWrapStyle }}">
+<button type="button" onClick="{{ toggleMobileToc }}" style="{{ mTocToggleStyle }}">
+<span>On this page</span>
+<span style="{{ mTocChevronStyle }}">▾</span>
+</button>
+<sc-if value="{{ mobileTocOpen }}" hint-placeholder-val="{{ true }}">
+<div style="{{ mTocListStyle }}">
+<sc-for list="{{ tocItems }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="{{ item.mobileStyle }}">{{ item.label }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<div style="{{ layoutGridStyle }}">
+
+<article style="{{ articleColStyle }}">
+
+<h2 id="includes" style="{{ h2Style }}">What This Service Includes</h2>
+<p style="{{ pStyle }}">This is a full program build, not a single deliverable. It covers the clinical protocol, the staff who deliver it, the documentation that makes it defensible, and the billing structure that makes it sustainable. Everything is developed specifically for your practice — your space, your staff, your patient population, and your state's requirements.</p>
+
+<h3 style="{{ h3Style }}">Program Components</h3>
+<div style="{{ dashListStyle }}">
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>A documented preparation and delivery protocol, specified by indication</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Staff training to competency, with sign-off records</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>AAAHC-aligned policies and procedures written for your practice</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Billing and coding guidance appropriate to your state and payer mix</div>
+</div>
+
+<h3 style="{{ h3Style }}">What You Retain Control Of</h3>
+<p style="{{ pStyle }}">You keep full clinical authority. Regenitiva builds and maintains the operational structure around the program — we don't practice medicine, and we don't take that decision away from you or your team.</p>
+
+<blockquote style="{{ blockquoteStyle }}">"We were referring these patients out for years. Now we're the ones who can help them." — Physiatrist, California practice</blockquote>
+
+<h2 id="process" style="{{ h2Style }}">How We Build It</h2>
+<p style="{{ pStyle }}">The build runs in four stages, typically over six to ten weeks depending on your state's requirements and how much clinical infrastructure already exists in your practice.</p>
+
+<div style="{{ numberedListStyle }}">
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">1</span><div><div style="{{ numberedItemHeadStyle }}">Assessment</div><p style="{{ numberedItemBodyStyle }}">We review your space, staff, patient population, and state requirements to scope the program.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">2</span><div><div style="{{ numberedItemHeadStyle }}">Protocol &amp; Documentation</div><p style="{{ numberedItemBodyStyle }}">We write the clinical protocol, policies, and procedures specific to your practice.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">3</span><div><div style="{{ numberedItemHeadStyle }}">Training</div><p style="{{ numberedItemBodyStyle }}">Your whole team trains remotely, on your own equipment, until signed off to competency.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">4</span><div><div style="{{ numberedItemHeadStyle }}">Launch &amp; Support</div><p style="{{ numberedItemBodyStyle }}">You begin treating patients with ongoing auditing and outcome tracking in place.</p></div></div>
+</div>
+
+<figure style="{{ figureStyle }}">
+<image-slot id="service-template-figure" shape="rect" placeholder="Training session in a clinical setting" style="width:100%;aspect-ratio:16/9;display:block"></image-slot>
+<figcaption style="{{ figcaptionStyle }}">Remote training is delivered directly in your procedure rooms, on your own equipment.</figcaption>
+</figure>
+
+<div style="{{ calloutStyle }}">
+<div style="{{ calloutLabelStyle }}">Why this matters</div>
+<p style="{{ calloutBodyStyle }}">Programs built without documented training and sign-off records are the ones that don't hold up under a payer audit. We build the record as we build the program, not after something goes wrong.</p>
+</div>
+
+<h2 id="compliance" style="{{ h2Style }}">Compliance &amp; Documentation</h2>
+<p style="{{ pStyle }}">Every program includes a complete documentation set, maintained as standards change. Read more about our full approach on the <a href="/compliance" style="{{ inlineLinkStyle }}">Compliance &amp; Operations</a> page.</p>
+
+<h4 style="{{ h4Style }}">Documentation Set</h4>
+<div style="{{ dashListStyle }}">
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Clinical protocol and technique standards</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Staff competency and training records</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Internal audit schedule and quality management plan</div>
+</div>
+
+<h2 id="timeline" style="{{ h2Style }}">Timeline &amp; Investment</h2>
+<p style="{{ pStyle }}">Every engagement is scoped to the practice, so there isn't a list price. A single physician adding a service line is a different build than a multi-site group standardizing across locations.</p>
+
+<h3 style="{{ h3Style }}">Typical Timeline</h3>
+<p style="{{ pStyle }}">Most practices are treating patients within six to ten weeks of kickoff. We'll give you a specific figure and a realistic schedule during the assessment — <a href="#book" style="{{ inlineLinkStyle }}">start a conversation</a> to get started.</p>
+
+</article>
+
+<sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ false }}">
+<div ref="{{ slotRef }}" style="{{ slotStyle }}">
+<aside ref="{{ asideRef }}" style="{{ asideStyle }}">
+<div style="{{ tocCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">On This Page</div>
+<div style="{{ tocListStyle }}">
+<sc-for list="{{ tocItems }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="{{ item.desktopStyle }}">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ formCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">Ready to talk?</div>
+<p style="{{ formIntroStyle }}">Tell us about your practice and we'll follow up to schedule an assessment.</p>
+<form style="{{ formStyle }}" onSubmit="{{ handleSubmit }}">
+<label style="{{ formLabelStyle }}">Name<input type="text" name="name" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Email<input type="email" name="email" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Phone<input type="tel" name="phone" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Practice Type
+<select name="practiceType" value="{{ practiceType }}" onChange="{{ handlePracticeTypeChange }}" style="{{ formSelectStyle }}">
+<option value="">Select one…</option>
+<option value="Physiatry / PM&R">Physiatry / PM&amp;R</option>
+<option value="Sports Medicine">Sports Medicine</option>
+<option value="Pain Management">Pain Management</option>
+<option value="Orthopedics">Orthopedics</option>
+<option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+<option value="Multi-Site Group">Multi-Site Group</option>
+<option value="Other">Other</option>
+</select>
+</label>
+<sc-if value="{{ showOtherField }}" hint-placeholder-val="{{ false }}">
+<label style="{{ formLabelStyle }}">Please specify<input type="text" name="practiceTypeOther" style="{{ formInputStyle }}" placeholder="Tell us about your practice"></input></label>
+</sc-if>
+<button type="submit" style="{{ formSubmitStyle }}">Request a Consultation</button>
+</form>
+</div>
+
+<div style="{{ blogCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">From the Blog</div>
+<a href="/blog/aaahc-alignment-checklist" style="{{ blogLinkStyle }}">
+<div style="{{ blogThumbStyle }}"><image-slot id="service-template-blog-thumb" shape="rect" placeholder="Blog thumbnail" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ blogTitleStyle }}">A Practical Checklist for AAAHC Alignment</div>
+<div style="{{ blogDateStyle }}">July 22, 2026</div>
+</a>
+</div>
+</aside>
+</div>
+</sc-if>
+
+</div>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+<div style="{{ mFormCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">Ready to talk?</div>
+<p style="{{ formIntroStyle }}">Tell us about your practice and we'll follow up to schedule an assessment.</p>
+<form style="{{ formStyle }}" onSubmit="{{ handleSubmit }}">
+<label style="{{ formLabelStyle }}">Name<input type="text" name="name" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Email<input type="email" name="email" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Phone<input type="tel" name="phone" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Practice Type
+<select name="practiceType" value="{{ practiceType }}" onChange="{{ handlePracticeTypeChange }}" style="{{ formSelectStyle }}">
+<option value="">Select one…</option>
+<option value="Physiatry / PM&R">Physiatry / PM&amp;R</option>
+<option value="Sports Medicine">Sports Medicine</option>
+<option value="Pain Management">Pain Management</option>
+<option value="Orthopedics">Orthopedics</option>
+<option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+<option value="Multi-Site Group">Multi-Site Group</option>
+<option value="Other">Other</option>
+</select>
+</label>
+<sc-if value="{{ showOtherField }}" hint-placeholder-val="{{ false }}">
+<label style="{{ formLabelStyle }}">Please specify<input type="text" name="practiceTypeOther" style="{{ formInputStyle }}" placeholder="Tell us about your practice"></input></label>
+</sc-if>
+<button type="submit" style="{{ formSubmitStyle }}">Request a Consultation</button>
+</form>
+</div>
+
+<div style="{{ mBlogCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">From the Blog</div>
+<a href="/blog/aaahc-alignment-checklist" style="{{ blogLinkStyle }}">
+<div style="{{ blogThumbStyle }}"><image-slot id="service-template-blog-thumb-m" shape="rect" placeholder="Blog thumbnail" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ blogTitleStyle }}">A Practical Checklist for AAAHC Alignment</div>
+<div style="{{ blogDateStyle }}">July 22, 2026</div>
+</a>
+</div>
+</sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2200},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023,
+    mobileTocOpen: false,
+    activeSection: 'includes',
+    practiceType: '',
+    localTop: 0,
+    heroHeight: 496
+  };
+
+  sectionIds = ['includes', 'process', 'compliance', 'timeline'];
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) this.setState({ activeSection: entry.target.id });
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    this.sectionIds.forEach(id => {
+      const el = this.rootRef && this.rootRef.querySelector ? this.rootRef.querySelector('#' + id) : document.getElementById(id);
+      if (el) this.observer.observe(el);
+    });
+
+    // CSS position:sticky is unreliable here (an ancestor can have overflow:auto and
+    // become the sticky containing block without itself being the thing that scrolls).
+    // Find whichever ancestor actually scrolls, and position the sidebar in the slot's
+    // own local coordinate space, clamped — confines it to that container and to the
+    // slot's height, wherever this template is mounted (plain page or a boxed preview).
+    this.findScroller = () => {
+      let el = this.slotEl && this.slotEl.parentElement;
+      while (el && el !== document.body) {
+        const cs = getComputedStyle(el);
+        if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 1) return el;
+        el = el.parentElement;
+      }
+      return null; // null = document/window is the real scroller
+    };
+
+    this.handleScroll = () => {
+      if (!this.slotEl || !this.asideEl) return;
+      const scroller = this.findScroller();
+      const containerTop = scroller ? scroller.getBoundingClientRect().top : 0;
+      const slotRect = this.slotEl.getBoundingClientRect();
+      const asideHeight = this.asideEl.offsetHeight;
+      const topGap = 32;
+      let localTop = (containerTop + topGap) - slotRect.top;
+      localTop = Math.max(0, Math.min(localTop, slotRect.height - asideHeight));
+      if (Math.abs(localTop - this.state.localTop) > 0.5) this.setState({ localTop });
+    };
+
+    this.attachScrollListener = () => {
+      const scroller = this.findScroller();
+      this.scrollTarget = scroller || window;
+      this.scrollTarget.addEventListener('scroll', this.handleScroll, { passive: true });
+    };
+    this.attachScrollListener();
+    window.addEventListener('resize', this.handleScroll);
+    this.handleScroll();
+
+    // The photo must be an exact 1:1 box that bleeds top/bottom/right — since the
+    // section's real height is set by the text column's content (variable length),
+    // measure that rendered height and drive the photo's own width/height from it,
+    // rather than letting the photo's own aspect-ratio try to dictate the section size.
+    if (this.heroEl) {
+      this.heroObserver = new ResizeObserver(() => {
+        const h = Math.round(this.heroEl.getBoundingClientRect().height);
+        if (h > 0 && Math.abs(h - this.state.heroHeight) > 0.5) this.setState({ heroHeight: h });
+      });
+      this.heroObserver.observe(this.heroEl);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+    if (this.observer) this.observer.disconnect();
+    if (this.handleScroll) {
+      if (this.scrollTarget) this.scrollTarget.removeEventListener('scroll', this.handleScroll);
+      window.removeEventListener('resize', this.handleScroll);
+    }
+    if (this.heroObserver) this.heroObserver.disconnect();
+  }
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+    const s = this.state;
+
+    const tocLabels = { includes: 'What This Service Includes', process: 'How We Build It', compliance: 'Compliance & Documentation', timeline: 'Timeline & Investment' };
+    const tocItems = this.sectionIds.map(id => {
+      const active = s.activeSection === id;
+      return {
+        href: '#' + id,
+        label: tocLabels[id],
+        desktopStyle: {
+          display: 'block', fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.4,
+          padding: '9px 0 9px 16px', borderLeft: active ? '2px solid #8F520B' : '2px solid #DDD4C7',
+          color: active ? '#1C1A17' : '#6B6358', fontWeight: active ? 600 : 400,
+          transition: 'color 0.15s, border-color 0.15s'
+        },
+        mobileStyle: {
+          display: 'block', fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4,
+          padding: '12px 0 12px 16px', borderLeft: active ? '2px solid #8F520B' : '2px solid #DDD4C7',
+          color: active ? '#1C1A17' : '#6B6358', fontWeight: active ? 600 : 400
+        }
+      };
+    });
+
+    const heroSectionStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', padding: `0 ${margin}px 0 ${margin}px`, background: '#FAF7F2', borderBottom: '1px solid #DDD4C7' }
+      : { position: 'relative', padding: `72px ${margin}px 56px ${margin}px`, background: '#FAF7F2', borderBottom: '1px solid #DDD4C7' };
+    // Text column width is fixed (independent of the measured heroHeight below) so
+    // measuring the section's height can never feed back into what's being measured.
+    const heroTextColStyle = isMobile ? { order: 2, padding: `24px 0 40px 0` } : { maxWidth: 'calc(100% - clamp(320px, 34vw, 560px) - 48px)', paddingRight: 16 };
+    const heroPhotoWrapStyle = isMobile
+      ? { order: 1, width: `calc(100% + ${margin * 2}px)`, margin: `0 -${margin}px 0 -${margin}px`, aspectRatio: '1/1' }
+      : { position: 'absolute', top: 0, right: 0, width: s.heroHeight, height: s.heroHeight };
+    const heroRef = (el) => { this.heroEl = el; };
+    const heroEyebrowStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', margin: '0 0 16px 0' };
+    const heroH1Style = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 34 : 56, lineHeight: 1.1, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0', maxWidth: 820 };
+    const heroPromiseStyle = { fontFamily: 'Archivo', fontWeight: 500, fontSize: isMobile ? 19 : 22, lineHeight: 1.4, color: '#8F520B', margin: '0 0 20px 0', maxWidth: 700 };
+    const heroSupportStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: 0, maxWidth: 700 };
+
+    const mTocWrapStyle = { margin: `24px ${margin}px 0 ${margin}px`, border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const mTocToggleStyle = { width: '100%', background: 'none', border: 'none', padding: '16px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', fontFamily: 'Archivo', fontSize: 15, fontWeight: 600, color: '#1C1A17' };
+    const mTocChevronStyle = { fontSize: 14, color: '#8F520B', transform: s.mobileTocOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' };
+    const mTocListStyle = { padding: '0 18px 18px 18px', display: 'flex', flexDirection: 'column', gap: 2 };
+
+    const layoutGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', padding: `32px ${margin}px 0 ${margin}px` }
+      : { display: 'grid', gridTemplateColumns: 'minmax(0,700px) 340px', gap: 64, padding: `72px ${margin}px`, maxWidth: 1360, margin: '0 auto' };
+    const articleColStyle = { minWidth: 0 };
+
+    const h2Style = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 34, lineHeight: 1.2, letterSpacing: '-0.01em', color: '#1C1A17', margin: '56px 0 20px 0' };
+    const h3Style = { fontFamily: 'Archivo', fontWeight: 500, fontSize: isMobile ? 21 : 23, lineHeight: 1.3, color: '#1C1A17', margin: '36px 0 14px 0' };
+    const h4Style = { fontFamily: 'Archivo', fontWeight: 600, fontSize: 18, lineHeight: 1.3, color: '#1C1A17', margin: '28px 0 12px 0' };
+    const pStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: '0 0 20px 0' };
+    const inlineLinkStyle = { color: '#8F520B', textDecoration: 'underline', fontWeight: 500 };
+
+    const dashListStyle = { display: 'flex', flexDirection: 'column', gap: 10, margin: '0 0 20px 0' };
+    const dashItemStyle = { display: 'flex', gap: 12, fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831' };
+    const dashMarkStyle = { flex: '0 0 auto', color: '#8F520B' };
+
+    const blockquoteStyle = { margin: '32px 0', padding: '4px 0 4px 24px', borderLeft: '3px solid #8F520B', fontFamily: 'Roboto', fontStyle: 'italic', fontSize: 20, lineHeight: 1.5, color: '#3D3831' };
+
+    const numberedListStyle = { display: 'flex', flexDirection: 'column', gap: 24, margin: '24px 0 32px 0' };
+    const numberedItemStyle = { display: 'flex', gap: 18, alignItems: 'flex-start' };
+    const numberBadgeStyle = { flex: '0 0 auto', width: 28, height: 28, borderRadius: '50%', background: '#1C1A17', color: '#FAF7F2', fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' };
+    const numberedItemHeadStyle = { fontFamily: 'Archivo', fontSize: 17, fontWeight: 600, color: '#1C1A17', margin: '2px 0 6px 0' };
+    const numberedItemBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: 0 };
+
+    const figureStyle = { margin: '32px 0' };
+    const figcaptionStyle = { fontFamily: 'Roboto', fontStyle: 'italic', fontSize: 14, color: '#6B6358', margin: '10px 0 0 0' };
+
+    const calloutStyle = { margin: '32px 0', padding: '24px 28px', background: '#EFE9E0', borderLeft: '4px solid #F59621', borderRadius: 8 };
+    const calloutLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', margin: '0 0 10px 0' };
+    const calloutBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: 0 };
+
+    const sidebarLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1C1A17', margin: '0 0 16px 0' };
+    const slotStyle = { position: 'relative' };
+    const asideStyle = { display: 'flex', flexDirection: 'column', gap: 24, width: '100%', position: 'absolute', top: s.localTop, left: 0 };
+    const tocCardStyle = { padding: '24px 24px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const tocListStyle = { display: 'flex', flexDirection: 'column' };
+    const formCardStyle = { padding: '24px 24px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const mFormCardStyle = { ...formCardStyle, margin: `48px ${margin}px 0 ${margin}px` };
+    const formIntroStyle = { fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.5, color: '#6B6358', margin: '0 0 20px 0' };
+    const formStyle = { display: 'flex', flexDirection: 'column', gap: 14 };
+    const formLabelStyle = { display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, color: '#3D3831' };
+    const formInputBase = { fontFamily: 'Roboto', fontSize: 15, color: '#1C1A17', border: '1px solid #DDD4C7', borderRadius: 6, padding: '10px 12px', background: '#FAF7F2', outline: 'none' };
+    const formInputStyle = { ...formInputBase };
+    const formSelectStyle = { ...formInputBase, appearance: 'auto' };
+    const formSubmitStyle = { marginTop: 8, fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '13px 20px', cursor: 'pointer' };
+
+    const blogCardStyle = { padding: '20px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const mBlogCardStyle = { ...blogCardStyle, margin: `24px ${margin}px 48px ${margin}px` };
+    const blogLinkStyle = { display: 'block' };
+    const blogThumbStyle = { width: '100%', aspectRatio: '16/10', borderRadius: 6, overflow: 'hidden', marginBottom: 14 };
+    const blogTitleStyle = { fontFamily: 'Archivo', fontSize: 16, fontWeight: 600, color: '#1C1A17', lineHeight: 1.3, margin: '0 0 6px 0' };
+    const blogDateStyle = { fontFamily: 'Roboto', fontSize: 13, color: '#6B6358' };
+
+    return {
+      isMobile, tocItems,
+      slotRef: (el) => { this.slotEl = el; },
+      asideRef: (el) => { this.asideEl = el; },
+      slotStyle,
+      heroSectionStyle, heroTextColStyle, heroPhotoWrapStyle, heroRef, heroEyebrowStyle, heroH1Style, heroPromiseStyle, heroSupportStyle,
+      mobileTocOpen: s.mobileTocOpen, toggleMobileToc: () => this.setState({ mobileTocOpen: !s.mobileTocOpen }),
+      mTocWrapStyle, mTocToggleStyle, mTocChevronStyle, mTocListStyle,
+      layoutGridStyle, articleColStyle,
+      h2Style, h3Style, h4Style, pStyle, inlineLinkStyle,
+      dashListStyle, dashItemStyle, dashMarkStyle,
+      blockquoteStyle,
+      numberedListStyle, numberedItemStyle, numberBadgeStyle, numberedItemHeadStyle, numberedItemBodyStyle,
+      figureStyle, figcaptionStyle,
+      calloutStyle, calloutLabelStyle, calloutBodyStyle,
+      sidebarLabelStyle, asideStyle, tocCardStyle, tocListStyle,
+      formCardStyle, mFormCardStyle, formIntroStyle, formStyle, formLabelStyle, formInputStyle, formSelectStyle, formSubmitStyle,
+      practiceType: s.practiceType,
+      handlePracticeTypeChange: (e) => this.setState({ practiceType: e.target.value }),
+      showOtherField: s.practiceType === 'Other',
+      handleSubmit: (e) => e.preventDefault(),
+      blogCardStyle, mBlogCardStyle, blogLinkStyle, blogThumbStyle, blogTitleStyle, blogDateStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>
