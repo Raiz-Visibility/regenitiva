@@ -1,0 +1,283 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { slugifyCategory, formatDate, validateCategory, KNOWN_CATEGORIES } from '../../lib/blog';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const { getCollection } = await import('astro:content');
+
+  const posts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  posts.forEach(p => validateCategory(p.data.category, p.id));
+
+  return paginate(posts, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const isFirstPage = page.currentPage === 1;
+const featuredPost = isFirstPage ? page.data[0] : null;
+const gridPosts = isFirstPage ? page.data.slice(1) : page.data;
+---
+
+<BaseLayout title="Blog — Regenitiva" description="Insights on regenerative medicine practice development, compliance, and clinical operations.">
+
+  <section class="blog-header">
+    <div class="blog-header-inner">
+      <div class="blog-eyebrow">Blog</div>
+      <h1 class="blog-h1">Regenitiva Insights</h1>
+      <p class="blog-intro">Practical guidance on building and running a regenerative medicine program — compliance, clinical protocols, and practice growth.</p>
+    </div>
+  </section>
+
+  <nav class="blog-filters">
+    <div class="blog-filters-inner">
+      <a href="/blog/" class="blog-chip blog-chip-active">All</a>
+      {KNOWN_CATEGORIES.map((cat) => (
+        <a href={`/blog/category/${slugifyCategory(cat)}/`} class="blog-chip">{cat}</a>
+      ))}
+    </div>
+  </nav>
+
+  <section class="blog-content">
+    <div class="blog-content-inner">
+
+      {featuredPost && (
+        <div class="blog-featured">
+          <BlogCard
+            title={featuredPost.data.title}
+            href={`/blog/${featuredPost.id}/`}
+            category={featuredPost.data.category}
+            date={formatDate(featuredPost.data.date)}
+            excerpt={featuredPost.data.excerpt}
+            variant="featured"
+          />
+        </div>
+      )}
+
+      {gridPosts.length > 0 && (
+        <div class="blog-grid">
+          {gridPosts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              href={`/blog/${post.id}/`}
+              category={post.data.category}
+              date={formatDate(post.data.date)}
+              excerpt={post.data.excerpt}
+            />
+          ))}
+        </div>
+      )}
+
+      {(page.url.prev || page.url.next) && (
+        <nav class="blog-pagination">
+          {page.url.prev ? (
+            <a href={page.url.prev} class="blog-page-link">&larr; Newer posts</a>
+          ) : (
+            <span></span>
+          )}
+          <div class="blog-page-numbers">
+            {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((num) => (
+              <a
+                href={num === 1 ? '/blog/' : `/blog/${num}/`}
+                class:list={['blog-page-num', { 'blog-page-current': num === page.currentPage }]}
+              >
+                {num}
+              </a>
+            ))}
+          </div>
+          {page.url.next ? (
+            <a href={page.url.next} class="blog-page-link">Older posts &rarr;</a>
+          ) : (
+            <span></span>
+          )}
+        </nav>
+      )}
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .blog-header {
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .blog-header-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-7) var(--rg-space-5) var(--rg-space-6);
+  }
+
+  .blog-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .blog-h1 {
+    font-size: var(--rg-size-h1);
+    font-weight: var(--rg-weight-regular);
+    line-height: var(--rg-lh-h1);
+    letter-spacing: var(--rg-ls-h1);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .blog-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: var(--rg-measure-lead);
+  }
+
+  @media (min-width: 768px) {
+    .blog-header-inner {
+      padding: 72px var(--rg-space-7) var(--rg-space-7);
+    }
+  }
+
+  /* Filters */
+  .blog-filters {
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .blog-filters-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-4) var(--rg-space-5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--rg-space-2);
+  }
+
+  @media (min-width: 768px) {
+    .blog-filters-inner {
+      padding: var(--rg-space-4) var(--rg-space-7);
+    }
+  }
+
+  .blog-chip {
+    display: inline-block;
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-semibold);
+    padding: var(--rg-space-2) var(--rg-space-4);
+    border: 1px solid var(--rg-border);
+    border-radius: 999px;
+    color: var(--rg-text-secondary);
+    text-decoration: none;
+    transition: background var(--rg-duration-base) var(--rg-ease),
+      border-color var(--rg-duration-base) var(--rg-ease),
+      color var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .blog-chip:hover {
+    text-decoration: none;
+    border-color: var(--rg-text-accent);
+    color: var(--rg-text-accent);
+  }
+
+  .blog-chip-active {
+    background: var(--rg-ink-900);
+    border-color: var(--rg-ink-900);
+    color: var(--rg-bone);
+  }
+
+  .blog-chip-active:hover {
+    background: var(--rg-ink-900);
+    border-color: var(--rg-ink-900);
+    color: var(--rg-bone);
+  }
+
+  /* Content */
+  .blog-content-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-6) var(--rg-space-5) var(--rg-space-8);
+  }
+
+  @media (min-width: 768px) {
+    .blog-content-inner {
+      padding: var(--rg-space-7) var(--rg-space-7) var(--rg-space-8);
+    }
+  }
+
+  .blog-featured {
+    margin-bottom: var(--rg-space-7);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--rg-space-5);
+  }
+
+  @media (min-width: 768px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Pagination */
+  .blog-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--rg-space-7);
+    padding-top: var(--rg-space-6);
+    border-top: 1px solid var(--rg-border);
+  }
+
+  .blog-page-link {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-accent);
+    text-decoration: none;
+  }
+
+  .blog-page-link:hover {
+    color: var(--rg-amber-900);
+    text-decoration: none;
+  }
+
+  .blog-page-numbers {
+    display: flex;
+    gap: var(--rg-space-2);
+  }
+
+  .blog-page-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--rg-radius-md);
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-secondary);
+    text-decoration: none;
+    transition: background var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .blog-page-num:hover {
+    background: var(--rg-bg-subtle);
+    text-decoration: none;
+  }
+
+  .blog-page-current {
+    background: var(--rg-ink-900);
+    color: var(--rg-bone);
+  }
+
+  .blog-page-current:hover {
+    background: var(--rg-ink-900);
+  }
+</style>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+.reg-scrollrow::-webkit-scrollbar{display:none}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<section style="{{ pageHeaderStyle }}">
+<div style="{{ eyebrowStyle }}">BLOG</div>
+<h1 style="{{ h1Style }}">Regenitiva Insights</h1>
+<p style="{{ pageIntroStyle }}">Notes on compliance, growth, and clinical practice for physicians building regenerative medicine programs.</p>
+</section>
+
+<div style="{{ filterOuterStyle }}">
+<div style="{{ filterRowStyle }}" class="reg-scrollrow">
+<sc-for list="{{ categoryChips }}" as="chip" hint-placeholder-count="5">
+<button type="button" onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button>
+</sc-for>
+</div>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+<div style="{{ filterFadeStyle }}"></div>
+</sc-if>
+</div>
+
+<div style="{{ containerStyle }}">
+
+<sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{ hasFeatured }}" hint-placeholder-val="{{ true }}">
+<a href="{{ featured.href }}" style="{{ featuredCardStyle }}">
+<div style="{{ featuredPhotoStyle }}"><image-slot id="{{ featured.imageId }}" shape="rect" placeholder="{{ featured.imageAlt }}" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ featuredContentStyle }}">
+<div style="{{ featuredMetaRowStyle }}">
+<span style="{{ featuredCategoryStyle }}">{{ featured.category }}</span>
+<span style="{{ featuredDateStyle }}">{{ featured.date }}</span>
+</div>
+<h2 style="{{ featuredTitleStyle }}">{{ featured.title }}</h2>
+<p style="{{ featuredExcerptStyle }}">{{ featured.excerpt }}</p>
+<span style="{{ featuredLinkStyle }}">Read the full post →</span>
+</div>
+</a>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{ hasPosts }}" hint-placeholder-val="{{ true }}">
+<div style="{{ gridStyle }}">
+<sc-for list="{{ gridPosts }}" as="post" hint-placeholder-count="6">
+<a href="{{ post.href }}" style="{{ cardStyle }}">
+<div style="{{ cardPhotoStyle }}"><image-slot id="{{ post.imageId }}" shape="rect" placeholder="{{ post.imageAlt }}" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ cardBodyStyle }}">
+<div style="{{ cardMetaRowStyle }}">
+<span style="{{ cardCategoryStyle }}">{{ post.category }}</span>
+<span style="{{ cardDateStyle }}">{{ post.date }}</span>
+</div>
+<h3 style="{{ cardTitleStyle }}">{{ post.title }}</h3>
+<p style="{{ cardExcerptStyle }}">{{ post.excerpt }}</p>
+</div>
+</a>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ !hasPosts }}" hint-placeholder-val="{{ false }}">
+<div style="{{ emptyStateStyle }}">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="22" rx="2" stroke="#B8AE9F" stroke-width="1.5"></rect><path d="M6 16H34" stroke="#B8AE9F" stroke-width="1.5"></path><path d="M13 24H27" stroke="#B8AE9F" stroke-width="1.5" stroke-linecap="round"></path></svg>
+<h3 style="{{ emptyHeadStyle }}">No posts in {{ activeCategory }} yet</h3>
+<p style="{{ emptyBodyStyle }}">We haven't published in this category yet — check back soon, or browse everything we've written so far.</p>
+<button type="button" onClick="{{ resetCategory }}" style="{{ emptyLinkStyle }}">View all posts</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ showPagination }}" hint-placeholder-val="{{ false }}">
+<div style="{{ paginationRowStyle }}">
+<button type="button" onClick="{{ prevPage }}" style="{{ pagerArrowStyle }}" disabled="{{ isFirstPage }}">← Previous</button>
+<div style="{{ pageNumRowStyle }}">
+<sc-for list="{{ pageNumbers }}" as="pn" hint-placeholder-count="4">
+<button type="button" onClick="{{ pn.onClick }}" style="{{ pn.style }}">{{ pn.label }}</button>
+</sc-for>
+</div>
+<button type="button" onClick="{{ nextPage }}" style="{{ pagerArrowStyle }}" disabled="{{ isLastPage }}">Next →</button>
+</div>
+</sc-if>
+
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1600},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showFeatured&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;previewPagination&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023,
+    activeCategory: 'All',
+    currentPage: 1
+  };
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+  }
+
+  categories = ['Compliance', 'Practice Growth', 'Clinical', 'Operations'];
+
+  posts = [
+    { id: 'aaahc-checklist', title: 'A Practical Checklist for AAAHC Alignment', category: 'Compliance', date: 'July 22, 2026', excerpt: 'The seven documentation gaps that show up most often when a practice is reviewed — and how to close them before they become a problem.', imageAlt: 'Compliance documentation' },
+    { id: 'referral-pipeline', title: 'Building a Referral Pipeline for a New Service Line', category: 'Practice Growth', date: 'July 9, 2026', excerpt: 'How practices are introducing regenerative medicine to existing patients without a hard sell — and where referrals actually come from in year one.', imageAlt: 'Physician consulting patient' },
+    { id: 'indication-matching', title: 'Why Indication Matching Changes Your Outcomes', category: 'Clinical', date: 'June 28, 2026', excerpt: 'Spine, cervical, and joint injuries respond differently to preparation and delivery. A uniform protocol leaves outcomes on the table.', imageAlt: 'Clinical procedure' },
+    { id: 'lien-documentation', title: 'Lien Documentation That Actually Holds Up', category: 'Compliance', date: 'June 14, 2026', excerpt: 'For practices treating motor vehicle accident patients, the difference between a paid lien and a disputed one is almost always documentation.', imageAlt: 'Legal documentation' },
+    { id: 'multi-site-standardizing', title: 'Standardizing a Protocol Across Multiple Sites', category: 'Practice Growth', date: 'May 30, 2026', excerpt: 'What changes when a single-location protocol has to run identically across three clinics with different staff and different equipment.', imageAlt: 'Multiple clinic locations' },
+    { id: 'competency-training', title: 'What Competency Training Should Actually Include', category: 'Clinical', date: 'May 12, 2026', excerpt: 'A sign-off sheet isn\'t a training program. Here is what separates real competency documentation from a formality.', imageAlt: 'Staff training session' },
+    { id: 'payer-audit-prep', title: 'Preparing for a Payer Audit Before You\'re Notified', category: 'Compliance', date: 'April 28, 2026', excerpt: 'The practices that pass an audit calmly are the ones who treated the documentation as ongoing work, not a scramble after the letter arrives.', imageAlt: 'Reviewing documents' },
+    { id: 'patient-education', title: 'How to Talk to Patients About a New Treatment Option', category: 'Practice Growth', date: 'April 15, 2026', excerpt: 'Introducing regenerative medicine works best as a conversation about options, not a pitch. Here\'s how practices frame it in the exam room.', imageAlt: 'Physician talking with patient' },
+    { id: 'prp-preparation-variables', title: 'The Preparation Variables That Actually Affect Outcomes', category: 'Clinical', date: 'March 30, 2026', excerpt: 'Concentration, cell count, and activation method all move outcomes independently. Most practices only control for one of the three.', imageAlt: 'Lab preparation' },
+    { id: 'staffing-a-new-service-line', title: 'Staffing a New Service Line Without Adding Headcount', category: 'Practice Growth', date: 'March 11, 2026', excerpt: 'Most practices launch a regenerative medicine program with the staff they already have. Here\'s how the roles typically get split.', imageAlt: 'Clinical staff meeting' },
+    { id: 'documentation-audit-schedule', title: 'Building an Internal Audit Schedule That Holds Up', category: 'Compliance', date: 'February 24, 2026', excerpt: 'Quarterly self-audits catch the small documentation gaps before they become findings. Here is a schedule that practices actually keep.', imageAlt: 'Audit checklist' }
+  ];
+
+  eyebrow(color) {
+    return { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color, margin: '0 0 16px 0' };
+  }
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+    const s = this.state;
+    const showFeatured = this.props.showFeatured ?? true;
+    const previewPagination = this.props.previewPagination ?? false;
+
+    const activeCategory = s.activeCategory;
+    const filtered = activeCategory === 'All' ? this.posts : this.posts.filter(p => p.category === activeCategory);
+
+    const featured = showFeatured && activeCategory === 'All' && s.currentPage === 1 ? filtered[0] : null;
+    const restAfterFeatured = featured ? filtered.slice(1) : filtered;
+    const hasFeatured = !!featured;
+
+    const postsPerPage = 6;
+    const totalPages = Math.max(1, Math.ceil(restAfterFeatured.length / postsPerPage));
+    const currentPage = Math.min(s.currentPage, totalPages);
+    const pagePosts = restAfterFeatured.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+
+    const hasPosts = pagePosts.length > 0 || hasFeatured;
+    const gridPosts = pagePosts.map(p => ({ ...p, href: '/blog/' + p.id, imageId: 'blog-thumb-' + p.id }));
+
+    const chipStyleFor = (label) => {
+      const active = activeCategory === label;
+      return {
+        flex: '0 0 auto', fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, cursor: 'pointer',
+        padding: '10px 18px', borderRadius: 999, border: active ? '1px solid #8F520B' : '1px solid #DDD4C7',
+        background: active ? '#8F520B' : '#FFFFFF', color: active ? '#FAF7F2' : '#3D3831',
+        transition: 'background 0.15s, border-color 0.15s, color 0.15s'
+      };
+    };
+    const categoryChips = ['All', ...this.categories].map(label => ({
+      label, style: chipStyleFor(label), onClick: () => this.setState({ activeCategory: label, currentPage: 1 })
+    }));
+
+    // Pagination is data-driven (hidden once everything fits on one page);
+    // previewPagination forces it visible for design review regardless of post count.
+    const showPagination = totalPages > 1 || previewPagination;
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => {
+      const n = i + 1;
+      const active = n === currentPage;
+      return {
+        label: String(n),
+        onClick: () => this.setState({ currentPage: n }),
+        style: {
+          width: 36, height: 36, borderRadius: 6, border: active ? '1px solid #8F520B' : '1px solid transparent',
+          background: active ? '#8F520B' : 'transparent', color: active ? '#FAF7F2' : '#3D3831',
+          fontFamily: 'Archivo', fontSize: 15, fontWeight: 600, cursor: 'pointer'
+        }
+      };
+    });
+
+    const h2 = (color, mb = 24) => ({ fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` });
+
+    const pageHeaderStyle = { padding: isMobile ? `40px ${margin}px 8px ${margin}px` : `72px ${margin}px 8px ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const eyebrowStyle = this.eyebrow('#8F520B');
+    const h1Style = h2('#1C1A17', 16);
+    const pageIntroStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: 0, maxWidth: 640 };
+
+    const filterOuterStyle = { padding: `24px 0 32px 0`, borderBottom: '1px solid #DDD4C7', position: 'relative' };
+    const filterRowStyle = isMobile
+      ? { display: 'flex', gap: 10, overflowX: 'auto', padding: `0 ${margin}px`, scrollbarWidth: 'none' }
+      : { display: 'flex', flexWrap: 'wrap', gap: 10, maxWidth: 1180, margin: '0 auto', padding: `0 ${margin}px` };
+    const filterFadeStyle = { position: 'absolute', top: 24, bottom: 8, right: 0, width: 48, background: 'linear-gradient(90deg, rgba(250,247,242,0) 0%, #FAF7F2 75%)', pointerEvents: 'none' };
+
+    const containerStyle = { maxWidth: 1180, margin: '0 auto', padding: `48px ${margin}px ${isMobile ? 64 : 96}px ${margin}px` };
+
+    const featuredCardStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', marginBottom: 48, border: '1px solid #DDD4C7', borderRadius: 10, overflow: 'hidden', background: '#FFFFFF' }
+      : { display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 0, marginBottom: 64, border: '1px solid #DDD4C7', borderRadius: 10, overflow: 'hidden', background: '#FFFFFF' };
+    const featuredPhotoStyle = isMobile ? { width: '100%', aspectRatio: '4/3' } : { width: '100%', height: '100%', minHeight: 360 };
+    const featuredContentStyle = { padding: isMobile ? '28px 22px 32px 22px' : '48px', display: 'flex', flexDirection: 'column', justifyContent: 'center' };
+    const featuredMetaRowStyle = { display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 };
+    const featuredCategoryStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B' };
+    const featuredDateStyle = { fontFamily: 'Roboto', fontSize: 14, color: '#6B6358' };
+    const featuredTitleStyle = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 26 : 32, lineHeight: 1.2, color: '#1C1A17', margin: '0 0 16px 0' };
+    const featuredExcerptStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: '0 0 20px 0' };
+    const featuredLinkStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#8F520B' };
+
+    const gridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 32 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 };
+
+    const cardStyle = { display: 'flex', flexDirection: 'column', border: '1px solid #DDD4C7', borderRadius: 10, overflow: 'hidden', background: '#FFFFFF', transition: 'transform 0.15s, box-shadow 0.15s' };
+    const cardPhotoStyle = { width: '100%', aspectRatio: '16/10' };
+    const cardBodyStyle = { padding: '22px 20px 24px 20px', display: 'flex', flexDirection: 'column', flex: '1 1 auto' };
+    const cardMetaRowStyle = { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 };
+    const cardCategoryStyle = { fontFamily: 'Archivo', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8F520B' };
+    const cardDateStyle = { fontFamily: 'Roboto', fontSize: 13, color: '#6B6358' };
+    const cardTitleStyle = { fontFamily: 'Archivo', fontWeight: 600, fontSize: 18, lineHeight: 1.3, color: '#1C1A17', margin: '0 0 10px 0' };
+    const cardExcerptStyle = { fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.55, color: '#3D3831', margin: 0 };
+
+    const emptyStateStyle = { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: isMobile ? '64px 24px' : '96px 24px', border: '1px dashed #DDD4C7', borderRadius: 10 };
+    const emptyHeadStyle = { fontFamily: 'Archivo', fontWeight: 600, fontSize: 20, color: '#1C1A17', margin: '20px 0 10px 0' };
+    const emptyBodyStyle = { fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.6, color: '#6B6358', margin: '0 0 20px 0', maxWidth: 380 };
+    const emptyLinkStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#8F520B', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' };
+
+    const paginationRowStyle = { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: isMobile ? 12 : 24, marginTop: 56, flexWrap: 'wrap' };
+    const pagerArrowStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#3D3831', background: 'none', border: '1px solid #DDD4C7', borderRadius: 6, padding: '10px 16px', cursor: 'pointer' };
+    const pageNumRowStyle = { display: 'flex', gap: 6 };
+
+    return {
+      isMobile, showFeatured, hasFeatured, featured: featured ? { ...featured, href: '/blog/' + featured.id, imageId: 'blog-featured-' + featured.id } : null,
+      hasPosts, gridPosts, categoryChips, activeCategory,
+      resetCategory: () => this.setState({ activeCategory: 'All', currentPage: 1 }),
+      totalPages,
+      showPagination, pageNumbers, isFirstPage: currentPage === 1, isLastPage: currentPage === totalPages,
+      prevPage: () => this.setState({ currentPage: Math.max(1, currentPage - 1) }),
+      nextPage: () => this.setState({ currentPage: Math.min(totalPages, currentPage + 1) }),
+      pageHeaderStyle, eyebrowStyle, h1Style, pageIntroStyle,
+      filterOuterStyle, filterRowStyle, filterFadeStyle,
+      containerStyle,
+      featuredCardStyle, featuredPhotoStyle, featuredContentStyle, featuredMetaRowStyle, featuredCategoryStyle, featuredDateStyle, featuredTitleStyle, featuredExcerptStyle, featuredLinkStyle,
+      gridStyle, cardStyle, cardPhotoStyle, cardBodyStyle, cardMetaRowStyle, cardCategoryStyle, cardDateStyle, cardTitleStyle, cardExcerptStyle,
+      emptyStateStyle, emptyHeadStyle, emptyBodyStyle, emptyLinkStyle,
+      paginationRowStyle, pagerArrowStyle, pageNumRowStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>

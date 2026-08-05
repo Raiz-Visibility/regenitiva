@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<header style="{{ headerOuterStyle }}">
+<div style="{{ headerInnerStyle }}">
+<a href="/blog" style="{{ backLinkStyle }}">← Back to Blog</a>
+<div style="{{ postCategoryStyle }}">COMPLIANCE</div>
+<h1 style="{{ postH1Style }}">A Practical Checklist for AAAHC Alignment</h1>
+<div style="{{ metaRowStyle }}">
+<div style="{{ metaItemStyle }}"><span style="{{ metaLabelStyle }}">By</span> Dr. Francis P. Lagattuta</div>
+<div style="{{ metaDividerStyle }}">·</div>
+<div style="{{ metaItemStyle }}">July 22, 2026</div>
+<div style="{{ metaDividerStyle }}">·</div>
+<div style="{{ metaItemStyle }}">6 min read</div>
+</div>
+</div>
+</header>
+
+<div style="{{ featuredImageOuterStyle }}">
+<div style="{{ featuredImageWrapStyle }}">
+<image-slot id="blog-post-featured-image" shape="rect" placeholder="Featured image — compliance documentation" style="width:100%;height:100%"></image-slot>
+</div>
+</div>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+<div style="{{ mTocWrapStyle }}">
+<button type="button" onClick="{{ toggleMobileToc }}" style="{{ mTocToggleStyle }}">
+<span>On this page</span>
+<span style="{{ mTocChevronStyle }}">▾</span>
+</button>
+<sc-if value="{{ mobileTocOpen }}" hint-placeholder-val="{{ true }}">
+<div style="{{ mTocListStyle }}">
+<sc-for list="{{ tocItems }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="{{ item.mobileStyle }}">{{ item.label }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<div style="{{ layoutGridStyle }}">
+
+<article style="{{ articleColStyle }}">
+
+<h2 id="the-gap" style="{{ h2Style }}">The Gap Most Practices Don't See Coming</h2>
+<p style="{{ pStyle }}">AAAHC alignment isn't a single certificate — it's an ongoing standard your policies, training records, and procedures either meet or don't. Most practices find out they've fallen behind during a review, which is the worst possible time to find out.</p>
+<p style="{{ pStyle }}">This checklist covers the seven places we see gaps most often, in the order we'd fix them if we were starting today.</p>
+
+<blockquote style="{{ blockquoteStyle }}">"We assumed our policies were current because we'd never had a problem. We hadn't looked at them in three years." — Practice administrator, multi-site group</blockquote>
+
+<h2 id="the-checklist" style="{{ h2Style }}">The Seven-Point Checklist</h2>
+<p style="{{ pStyle }}">Work through these in order. Each one is quick to check and expensive to have missed.</p>
+
+<div style="{{ numberedListStyle }}">
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">1</span><div><div style="{{ numberedItemHeadStyle }}">Policies reflect current practice</div><p style="{{ numberedItemBodyStyle }}">Written procedures should match what actually happens in the room, not what happened when they were drafted.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">2</span><div><div style="{{ numberedItemHeadStyle }}">Competency records are current</div><p style="{{ numberedItemBodyStyle }}">Every staff member with hands in the process needs a dated, signed record — not a one-time onboarding note.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">3</span><div><div style="{{ numberedItemHeadStyle }}">Internal audits are actually scheduled</div><p style="{{ numberedItemBodyStyle }}">A quality management plan that exists on paper but never runs is functionally the same as not having one.</p></div></div>
+<div style="{{ numberedItemStyle }}"><span style="{{ numberBadgeStyle }}">4</span><div><div style="{{ numberedItemHeadStyle }}">Documentation ties back to protocol</div><p style="{{ numberedItemBodyStyle }}">Chart notes should reference the specific protocol followed, not a general description of the procedure.</p></div></div>
+</div>
+
+<h3 style="{{ h3Style }}">What This Looks Like in Practice</h3>
+<div style="{{ dashListStyle }}">
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>A binder that's reviewed quarterly, not filed once and forgotten</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>Sign-off sheets with actual dates, not a single blanket signature</div>
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>An audit calendar someone owns, with findings tracked to resolution</div>
+</div>
+
+<figure style="{{ figureStyle }}">
+<image-slot id="blog-post-inline-figure" shape="rect" placeholder="Documentation binder review" style="width:100%;aspect-ratio:16/9;display:block"></image-slot>
+<figcaption style="{{ figcaptionStyle }}">A quarterly review is the single highest-leverage habit on this list.</figcaption>
+</figure>
+
+<div style="{{ calloutStyle }}">
+<div style="{{ calloutLabelStyle }}">Why this matters</div>
+<p style="{{ calloutBodyStyle }}">Reviewers aren't looking for perfection — they're looking for a system that's actually running. A practice with modest documentation that's clearly maintained will do better than one with an elaborate binder no one has touched in a year.</p>
+</div>
+
+<h2 id="getting-started" style="{{ h2Style }}">Getting Started</h2>
+<p style="{{ pStyle }}">If you're not sure where your program stands today, the fastest path is an outside review. Read more about our full approach on the <a href="/compliance" style="{{ inlineLinkStyle }}">Compliance &amp; Operations</a> page, or see how this fits into a complete build on the <a href="/services/practice-development" style="{{ inlineLinkStyle }}">practice development</a> service page.</p>
+
+<h2 id="takeaways" style="{{ h2Style }}">Takeaways</h2>
+<p style="{{ pStyle }}">Alignment is maintained, not achieved once. Build the quarterly habit and the rest of this list takes care of itself.</p>
+
+</article>
+
+<sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ false }}">
+<div ref="{{ slotRef }}" style="{{ slotStyle }}">
+<aside ref="{{ asideRef }}" style="{{ asideStyle }}">
+<div style="{{ tocCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">On This Page</div>
+<div style="{{ tocListStyle }}">
+<sc-for list="{{ tocItems }}" as="item" hint-placeholder-count="4">
+<a href="{{ item.href }}" style="{{ item.desktopStyle }}">{{ item.label }}</a>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ formCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">Ready to talk?</div>
+<p style="{{ formIntroStyle }}">Tell us about your practice and we'll follow up to schedule an assessment.</p>
+<form style="{{ formStyle }}" onSubmit="{{ handleSubmit }}">
+<label style="{{ formLabelStyle }}">Name<input type="text" name="name" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Email<input type="email" name="email" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Phone<input type="tel" name="phone" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Practice Type
+<select name="practiceType" value="{{ practiceType }}" onChange="{{ handlePracticeTypeChange }}" style="{{ formSelectStyle }}">
+<option value="">Select one…</option>
+<option value="Physiatry / PM&R">Physiatry / PM&amp;R</option>
+<option value="Sports Medicine">Sports Medicine</option>
+<option value="Pain Management">Pain Management</option>
+<option value="Orthopedics">Orthopedics</option>
+<option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+<option value="Multi-Site Group">Multi-Site Group</option>
+<option value="Other">Other</option>
+</select>
+</label>
+<sc-if value="{{ showOtherField }}" hint-placeholder-val="{{ false }}">
+<label style="{{ formLabelStyle }}">Please specify<input type="text" name="practiceTypeOther" style="{{ formInputStyle }}" placeholder="Tell us about your practice"></input></label>
+</sc-if>
+<button type="submit" style="{{ formSubmitStyle }}">Request a Consultation</button>
+</form>
+</div>
+
+<div style="{{ relatedCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">Related Posts</div>
+<div style="{{ relatedListStyle }}">
+<sc-for list="{{ relatedPosts }}" as="post" hint-placeholder-count="3">
+<a href="{{ post.href }}" style="{{ relatedItemStyle }}">
+<div style="{{ relatedThumbStyle }}"><image-slot id="{{ post.imageId }}" shape="rect" placeholder="Related post thumbnail" style="width:100%;height:100%"></image-slot></div>
+<div>
+<div style="{{ relatedTitleStyle }}">{{ post.title }}</div>
+<div style="{{ relatedDateStyle }}">{{ post.date }}</div>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</aside>
+</div>
+</sc-if>
+
+</div>
+
+<section style="{{ footerOuterStyle }}">
+<div style="{{ authorBioStyle }}">
+<div style="{{ authorAvatarStyle }}"><image-slot id="blog-post-author-avatar" shape="circle" placeholder="Author photo" style="width:100%;height:100%"></image-slot></div>
+<div>
+<div style="{{ authorNameStyle }}">Francis P. Lagattuta, MD</div>
+<div style="{{ authorTitleStyle }}">Founder, Regenitiva</div>
+<p style="{{ authorBodyStyle }}">Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship for over twenty years and has performed more than 2,000 regenerative procedures.</p>
+</div>
+</div>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+<div style="{{ sidebarLabelStyle }}; margin: 0 0 16px 0;">Related Posts</div>
+</sc-if>
+<sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ false }}">
+<div style="{{ sidebarLabelStyle }}; margin: 0 0 20px 0;">More From the Blog</div>
+</sc-if>
+<div style="{{ relatedGridStyle }}">
+<sc-for list="{{ relatedPosts }}" as="post" hint-placeholder-count="3">
+<a href="{{ post.href }}" style="{{ relatedCardGridItemStyle }}">
+<div style="{{ relatedCardThumbStyle }}"><image-slot id="{{ post.gridImageId }}" shape="rect" placeholder="Related post thumbnail" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ relatedCardBodyStyle }}">
+<div style="{{ relatedCardCategoryStyle }}">{{ post.category }}</div>
+<div style="{{ relatedCardTitleStyle }}">{{ post.title }}</div>
+<div style="{{ relatedCardDateStyle }}">{{ post.date }}</div>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2200},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023,
+    mobileTocOpen: false,
+    activeSection: 'the-gap',
+    practiceType: '',
+    localTop: 0
+  };
+
+  sectionIds = ['the-gap', 'the-checklist', 'getting-started', 'takeaways'];
+
+  relatedPostsData = [
+    { id: 'lien-documentation', title: 'Lien Documentation That Actually Holds Up', category: 'Compliance', date: 'June 14, 2026' },
+    { id: 'documentation-audit-schedule', title: 'Building an Internal Audit Schedule That Holds Up', category: 'Compliance', date: 'February 24, 2026' },
+    { id: 'competency-training', title: 'What Competency Training Should Actually Include', category: 'Clinical', date: 'May 12, 2026' }
+  ];
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) this.setState({ activeSection: entry.target.id });
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    this.sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) this.observer.observe(el);
+    });
+
+    // Manual scroll-driven sidebar position (see Service Page Template): CSS
+    // position:sticky is unreliable when an ancestor has overflow:auto without
+    // itself being the actual scrolling element, so track the real scroller and
+    // position the sidebar in the slot's own local coordinate space, clamped.
+    this.findScroller = () => {
+      let el = this.slotEl && this.slotEl.parentElement;
+      while (el && el !== document.body) {
+        const cs = getComputedStyle(el);
+        if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 1) return el;
+        el = el.parentElement;
+      }
+      return null;
+    };
+    this.handleScroll = () => {
+      if (!this.slotEl || !this.asideEl) return;
+      const scroller = this.findScroller();
+      const containerTop = scroller ? scroller.getBoundingClientRect().top : 0;
+      const slotRect = this.slotEl.getBoundingClientRect();
+      const asideHeight = this.asideEl.offsetHeight;
+      const topGap = 32;
+      let localTop = (containerTop + topGap) - slotRect.top;
+      localTop = Math.max(0, Math.min(localTop, slotRect.height - asideHeight));
+      if (Math.abs(localTop - this.state.localTop) > 0.5) this.setState({ localTop });
+    };
+    this.attachScrollListener = () => {
+      const scroller = this.findScroller();
+      this.scrollTarget = scroller || window;
+      this.scrollTarget.addEventListener('scroll', this.handleScroll, { passive: true });
+    };
+    this.attachScrollListener();
+    window.addEventListener('resize', this.handleScroll);
+    this.handleScroll();
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+    if (this.observer) this.observer.disconnect();
+    if (this.handleScroll) {
+      if (this.scrollTarget) this.scrollTarget.removeEventListener('scroll', this.handleScroll);
+      window.removeEventListener('resize', this.handleScroll);
+    }
+  }
+
+  h2(color, isMobile, mb = 24) {
+    return { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 34, lineHeight: 1.2, letterSpacing: '-0.01em', color, margin: `56px 0 ${mb}px 0` };
+  }
+  h3(color, isMobile, mb = 14) {
+    return { fontFamily: 'Archivo', fontWeight: 500, fontSize: isMobile ? 21 : 23, lineHeight: 1.3, color, margin: `36px 0 ${mb}px 0` };
+  }
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+    const s = this.state;
+
+    const tocLabels = { 'the-gap': "The Gap Most Practices Don't See Coming", 'the-checklist': 'The Seven-Point Checklist', 'getting-started': 'Getting Started', 'takeaways': 'Takeaways' };
+    const tocItems = this.sectionIds.map(id => {
+      const active = s.activeSection === id;
+      return {
+        href: '#' + id, label: tocLabels[id],
+        desktopStyle: { display: 'block', fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.4, padding: '9px 0 9px 16px', borderLeft: active ? '2px solid #8F520B' : '2px solid #DDD4C7', color: active ? '#1C1A17' : '#6B6358', fontWeight: active ? 600 : 400, transition: 'color 0.15s, border-color 0.15s' },
+        mobileStyle: { display: 'block', fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.4, padding: '12px 0 12px 16px', borderLeft: active ? '2px solid #8F520B' : '2px solid #DDD4C7', color: active ? '#1C1A17' : '#6B6358', fontWeight: active ? 600 : 400 }
+      };
+    });
+
+    const relatedPosts = this.relatedPostsData.map(p => ({ ...p, href: '/blog/' + p.id, imageId: 'related-thumb-' + p.id, gridImageId: 'related-grid-' + p.id }));
+
+    const headerOuterStyle = { padding: isMobile ? `32px ${margin}px 0 ${margin}px` : `56px ${margin}px 0 ${margin}px`, background: '#FAF7F2' };
+    const headerInnerStyle = { maxWidth: 820, margin: '0 auto' };
+    const backLinkStyle = { fontFamily: 'Roboto', fontSize: 14, fontWeight: 500, color: '#6B6358', display: 'inline-block', marginBottom: 24 };
+    const postCategoryStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', margin: '0 0 16px 0' };
+    const postH1Style = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 32 : 48, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 20px 0' };
+    const metaRowStyle = { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 10, marginBottom: 32 };
+    const metaItemStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#6B6358' };
+    const metaLabelStyle = { color: '#3D3831' };
+    const metaDividerStyle = { color: '#DDD4C7' };
+
+    const featuredImageOuterStyle = { padding: `0 ${margin}px`, margin: isMobile ? '24px 0 0 0' : '32px 0 0 0' };
+    const featuredImageWrapStyle = { maxWidth: 1180, margin: '0 auto', width: '100%', aspectRatio: isMobile ? '4/3' : '21/9', borderRadius: 10, overflow: 'hidden' };
+
+    const mTocWrapStyle = { margin: `24px ${margin}px 0 ${margin}px`, border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const mTocToggleStyle = { width: '100%', background: 'none', border: 'none', padding: '16px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', fontFamily: 'Archivo', fontSize: 15, fontWeight: 600, color: '#1C1A17' };
+    const mTocChevronStyle = { fontSize: 14, color: '#8F520B', transform: s.mobileTocOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' };
+    const mTocListStyle = { padding: '0 18px 18px 18px', display: 'flex', flexDirection: 'column', gap: 2 };
+
+    const layoutGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', padding: `32px ${margin}px 0 ${margin}px` }
+      : { display: 'grid', gridTemplateColumns: 'minmax(0,700px) 340px', gap: 64, padding: `72px ${margin}px`, maxWidth: 1360, margin: '0 auto' };
+    const articleColStyle = { minWidth: 0 };
+
+    const h2Style = this.h2('#1C1A17', isMobile);
+    const h3Style = this.h3('#1C1A17', isMobile);
+    const pStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: '0 0 20px 0' };
+    const inlineLinkStyle = { color: '#8F520B', textDecoration: 'underline', fontWeight: 500 };
+    const dashListStyle = { display: 'flex', flexDirection: 'column', gap: 10, margin: '0 0 20px 0' };
+    const dashItemStyle = { display: 'flex', gap: 12, fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831' };
+    const dashMarkStyle = { flex: '0 0 auto', color: '#8F520B' };
+    const blockquoteStyle = { margin: '32px 0', padding: '4px 0 4px 24px', borderLeft: '3px solid #8F520B', fontFamily: 'Roboto', fontStyle: 'italic', fontSize: 20, lineHeight: 1.5, color: '#3D3831' };
+    const numberedListStyle = { display: 'flex', flexDirection: 'column', gap: 24, margin: '24px 0 32px 0' };
+    const numberedItemStyle = { display: 'flex', gap: 18, alignItems: 'flex-start' };
+    const numberBadgeStyle = { flex: '0 0 auto', width: 28, height: 28, borderRadius: '50%', background: '#1C1A17', color: '#FAF7F2', fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' };
+    const numberedItemHeadStyle = { fontFamily: 'Archivo', fontSize: 17, fontWeight: 600, color: '#1C1A17', margin: '2px 0 6px 0' };
+    const numberedItemBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: 0 };
+    const figureStyle = { margin: '32px 0' };
+    const figcaptionStyle = { fontFamily: 'Roboto', fontStyle: 'italic', fontSize: 14, color: '#6B6358', margin: '10px 0 0 0' };
+    const calloutStyle = { margin: '32px 0', padding: '24px 28px', background: '#EFE9E0', borderLeft: '4px solid #F59621', borderRadius: 8 };
+    const calloutLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', margin: '0 0 10px 0' };
+    const calloutBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: 0 };
+
+    const sidebarLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1C1A17', margin: '0 0 16px 0' };
+    const slotStyle = { position: 'relative' };
+    const asideStyle = { display: 'flex', flexDirection: 'column', gap: 24, width: '100%', position: 'absolute', top: s.localTop, left: 0 };
+    const tocCardStyle = { padding: '24px 24px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const tocListStyle = { display: 'flex', flexDirection: 'column' };
+    const formCardStyle = { padding: '24px 24px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const formIntroStyle = { fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.5, color: '#6B6358', margin: '0 0 20px 0' };
+    const formStyle = { display: 'flex', flexDirection: 'column', gap: 14 };
+    const formLabelStyle = { display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, color: '#3D3831' };
+    const formInputBase = { fontFamily: 'Roboto', fontSize: 15, color: '#1C1A17', border: '1px solid #DDD4C7', borderRadius: 6, padding: '10px 12px', background: '#FAF7F2', outline: 'none' };
+    const formInputStyle = { ...formInputBase };
+    const formSelectStyle = { ...formInputBase, appearance: 'auto' };
+    const formSubmitStyle = { marginTop: 8, fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '13px 20px', cursor: 'pointer' };
+
+    const relatedCardStyle = { padding: '20px', border: '1px solid #DDD4C7', borderRadius: 8, background: '#FFFFFF' };
+    const relatedListStyle = { display: 'flex', flexDirection: 'column', gap: 16 };
+    const relatedItemStyle = { display: 'flex', gap: 12, alignItems: 'flex-start' };
+    const relatedThumbStyle = { flex: '0 0 auto', width: 64, height: 64, borderRadius: 6, overflow: 'hidden' };
+    const relatedTitleStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, color: '#1C1A17', lineHeight: 1.3, margin: '0 0 6px 0' };
+    const relatedDateStyle = { fontFamily: 'Roboto', fontSize: 12, color: '#6B6358' };
+
+    const footerOuterStyle = { padding: isMobile ? `0 ${margin}px 64px ${margin}px` : `0 ${margin}px 96px ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const authorBioStyle = { display: 'flex', gap: 20, alignItems: 'flex-start', padding: isMobile ? '32px 0' : '40px 0', borderTop: '1px solid #DDD4C7', borderBottom: '1px solid #DDD4C7', marginBottom: 56 };
+    const authorAvatarStyle = { flex: '0 0 auto', width: 72, height: 72, borderRadius: '50%', overflow: 'hidden' };
+    const authorNameStyle = { fontFamily: 'Archivo', fontSize: 18, fontWeight: 600, color: '#1C1A17', margin: '0 0 4px 0' };
+    const authorTitleStyle = { fontFamily: 'Roboto', fontSize: 14, color: '#6B6358', margin: '0 0 12px 0' };
+    const authorBodyStyle = { fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.65, color: '#3D3831', margin: 0, maxWidth: 560 };
+
+    const relatedGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 24 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 };
+    const relatedCardGridItemStyle = { display: 'flex', flexDirection: 'column', border: '1px solid #DDD4C7', borderRadius: 10, overflow: 'hidden', background: '#FFFFFF' };
+    const relatedCardThumbStyle = { width: '100%', aspectRatio: '16/10' };
+    const relatedCardBodyStyle = { padding: '18px 18px 20px 18px' };
+    const relatedCardCategoryStyle = { fontFamily: 'Archivo', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8F520B', marginBottom: 8 };
+    const relatedCardTitleStyle = { fontFamily: 'Archivo', fontSize: 16, fontWeight: 600, color: '#1C1A17', lineHeight: 1.3, marginBottom: 8 };
+    const relatedCardDateStyle = { fontFamily: 'Roboto', fontSize: 13, color: '#6B6358' };
+
+    return {
+      isMobile, tocItems, relatedPosts,
+      slotRef: (el) => { this.slotEl = el; },
+      asideRef: (el) => { this.asideEl = el; },
+      mobileTocOpen: s.mobileTocOpen, toggleMobileToc: () => this.setState({ mobileTocOpen: !s.mobileTocOpen }),
+      practiceType: s.practiceType,
+      handlePracticeTypeChange: (e) => this.setState({ practiceType: e.target.value }),
+      showOtherField: s.practiceType === 'Other',
+      handleSubmit: (e) => e.preventDefault(),
+      headerOuterStyle, headerInnerStyle, backLinkStyle, postCategoryStyle, postH1Style, metaRowStyle, metaItemStyle, metaLabelStyle, metaDividerStyle,
+      featuredImageOuterStyle, featuredImageWrapStyle,
+      mTocWrapStyle, mTocToggleStyle, mTocChevronStyle, mTocListStyle,
+      layoutGridStyle, articleColStyle,
+      h2Style, h3Style, pStyle, inlineLinkStyle, dashListStyle, dashItemStyle, dashMarkStyle, blockquoteStyle,
+      numberedListStyle, numberedItemStyle, numberBadgeStyle, numberedItemHeadStyle, numberedItemBodyStyle,
+      figureStyle, figcaptionStyle, calloutStyle, calloutLabelStyle, calloutBodyStyle,
+      sidebarLabelStyle, slotStyle, asideStyle, tocCardStyle, tocListStyle,
+      formCardStyle, formIntroStyle, formStyle, formLabelStyle, formInputStyle, formSelectStyle, formSubmitStyle,
+      relatedCardStyle, relatedListStyle, relatedItemStyle, relatedThumbStyle, relatedTitleStyle, relatedDateStyle,
+      footerOuterStyle, authorBioStyle, authorAvatarStyle, authorNameStyle, authorTitleStyle, authorBodyStyle,
+      relatedGridStyle, relatedCardGridItemStyle, relatedCardThumbStyle, relatedCardBodyStyle, relatedCardCategoryStyle, relatedCardTitleStyle, relatedCardDateStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>
