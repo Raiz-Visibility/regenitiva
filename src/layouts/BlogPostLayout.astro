@@ -10,6 +10,7 @@ interface Props {
   category: string;
   date: string;
   author: string;
+  authorSlug?: string;
   authorTitle: string;
   authorBio: string;
   readTime: number;
@@ -22,6 +23,7 @@ const {
   category,
   date,
   author,
+  authorSlug,
   authorTitle,
   authorBio,
   readTime,
@@ -41,7 +43,10 @@ const categorySlug = slugifyCategory(category);
       <a href={`/blog/category/${categorySlug}/`} class="bp-category">{category}</a>
       <h1 class="bp-title">{title}</h1>
       <div class="bp-meta">
-        <span>{author}</span>
+        {authorSlug
+          ? <a href={`/about/${authorSlug}/`} class="bp-author-link">{author}</a>
+          : <span>{author}</span>
+        }
         <span class="bp-meta-sep">&middot;</span>
         <span>{date}</span>
         <span class="bp-meta-sep">&middot;</span>
@@ -189,6 +194,16 @@ const categorySlug = slugifyCategory(category);
 
   .bp-meta-sep {
     margin: 0 var(--rg-space-2);
+  }
+
+  .bp-author-link {
+    color: var(--rg-text-accent);
+    text-decoration: none;
+    font-weight: var(--rg-weight-medium);
+  }
+
+  .bp-author-link:hover {
+    text-decoration: underline;
   }
 
   /* ----------------------------------------------------------------

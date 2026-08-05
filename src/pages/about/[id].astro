@@ -1,0 +1,361 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { team } from '../../data/team';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../lib/blog';
+import '../../styles/prose.css';
+
+export function getStaticPaths() {
+  return team.map((person) => ({
+    params: { id: person.id },
+    props: { person },
+  }));
+}
+
+const { person } = Astro.props;
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((p) => p.data.author === person.name)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title={`${person.name} — Regenitiva`} description={person.shortBio}>
+
+  <!-- Back link -->
+  <div class="au-back-wrap">
+    <a href="/about/" class="au-back">← Back to About</a>
+  </div>
+
+  <!-- Header -->
+  <header class="au-header">
+    <div class="au-portrait"></div>
+    <div>
+      <h1 class="au-name">{person.name}</h1>
+      <div class="au-credentials">{person.credentials}</div>
+      <div class="au-title">{person.title}</div>
+    </div>
+  </header>
+
+  <!-- Bio + credentials -->
+  <div class="au-container">
+    <article class="au-article prose">
+      {person.bioParagraphs.map((para) => (
+        <p>{para}</p>
+      ))}
+    </article>
+
+    <div class="au-cred-card">
+      <div class="au-cred-heading">Background</div>
+      {person.credentialGroups.map((group) => (
+        <div class="au-cred-group">
+          <div class="au-cred-label">{group.label}</div>
+          <div class="au-cred-list">
+            {group.items.map((item) => (
+              <div class="au-cred-item">
+                <span class="au-cred-dash" aria-hidden="true">—</span>{item}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Posts by this author -->
+  <section class="au-posts">
+    <h2>Posts by {person.firstName}</h2>
+
+    {allPosts.length > 0 ? (
+      <div class="au-posts-grid">
+        {allPosts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            href={`/blog/${post.id}/`}
+            category={post.data.category}
+            date={formatDate(post.data.date)}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="au-empty">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect x="5" y="9" width="26" height="20" rx="2" stroke="var(--rg-stone-400)" stroke-width="1.5"></rect><path d="M5 14.5H31" stroke="var(--rg-stone-400)" stroke-width="1.5"></path><path d="M11 21H25" stroke="var(--rg-stone-400)" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <p>{person.firstName} hasn't published any posts yet.</p>
+      </div>
+    )}
+  </section>
+
+  <!-- CTA -->
+  <section class="au-cta">
+    <div class="au-cta-inner">
+      <h2 class="au-cta-head">Want to talk to our team?</h2>
+      <p class="au-cta-body">Reach out and we'll follow up to schedule a short assessment call.</p>
+      <a href="/contact" class="au-cta-btn">Contact Us</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Back link */
+  .au-back-wrap {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-5) var(--rg-space-5) 0;
+  }
+
+  .au-back {
+    font-size: 14px;
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-muted);
+    text-decoration: none;
+  }
+
+  .au-back:hover {
+    color: var(--rg-text-accent);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .au-back-wrap { padding: 40px var(--rg-space-7) 0; }
+  }
+
+  /* Header */
+  .au-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-5);
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-5) var(--rg-space-5) 0;
+  }
+
+  .au-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-stone-300);
+  }
+
+  .au-name {
+    margin-bottom: 10px;
+  }
+
+  .au-credentials {
+    font-size: var(--rg-size-small);
+    color: var(--rg-text-muted);
+    margin-bottom: var(--rg-space-2);
+  }
+
+  .au-title {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-accent);
+  }
+
+  @media (min-width: 768px) {
+    .au-header {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: var(--rg-space-6) var(--rg-space-7) 0;
+    }
+
+    .au-portrait {
+      flex: 0 0 auto;
+      width: 220px;
+      height: 220px;
+      aspect-ratio: auto;
+    }
+  }
+
+  /* Bio + credentials container */
+  .au-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) 0;
+  }
+
+  .au-article {
+    max-width: 820px;
+  }
+
+  @media (min-width: 768px) {
+    .au-container {
+      gap: var(--rg-space-7);
+      padding: var(--rg-space-8) var(--rg-space-7) 0;
+    }
+  }
+
+  /* Credentials card */
+  .au-cred-card {
+    max-width: 820px;
+    padding: var(--rg-space-5) 22px;
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+  }
+
+  .au-cred-heading {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-primary);
+    margin-bottom: 20px;
+  }
+
+  .au-cred-group {
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .au-cred-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .au-cred-label {
+    font-family: var(--rg-font-display);
+    font-size: 14px;
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-accent);
+    margin-bottom: 10px;
+  }
+
+  .au-cred-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-2);
+  }
+
+  .au-cred-item {
+    display: flex;
+    gap: 10px;
+    font-size: var(--rg-size-small);
+    line-height: 1.5;
+    color: var(--rg-text-secondary);
+  }
+
+  .au-cred-dash {
+    flex: 0 0 auto;
+    color: var(--rg-text-accent);
+  }
+
+  @media (min-width: 768px) {
+    .au-cred-card { padding: var(--rg-space-6) 40px; }
+
+    .au-cred-group {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: var(--rg-space-5);
+      align-items: baseline;
+    }
+
+    .au-cred-label { margin-bottom: 0; }
+  }
+
+  /* Posts section */
+  .au-posts {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 56px var(--rg-space-5);
+    border-top: 1px solid var(--rg-border);
+    margin-top: var(--rg-space-7);
+  }
+
+  .au-posts h2 {
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .au-posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+  }
+
+  .au-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--rg-space-7) var(--rg-space-5);
+    border: 1px dashed var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    gap: var(--rg-space-4);
+  }
+
+  .au-empty p {
+    font-size: var(--rg-size-small);
+    color: var(--rg-text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .au-posts {
+      padding: 88px var(--rg-space-7);
+      margin-top: 72px;
+    }
+
+    .au-posts h2 { margin-bottom: var(--rg-space-6); }
+
+    .au-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--rg-space-6);
+    }
+  }
+
+  /* CTA */
+  .au-cta {
+    padding: 56px var(--rg-space-5);
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+    text-align: center;
+  }
+
+  .au-cta-inner { max-width: 560px; margin: 0 auto; }
+
+  .au-cta-head {
+    color: var(--rg-text-on-inverse);
+    margin-bottom: var(--rg-space-4);
+    text-align: center;
+  }
+
+  .au-cta-body {
+    font-size: var(--rg-size-button);
+    line-height: 1.6;
+    color: var(--rg-stone-300);
+    max-width: 440px;
+    margin: 0 auto var(--rg-space-6);
+  }
+
+  .au-cta-btn {
+    display: inline-block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: 15px 26px;
+    text-decoration: none;
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .au-cta-btn:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+    color: var(--rg-ink-900);
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    .au-cta { padding: 88px var(--rg-space-7); }
+  }
+</style>

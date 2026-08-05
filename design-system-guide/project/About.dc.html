@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<section style="{{ heroOuterStyle }}">
+<div style="{{ heroInnerStyle }}">
+<div style="{{ eyebrowStyle }}">ABOUT</div>
+<h1 style="{{ h1Style }}">Closing the gap between what's possible and what patients receive.</h1>
+<p style="{{ heroIntroStyle }}">Regenitiva was founded in 2026 on a straightforward observation: there are patients who aren't getting the best available care, and physicians who would offer it if the path were clearer.</p>
+</div>
+</section>
+
+<section style="{{ missionOuterStyle }}">
+<div style="{{ missionGridStyle }}">
+<div style="{{ missionCardStyle }}">
+<div style="{{ cardLabelStyle }}">Mission</div>
+<p style="{{ cardBodyStyle }}">To improve people's lives by making cutting-edge regenerative medicine available to more patients, through the physicians already treating them.</p>
+</div>
+<div style="{{ missionCardStyle }}">
+<div style="{{ cardLabelStyle }}">Vision</div>
+<p style="{{ cardBodyStyle }}">A future where patients get better, and doctors practice regenerative medicine without hesitation — backed by protocols and compliance they can stand behind.</p>
+</div>
+</div>
+</section>
+
+<section style="{{ valuesOuterStyle }}">
+<h2 style="{{ valuesHeadStyle }}">What we hold to.</h2>
+<div style="{{ valuesRowStyle }}">
+<div style="{{ valueItemStyle }}">
+<div style="{{ valueLabelStyle }}">Integrity</div>
+<p style="{{ valueBodyStyle }}">We tell physicians what's actually true about outcomes, costs, and risk.</p>
+</div>
+<div style="{{ valueItemStyle }}">
+<div style="{{ valueLabelStyle }}">Patient Safety</div>
+<p style="{{ valueBodyStyle }}">Every protocol we write starts here.</p>
+</div>
+<div style="{{ valueItemStyle }}">
+<div style="{{ valueLabelStyle }}">Client Support</div>
+<p style="{{ valueBodyStyle }}">Your program is our responsibility, not just our project.</p>
+</div>
+</div>
+</section>
+
+<section style="{{ teamOuterStyle }}">
+<div style="{{ teamHeadWrapStyle }}">
+<div style="{{ eyebrowStyle }}">LEADERSHIP</div>
+<h2 style="{{ teamHeadStyle }}">The people behind the program.</h2>
+</div>
+<div style="{{ teamGridStyle }}">
+<sc-for list="{{ team }}" as="person" hint-placeholder-count="2">
+<div style="{{ teamCardStyle }}">
+<div style="{{ teamPortraitStyle }}"><image-slot id="{{ person.imageId }}" shape="rect" placeholder="{{ person.imageAlt }}" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ teamNameStyle }}">{{ person.name }}</div>
+<div style="{{ teamTitleStyle }}">{{ person.title }}</div>
+<p style="{{ teamBioStyle }}">{{ person.bio }}</p>
+<a href="{{ person.href }}" style="{{ teamLinkStyle }}">Read full bio →</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="{{ closingSectionStyle }}">
+<div style="{{ closingInnerStyle }}">
+<h2 style="{{ closingHeadlineStyle }}">Let's look at your practice.</h2>
+<p style="{{ closingBodyStyle }}">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you.</p>
+<a href="/contact" style="{{ closingBtnStyle }}">Schedule a Consultation</a>
+</div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1900},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023
+  };
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+  }
+
+  teamData = [
+    { id: 'francis-lagattuta', name: 'Francis P. Lagattuta, MD', title: 'Founder', bio: 'Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship for over twenty years and has performed more than 2,000 regenerative procedures.', imageAlt: 'Dr. Francis P. Lagattuta portrait' },
+    { id: 'vince-surra', name: 'Vince Surra', title: 'Director of Operations', bio: 'Oversees client operations, compliance program delivery, and day-to-day practice support across Regenitiva\'s client base — the point of contact once a program is up and running.', imageAlt: 'Vince Surra portrait' }
+  ];
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+
+    const eyebrow = (color) => ({ fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color, margin: '0 0 16px 0' });
+    const h2 = (color, mb = 24) => ({ fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` });
+
+    const team = this.teamData.map(p => ({ ...p, href: '/about/' + p.id, imageId: 'team-portrait-' + p.id }));
+
+    const heroOuterStyle = { padding: isMobile ? `40px ${margin}px 0 ${margin}px` : `80px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const heroInnerStyle = { maxWidth: 780 };
+    const eyebrowStyle = eyebrow('#8F520B');
+    const h1Style = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 32 : 52, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 24px 0' };
+    const heroIntroStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: 0 };
+
+    const missionOuterStyle = { padding: isMobile ? `48px ${margin}px` : `72px ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const missionGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 24 }
+      : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 };
+    const missionCardStyle = { padding: isMobile ? '28px 24px' : '40px', background: '#EFE9E0', borderRadius: 10 };
+    const cardLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', margin: '0 0 16px 0' };
+    const cardBodyStyle = { fontFamily: 'Roboto', fontSize: isMobile ? 16 : 18, lineHeight: 1.6, color: '#1C1A17', margin: 0 };
+
+    const valuesOuterStyle = { padding: isMobile ? `24px ${margin}px 56px ${margin}px` : `24px ${margin}px 88px ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const valuesHeadStyle = h2('#1C1A17', isMobile ? 28 : 40);
+    const valuesRowStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 28 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 };
+    const valueItemStyle = { borderLeft: '2px solid #DDD4C7', paddingLeft: 18 };
+    const valueLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8F520B', marginBottom: 10 };
+    const valueBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.6, color: '#3D3831', margin: 0 };
+
+    const teamOuterStyle = { padding: isMobile ? `56px ${margin}px` : `88px ${margin}px`, background: '#FFFFFF', borderTop: '1px solid #DDD4C7' };
+    const teamHeadWrapStyle = { maxWidth: 1180, margin: '0 auto', marginBottom: isMobile ? 32 : 48 };
+    const teamHeadStyle = h2('#1C1A17', 0);
+    const teamGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 40, maxWidth: 1180, margin: '0 auto' }
+      : { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 56, maxWidth: 1180, margin: '0 auto' };
+    const teamCardStyle = {};
+    const teamPortraitStyle = { width: '100%', aspectRatio: '4/3', borderRadius: 10, overflow: 'hidden', marginBottom: 24 };
+    const teamNameStyle = { fontFamily: 'Archivo', fontSize: 22, fontWeight: 600, color: '#1C1A17', margin: '0 0 4px 0' };
+    const teamTitleStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#8F520B', fontWeight: 500, margin: '0 0 16px 0' };
+    const teamBioStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.65, color: '#3D3831', margin: '0 0 16px 0' };
+    const teamLinkStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#8F520B' };
+
+    const closingSectionStyle = { padding: isMobile ? `64px ${margin}px` : `100px ${margin}px`, background: '#1C1A17', color: '#FAF7F2', textAlign: 'center' };
+    const closingInnerStyle = { maxWidth: 640, margin: '0 auto' };
+    const closingHeadlineStyle = { ...h2('#FAF7F2', 20), textAlign: 'center' };
+    const closingBodyStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#DDD4C7', margin: '0 auto 36px auto', maxWidth: 480 };
+    const closingBtnStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, letterSpacing: '0.01em', background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '16px 30px', display: 'inline-block' };
+
+    return {
+      team,
+      heroOuterStyle, heroInnerStyle, eyebrowStyle, h1Style, heroIntroStyle,
+      missionOuterStyle, missionGridStyle, missionCardStyle, cardLabelStyle, cardBodyStyle,
+      valuesOuterStyle, valuesHeadStyle, valuesRowStyle, valueItemStyle, valueLabelStyle, valueBodyStyle,
+      teamOuterStyle, teamHeadWrapStyle, teamHeadStyle, teamGridStyle, teamCardStyle, teamPortraitStyle, teamNameStyle, teamTitleStyle, teamBioStyle, teamLinkStyle,
+      closingSectionStyle, closingInnerStyle, closingHeadlineStyle, closingBodyStyle, closingBtnStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>

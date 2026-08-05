@@ -1,0 +1,626 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+---
+
+<BaseLayout title="Contact — Regenitiva" description="Tell us about your practice and we'll follow up to schedule an assessment call.">
+
+  <!-- Page header -->
+  <section class="ct-header">
+    <div class="ct-header-inner">
+      <div class="ct-eyebrow">Contact</div>
+      <h1 class="ct-h1">Let's talk about your practice.</h1>
+      <p class="ct-intro">Tell us where you're starting from and we'll follow up to schedule a short assessment call — no obligation, no pressure.</p>
+    </div>
+  </section>
+
+  <!-- Two-column: form + details -->
+  <div class="ct-two-col">
+
+    <div class="ct-form-card">
+      <!-- Idle: form -->
+      <form class="ct-form" id="contact-form" data-key={WEB3FORMS_KEY}>
+        <label class="ct-field">
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label class="ct-field">
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label class="ct-field">
+          Phone
+          <input type="tel" name="phone" />
+        </label>
+        <label class="ct-field">
+          Practice Type
+          <select name="practiceType" class="ct-select">
+            <option value="">Select one…</option>
+            <option value="Physiatry / PM&R">Physiatry / PM&R</option>
+            <option value="Sports Medicine">Sports Medicine</option>
+            <option value="Pain Management">Pain Management</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+            <option value="Multi-Site Group">Multi-Site Group</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label class="ct-field ct-field-other" hidden>
+          Please specify
+          <input type="text" name="practiceTypeOther" placeholder="Tell us about your practice" />
+        </label>
+        <label class="ct-field">
+          Message
+          <textarea name="message" rows="5" placeholder="What would you like to know?" class="ct-textarea"></textarea>
+        </label>
+        <button type="submit" class="ct-submit">Send Message</button>
+      </form>
+
+      <!-- Success state -->
+      <div class="ct-status ct-status-success" hidden>
+        <div class="ct-status-icon ct-status-icon-ok">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M6 14.5L11.5 20L22 8" stroke="var(--rg-amber-800)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+        <h3 class="ct-status-head">Message sent.</h3>
+        <p class="ct-status-body">Thanks for reaching out — we'll be in touch within one business day.</p>
+        <button type="button" class="ct-status-link ct-reset">Send another message</button>
+      </div>
+
+      <!-- Error state -->
+      <div class="ct-status ct-status-error" hidden>
+        <div class="ct-status-icon ct-status-icon-err">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke="var(--rg-error)" stroke-width="2"></circle><path d="M14 9V15" stroke="var(--rg-error)" stroke-width="2" stroke-linecap="round"></path><circle cx="14" cy="19" r="1.2" fill="var(--rg-error)"></circle></svg>
+        </div>
+        <h3 class="ct-status-head">Something went wrong.</h3>
+        <p class="ct-status-body">Your message didn't go through. Please try again, or reach us directly at <a href="mailto:vince@regenitiva.com">vince@regenitiva.com</a>.</p>
+        <button type="button" class="ct-status-link ct-reset">Try again</button>
+      </div>
+    </div>
+
+    <!-- Contact details -->
+    <div class="ct-details">
+      <div class="ct-details-label">Contact Details</div>
+      <div class="ct-details-list">
+        <div class="ct-detail">
+          <div class="ct-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 3H7.5L9 7L7 8.5C7.8 10.4 9.6 12.2 11.5 13L13 11L17 12.5V16C17 16.6 16.5 17 16 17C9 17 3 11 3 4C3 3.5 3.4 3 4 3Z" stroke="var(--rg-amber-800)" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+          </div>
+          <div>
+            <div class="ct-detail-label">Phone</div>
+            <a href="tel:8058967983" class="ct-detail-value-link">805-896-7983</a>
+          </div>
+        </div>
+        <div class="ct-detail">
+          <div class="ct-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4.5" width="14" height="11" rx="1.5" stroke="var(--rg-amber-800)" stroke-width="1.4"></rect><path d="M3.5 5.5L10 10.5L16.5 5.5" stroke="var(--rg-amber-800)" stroke-width="1.4" stroke-linecap="round"></path></svg>
+          </div>
+          <div>
+            <div class="ct-detail-label">Email</div>
+            <a href="mailto:vince@regenitiva.com" class="ct-detail-value-link">vince@regenitiva.com</a>
+          </div>
+        </div>
+        <div class="ct-detail">
+          <div class="ct-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7" stroke="var(--rg-amber-800)" stroke-width="1.4"></circle><path d="M10 6V10L12.5 12" stroke="var(--rg-amber-800)" stroke-width="1.4" stroke-linecap="round"></path></svg>
+          </div>
+          <div>
+            <div class="ct-detail-label">Hours</div>
+            <div class="ct-detail-value">9am–5pm CST</div>
+          </div>
+        </div>
+        <div class="ct-detail">
+          <div class="ct-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 18C10 18 16 12.4 16 8A6 6 0 1 0 4 8C4 12.4 10 18 10 18Z" stroke="var(--rg-amber-800)" stroke-width="1.4"></path><circle cx="10" cy="8" r="2" stroke="var(--rg-amber-800)" stroke-width="1.4"></circle></svg>
+          </div>
+          <div>
+            <div class="ct-detail-label">Location</div>
+            <div class="ct-detail-value">Garden Grove, CA</div>
+          </div>
+        </div>
+      </div>
+      <p class="ct-remote-note">Regenitiva works with practices remotely, nationwide — your location isn't a barrier to getting started.</p>
+    </div>
+
+  </div>
+
+  <!-- What happens next -->
+  <section class="ct-expectations">
+    <div class="ct-expectations-inner">
+      <h2 class="ct-expectations-head">What happens after you reach out.</h2>
+      <div class="ct-expectations-grid">
+        <div class="ct-expectation">
+          <span class="ct-expectation-badge">1</span>
+          <div>
+            <div class="ct-expectation-title">We respond</div>
+            <p class="ct-expectation-body">Within one business day, usually sooner.</p>
+          </div>
+        </div>
+        <div class="ct-expectation">
+          <span class="ct-expectation-badge">2</span>
+          <div>
+            <div class="ct-expectation-title">We schedule a call</div>
+            <p class="ct-expectation-body">A short conversation about your practice and what you're considering.</p>
+          </div>
+        </div>
+        <div class="ct-expectation">
+          <span class="ct-expectation-badge">3</span>
+          <div>
+            <div class="ct-expectation-title">We scope the assessment</div>
+            <p class="ct-expectation-body">If it's a fit, we outline next steps and a realistic timeline — no pressure to commit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="ct-map" id="map">
+    <div class="ct-map-placeholder">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 29C16 29 26 20 26 13A10 10 0 1 0 6 13C6 20 16 29 16 29Z" stroke="var(--rg-stone-400)" stroke-width="1.6"></path><circle cx="16" cy="13" r="3.5" stroke="var(--rg-stone-400)" stroke-width="1.6"></circle></svg>
+      <div class="ct-map-text">Map embed — Garden Grove, CA</div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ----------------------------------------------------------------
+     Header
+     ---------------------------------------------------------------- */
+  .ct-header-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) 0;
+  }
+
+  .ct-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ct-h1 {
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ct-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: 620px;
+  }
+
+  @media (min-width: 768px) {
+    .ct-header-inner {
+      padding: 72px var(--rg-space-7) 0;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Two-column layout
+     ---------------------------------------------------------------- */
+  .ct-two-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) 0;
+  }
+
+  @media (min-width: 768px) {
+    .ct-two-col {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: var(--rg-space-7);
+      padding: 56px var(--rg-space-7) 0;
+      align-items: start;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Form card
+     ---------------------------------------------------------------- */
+  .ct-form-card {
+    padding: 28px 22px;
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+  }
+
+  .ct-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-4);
+  }
+
+  .ct-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-2);
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-secondary);
+  }
+
+  .ct-field-other[hidden] {
+    display: none;
+  }
+
+  .ct-field input,
+  .ct-field select,
+  .ct-textarea {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    color: var(--rg-text-primary);
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-md);
+    padding: var(--rg-space-3) 14px;
+    background: var(--rg-bone);
+    outline: none;
+    transition: border-color var(--rg-duration-base) var(--rg-ease),
+      box-shadow var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .ct-textarea {
+    line-height: 1.5;
+    resize: vertical;
+  }
+
+  .ct-field input:focus,
+  .ct-field select:focus,
+  .ct-textarea:focus {
+    border-color: var(--rg-amber-500);
+    box-shadow: var(--rg-focus-ring);
+  }
+
+  .ct-select {
+    appearance: auto;
+  }
+
+  .ct-submit {
+    margin-top: var(--rg-space-2);
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: 15px 22px;
+    cursor: pointer;
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .ct-submit:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+  }
+
+  .ct-submit[disabled] {
+    background: var(--rg-stone-300);
+    border-color: var(--rg-stone-300);
+    cursor: default;
+  }
+
+  @media (min-width: 768px) {
+    .ct-form-card {
+      padding: 40px;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Status states (success / error)
+     ---------------------------------------------------------------- */
+  .ct-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--rg-space-5) 0;
+  }
+
+  .ct-status[hidden] {
+    display: none;
+  }
+
+  .ct-status-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .ct-status-icon-ok {
+    background: var(--rg-bg-subtle);
+  }
+
+  .ct-status-icon-err {
+    background: var(--rg-error-bg);
+  }
+
+  .ct-status-head {
+    font-size: var(--rg-size-h4);
+    margin-bottom: 10px;
+  }
+
+  .ct-status-body {
+    font-size: var(--rg-size-button);
+    line-height: 1.6;
+    color: var(--rg-text-secondary);
+    max-width: 420px;
+    margin-bottom: 20px;
+  }
+
+  .ct-status-link {
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    .ct-status {
+      padding: var(--rg-space-7) 0;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Contact details card
+     ---------------------------------------------------------------- */
+  .ct-details {
+    padding: 28px 22px;
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-inverse);
+  }
+
+  .ct-details-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-caption);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-stone-300);
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .ct-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 28px;
+  }
+
+  .ct-detail {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .ct-detail-icon {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-ink-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ct-detail-label {
+    font-size: var(--rg-size-caption);
+    color: var(--rg-stone-400);
+    margin: 2px 0 var(--rg-space-1);
+  }
+
+  .ct-detail-value {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-body);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-on-inverse);
+  }
+
+  .ct-detail-value-link {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-body);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-amber-300);
+    text-decoration: none;
+  }
+
+  .ct-detail-value-link:hover {
+    text-decoration: underline;
+    color: var(--rg-amber-300);
+  }
+
+  .ct-remote-note {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--rg-stone-400);
+    padding-top: var(--rg-space-5);
+    border-top: 1px solid var(--rg-border-inverse);
+  }
+
+  @media (min-width: 768px) {
+    .ct-details {
+      padding: 40px 36px;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Expectations section
+     ---------------------------------------------------------------- */
+  .ct-expectations {
+    background: var(--rg-bg-subtle);
+    margin-top: var(--rg-space-7);
+    padding: 56px var(--rg-space-5);
+  }
+
+  .ct-expectations-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+  }
+
+  .ct-expectations-head {
+    margin-bottom: var(--rg-space-6);
+  }
+
+  .ct-expectations-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+  }
+
+  .ct-expectation {
+    display: flex;
+    gap: var(--rg-space-4);
+    align-items: flex-start;
+  }
+
+  .ct-expectation-badge {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--rg-ink-900);
+    color: var(--rg-bone);
+    font-family: var(--rg-font-display);
+    font-size: 14px;
+    font-weight: var(--rg-weight-semibold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ct-expectation-title {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-body);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-primary);
+    margin: 2px 0 var(--rg-space-2);
+  }
+
+  .ct-expectation-body {
+    font-size: var(--rg-size-button);
+    line-height: 1.6;
+    color: var(--rg-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .ct-expectations {
+      margin-top: 72px;
+      padding: var(--rg-space-9) var(--rg-space-7);
+    }
+
+    .ct-expectations-head {
+      margin-bottom: var(--rg-space-7);
+    }
+
+    .ct-expectations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Map placeholder
+     ---------------------------------------------------------------- */
+  .ct-map-placeholder {
+    width: 100%;
+    height: 260px;
+    background: var(--rg-stone-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--rg-space-3);
+  }
+
+  .ct-map-text {
+    font-size: var(--rg-size-small);
+    color: var(--rg-text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .ct-map-placeholder {
+      height: 420px;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  if (form) {
+    const card = form.parentElement!;
+    const successEl = card.querySelector('.ct-status-success') as HTMLElement;
+    const errorEl = card.querySelector('.ct-status-error') as HTMLElement;
+    const submitBtn = form.querySelector('.ct-submit') as HTMLButtonElement;
+
+    // "Other" field toggle
+    const select = form.querySelector('.ct-select') as HTMLSelectElement | null;
+    const otherField = form.querySelector('.ct-field-other') as HTMLElement | null;
+    if (select && otherField) {
+      select.addEventListener('change', () => {
+        const show = select.value === 'Other';
+        otherField.hidden = !show;
+        const input = otherField.querySelector('input') as HTMLInputElement | null;
+        if (input) input.required = show;
+      });
+    }
+
+    // Submit via Web3Forms
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const data = new FormData(form);
+      data.append('access_key', form.dataset.key || '');
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+        });
+        if (res.ok) {
+          form.hidden = true;
+          successEl.hidden = false;
+        } else {
+          throw new Error('Submit failed');
+        }
+      } catch {
+        form.hidden = true;
+        errorEl.hidden = false;
+      }
+    });
+
+    // Reset buttons
+    card.querySelectorAll('.ct-reset').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        form.reset();
+        form.hidden = false;
+        successEl.hidden = true;
+        errorEl.hidden = true;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        if (otherField) otherField.hidden = true;
+      });
+    });
+  }
+</script>

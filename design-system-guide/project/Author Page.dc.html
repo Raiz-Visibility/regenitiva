@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<a href="/about" style="{{ backLinkStyle }}">← Back to About</a>
+
+<header style="{{ headerOuterStyle }}">
+<div style="{{ headerPortraitStyle }}"><image-slot id="{{ person.imageId }}" shape="rect" placeholder="{{ person.imageAlt }}" style="width:100%;height:100%"></image-slot></div>
+<div>
+<h1 style="{{ nameStyle }}">{{ person.name }}</h1>
+<div style="{{ credentialsStyle }}">{{ person.credentials }}</div>
+<div style="{{ titleStyle }}">{{ person.title }}</div>
+</div>
+</header>
+
+<div style="{{ containerStyle }}">
+
+<article style="{{ articleStyle }}">
+<sc-for list="{{ person.bioParagraphs }}" as="para" hint-placeholder-count="3">
+<p style="{{ pStyle }}">{{ para }}</p>
+</sc-for>
+</article>
+
+<div style="{{ credentialsBlockStyle }}">
+<div style="{{ sidebarLabelStyle }}">Background</div>
+<sc-for list="{{ person.credentialGroups }}" as="group" hint-placeholder-count="3">
+<div style="{{ credGroupStyle }}">
+<div style="{{ credGroupLabelStyle }}">{{ group.label }}</div>
+<div style="{{ dashListStyle }}">
+<sc-for list="{{ group.items }}" as="item" hint-placeholder-count="2">
+<div style="{{ dashItemStyle }}"><span style="{{ dashMarkStyle }}">—</span>{{ item }}</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+
+</div>
+
+<section style="{{ postsOuterStyle }}">
+<h2 style="{{ postsHeadStyle }}">Posts by {{ person.firstName }}</h2>
+
+<sc-if value="{{ hasPosts }}" hint-placeholder-val="{{ true }}">
+<div style="{{ postsGridStyle }}">
+<sc-for list="{{ person.posts }}" as="post" hint-placeholder-count="3">
+<a href="{{ post.href }}" style="{{ postCardStyle }}">
+<div style="{{ postThumbStyle }}"><image-slot id="{{ post.imageId }}" shape="rect" placeholder="Post thumbnail" style="width:100%;height:100%"></image-slot></div>
+<div style="{{ postBodyStyle }}">
+<div style="{{ postCategoryStyle }}">{{ post.category }}</div>
+<div style="{{ postTitleStyle }}">{{ post.title }}</div>
+<div style="{{ postDateStyle }}">{{ post.date }}</div>
+</div>
+</a>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ !hasPosts }}" hint-placeholder-val="{{ false }}">
+<div style="{{ emptyStateStyle }}">
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="5" y="9" width="26" height="20" rx="2" stroke="#B8AE9F" stroke-width="1.5"></rect><path d="M5 14.5H31" stroke="#B8AE9F" stroke-width="1.5"></path><path d="M11 21H25" stroke="#B8AE9F" stroke-width="1.5" stroke-linecap="round"></path></svg>
+<p style="{{ emptyTextStyle }}">{{ person.firstName }} hasn't published any posts yet.</p>
+</div>
+</sc-if>
+</section>
+
+<section style="{{ ctaOuterStyle }}">
+<div style="{{ ctaInnerStyle }}">
+<h2 style="{{ ctaHeadStyle }}">Want to talk to our team?</h2>
+<p style="{{ ctaBodyStyle }}">Reach out and we'll follow up to schedule a short assessment call.</p>
+<a href="/contact" style="{{ ctaBtnStyle }}">Contact Us</a>
+</div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1900},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;personId&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;lagattuta&quot;,&quot;options&quot;:[&quot;lagattuta&quot;,&quot;surra&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;demoEmptyPosts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023
+  };
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+  }
+
+  people = {
+    lagattuta: {
+      firstName: 'Dr. Lagattuta', name: 'Francis P. Lagattuta, MD', title: 'Founder, Regenitiva',
+      credentials: 'MD · Board Certified, PM&R · Pain Medicine · Addiction Medicine',
+      imageAlt: 'Dr. Francis P. Lagattuta portrait',
+      bioParagraphs: [
+        "Dr. Francis P. Lagattuta founded Regenitiva after two decades of directing an interventional pain fellowship and watching capable physicians turn patients away from regenerative medicine — not for lack of interest, but for lack of a defensible way to offer it.",
+        "Over more than 2,000 regenerative procedures, he built the protocols, training methods, and compliance structure that now form the basis of Regenitiva's practice development work. His approach is unusual in the field: compliance and documentation are treated as part of the clinical program from day one, not bolted on afterward.",
+        "He continues to see patients and to train physicians directly, and every protocol Regenitiva ships has passed through his review."
+      ],
+      credentialGroups: [
+        { label: 'Education', items: ['MD, [Medical School]', 'Residency, Physical Medicine & Rehabilitation'] },
+        { label: 'Certifications', items: ['Board Certified, Physical Medicine & Rehabilitation', 'Board Certified, Electrodiagnostic Medicine', 'Board Certified, Pain Medicine', 'Board Certified, Addiction Medicine'] },
+        { label: 'Professional History', items: ['Founder, Regenitiva (2026–present)', 'Director, Interventional Pain Fellowship (1994–2015)', 'Trained more than 60 physicians in interventional and regenerative technique'] }
+      ],
+      posts: [
+        { id: 'aaahc-checklist', title: 'A Practical Checklist for AAAHC Alignment', category: 'Compliance', date: 'July 22, 2026' },
+        { id: 'prp-preparation-variables', title: 'The Preparation Variables That Actually Affect Outcomes', category: 'Clinical', date: 'March 30, 2026' }
+      ]
+    },
+    surra: {
+      firstName: 'Vince', name: 'Vince Surra', title: 'Director of Operations, Regenitiva',
+      credentials: 'Practice Operations · Compliance Program Delivery',
+      imageAlt: 'Vince Surra portrait',
+      bioParagraphs: [
+        "Vince Surra leads client operations at Regenitiva — the point of contact for practices once a program moves from build to daily use. He oversees compliance program delivery, staff training logistics, and the ongoing auditing that keeps a program current as standards change.",
+        "Before joining Regenitiva, he spent his career managing multi-site healthcare operations, which shapes how he approaches standardizing a protocol across locations without losing what makes each practice work."
+      ],
+      credentialGroups: [
+        { label: 'Background', items: ['10+ years in multi-site healthcare operations management', 'Specializes in compliance program delivery and staff training logistics'] },
+        { label: 'Professional History', items: ['Director of Operations, Regenitiva (2026–present)'] }
+      ],
+      posts: []
+    }
+  };
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+
+    const personId = this.props.personId ?? 'lagattuta';
+    const base = this.people[personId] || this.people.lagattuta;
+    const forceEmpty = this.props.demoEmptyPosts ?? false;
+    const posts = (forceEmpty ? [] : base.posts).map(p => ({ ...p, href: '/blog/' + p.id, imageId: 'author-post-' + p.id }));
+    const person = { ...base, imageId: 'author-portrait-' + personId, posts };
+    const hasPosts = posts.length > 0;
+
+    const h2 = (color, mb = 24) => ({ fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` });
+
+    const backLinkStyle = { display: 'block', fontFamily: 'Roboto', fontSize: 14, fontWeight: 500, color: '#6B6358', padding: isMobile ? `24px ${margin}px 0 ${margin}px` : `40px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+
+    const headerOuterStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 24, padding: `24px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' }
+      : { display: 'flex', gap: 40, alignItems: 'center', padding: `32px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const headerPortraitStyle = isMobile
+      ? { width: '100%', aspectRatio: '4/3', borderRadius: 10, overflow: 'hidden' }
+      : { flex: '0 0 auto', width: 220, height: 220, borderRadius: 10, overflow: 'hidden' };
+    const nameStyle = { fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 30 : 42, lineHeight: 1.15, letterSpacing: '-0.01em', color: '#1C1A17', margin: '0 0 10px 0' };
+    const credentialsStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#6B6358', margin: '0 0 8px 0' };
+    const titleStyle = { fontFamily: 'Archivo', fontSize: 16, fontWeight: 600, color: '#8F520B' };
+
+    const containerStyle = { display: 'flex', flexDirection: 'column', gap: isMobile ? 40 : 48, padding: `${isMobile ? 40 : 64}px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const articleStyle = { minWidth: 0, maxWidth: isMobile ? 'none' : 820 };
+    const pStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: '0 0 20px 0' };
+
+    const credentialsBlockStyle = { maxWidth: isMobile ? 'none' : 820, padding: isMobile ? '24px 22px' : '32px 40px', border: '1px solid #DDD4C7', borderRadius: 10, background: '#FFFFFF' };
+    const sidebarLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1C1A17', margin: '0 0 20px 0' };
+    const credGroupStyle = isMobile ? { marginBottom: 24 } : { marginBottom: 24, display: 'grid', gridTemplateColumns: '200px 1fr', gap: 24, alignItems: 'baseline' };
+    const credGroupLabelStyle = { fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, color: '#8F520B', margin: isMobile ? '0 0 10px 0' : 0 };
+    const dashListStyle = { display: 'flex', flexDirection: 'column', gap: 8 };
+    const dashItemStyle = { display: 'flex', gap: 10, fontFamily: 'Roboto', fontSize: 15, lineHeight: 1.5, color: '#3D3831' };
+    const dashMarkStyle = { flex: '0 0 auto', color: '#8F520B' };
+
+    const postsOuterStyle = { padding: isMobile ? `56px ${margin}px` : `88px ${margin}px`, maxWidth: 1180, margin: '0 auto', borderTop: '1px solid #DDD4C7', marginTop: isMobile ? 48 : 72 };
+    const postsHeadStyle = h2('#1C1A17', isMobile ? 24 : 32);
+    const postsGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 28 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 };
+    const postCardStyle = { display: 'flex', flexDirection: 'column', border: '1px solid #DDD4C7', borderRadius: 10, overflow: 'hidden', background: '#FFFFFF' };
+    const postThumbStyle = { width: '100%', aspectRatio: '16/10' };
+    const postBodyStyle = { padding: '18px 18px 20px 18px' };
+    const postCategoryStyle = { fontFamily: 'Archivo', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8F520B', marginBottom: 8 };
+    const postTitleStyle = { fontFamily: 'Archivo', fontSize: 16, fontWeight: 600, color: '#1C1A17', lineHeight: 1.3, marginBottom: 8 };
+    const postDateStyle = { fontFamily: 'Roboto', fontSize: 13, color: '#6B6358' };
+
+    const emptyStateStyle = { display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: isMobile ? '48px 24px' : '72px 24px', border: '1px dashed #DDD4C7', borderRadius: 10, gap: 16 };
+    const emptyTextStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#6B6358', margin: 0 };
+
+    const ctaOuterStyle = { padding: isMobile ? `56px ${margin}px` : `88px ${margin}px`, background: '#1C1A17', color: '#FAF7F2', textAlign: 'center' };
+    const ctaInnerStyle = { maxWidth: 560, margin: '0 auto' };
+    const ctaHeadStyle = { ...h2('#FAF7F2', 16), textAlign: 'center' };
+    const ctaBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.6, color: '#DDD4C7', margin: '0 auto 28px auto', maxWidth: 440 };
+    const ctaBtnStyle = { fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, background: '#F59621', color: '#1C1A17', border: '1px solid #F59621', borderRadius: 6, padding: '15px 26px', display: 'inline-block' };
+
+    return {
+      person, hasPosts,
+      backLinkStyle, headerOuterStyle, headerPortraitStyle, nameStyle, credentialsStyle, titleStyle,
+      containerStyle, articleStyle, pStyle,
+      credentialsBlockStyle, sidebarLabelStyle, credGroupStyle, credGroupLabelStyle, dashListStyle, dashItemStyle, dashMarkStyle,
+      postsOuterStyle, postsHeadStyle, postsGridStyle, postCardStyle, postThumbStyle, postBodyStyle, postCategoryStyle, postTitleStyle, postDateStyle,
+      emptyStateStyle, emptyTextStyle,
+      ctaOuterStyle, ctaInnerStyle, ctaHeadStyle, ctaBodyStyle, ctaBtnStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>

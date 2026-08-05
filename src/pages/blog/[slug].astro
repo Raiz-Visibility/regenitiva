@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { getReadTime, formatDate, validateCategory } from '../../lib/blog';
+import { getTeamMemberByName } from '../../data/team';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -15,6 +16,7 @@ const { Content } = await render(post);
 validateCategory(post.data.category, post.id);
 
 const readTime = post.body ? getReadTime(post.body) : 3;
+const authorMember = getTeamMemberByName(post.data.author);
 const formattedDate = formatDate(post.data.date);
 
 // Get related posts (same category, exclude current, max 3)
@@ -38,6 +40,7 @@ const relatedPosts = allPosts
   category={post.data.category}
   date={formattedDate}
   author={post.data.author}
+  authorSlug={authorMember?.id}
   authorTitle={post.data.authorTitle}
   authorBio={post.data.authorBio}
   readTime={readTime}

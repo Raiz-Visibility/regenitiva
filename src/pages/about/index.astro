@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { team } from '../../data/team';
+---
+
+<BaseLayout title="About — Regenitiva" description="Regenitiva was founded to close the gap between what's possible in regenerative medicine and what patients actually receive.">
+
+  <!-- Hero -->
+  <section class="ab-hero">
+    <div class="ab-hero-inner">
+      <div class="ab-eyebrow">About</div>
+      <h1>Closing the gap between what's possible and what patients receive.</h1>
+      <p class="ab-intro">Regenitiva was founded in 2026 on a straightforward observation: there are patients who aren't getting the best available care, and physicians who would offer it if the path were clearer.</p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="ab-mission">
+    <div class="ab-mission-grid">
+      <div class="ab-mission-card">
+        <div class="ab-card-label">Mission</div>
+        <p class="ab-card-body">To improve people's lives by making cutting-edge regenerative medicine available to more patients, through the physicians already treating them.</p>
+      </div>
+      <div class="ab-mission-card">
+        <div class="ab-card-label">Vision</div>
+        <p class="ab-card-body">A future where patients get better, and doctors practice regenerative medicine without hesitation — backed by protocols and compliance they can stand behind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="ab-values">
+    <h2>What we hold to.</h2>
+    <div class="ab-values-row">
+      <div class="ab-value">
+        <div class="ab-value-label">Integrity</div>
+        <p class="ab-value-body">We tell physicians what's actually true about outcomes, costs, and risk.</p>
+      </div>
+      <div class="ab-value">
+        <div class="ab-value-label">Patient Safety</div>
+        <p class="ab-value-body">Every protocol we write starts here.</p>
+      </div>
+      <div class="ab-value">
+        <div class="ab-value-label">Client Support</div>
+        <p class="ab-value-body">Your program is our responsibility, not just our project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="ab-team">
+    <div class="ab-team-head">
+      <div class="ab-eyebrow">Leadership</div>
+      <h2>The people behind the program.</h2>
+    </div>
+    <div class="ab-team-grid">
+      {team.map((person) => (
+        <div class="ab-team-card">
+          <div class="ab-portrait"></div>
+          <div class="ab-team-name">{person.name}</div>
+          <div class="ab-team-title">{person.title}</div>
+          <p class="ab-team-bio">{person.shortBio}</p>
+          <a href={`/about/${person.id}/`} class="ab-team-link">Read full bio →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ab-cta">
+    <div class="ab-cta-inner">
+      <h2 class="ab-cta-head">Let's look at your practice.</h2>
+      <p class="ab-cta-body">A short conversation is usually enough to tell whether a regenerative medicine program makes sense for you.</p>
+      <a href="/contact" class="ab-cta-btn">Schedule a Consultation</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .ab-hero {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) 0;
+  }
+
+  .ab-hero-inner {
+    max-width: 780px;
+  }
+
+  .ab-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ab-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .ab-hero { padding: 80px var(--rg-space-7) 0; }
+  }
+
+  /* Mission */
+  .ab-mission {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-7) var(--rg-space-5);
+  }
+
+  .ab-mission-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-5);
+  }
+
+  .ab-mission-card {
+    padding: 28px var(--rg-space-5);
+    background: var(--rg-bg-subtle);
+    border-radius: var(--rg-radius-lg);
+  }
+
+  .ab-card-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ab-card-body {
+    font-size: var(--rg-size-body);
+    line-height: 1.6;
+    color: var(--rg-text-primary);
+  }
+
+  @media (min-width: 768px) {
+    .ab-mission { padding: 72px var(--rg-space-7); }
+    .ab-mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--rg-space-6); }
+    .ab-mission-card { padding: 40px; }
+  }
+
+  /* Values */
+  .ab-values {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-5) var(--rg-space-5) 56px;
+  }
+
+  .ab-values h2 { margin-bottom: var(--rg-space-6); }
+
+  .ab-values-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-6);
+  }
+
+  .ab-value {
+    border-left: 2px solid var(--rg-border);
+    padding-left: 18px;
+  }
+
+  .ab-value-label {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: 10px;
+  }
+
+  .ab-value-body {
+    font-size: var(--rg-size-button);
+    line-height: 1.6;
+    color: var(--rg-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .ab-values { padding: var(--rg-space-5) var(--rg-space-7) 88px; }
+    .ab-values h2 { margin-bottom: 40px; }
+    .ab-values-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--rg-space-6); }
+  }
+
+  /* Team */
+  .ab-team {
+    padding: 56px var(--rg-space-5);
+    background: var(--rg-bg-surface);
+    border-top: 1px solid var(--rg-border);
+  }
+
+  .ab-team-head {
+    max-width: var(--rg-container);
+    margin: 0 auto var(--rg-space-6);
+  }
+
+  .ab-team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: var(--rg-container);
+    margin: 0 auto;
+  }
+
+  .ab-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-stone-300);
+    margin-bottom: var(--rg-space-5);
+  }
+
+  .ab-team-name {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-h4);
+    font-weight: var(--rg-weight-semibold);
+    color: var(--rg-text-primary);
+    margin-bottom: var(--rg-space-1);
+  }
+
+  .ab-team-title {
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ab-team-bio {
+    font-size: var(--rg-size-button);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .ab-team-link {
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    text-decoration: none;
+  }
+
+  .ab-team-link:hover {
+    color: var(--rg-amber-900);
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .ab-team { padding: 88px var(--rg-space-7); }
+    .ab-team-head { margin-bottom: var(--rg-space-7); }
+    .ab-team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px; }
+  }
+
+  /* CTA */
+  .ab-cta {
+    padding: var(--rg-space-8) var(--rg-space-5);
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+    text-align: center;
+  }
+
+  .ab-cta-inner { max-width: 640px; margin: 0 auto; }
+
+  .ab-cta-head {
+    color: var(--rg-text-on-inverse);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .ab-cta-body {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-stone-300);
+    max-width: 480px;
+    margin: 0 auto var(--rg-space-7);
+  }
+
+  .ab-cta-btn {
+    display: inline-block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    letter-spacing: var(--rg-ls-button);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: var(--rg-space-4) 30px;
+    text-decoration: none;
+    transition: background var(--rg-duration-base) ease-out,
+      border-color var(--rg-duration-base) ease-out;
+  }
+
+  .ab-cta-btn:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+    color: var(--rg-ink-900);
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    .ab-cta { padding: 100px var(--rg-space-7); }
+  }
+</style>

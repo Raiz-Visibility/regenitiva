@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FAF7F2;color:#1C1A17;font-family:Roboto,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F520B;text-decoration:none}
+a:hover{color:#6E3F08;text-decoration:underline}
+::selection{background:#FFCD4D;color:#1C1A17}
+</style>
+</helmet>
+
+<div style="width:100%;background:#FAF7F2;overflow-x:hidden">
+
+<section style="{{ pageHeaderStyle }}">
+<div style="{{ eyebrowStyle }}">CONTACT</div>
+<h1 style="{{ h1Style }}">Let's talk about your practice.</h1>
+<p style="{{ pageIntroStyle }}">Tell us where you're starting from and we'll follow up to schedule a short assessment call — no obligation, no pressure.</p>
+</section>
+
+<div style="{{ twoColStyle }}">
+
+<div style="{{ formCardStyle }}">
+
+<sc-if value="{{ isIdle }}" hint-placeholder-val="{{ true }}">
+<form style="{{ formStyle }}" onSubmit="{{ handleSubmit }}">
+<label style="{{ formLabelStyle }}">Name<input type="text" name="name" required="{{ true }}" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Email<input type="email" name="email" required="{{ true }}" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Phone<input type="tel" name="phone" style="{{ formInputStyle }}"></input></label>
+<label style="{{ formLabelStyle }}">Practice Type
+<select name="practiceType" value="{{ practiceType }}" onChange="{{ handlePracticeTypeChange }}" style="{{ formSelectStyle }}">
+<option value="">Select one…</option>
+<option value="Physiatry / PM&R">Physiatry / PM&amp;R</option>
+<option value="Sports Medicine">Sports Medicine</option>
+<option value="Pain Management">Pain Management</option>
+<option value="Orthopedics">Orthopedics</option>
+<option value="Personal Injury / MVA Practice">Personal Injury / MVA Practice</option>
+<option value="Multi-Site Group">Multi-Site Group</option>
+<option value="Other">Other</option>
+</select>
+</label>
+<sc-if value="{{ showOtherField }}" hint-placeholder-val="{{ false }}">
+<label style="{{ formLabelStyle }}">Please specify<input type="text" name="practiceTypeOther" style="{{ formInputStyle }}" placeholder="Tell us about your practice"></input></label>
+</sc-if>
+<label style="{{ formLabelStyle }}">Message<textarea name="message" rows="5" placeholder="What would you like to know?" style="{{ formTextareaStyle }}"></textarea></label>
+<button type="submit" style="{{ formSubmitStyle }}">{{ submitLabel }}</button>
+</form>
+</sc-if>
+
+<sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+<div style="{{ statusWrapStyle }}">
+<div style="{{ statusIconWrapStyle }}background:#EFE9E0;">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14.5L11.5 20L22 8" stroke="#8F520B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 style="{{ statusHeadStyle }}">Message sent.</h3>
+<p style="{{ statusBodyStyle }}">Thanks for reaching out — we'll be in touch within one business day.</p>
+<button type="button" onClick="{{ resetForm }}" style="{{ statusLinkStyle }}">Send another message</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+<div style="{{ statusWrapStyle }}">
+<div style="{{ statusIconWrapStyle }}background:#F4E4D9;">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#B34715" stroke-width="2"></circle><path d="M14 9V15" stroke="#B34715" stroke-width="2" stroke-linecap="round"></path><circle cx="14" cy="19" r="1.2" fill="#B34715"></circle></svg>
+</div>
+<h3 style="{{ statusHeadStyle }}">Something went wrong.</h3>
+<p style="{{ statusBodyStyle }}">Your message didn't go through. Please try again, or reach us directly at <a href="mailto:vince@regenitiva.com" style="color:#8F520B">vince@regenitiva.com</a>.</p>
+<button type="button" onClick="{{ resetForm }}" style="{{ statusLinkStyle }}">Try again</button>
+</div>
+</sc-if>
+
+</div>
+
+<div style="{{ detailsCardStyle }}">
+<div style="{{ sidebarLabelStyle }}">Contact Details</div>
+<div style="{{ detailsListStyle }}">
+<div style="{{ detailItemStyle }}">
+<div style="{{ detailIconStyle }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3H7.5L9 7L7 8.5C7.8 10.4 9.6 12.2 11.5 13L13 11L17 12.5V16C17 16.6 16.5 17 16 17C9 17 3 11 3 4C3 3.5 3.4 3 4 3Z" stroke="#8F520B" stroke-width="1.4" stroke-linejoin="round"></path></svg></div>
+<div><div style="{{ detailLabelStyle }}">Phone</div><a href="tel:8058967983" style="{{ detailValueLinkStyle }}">805-896-7983</a></div>
+</div>
+<div style="{{ detailItemStyle }}">
+<div style="{{ detailIconStyle }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4.5" width="14" height="11" rx="1.5" stroke="#8F520B" stroke-width="1.4"></rect><path d="M3.5 5.5L10 10.5L16.5 5.5" stroke="#8F520B" stroke-width="1.4" stroke-linecap="round"></path></svg></div>
+<div><div style="{{ detailLabelStyle }}">Email</div><a href="mailto:vince@regenitiva.com" style="{{ detailValueLinkStyle }}">vince@regenitiva.com</a></div>
+</div>
+<div style="{{ detailItemStyle }}">
+<div style="{{ detailIconStyle }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#8F520B" stroke-width="1.4"></circle><path d="M10 6V10L12.5 12" stroke="#8F520B" stroke-width="1.4" stroke-linecap="round"></path></svg></div>
+<div><div style="{{ detailLabelStyle }}">Hours</div><div style="{{ detailValueStyle }}">9am–5pm CST</div></div>
+</div>
+<div style="{{ detailItemStyle }}">
+<div style="{{ detailIconStyle }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18C10 18 16 12.4 16 8A6 6 0 1 0 4 8C4 12.4 10 18 10 18Z" stroke="#8F520B" stroke-width="1.4"></path><circle cx="10" cy="8" r="2" stroke="#8F520B" stroke-width="1.4"></circle></svg></div>
+<div><div style="{{ detailLabelStyle }}">Location</div><div style="{{ detailValueStyle }}">Garden Grove, CA</div></div>
+</div>
+</div>
+<p style="{{ remoteNoteStyle }}">Regenitiva works with practices remotely, nationwide — your location isn't a barrier to getting started.</p>
+</div>
+
+</div>
+
+<section style="{{ expectationsOuterStyle }}">
+<div style="{{ expectationsInnerStyle }}">
+<h2 style="{{ expectationsHeadStyle }}">What happens after you reach out.</h2>
+<div style="{{ expectationsGridStyle }}">
+<div style="{{ expectationItemStyle }}"><span style="{{ expectationBadgeStyle }}">1</span><div><div style="{{ expectationItemHeadStyle }}">We respond</div><p style="{{ expectationItemBodyStyle }}">Within one business day, usually sooner.</p></div></div>
+<div style="{{ expectationItemStyle }}"><span style="{{ expectationBadgeStyle }}">2</span><div><div style="{{ expectationItemHeadStyle }}">We schedule a call</div><p style="{{ expectationItemBodyStyle }}">A short conversation about your practice and what you're considering.</p></div></div>
+<div style="{{ expectationItemStyle }}"><span style="{{ expectationBadgeStyle }}">3</span><div><div style="{{ expectationItemHeadStyle }}">We scope the assessment</div><p style="{{ expectationItemBodyStyle }}">If it's a fit, we outline next steps and a realistic timeline — no pressure to commit.</p></div></div>
+</div>
+</div>
+</section>
+
+<section style="{{ mapSectionStyle }}">
+<div style="{{ mapPlaceholderStyle }}">
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 29C16 29 26 20 26 13A10 10 0 1 0 6 13C6 20 16 29 16 29Z" stroke="#B8AE9F" stroke-width="1.6"></path><circle cx="16" cy="13" r="3.5" stroke="#B8AE9F" stroke-width="1.6"></circle></svg>
+<div style="{{ mapPlaceholderTextStyle }}">Map embed — Garden Grove, CA</div>
+</div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1700},&quot;forceMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;auto&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;desktop&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;previewStatus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;idle&quot;,&quot;options&quot;:[&quot;idle&quot;,&quot;success&quot;,&quot;error&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Form State&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth <= 767,
+    isTablet: typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth <= 1023,
+    practiceType: '',
+    status: 'idle'
+  };
+
+  componentDidMount() {
+    this.mqMobile = window.matchMedia('(max-width:767px)');
+    this.mqTablet = window.matchMedia('(min-width:768px) and (max-width:1023px)');
+    this.onMqMobile = e => this.setState({ isMobile: e.matches });
+    this.onMqTablet = e => this.setState({ isTablet: e.matches });
+    this.mqMobile.addEventListener('change', this.onMqMobile);
+    this.mqTablet.addEventListener('change', this.onMqTablet);
+  }
+
+  componentWillUnmount() {
+    if (this.mqMobile) this.mqMobile.removeEventListener('change', this.onMqMobile);
+    if (this.mqTablet) this.mqTablet.removeEventListener('change', this.onMqTablet);
+  }
+
+  renderVals() {
+    const forceMode = this.props.forceMode;
+    const isMobile = forceMode === 'mobile' ? true : forceMode === 'desktop' ? false : this.state.isMobile;
+    const isTablet = forceMode ? false : this.state.isTablet;
+    const margin = isMobile ? 24 : isTablet ? 64 : 120;
+    const s = this.state;
+    const previewStatus = this.props.previewStatus ?? 'idle';
+    const status = previewStatus !== 'idle' ? previewStatus : s.status;
+
+    const eyebrow = (color) => ({ fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color, margin: '0 0 16px 0' });
+    const h2 = (color, mb = 24) => ({ fontFamily: 'Archivo', fontWeight: 400, fontSize: isMobile ? 28 : 40, lineHeight: 1.15, letterSpacing: '-0.01em', color, margin: `0 0 ${mb}px 0` });
+
+    const pageHeaderStyle = { padding: isMobile ? `40px ${margin}px 0 ${margin}px` : `72px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' };
+    const eyebrowStyle = eyebrow('#8F520B');
+    const h1Style = h2('#1C1A17', 16);
+    const pageIntroStyle = { fontFamily: 'Roboto', fontSize: 17, lineHeight: 1.65, color: '#3D3831', margin: 0, maxWidth: 620 };
+
+    const twoColStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 32, padding: `40px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto' }
+      : { display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, padding: `56px ${margin}px 0 ${margin}px`, maxWidth: 1180, margin: '0 auto', alignItems: 'start' };
+
+    const formCardStyle = { padding: isMobile ? '28px 22px' : '40px 40px', border: '1px solid #DDD4C7', borderRadius: 10, background: '#FFFFFF' };
+    const formStyle = { display: 'flex', flexDirection: 'column', gap: 16 };
+    const formLabelStyle = { display: 'flex', flexDirection: 'column', gap: 6, fontFamily: 'Archivo', fontSize: 13, fontWeight: 600, color: '#3D3831' };
+    const formInputBase = { fontFamily: 'Roboto', fontSize: 16, color: '#1C1A17', border: '1px solid #DDD4C7', borderRadius: 6, padding: '12px 14px', background: '#FAF7F2', outline: 'none' };
+    const formInputStyle = { ...formInputBase };
+    const formSelectStyle = { ...formInputBase, appearance: 'auto' };
+    const formTextareaStyle = { ...formInputBase, resize: 'vertical', fontFamily: 'Roboto', lineHeight: 1.5 };
+    const formSubmitStyle = { marginTop: 8, fontFamily: 'Roboto', fontSize: 16, fontWeight: 500, background: status === 'submitting' ? '#DDD4C7' : '#F59621', color: '#1C1A17', border: '1px solid ' + (status === 'submitting' ? '#DDD4C7' : '#F59621'), borderRadius: 6, padding: '15px 22px', cursor: status === 'submitting' ? 'default' : 'pointer' };
+
+    const statusWrapStyle = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: isMobile ? '24px 0' : '48px 0' };
+    const statusIconWrapStyle = { width: 56, height: 56, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 };
+    const statusHeadStyle = { fontFamily: 'Archivo', fontSize: 22, fontWeight: 600, color: '#1C1A17', margin: '0 0 10px 0' };
+    const statusBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.6, color: '#3D3831', margin: '0 0 20px 0', maxWidth: 420 };
+    const statusLinkStyle = { fontFamily: 'Roboto', fontSize: 15, fontWeight: 500, color: '#8F520B', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', padding: 0 };
+
+    const detailsCardStyle = { padding: isMobile ? '28px 22px' : '40px 36px', border: '1px solid #DDD4C7', borderRadius: 10, background: '#1C1A17' };
+    const sidebarLabelStyle = { fontFamily: 'Archivo', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#DDD4C7', margin: '0 0 24px 0' };
+    const detailsListStyle = { display: 'flex', flexDirection: 'column', gap: 22, marginBottom: 28 };
+    const detailItemStyle = { display: 'flex', gap: 14, alignItems: 'flex-start' };
+    const detailIconStyle = { flex: '0 0 auto', width: 36, height: 36, borderRadius: 8, background: '#3D3831', display: 'flex', alignItems: 'center', justifyContent: 'center' };
+    const detailLabelStyle = { fontFamily: 'Roboto', fontSize: 13, color: '#B8AE9F', margin: '2px 0 4px 0' };
+    const detailValueStyle = { fontFamily: 'Archivo', fontSize: 17, fontWeight: 500, color: '#FAF7F2' };
+    const detailValueLinkStyle = { fontFamily: 'Archivo', fontSize: 17, fontWeight: 500, color: '#FFCD4D' };
+    const remoteNoteStyle = { fontFamily: 'Roboto', fontSize: 14, lineHeight: 1.6, color: '#B8AE9F', margin: 0, paddingTop: 24, borderTop: '1px solid #3D3831' };
+
+    const expectationsOuterStyle = { padding: isMobile ? `56px ${margin}px` : `96px ${margin}px`, background: '#EFE9E0', marginTop: isMobile ? 48 : 72 };
+    const expectationsInnerStyle = { maxWidth: 1180, margin: '0 auto' };
+    const expectationsHeadStyle = h2('#1C1A17', isMobile ? 32 : 48);
+    const expectationsGridStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: 32 }
+      : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40 };
+    const expectationItemStyle = { display: 'flex', gap: 16, alignItems: 'flex-start' };
+    const expectationBadgeStyle = { flex: '0 0 auto', width: 28, height: 28, borderRadius: '50%', background: '#1C1A17', color: '#FAF7F2', fontFamily: 'Archivo', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' };
+    const expectationItemHeadStyle = { fontFamily: 'Archivo', fontSize: 17, fontWeight: 600, color: '#1C1A17', margin: '2px 0 8px 0' };
+    const expectationItemBodyStyle = { fontFamily: 'Roboto', fontSize: 16, lineHeight: 1.6, color: '#3D3831', margin: 0 };
+
+    const mapSectionStyle = { width: '100%' };
+    const mapPlaceholderStyle = { width: '100%', height: isMobile ? 260 : 420, background: '#E4DBCC', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 };
+    const mapPlaceholderTextStyle = { fontFamily: 'Roboto', fontSize: 15, color: '#6B6358' };
+
+    return {
+      status, isIdle: status === 'idle', isSuccess: status === 'success', isError: status === 'error',
+      submitLabel: status === 'submitting' ? 'Sending…' : 'Send Message',
+      practiceType: s.practiceType,
+      handlePracticeTypeChange: (e) => this.setState({ practiceType: e.target.value }),
+      showOtherField: s.practiceType === 'Other',
+      handleSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ status: 'submitting' });
+        setTimeout(() => this.setState({ status: 'success' }), 700);
+      },
+      resetForm: () => this.setState({ status: 'idle', practiceType: '' }),
+      pageHeaderStyle, eyebrowStyle, h1Style, pageIntroStyle,
+      twoColStyle, formCardStyle, formStyle, formLabelStyle, formInputStyle, formSelectStyle, formTextareaStyle, formSubmitStyle,
+      statusWrapStyle, statusIconWrapStyle, statusHeadStyle, statusBodyStyle, statusLinkStyle,
+      detailsCardStyle, sidebarLabelStyle, detailsListStyle, detailItemStyle, detailIconStyle, detailLabelStyle, detailValueStyle, detailValueLinkStyle, remoteNoteStyle,
+      expectationsOuterStyle, expectationsInnerStyle, expectationsHeadStyle, expectationsGridStyle, expectationItemStyle, expectationBadgeStyle, expectationItemHeadStyle, expectationItemBodyStyle,
+      mapSectionStyle, mapPlaceholderStyle, mapPlaceholderTextStyle
+    };
+  }
+}
+
+</script>
+</body>
+</html>
