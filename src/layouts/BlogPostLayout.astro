@@ -9,10 +9,10 @@ interface Props {
   description?: string;
   category: string;
   date: string;
-  author: string;
+  author?: string;
   authorSlug?: string;
-  authorTitle: string;
-  authorBio: string;
+  authorTitle?: string;
+  authorBio?: string;
   readTime: number;
   relatedPosts: Array<{ slug: string; title: string; category: string; date: string }>;
 }
@@ -43,11 +43,11 @@ const categorySlug = slugifyCategory(category);
       <a href={`/blog/category/${categorySlug}/`} class="bp-category">{category}</a>
       <h1 class="bp-title">{title}</h1>
       <div class="bp-meta">
-        {authorSlug
-          ? <a href={`/about/${authorSlug}/`} class="bp-author-link">{author}</a>
-          : <span>{author}</span>
-        }
-        <span class="bp-meta-sep">&middot;</span>
+        {author && (
+          authorSlug
+            ? <><a href={`/about/${authorSlug}/`} class="bp-author-link">{author}</a><span class="bp-meta-sep">&middot;</span></>
+            : <><span>{author}</span><span class="bp-meta-sep">&middot;</span></>
+        )}
         <span>{date}</span>
         <span class="bp-meta-sep">&middot;</span>
         <span>{readTime} min read</span>
@@ -101,16 +101,18 @@ const categorySlug = slugifyCategory(category);
   </div>
 
   <!-- Author bio -->
+  {(author || authorBio) && (
   <section class="bp-author">
     <div class="bp-author-inner">
       <div class="bp-author-avatar"></div>
       <div class="bp-author-text">
-        <div class="bp-author-name">{author}</div>
-        <div class="bp-author-role">{authorTitle}</div>
-        <p class="bp-author-bio">{authorBio}</p>
+        {author && <div class="bp-author-name">{author}</div>}
+        {authorTitle && <div class="bp-author-role">{authorTitle}</div>}
+        {authorBio && <p class="bp-author-bio">{authorBio}</p>}
       </div>
     </div>
   </section>
+  )}
 
   <!-- Related posts grid -->
   {relatedPosts.length > 0 && (

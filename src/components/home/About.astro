@@ -1,7 +1,7 @@
 <section id="about" class="about-section">
   <div class="about">
     <div class="about-photo">
-      <img src="/images/about-founder-photo.webp" alt="Dr. Lagattuta portrait" />
+      <div class="about-placeholder"></div>
     </div>
     <div class="about-content">
       <h2>Who we are.</h2>
@@ -9,11 +9,11 @@
       <p class="about-body">We exist to close that gap — making regenerative medicine practical for real practices, with the protocols, training, and compliance structure that let a physician offer it confidently.</p>
       <a href="/about" class="about-section-link">Learn more about Regenitiva →</a>
       <div class="about-founder">
-        <h3 class="about-name">Francis P. Lagattuta, MD</h3>
+        <h3 class="about-name"><!-- Founder name --></h3>
         <p class="about-title">Founder, Regenitiva</p>
       </div>
-      <p class="about-credential">Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship from 1994 to 2015, training more than 60 physicians. More than 2,000 regenerative procedures performed.</p>
-      <a href="#" class="about-bio-link">Read Dr. Lagattuta's full background →</a>
+      <p class="about-credential"><!-- Founder credentials --></p>
+      <a href="/about" class="about-bio-link">Read full background →</a>
     </div>
     <div class="about-values">
     <div class="about-value">
@@ -48,10 +48,10 @@
     overflow: hidden;
   }
 
-  .about-photo img {
+  .about-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: var(--rg-stone-300);
   }
 
   .about-content {
@@ -157,7 +157,7 @@
       border-radius: var(--rg-radius-lg);
     }
 
-    .about-photo .placeholder {
+    .about-placeholder {
       border-radius: var(--rg-radius-lg);
     }
 

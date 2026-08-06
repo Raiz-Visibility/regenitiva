@@ -8,13 +8,9 @@ const blog = defineCollection({
     excerpt: z.string(),
     category: z.string(),
     date: z.date(),
-    author: z.string().default('Dr. Francis P. Lagattuta'),
-    authorTitle: z.string().default('Founder, Regenitiva'),
-    authorBio: z
-      .string()
-      .default(
-        'Board certified in physical medicine and rehabilitation, electrodiagnostic medicine, pain medicine, and addiction medicine. Directed an interventional pain fellowship for over twenty years and has performed more than 2,000 regenerative procedures.'
-      ),
+    author: z.string().optional(),
+    authorTitle: z.string().optional(),
+    authorBio: z.string().optional(),
     coverAlt: z.string().default(''),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
