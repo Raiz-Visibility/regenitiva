@@ -1,11 +1,13 @@
 ---
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+const WEB3FORMS_KEY = '3376c1de-6dd8-4d99-b502-3db4339bcab0';
 ---
 
 <div class="app-form-card">
   <div class="app-form-label">Ready to talk?</div>
-<form class="app-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+  <form class="app-form" data-key={WEB3FORMS_KEY}>
+    <input type="hidden" name="subject" value="New Consultation Request — Regenitiva" />
+    <input type="hidden" name="from_name" value="Regenitiva Website" />
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
     <label class="app-field">
       Name
       <input type="text" name="name" required />
@@ -37,6 +39,19 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
     </label>
     <button type="submit" class="app-submit">Request a Consultation</button>
   </form>
+
+  <!-- Success state -->
+  <div class="app-status app-status-success" hidden>
+    <h3 class="app-status-head">Request received.</h3>
+    <p class="app-status-body">Thanks for reaching out — we'll be in touch within 48 hours.</p>
+  </div>
+
+  <!-- Error state -->
+  <div class="app-status app-status-error" hidden>
+    <h3 class="app-status-head">Something went wrong.</h3>
+    <p class="app-status-body">Your request didn't go through. Please try again, or reach us directly at <a href="mailto:vince@regenitiva.com">vince@regenitiva.com</a>.</p>
+    <button type="button" class="app-status-link app-reset">Try again</button>
+  </div>
 </div>
 
 <style>
@@ -61,6 +76,10 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
     display: flex;
     flex-direction: column;
     gap: 14px;
+  }
+
+  .app-form[hidden] {
+    display: none;
   }
 
   .app-field {
@@ -120,20 +139,107 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
     background: var(--rg-amber-600);
     border-color: var(--rg-amber-600);
   }
+
+  .app-submit[disabled] {
+    background: var(--rg-stone-300);
+    border-color: var(--rg-stone-300);
+    cursor: default;
+  }
+
+  /* Status states */
+  .app-status {
+    padding: var(--rg-space-3) 0;
+  }
+
+  .app-status[hidden] {
+    display: none;
+  }
+
+  .app-status-head {
+    font-size: var(--rg-size-h5);
+    margin-bottom: var(--rg-space-2);
+  }
+
+  .app-status-body {
+    font-size: var(--rg-size-small);
+    line-height: 1.6;
+    color: var(--rg-text-secondary);
+  }
+
+  .app-status-link {
+    margin-top: var(--rg-space-3);
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
 </style>
 
 <script>
-  document.querySelectorAll<HTMLSelectElement>('.app-select').forEach((select) => {
-      const form = select.closest('.app-form');
-      if (!form) return;
-      const otherField = form.querySelector('.app-field-other') as HTMLElement | null;
-      if (!otherField) return;
+  document.querySelectorAll<HTMLFormElement>('.app-form').forEach((form) => {
+    const card = form.parentElement;
+    if (!card) return;
+    const successEl = card.querySelector('.app-status-success') as HTMLElement | null;
+    const errorEl = card.querySelector('.app-status-error') as HTMLElement | null;
+    const submitBtn = form.querySelector('.app-submit') as HTMLButtonElement | null;
 
+    // "Other" practice-type toggle
+    const select = form.querySelector('.app-select') as HTMLSelectElement | null;
+    const otherField = form.querySelector('.app-field-other') as HTMLElement | null;
+    if (select && otherField) {
       select.addEventListener('change', () => {
         const show = select.value === 'Other';
         otherField.hidden = !show;
         const input = otherField.querySelector('input') as HTMLInputElement | null;
         if (input) input.required = show;
       });
+    }
+
+    // Submit via Web3Forms (inline, no redirect)
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      const data = new FormData(form);
+      data.append('access_key', form.dataset.key || '');
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+        });
+        if (res.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          throw new Error('Submit failed');
+        }
+      } catch {
+        form.hidden = true;
+        if (errorEl) errorEl.hidden = false;
+      }
     });
+
+    // Reset (error → try again)
+    card.querySelectorAll('.app-reset').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        form.reset();
+        form.hidden = false;
+        if (successEl) successEl.hidden = true;
+        if (errorEl) errorEl.hidden = true;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request a Consultation';
+        }
+        if (otherField) otherField.hidden = true;
+      });
+    });
+  });
 </script>

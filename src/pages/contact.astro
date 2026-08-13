@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+const WEB3FORMS_KEY = '3376c1de-6dd8-4d99-b502-3db4339bcab0';
 ---
 
 <BaseLayout title="Contact — Regenitiva" description="Tell us about your practice and we'll follow up to schedule an assessment call.">
@@ -21,6 +21,9 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
     <div class="ct-form-card">
       <!-- Idle: form -->
       <form class="ct-form" id="contact-form" data-key={WEB3FORMS_KEY}>
+        <input type="hidden" name="subject" value="New Contact Form Submission — Regenitiva" />
+        <input type="hidden" name="from_name" value="Regenitiva Website" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label class="ct-field">
           Name
           <input type="text" name="name" required />
