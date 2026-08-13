@@ -110,6 +110,10 @@ service line without building it themselves.
 - All 10 service pages built (via cowork) and reviewed against this brief — on-brief and accurate.
 - ServiceLayout "From the Blog" sidebar card removed (kept blog fully hidden).
 - Both forms wired to Web3Forms with subject lines + honeypot; application form submits inline.
-- Built /protocol, /services (overview), /service-areas, /privacy, /terms. Repointed /compliance
+- Built /protocol, /services (overview), /privacy, /terms. Repointed /compliance
   links → /services/operations-compliance and /who-we-work-with → /services. Zero broken internal
   links across all 38 pages.
+- Business location corrected to 1860 Wilma Rudolph Blvd 128V, Clarksville, TN 37040 (hours CST
+  are correct — Central Time). Governing law in Terms set to Tennessee.
+- Service Areas page unlinked from nav/footer/homepage and force-noindexed (file kept), same
+  treatment as the blog — hidden at launch.
