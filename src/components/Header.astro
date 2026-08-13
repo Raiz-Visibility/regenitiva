@@ -53,12 +53,6 @@ const { activePage = '' } = Astro.props;
         >Service Areas</a>
 
         <a
-          href="/blog"
-          class:list={["nav-link", { active: activePage === 'blog' }]}
-          aria-current={activePage === 'blog' ? 'page' : undefined}
-        >Blog</a>
-
-        <a
           href="/contact"
           class:list={["nav-link nav-link-contact", { active: activePage === 'contact' }]}
           aria-current={activePage === 'contact' ? 'page' : undefined}
@@ -116,12 +110,6 @@ const { activePage = '' } = Astro.props;
             class:list={["mobile-link", { active: activePage === 'service-areas' }]}
             aria-current={activePage === 'service-areas' ? 'page' : undefined}
           >Service Areas</a>
-
-          <a
-            href="/blog"
-            class:list={["mobile-link", { active: activePage === 'blog' }]}
-            aria-current={activePage === 'blog' ? 'page' : undefined}
-          >Blog</a>
 
           <a
             href="/contact"

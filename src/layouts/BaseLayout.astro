@@ -6,14 +6,18 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  /** Force this page to be excluded from search indexing, even in production. */
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Regenitiva — regenerative medicine practice development and management services for physician-owned practices.',
+  noindex: forceNoindex = false,
 } = Astro.props;
 
-const noindex = import.meta.env.PUBLIC_NOINDEX !== 'false';
+// Site-wide staging protection (PUBLIC_NOINDEX) OR a per-page override.
+const noindex = forceNoindex || import.meta.env.PUBLIC_NOINDEX !== 'false';
 
 // Derive active page from URL pathname
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';

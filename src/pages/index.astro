@@ -27,19 +27,6 @@ import FAQ from '../components/home/FAQ.astro';
 
   <Protocol />
 
-  <!-- Patient Story -->
-  <section class="story">
-    <div class="story-photo">
-      <img src="/images/patient-story-photo.webp" alt="Patient story" class="story-img" />
-    </div>
-    <div class="story-text">
-      <div class="story-eyebrow">The patients you can help</div>
-      <h2 class="story-headline">She came in as a surgical candidate. She left pain free and without surgery.</h2>
-      <p class="story-body">A 45-year-old woman had been told her back would need surgery. She was treated in the office instead, and today she's pain-free — without ever going to the operating room.</p>
-      <p class="story-body">Not every patient is a candidate, and not every case ends this way. But this is what a properly built program makes possible: real options for the people sitting in your waiting room right now.</p>
-    </div>
-  </section>
-
   <About />
 
   <Training />
@@ -77,78 +64,6 @@ import FAQ from '../components/home/FAQ.astro';
   @media (min-width: 768px) {
     .intro {
       padding: var(--rg-space-8) var(--rg-space-7) var(--rg-space-7);
-    }
-  }
-
-  /* ----------------------------------------------------------------
-     Patient Story
-     ---------------------------------------------------------------- */
-  .story {
-    display: flex;
-    flex-direction: column;
-    background: var(--rg-bg-subtle);
-  }
-
-  .story-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-  }
-
-  .story-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .story-text {
-    padding: var(--rg-space-6) var(--rg-space-5) var(--rg-space-7);
-  }
-
-  .story-eyebrow {
-    font-family: var(--rg-font-display);
-    font-size: var(--rg-size-eyebrow);
-    font-weight: var(--rg-weight-bold);
-    letter-spacing: var(--rg-ls-eyebrow);
-    text-transform: uppercase;
-    color: var(--rg-text-muted);
-    margin-bottom: var(--rg-space-6);
-  }
-
-  .story-headline {
-    font-size: var(--rg-size-h3);
-    font-weight: var(--rg-weight-medium);
-    line-height: var(--rg-lh-h3);
-    letter-spacing: var(--rg-ls-h3);
-    max-width: 620px;
-    margin-bottom: var(--rg-space-6);
-  }
-
-  .story-body {
-    font-size: var(--rg-size-body);
-    line-height: var(--rg-lh-body);
-    color: var(--rg-text-secondary);
-    max-width: 620px;
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 768px) {
-    .story {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .story-photo {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 42%;
-      aspect-ratio: auto;
-    }
-
-    .story-text {
-      margin-right: 42%;
-      padding: 140px var(--rg-space-8) 140px max(var(--rg-space-8), calc((100% - var(--rg-container)) / 2 + var(--rg-space-7)));
     }
   }
 

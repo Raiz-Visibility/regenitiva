@@ -1,7 +1,13 @@
+---
+import { getTeamMember } from '../../data/team';
+
+const vince = getTeamMember('vince-surra')!;
+---
+
 <section id="about" class="about-section">
   <div class="about">
     <div class="about-photo">
-      <div class="about-placeholder"></div>
+      <img src={vince.image} alt={vince.imageAlt} class="about-portrait" />
     </div>
     <div class="about-content">
       <h2>Who we are.</h2>
@@ -9,11 +15,11 @@
       <p class="about-body">We exist to close that gap — making regenerative medicine practical for real practices, with the protocols, training, and compliance structure that let a physician offer it confidently.</p>
       <a href="/about" class="about-section-link">Learn more about Regenitiva →</a>
       <div class="about-founder">
-        <h3 class="about-name"><!-- Founder name --></h3>
-        <p class="about-title">Founder, Regenitiva</p>
+        <h3 class="about-name">{vince.name}</h3>
+        <p class="about-title">{vince.title}, Regenitiva</p>
       </div>
-      <p class="about-credential"><!-- Founder credentials --></p>
-      <a href="/about" class="about-bio-link">Read full background →</a>
+      <p class="about-credential">{vince.credentials}</p>
+      <a href={`/about/${vince.id}/`} class="about-bio-link">Read full background →</a>
     </div>
     <div class="about-values">
     <div class="about-value">
@@ -48,10 +54,12 @@
     overflow: hidden;
   }
 
-  .about-placeholder {
+  .about-portrait {
     width: 100%;
     height: 100%;
-    background: var(--rg-stone-300);
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
   .about-content {
@@ -154,10 +162,6 @@
       height: auto;
       aspect-ratio: 4 / 5;
       max-width: 420px;
-      border-radius: var(--rg-radius-lg);
-    }
-
-    .about-placeholder {
       border-radius: var(--rg-radius-lg);
     }
 

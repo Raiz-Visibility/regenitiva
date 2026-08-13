@@ -30,7 +30,7 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
 
   <!-- Header -->
   <header class="au-header">
-    <div class="au-portrait"></div>
+    <div class="au-portrait"><img src={person.image} alt={person.imageAlt} /></div>
     <div>
       <h1 class="au-name">{person.name}</h1>
       <div class="au-credentials">{person.credentials}</div>
@@ -136,6 +136,15 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
     aspect-ratio: 4 / 3;
     border-radius: var(--rg-radius-lg);
     background: var(--rg-stone-300);
+    overflow: hidden;
+  }
+
+  .au-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
   .au-name {

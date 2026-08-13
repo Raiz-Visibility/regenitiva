@@ -28,7 +28,7 @@ const { page, category } = Astro.props;
 const currentCategorySlug = slugifyCategory(category);
 ---
 
-<BaseLayout title={`${category} — Blog — Regenitiva`} description={`Blog posts about ${category.toLowerCase()} in regenerative medicine practice development.`}>
+<BaseLayout title={`${category} — Blog — Regenitiva`} description={`Blog posts about ${category.toLowerCase()} in regenerative medicine practice development.`} noindex={true}>
 
   <section class="blog-header">
     <div class="blog-header-inner">

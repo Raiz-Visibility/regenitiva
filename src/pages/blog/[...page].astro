@@ -21,7 +21,7 @@ const featuredPost = isFirstPage ? page.data[0] : null;
 const gridPosts = isFirstPage ? page.data.slice(1) : page.data;
 ---
 
-<BaseLayout title="Blog — Regenitiva" description="Insights on regenerative medicine practice development, compliance, and clinical operations.">
+<BaseLayout title="Blog — Regenitiva" description="Insights on regenerative medicine practice development, compliance, and clinical operations." noindex={true}>
 
   <section class="blog-header">
     <div class="blog-header-inner">

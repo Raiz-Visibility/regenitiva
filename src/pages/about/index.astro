@@ -56,7 +56,7 @@ import { team } from '../../data/team';
     <div class="ab-team-grid">
       {team.map((person) => (
         <div class="ab-team-card">
-          <div class="ab-portrait"></div>
+          <div class="ab-portrait"><img src={person.image} alt={person.imageAlt} /></div>
           <div class="ab-team-name">{person.name}</div>
           <div class="ab-team-title">{person.title}</div>
           <p class="ab-team-bio">{person.shortBio}</p>
@@ -218,6 +218,15 @@ import { team } from '../../data/team';
     border-radius: var(--rg-radius-lg);
     background: var(--rg-stone-300);
     margin-bottom: var(--rg-space-5);
+    overflow: hidden;
+  }
+
+  .ab-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
   .ab-team-name {

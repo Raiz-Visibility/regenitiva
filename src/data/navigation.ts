@@ -31,6 +31,5 @@ export const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

@@ -34,7 +34,7 @@ import { slugifyCategory } from '../lib/blog';
 const categorySlug = slugifyCategory(category);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} noindex={true}>
 
   <!-- Header -->
   <header class="bp-header">
