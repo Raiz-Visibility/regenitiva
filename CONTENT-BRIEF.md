@@ -124,7 +124,7 @@ service line without building it themselves.
 
 ## 🚀 Launch flip (do these together when client approves indexing)
 
-1. Confirm canonical domain (www vs non-www) and update `site` in astro.config.mjs if needed.
+1. Canonical domain confirmed: https://www.regenitiva.com (set in astro.config.mjs).
 2. Update `public/robots.txt` from `Disallow: /` to allow crawling + add `Sitemap:` line.
 3. Set `PUBLIC_NOINDEX=false` in the production build environment (Cloudflare Pages env var) to
    drop the noindex meta on public pages (blog + service-areas stay noindexed via per-page override).
