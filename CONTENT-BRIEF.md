@@ -91,13 +91,12 @@ service line without building it themselves.
 
 ## 🔧 Corrections still needed on existing pages
 
-- **`src/pages/services/practice-development.astro`**
-  - "Your whole team trains **remotely**, on your own equipment" → in-person, proctored (see above).
-  - "**six to ten weeks**" (appears twice) → **3–6 months**.
-  - Remove the invented testimonial: *"We were referring these patients out for years…" — Physiatrist.*
-  - Reframe any "specified by indication / different protocols" language → one consistent protocol.
-- **Dead links to build or repoint:** `/protocol`, `/service-areas`, `/privacy`, `/terms`, and the
-  9 not-yet-built service routes listed in `src/data/navigation.ts`.
+- **Dead links to build or repoint:** `/protocol` (linked from homepage Protocol section),
+  `/service-areas` (in nav + homepage Training), `/privacy` and `/terms` (footer).
+- **Contact email mismatch:** footer uses hello@regenitiva.com; contact page uses
+  vince@regenitiva.com. Pick one.
+- **Web3Forms:** contact + application forms both wired to key `3376c1de…bcab0` → confirm the
+  destination inbox is correct, or split to a second key if desired.
 
 ---
 
@@ -110,3 +109,6 @@ service line without building it themselves.
 - Homepage Protocol corrected to one consistent, ultrasound-guided protocol.
 - Homepage FAQ timeline → 3–6 months. Contact confirmation → within 48 hours.
 - Homepage patient story removed (client: "not needed at this time").
+- All 10 service pages built (via cowork) and reviewed against this brief — on-brief and accurate.
+- ServiceLayout "From the Blog" sidebar card removed (kept blog fully hidden).
+- Both forms wired to Web3Forms with subject lines + honeypot; application form submits inline.
