@@ -57,8 +57,8 @@ don't put it on the site.
 - Pure Health and Wellness
 
 **Contact**
-- Front-facing contact: **Vincent Surra, CEO** — 805-896-7983 · vince@regenitiva.com
-  (Note: footer currently shows hello@regenitiva.com — reconcile which is correct.)
+- Front-facing contact: **Vincent Surra, CEO** — 805-896-7983 · vincesurra@regenitiva.com
+  (This is the single correct email used site-wide.)
 
 ---
 
@@ -93,8 +93,6 @@ service line without building it themselves.
 
 - **Legal pages need attorney review:** `/privacy` and `/terms` are standard templates, not
   legal advice — have counsel review before launch.
-- **Contact email mismatch:** footer uses hello@regenitiva.com; contact page + legal pages use
-  vince@regenitiva.com. Pick one.
 - **Web3Forms:** contact + application forms both wired to key `3376c1de…bcab0` → confirm the
   destination inbox is correct, or split to a second key if desired.
 
