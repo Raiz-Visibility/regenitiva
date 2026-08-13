@@ -117,9 +117,10 @@ service line without building it themselves.
   are correct — Central Time). Governing law in Terms set to Tennessee.
 - Service Areas page unlinked from nav/footer/homepage and force-noindexed (file kept), same
   treatment as the blog — hidden at launch.
-- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; excludes blog, service-areas,
-  and /tokens. Generates /sitemap-index.xml. Site stays fully noindexed (robots Disallow + noindex
-  meta) pending client review.
+- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; excludes blog and service-areas.
+  Generates /sitemap-index.xml. Site stays fully noindexed (robots Disallow + noindex meta) pending
+  client review.
+- /tokens internal design-system page removed.
 
 ## 🚀 Launch flip (do these together when client approves indexing)
 
@@ -127,4 +128,3 @@ service line without building it themselves.
 2. Update `public/robots.txt` from `Disallow: /` to allow crawling + add `Sitemap:` line.
 3. Set `PUBLIC_NOINDEX=false` in the production build environment (Cloudflare Pages env var) to
    drop the noindex meta on public pages (blog + service-areas stay noindexed via per-page override).
-4. Decide whether /tokens should be removed or noindexed (internal design reference).
