@@ -91,8 +91,8 @@ service line without building it themselves.
 
 ## 🔧 Corrections still needed on existing pages
 
-- **Dead links to build or repoint:** `/protocol` (linked from homepage Protocol section),
-  `/service-areas` (in nav + homepage Training), `/privacy` and `/terms` (footer).
+- **Dead links to build or repoint:** `/service-areas` (in nav + homepage Training),
+  `/privacy` and `/terms` (footer). (`/protocol` is now built.)
 - **Contact email mismatch:** footer uses hello@regenitiva.com; contact page uses
   vince@regenitiva.com. Pick one.
 - **Web3Forms:** contact + application forms both wired to key `3376c1de…bcab0` → confirm the
