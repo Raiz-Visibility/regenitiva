@@ -91,9 +91,9 @@ service line without building it themselves.
 
 ## 🔧 Corrections still needed on existing pages
 
-- **Dead links to build or repoint:** `/service-areas` (in nav + homepage Training),
-  `/privacy` and `/terms` (footer). (`/protocol` is now built.)
-- **Contact email mismatch:** footer uses hello@regenitiva.com; contact page uses
+- **Legal pages need attorney review:** `/privacy` and `/terms` are standard templates, not
+  legal advice — have counsel review before launch.
+- **Contact email mismatch:** footer uses hello@regenitiva.com; contact page + legal pages use
   vince@regenitiva.com. Pick one.
 - **Web3Forms:** contact + application forms both wired to key `3376c1de…bcab0` → confirm the
   destination inbox is correct, or split to a second key if desired.
@@ -112,3 +112,6 @@ service line without building it themselves.
 - All 10 service pages built (via cowork) and reviewed against this brief — on-brief and accurate.
 - ServiceLayout "From the Blog" sidebar card removed (kept blog fully hidden).
 - Both forms wired to Web3Forms with subject lines + honeypot; application form submits inline.
+- Built /protocol, /services (overview), /service-areas, /privacy, /terms. Repointed /compliance
+  links → /services/operations-compliance and /who-we-work-with → /services. Zero broken internal
+  links across all 38 pages.

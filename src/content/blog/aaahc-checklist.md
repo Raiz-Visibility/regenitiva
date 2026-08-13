@@ -31,7 +31,7 @@ Work through these in order. Each one is quick to check and expensive to have mi
 
 ## Getting Started
 
-If you're not sure where your program stands today, the fastest path is an outside review. Read more about our full approach on the [Compliance & Operations](/compliance) page.
+If you're not sure where your program stands today, the fastest path is an outside review. Read more about our full approach on the [Practice Operations & Compliance](/services/operations-compliance) page.
 
 ## Takeaways
 

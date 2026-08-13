@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const groups = [
+  {
+    label: 'Build & Launch',
+    intro: 'Everything required to stand up a compliant regenerative medicine service line inside your existing practice.',
+    items: [
+      {
+        label: 'Regenerative Medicine Practice Development',
+        href: '/services/practice-development',
+        desc: 'A complete, compliant program built around your existing practice — protocol, training, compliance, and operations.',
+      },
+      {
+        label: 'Clinical Program Implementation',
+        href: '/services/clinical-program-implementation',
+        desc: 'Workflows, the standardized protocol, and trained staff — the day-to-day machinery that makes the program run.',
+      },
+      {
+        label: 'Credentialing & Provider Support',
+        href: '/services/credentialing-provider-support',
+        desc: 'Onboarding, privileging, and licensing support so providers are ready to deliver — correctly and on record.',
+      },
+    ],
+  },
+  {
+    label: 'Run & Comply',
+    intro: 'Ongoing operational and compliance support that keeps the program consistent, documented, and defensible.',
+    items: [
+      {
+        label: 'Management Services Organization (MSO)',
+        href: '/services/mso',
+        desc: 'The operational half of a regenerative program, run for you — so your team can stay focused on patients.',
+      },
+      {
+        label: 'Practice Operations & Compliance',
+        href: '/services/operations-compliance',
+        desc: 'Our signature service: AAAHC-aligned policies, procedures, and audits that make your program defensible.',
+      },
+      {
+        label: 'Multi-Clinic Management',
+        href: '/services/multi-clinic-management',
+        desc: 'One consistent standard across every location — not ten practices doing it ten different ways.',
+      },
+    ],
+  },
+  {
+    label: 'Grow & Optimize',
+    intro: 'The growth, financial, and data work that turns a working program into a sustainable one.',
+    items: [
+      {
+        label: 'Practice Growth & Marketing',
+        href: '/services/growth-marketing',
+        desc: 'Referral development, physician branding, and patient acquisition — grounded in what your program honestly delivers.',
+      },
+      {
+        label: 'Revenue Optimization',
+        href: '/services/revenue-optimization',
+        desc: 'Lien management, operational efficiency, and pricing guidance that keep the program sustainable.',
+      },
+      {
+        label: 'Outcome Tracking & Data Analytics',
+        href: '/services/outcome-tracking',
+        desc: 'Validated outcome measures and clear dashboards, so you can see what your program is actually doing.',
+      },
+      {
+        label: 'Strategic Consulting',
+        href: '/services/strategic-consulting',
+        desc: 'Executive-level guidance for practice transformation and deliberate expansion.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Services — Regenitiva" description="From building a compliant regenerative medicine service line to running, growing, and optimizing it — a full set of services for physician-owned practices.">
+
+  <!-- Header -->
+  <section class="sv-header">
+    <div class="sv-header-inner">
+      <div class="sv-eyebrow">Services</div>
+      <h1>From first patient to full program.</h1>
+      <p class="sv-intro">Regenitiva builds, runs, and grows regenerative medicine programs for physician-owned practices. Whether you're adding a service line or standardizing across locations, these are the ways we help — you keep clinical control, we handle the structure around it.</p>
+    </div>
+  </section>
+
+  <!-- Groups -->
+  {groups.map((group) => (
+    <section class="sv-group">
+      <div class="sv-group-inner">
+        <div class="sv-group-head">
+          <h2 class="sv-group-label">{group.label}</h2>
+          <p class="sv-group-intro">{group.intro}</p>
+        </div>
+        <div class="sv-cards">
+          {group.items.map((item) => (
+            <a href={item.href} class="sv-card">
+              <h3 class="sv-card-title">{item.label}</h3>
+              <p class="sv-card-desc">{item.desc}</p>
+              <span class="sv-card-link">Learn more →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="sv-cta">
+    <div class="sv-cta-inner">
+      <h2 class="sv-cta-head">Not sure where to start?</h2>
+      <p class="sv-cta-body">A short conversation is usually enough to tell which of these fits your practice — and what it would take to build.</p>
+      <a href="/contact" class="sv-cta-btn">Start a Conversation</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sv-header-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) 0;
+  }
+
+  .sv-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .sv-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: var(--rg-measure-lead);
+    margin-top: var(--rg-space-4);
+  }
+
+  @media (min-width: 768px) {
+    .sv-header-inner { padding: 72px var(--rg-space-7) 0; }
+  }
+
+  /* Groups */
+  .sv-group-inner {
+    max-width: var(--rg-container);
+    margin: 0 auto;
+    padding: var(--rg-space-7) var(--rg-space-5) 0;
+  }
+
+  .sv-group:last-of-type .sv-group-inner {
+    padding-bottom: var(--rg-space-7);
+  }
+
+  .sv-group-head {
+    margin-bottom: var(--rg-space-6);
+    padding-bottom: var(--rg-space-4);
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .sv-group-label {
+    font-size: var(--rg-size-h3);
+    margin-bottom: var(--rg-space-3);
+  }
+
+  .sv-group-intro {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    max-width: var(--rg-measure-lead);
+  }
+
+  .sv-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rg-space-4);
+  }
+
+  .sv-card {
+    display: block;
+    padding: var(--rg-space-5);
+    border: 1px solid var(--rg-border);
+    border-radius: var(--rg-radius-lg);
+    background: var(--rg-bg-surface);
+    text-decoration: none;
+    transition: box-shadow var(--rg-duration-slow) var(--rg-ease),
+      border-color var(--rg-duration-base) var(--rg-ease);
+  }
+
+  .sv-card:hover {
+    text-decoration: none;
+    box-shadow: var(--rg-shadow-2);
+    border-color: var(--rg-amber-500);
+  }
+
+  .sv-card-title {
+    font-size: var(--rg-size-h5);
+    color: var(--rg-text-primary);
+    margin-bottom: var(--rg-space-2);
+  }
+
+  .sv-card-desc {
+    font-size: var(--rg-size-button);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-text-secondary);
+    margin-bottom: var(--rg-space-3);
+  }
+
+  .sv-card-link {
+    font-size: var(--rg-size-small);
+    font-weight: var(--rg-weight-medium);
+    color: var(--rg-text-accent);
+  }
+
+  @media (min-width: 768px) {
+    .sv-group-inner { padding: var(--rg-space-8) var(--rg-space-7) 0; }
+    .sv-group:last-of-type .sv-group-inner { padding-bottom: var(--rg-space-8); }
+    .sv-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--rg-space-5); }
+  }
+
+  /* CTA */
+  .sv-cta {
+    background: var(--rg-bg-inverse);
+    color: var(--rg-text-on-inverse);
+    text-align: center;
+  }
+
+  .sv-cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: var(--rg-space-8) var(--rg-space-5);
+  }
+
+  .sv-cta-head {
+    color: var(--rg-text-on-inverse);
+    margin-bottom: 20px;
+  }
+
+  .sv-cta-body {
+    font-size: var(--rg-size-body);
+    line-height: var(--rg-lh-body);
+    color: var(--rg-stone-300);
+    margin: 0 auto var(--rg-space-6);
+  }
+
+  .sv-cta-btn {
+    display: inline-block;
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-button);
+    font-weight: var(--rg-weight-medium);
+    letter-spacing: var(--rg-ls-button);
+    background: var(--rg-amber-500);
+    color: var(--rg-ink-900);
+    border: 1px solid var(--rg-amber-500);
+    border-radius: var(--rg-radius-md);
+    padding: var(--rg-space-4) 30px;
+    text-decoration: none;
+    transition: background var(--rg-duration-base) ease-out, border-color var(--rg-duration-base) ease-out;
+  }
+
+  .sv-cta-btn:hover {
+    background: var(--rg-amber-600);
+    border-color: var(--rg-amber-600);
+    color: var(--rg-ink-900);
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    .sv-cta-inner { padding: 100px var(--rg-space-7); }
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/prose.css';
+
+const lastUpdated = 'August 12, 2026';
+---
+
+<BaseLayout title="Privacy Policy — Regenitiva" description="How Regenitiva collects, uses, and protects the information you share with us.">
+
+  <section class="legal">
+    <div class="legal-inner">
+      <header class="legal-header">
+        <div class="legal-eyebrow">Legal</div>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-updated">Last updated: {lastUpdated}</p>
+      </header>
+
+      <article class="prose">
+        <p>This Privacy Policy explains how Regenitiva LLC ("Regenitiva," "we," "us," or "our") collects, uses, and shares information when you visit our website or contact us through it. By using this website, you agree to the practices described here.</p>
+
+        <h2>Information We Collect</h2>
+        <p><strong>Information you provide.</strong> When you submit a form on our site — such as the contact or consultation request form — we collect the information you choose to give us, which may include your name, email address, phone number, practice type, and any message you send.</p>
+        <p><strong>Information collected automatically.</strong> Like most websites, our host may collect limited technical information automatically, such as your IP address, browser type, and the pages you visit. This site does not currently use advertising or analytics tracking cookies.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information you provide to:</p>
+        <ul>
+          <li>Respond to your inquiry and follow up about your practice;</li>
+          <li>Schedule and conduct introductory calls and, where appropriate, a practice assessment;</li>
+          <li>Provide, maintain, and improve our services and this website; and</li>
+          <li>Comply with our legal obligations.</li>
+        </ul>
+
+        <h2>How We Share Information</h2>
+        <p>We do not sell your personal information. We share it only in these limited circumstances:</p>
+        <ul>
+          <li><strong>Service providers.</strong> We use Web3Forms to deliver form submissions to our inbox, and Google Fonts to display the site's typography. These providers process data on our behalf or as needed to deliver their service.</li>
+          <li><strong>Legal requirements.</strong> We may disclose information if required by law or to protect our rights, safety, or property.</li>
+          <li><strong>Business transfers.</strong> If Regenitiva is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+        </ul>
+
+        <h2>Cookies</h2>
+        <p>This website does not set advertising or analytics tracking cookies. Some third-party resources the site loads (such as Google Fonts) may receive standard request information, including your IP address, as part of serving that resource.</p>
+
+        <h2>Data Retention</h2>
+        <p>We retain the information you submit for as long as needed to respond to your inquiry and for our legitimate business and legal purposes. You may ask us to delete your information at any time using the contact details below.</p>
+
+        <h2>Your Choices and Rights</h2>
+        <p>You may request to access, correct, or delete the personal information you have provided to us by contacting us at the address below. Depending on where you live, you may have additional rights under applicable privacy laws, and we will honor those rights as required.</p>
+
+        <h2>Data Security</h2>
+        <p>We take reasonable measures to protect the information you share with us. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>This website is intended for physicians and healthcare businesses. It is not directed to children, and we do not knowingly collect personal information from children.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date above. Your continued use of the website after any change indicates your acceptance of the updated policy.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or how we handle your information, contact us at <a href="mailto:vince@regenitiva.com">vince@regenitiva.com</a> or 805-896-7983, Garden Grove, California.</p>
+      </article>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px var(--rg-space-5) var(--rg-space-8);
+  }
+
+  .legal-header {
+    padding-bottom: var(--rg-space-6);
+    margin-bottom: var(--rg-space-6);
+    border-bottom: 1px solid var(--rg-border);
+  }
+
+  .legal-eyebrow {
+    font-family: var(--rg-font-display);
+    font-size: var(--rg-size-eyebrow);
+    font-weight: var(--rg-weight-bold);
+    letter-spacing: var(--rg-ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--rg-text-accent);
+    margin-bottom: var(--rg-space-4);
+  }
+
+  .legal-title {
+    margin-bottom: var(--rg-space-3);
+  }
+
+  .legal-updated {
+    font-size: var(--rg-size-small);
+    color: var(--rg-text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .legal-inner { padding: 72px var(--rg-space-7) 96px; }
+  }
+</style>
