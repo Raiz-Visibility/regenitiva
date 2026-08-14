@@ -57,7 +57,7 @@ don't put it on the site.
 - Pure Health and Wellness
 
 **Contact**
-- Front-facing contact: **Vincent Surra, CEO** — 805-896-7983 · vincesurra@regenitiva.com
+- Front-facing contact: **Vincent Surra, CEO** — 931-300-2226 · vincesurra@regenitiva.com
   (This is the single correct email used site-wide.)
 
 ---
