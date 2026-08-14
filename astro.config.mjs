@@ -8,11 +8,8 @@ export default defineConfig({
   site: 'https://www.regenitiva.com',
   integrations: [
     sitemap({
-      // Keep hidden pages out of the sitemap. These are also force-noindexed
-      // in code: the blog and the Service Areas page.
-      filter: (page) =>
-        !page.includes('/blog') &&
-        !page.includes('/service-areas'),
+      // Keep the hidden, force-noindexed Service Areas page out of the sitemap.
+      filter: (page) => !page.includes('/service-areas'),
     }),
   ],
 });

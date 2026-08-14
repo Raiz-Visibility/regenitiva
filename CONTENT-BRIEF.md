@@ -100,7 +100,8 @@ service line without building it themselves.
 
 ## ✔️ Already applied (Aug 2026)
 
-- Blog unlinked from nav + force-noindexed (files kept).
+- Blog REMOVED entirely (posts, routes, layout, BlogCard, lib/blog, content collection, and the
+  About author "Posts by" section). Was previously just unlinked+noindexed; now fully deleted.
 - Dr. Lagattuta confirmed absent from the live site.
 - Vince Surra added as CEO with real bio + headshot (team data, About pages, homepage About block).
 - Homepage Training corrected to in-person + live proctoring.
@@ -117,7 +118,7 @@ service line without building it themselves.
   are correct — Central Time). Governing law in Terms set to Tennessee.
 - Service Areas page unlinked from nav/footer/homepage and force-noindexed (file kept), same
   treatment as the blog — hidden at launch.
-- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; excludes blog and service-areas.
+- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; excludes service-areas.
   Generates /sitemap-index.xml. Site stays fully noindexed (robots Disallow + noindex meta) pending
   client review.
 - /tokens internal design-system page removed.
@@ -139,4 +140,4 @@ service line without building it themselves.
 1. Canonical domain confirmed: https://www.regenitiva.com (set in astro.config.mjs).
 2. Update `public/robots.txt` from `Disallow: /` to allow crawling + add `Sitemap:` line.
 3. Set `PUBLIC_NOINDEX=false` in the production build environment (Cloudflare Pages env var) to
-   drop the noindex meta on public pages (blog + service-areas stay noindexed via per-page override).
+   drop the noindex meta on public pages (service-areas stays noindexed via per-page override).

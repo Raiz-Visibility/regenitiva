@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogCard from '../../components/BlogCard.astro';
 import { team } from '../../data/team';
-import { getCollection } from 'astro:content';
-import { formatDate } from '../../lib/blog';
 import '../../styles/prose.css';
 
 export function getStaticPaths() {
@@ -14,11 +11,6 @@ export function getStaticPaths() {
 }
 
 const { person } = Astro.props;
-
-const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
-  .filter((p) => p.data.author === person.name)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
 ---
 
 <BaseLayout title={`${person.name} — Regenitiva`} description={person.shortBio}>
@@ -62,29 +54,6 @@ const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
       ))}
     </div>
   </div>
-
-  <!-- Posts by this author -->
-  <section class="au-posts">
-    <h2>Posts by {person.firstName}</h2>
-
-    {allPosts.length > 0 ? (
-      <div class="au-posts-grid">
-        {allPosts.map((post) => (
-          <BlogCard
-            title={post.data.title}
-            href={`/blog/${post.id}/`}
-            category={post.data.category}
-            date={formatDate(post.data.date)}
-          />
-        ))}
-      </div>
-    ) : (
-      <div class="au-empty">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect x="5" y="9" width="26" height="20" rx="2" stroke="var(--rg-stone-400)" stroke-width="1.5"></rect><path d="M5 14.5H31" stroke="var(--rg-stone-400)" stroke-width="1.5"></path><path d="M11 21H25" stroke="var(--rg-stone-400)" stroke-width="1.5" stroke-linecap="round"></path></svg>
-        <p>{person.firstName} hasn't published any posts yet.</p>
-      </div>
-    )}
-  </section>
 
   <!-- CTA -->
   <section class="au-cta">
