@@ -81,6 +81,33 @@ removed from the site entirely, so this is moot going forward.
 
 ---
 
+## Testimonials, Case Studies & Success Stories
+
+**Finding: none currently exist on the site — nothing to flag.**
+
+A full review found no patient testimonials, physician testimonials, case studies, or success
+stories on any page, and none of the high-risk phrasings ("PRP cured my condition," "my cartilage
+grew back," "I avoided surgery because of this treatment," "my pain disappeared permanently,"
+"this treatment works better than surgery").
+
+These were removed over the course of the build:
+- The homepage patient story ("surgical candidate… left pain-free") was removed.
+- An invented physician testimonial on the Practice Development page was removed.
+- The blog (which contained an invented "— Physiatrist, California practice" quote) was deleted.
+- The two real clients (California Premier Pain Clinics; Pure Health and Wellness) are **not**
+  named or quoted anywhere on the site.
+
+**Protective language already in place:** the Terms of Service "No Guarantees" clause states that
+"any examples, projections, case studies, or descriptions of potential results are illustrative
+only and may not reflect the results of any particular practice or patient."
+
+**Guidance if testimonials or case studies are added later:**
+1. Obtain a signed written release from the patient or physician before publishing.
+2. Avoid the high-risk phrasings above (cure, permanent, cartilage regrowth, surgery superiority).
+3. Place an "individual results vary; results are not typical" disclaimer adjacent to the testimonial.
+4. Do not surround an individual testimonial with copy that implies it represents typical results.
+5. For patient stories specifically, confirm HIPAA-compliant authorization for use of their information.
+
 ## Recommended next step
 
 Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
