@@ -48,6 +48,8 @@ const year = new Date().getFullYear();
       ))}
     </div>
 
+    <p class="footer-disclaimer">The information on this website is general and educational and is not medical advice. Regenitiva does not practice medicine or make clinical decisions; treatment decisions, and the associated risks, benefits, and outcomes, are the responsibility of the treating healthcare provider and depend on the individual patient.</p>
+
     <div class="footer-legal">
       <span class="footer-copyright">&copy; {year} Regenitiva LLC. All rights reserved.</span>
       <div class="footer-legal-links">
@@ -174,6 +176,15 @@ const year = new Date().getFullYear();
   /* ----------------------------------------------------------------
      Legal bar
      ---------------------------------------------------------------- */
+  .footer-disclaimer {
+    font-family: var(--rg-font-body);
+    font-size: var(--rg-size-caption);
+    line-height: 1.6;
+    color: var(--rg-stone-400);
+    padding-top: var(--rg-space-5);
+    max-width: 760px;
+  }
+
   .footer-legal {
     padding: 22px 0;
     display: flex;
