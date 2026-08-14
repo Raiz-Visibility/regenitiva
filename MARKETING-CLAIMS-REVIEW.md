@@ -133,6 +133,30 @@ or patient-volume figures without substantiation; keep revenue/ROI out of headli
 the brand guide); any business-case numbers should stay in the private assessment conversation, not
 public marketing copy.
 
+## Earnings Examples & Case Studies (practice-development results)
+
+**Finding: the site presents no practice-development results, earnings examples, case studies,
+projections, or client outcomes.** There is therefore nothing that requires an
+actual-vs-illustrative-vs-projection-vs-hypothetical distinction, and nothing implies that prior
+client results are guaranteed or typical for every Regenitiva partner.
+
+- No dollar figures, statistics, success rates, track-record numbers, or named client outcomes
+  appear anywhere (see the Financial & Practice-Growth section above).
+- The two real clients are not named or quoted, and no results are attributed to them.
+
+**Protective language already in place:** the Terms of Service "No Guarantees" clause states that
+"any examples, projections, case studies, or descriptions of potential results are illustrative
+only and may not reflect the results of any particular practice or patient" — exactly the
+distinction and disclaimer this item calls for, should any results be added later.
+
+**Guidance if earnings examples or case studies are added later:**
+1. Label each clearly as one of: actual historical result, illustrative example, projection, or
+   hypothetical scenario.
+2. Never present a prior client's result as guaranteed or typical for every partner.
+3. Place a "results not typical; individual results vary" disclaimer adjacent to any figure or example.
+4. Only publish numbers Regenitiva can source and substantiate (per the brand guide).
+5. For actual client results, obtain written permission before publishing.
+
 ## Recommended next step
 
 Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
