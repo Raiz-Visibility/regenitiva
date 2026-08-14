@@ -1,0 +1,89 @@
+# Regenitiva — Marketing Copy Compliance Review
+
+**Purpose:** Flag PRP / regenerative-medicine wording that may overstate clinical efficacy, so
+compliance/content review (and legal counsel) can decide whether to keep, soften, or revise it.
+
+**Status:** FLAGGED ONLY — no website copy has been changed. Every phrase below is still live as
+written, pending review.
+
+**Reviewed:** All public pages discussing PRP, regenerative treatments, injuries, recovery, healing,
+and treatment effectiveness. Date of review: August 2026.
+
+---
+
+## Summary
+
+**The site is already fairly conservative.** None of the hardest-line phrases appear anywhere:
+
+- ❌ "eliminates pain" — not present
+- ❌ "permanent relief" — not present
+- ❌ "guaranteed results" — not present
+- ❌ "proven to cure" / "cure" — not present
+- ❌ "works for everyone" — not present
+- ❌ "regenerates cartilage" — not present (cartilage is only mentioned as something steroids can
+  *weaken*, not something PRP regenerates)
+
+**Compliant hedging is already in place** and should be preserved:
+
+- FAQ (homepage): "candid about what the research supports and what it doesn't"
+- Outcome Tracking service page: "we don't market unverified statistics as claims"
+- Growth & Marketing service page: "no unverified outcome claims and no overselling"
+- Protocol page "On Outcomes" section: notes a formal outcomes study is in progress
+
+**Where the flags concentrate:** almost entirely the `/protocol` page, with one mild instance on
+the homepage. The 10 service pages are business-focused (practice development, compliance,
+billing, etc.) and contain no clinical-efficacy claims.
+
+**Important context:** Much of the flagged `/protocol` language comes directly from the client's
+own answers in the discovery questionnaire ("What Makes PRP Different," and the patient/practice
+benefit lists). These are the client's own words — compliance should weigh them accordingly.
+
+---
+
+## 🔴 Tissue-repair / mechanism-of-action claims (highest priority)
+
+These imply PRP actively repairs or heals tissue at a biological level.
+
+| File | Line | Exact wording | Concern |
+|------|------|---------------|---------|
+| `src/pages/protocol.astro` | 19 | "…stimulate the body's **natural repair process at the cellular level**. It **addresses the underlying injury**, not just the symptom." | States a biological repair mechanism as fact |
+| `src/pages/protocol.astro` | 19 | "…steroid injections…**don't repair damaged tissue**…" | By contrast, implies PRP *does* repair damaged tissue |
+| `src/pages/protocol.astro` | 43 | "…supports **actual tissue repair** rather than only reducing pain" | Direct tissue-repair efficacy claim |
+| `src/pages/protocol.astro` | 16 | "…it works with the body's own **healing response**…" | "Healing" mechanism language (milder) |
+| `src/pages/protocol.astro` | 40 | "…no long **wait to heal**" | Implies healing outcome (milder) |
+
+## 🟠 Surgery-avoidance framing ("Avoid surgery" category)
+
+The site never says "avoid surgery" literally, but positions PRP as a surgery alternative.
+
+| File | Line | Exact wording | Concern |
+|------|------|---------------|---------|
+| `src/pages/protocol.astro` | 25 | "PRP offers a **non-surgical alternative** — no incisions, no anesthesia risk, no lengthy post-op recovery." | Frames PRP as an alternative to surgery |
+| `src/pages/protocol.astro` | 41 | "…an in-office injection **instead of an operating room**" | Surgery-avoidance framing |
+| `src/pages/protocol.astro` | 52 | "…refer into **without sending patients to surgery**" | Surgery-avoidance framing |
+| `src/pages/protocol.astro` | 54 | "…in-office, **non-surgical care**" | Surgery-avoidance framing |
+| `src/components/home/Protocol.astro` | 16 | "…patients…**not ready for surgery**…referred out or told to wait" | Mild surgery framing (homepage) |
+
+## 🟡 Recovery / outcome-timing claims
+
+| File | Line | Exact wording | Concern |
+|------|------|---------------|---------|
+| `src/pages/protocol.astro` | 25 | "…most patients **resume normal activity within a day or two**" | Specific recovery-time expectation |
+| `src/pages/protocol.astro` | 44 | "…avoids the **tissue weakening** of repeated steroid use and the risks of surgery" | Comparative safety/outcome claim |
+
+---
+
+## Blog
+
+The 12 blog posts were scanned for the strongest claim terms (cure, permanent, guarantee,
+eliminates, heals, regenerates cartilage) and came back clean. **Note:** the blog has since been
+removed from the site entirely, so this is moot going forward.
+
+---
+
+## Recommended next step
+
+Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
+item should be **kept as-is, softened, or revised**. Once decisions are returned, the approved
+wording can be applied to the `/protocol` page and homepage in one pass. No changes should be made
+to this copy until those decisions are in.
