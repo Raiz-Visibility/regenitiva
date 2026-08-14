@@ -157,6 +157,41 @@ distinction and disclaimer this item calls for, should any results be added late
 4. Only publish numbers Regenitiva can source and substantiate (per the brand guide).
 5. For actual client results, obtain written permission before publishing.
 
+## Final Sitewide Compliance Search (step 14)
+
+A final full-source search was run for the old contact details, "physicians retain," and the claim
+words: guarantee, cure, heal, regenerate, repair, 100%, no risk.
+
+**Confirmed removed — zero matches (earlier fixes held):**
+- `vincesurra@regenitiva.com` — none (now `vince@regenitiva.com` sitewide)
+- `805-896-7983` — none (now `931-300-2226` sitewide)
+- "physicians retain" — none (now "Healthcare providers retain sole responsibility and authority…")
+
+**No issue found:**
+- `100%` — appears only in CSS layout (width/height/gradients), never as a claim.
+- `guarantee` — appears only in **protective** legal disclaimers (Privacy: "cannot guarantee
+  absolute security"; Terms: "do not constitute a promise or guarantee," and the "No Guarantees"
+  section). Intentional — should stay.
+- `cure` and `regenerate` — no matches (no "cure" or "regenerates cartilage" language exists; the
+  brand term "regenerative medicine" is descriptive, not a claim).
+
+**New flag (not previously captured):**
+
+| File | Line | Exact wording | Concern |
+|------|------|---------------|---------|
+| `src/pages/protocol.astro` | 27 | "…there's **no risk of rejection**…" | Safety claim. Medically this refers to autologous (own-blood) treatment not causing immune rejection, which is defensible — but the "no risk" phrasing should be reviewed. |
+
+**Line-number correction:** the step-8 flags on `/protocol` are unchanged in wording, but their line
+numbers shifted **+5** after the treatment disclaimer was added in step 9. Current `/protocol`
+locations: healing response (21), tissue-repair mechanism (24), non-surgical alternative + recovery
+timing (30), "no long wait to heal" (45), "operating room" (46), "actual tissue repair" (48), "tissue
+weakening" (49), "without sending patients to surgery" (57), "non-surgical care" (59). The homepage
+`src/components/home/Protocol.astro:16` ("not ready for surgery") is unchanged.
+
+**Note on unpublished files:** the `design-system-guide/` folder (original design mockups) still
+contains historical contact info and draft copy, but it is **not part of the published site** —
+Astro builds only `src/pages/`, so nothing in that folder is served to visitors.
+
 ## Recommended next step
 
 Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
