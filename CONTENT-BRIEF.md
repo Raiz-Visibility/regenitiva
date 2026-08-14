@@ -122,6 +122,18 @@ service line without building it themselves.
   client review.
 - /tokens internal design-system page removed.
 
+## 🖼️ Third-party asset licensing (audited Aug 2026)
+
+- **Photography** (`hero-physician.png`, `service-hero.webp`, `protocol-image.webp`,
+  `who-we-work-with-photo.webp`): AI-generated — no third-party stock license required.
+  Used as generic imagery only (not presented as real named people).
+- **Fonts:** Archivo (SIL OFL) + Roboto (Apache 2.0), via Google Fonts — cleared for commercial use.
+- **Icons:** all hand-coded inline SVG, no icon library — original.
+- **Logos/brand marks:** client's own assets. **Vince headshot:** client-provided.
+- **Template:** Astro starter + @astrojs/sitemap (MIT). **Videos:** none.
+- All third-party assets confirmed properly licensed. IP clause ("owned by or licensed to
+  Regenitiva") stands unchanged.
+
 ## 🚀 Launch flip (do these together when client approves indexing)
 
 1. Canonical domain confirmed: https://www.regenitiva.com (set in astro.config.mjs).
