@@ -30,5 +30,6 @@ export const companyLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Protocol", href: "/protocol" },
   { label: "Contact", href: "/contact" },
 ];

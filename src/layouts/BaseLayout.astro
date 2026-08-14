@@ -25,6 +25,7 @@ const activePage = pathname === '/' ? 'home'
   : pathname.startsWith('/about') ? 'about'
   : pathname.startsWith('/services') && !pathname.startsWith('/service-areas') ? 'services'
   : pathname.startsWith('/service-areas') ? 'service-areas'
+  : pathname.startsWith('/protocol') ? 'protocol'
   : pathname.startsWith('/contact') ? 'contact'
   : '';
 ---
