@@ -57,10 +57,12 @@ import { team } from '../../data/team';
       {team.map((person) => (
         <div class="ab-team-card">
           <div class="ab-portrait"><img src={person.image} alt={person.imageAlt} /></div>
-          <div class="ab-team-name">{person.name}</div>
-          <div class="ab-team-title">{person.title}</div>
-          <p class="ab-team-bio">{person.shortBio}</p>
-          <a href={`/about/${person.id}/`} class="ab-team-link">Read full bio →</a>
+          <div class="ab-team-text">
+            <div class="ab-team-name">{person.name}</div>
+            <div class="ab-team-title">{person.title}</div>
+            <p class="ab-team-bio">{person.shortBio}</p>
+            <a href={`/about/${person.id}/`} class="ab-team-link">Read full bio →</a>
+          </div>
         </div>
       ))}
     </div>
@@ -200,7 +202,7 @@ import { team } from '../../data/team';
   }
 
   .ab-team-head {
-    max-width: var(--rg-container);
+    max-width: 820px;
     margin: 0 auto var(--rg-space-6);
   }
 
@@ -208,25 +210,37 @@ import { team } from '../../data/team';
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: var(--rg-container);
+    max-width: 820px;
     margin: 0 auto;
   }
 
+  .ab-team-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
   .ab-portrait {
-    width: 100%;
-    aspect-ratio: 4 / 3;
+    width: 280px;
+    max-width: 100%;
+    aspect-ratio: 1015 / 1280;
     border-radius: var(--rg-radius-lg);
     background: var(--rg-stone-300);
-    margin-bottom: var(--rg-space-5);
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .ab-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center;
     display: block;
+  }
+
+  .ab-team-text {
+    width: 100%;
   }
 
   .ab-team-name {
@@ -266,12 +280,13 @@ import { team } from '../../data/team';
   @media (min-width: 768px) {
     .ab-team { padding: 88px var(--rg-space-7); }
     .ab-team-head { margin-bottom: var(--rg-space-7); }
-    .ab-team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 460px));
-      gap: 56px;
-      justify-content: center;
+    .ab-team-card {
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
     }
+    .ab-portrait { width: 300px; }
+    .ab-team-text { width: auto; flex: 1; }
   }
 
   /* CTA */
