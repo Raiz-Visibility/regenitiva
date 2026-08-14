@@ -51,7 +51,7 @@ import { team } from '../../data/team';
   <section class="ab-team">
     <div class="ab-team-head">
       <div class="ab-eyebrow">Leadership</div>
-      <h2>The people behind the program.</h2>
+      <h2>The person behind the program.</h2>
     </div>
     <div class="ab-team-grid">
       {team.map((person) => (
@@ -266,7 +266,12 @@ import { team } from '../../data/team';
   @media (min-width: 768px) {
     .ab-team { padding: 88px var(--rg-space-7); }
     .ab-team-head { margin-bottom: var(--rg-space-7); }
-    .ab-team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px; }
+    .ab-team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 460px));
+      gap: 56px;
+      justify-content: center;
+    }
   }
 
   /* CTA */
