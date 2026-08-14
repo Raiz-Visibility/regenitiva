@@ -1,11 +1,3 @@
----
-const states = [
-  { label: "California", href: "/contact" },
-  { label: "Florida", href: "/contact" },
-  { label: "Tennessee", href: "/contact" },
-];
----
-
 <section id="availability" class="training-section">
   <div class="training">
   <div class="training-left">
@@ -15,14 +7,9 @@ const states = [
     <p class="training-body-last">Your team's first cases are proctored live, and we stay involved with ongoing training as your program grows.</p>
   </div>
   <div class="training-right">
-    <h3 class="training-subhead">Where is your clinic located?</h3>
-    <p class="training-sub-body">Compliance requirements, licensing, and billing vary by state, so we build your program around the one you practice in.</p>
-    <div class="training-states">
-      {states.map((s) => (
-        <a href={s.href} class="training-state">{s.label}</a>
-      ))}
-    </div>
-    <p class="training-catch-all">Practicing somewhere else? We work with practices nationwide — <a href="/contact">schedule a call</a> and we'll build the program around your state.</p>
+    <h3 class="training-subhead">Available across the United States.</h3>
+    <p class="training-sub-body">We work with practices throughout the U.S. Compliance requirements, licensing, and billing vary by state, so we build your program around the one you practice in — wherever that is.</p>
+    <p class="training-catch-all">Ready to bring it to your practice? <a href="/contact">Schedule a call</a> and we'll tailor the program to your state.</p>
   </div>
   </div>
 </section>
@@ -76,38 +63,6 @@ const states = [
     line-height: var(--rg-lh-small);
     color: var(--rg-text-secondary);
     margin-bottom: var(--rg-space-6);
-  }
-
-  .training-states {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .training-state {
-    display: flex;
-    border-top: 1px solid var(--rg-stone-400);
-    padding: 18px 0;
-    font-family: var(--rg-font-body);
-    font-size: var(--rg-size-lead);
-    color: var(--rg-text-primary);
-    text-decoration: none;
-    transition: transform var(--rg-duration-slow) ease,
-      background var(--rg-duration-slow) ease;
-  }
-
-  .training-state:hover {
-    transform: translateX(4px);
-    text-decoration: none;
-    color: var(--rg-text-primary);
-  }
-
-  .training-state-cta {
-    border-bottom: 1px solid var(--rg-stone-400);
-    color: var(--rg-text-accent);
-  }
-
-  .training-state-cta:hover {
-    color: var(--rg-text-accent);
   }
 
   .training-catch-all {
