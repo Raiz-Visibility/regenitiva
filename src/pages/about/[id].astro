@@ -165,9 +165,14 @@ const { person } = Astro.props;
 
   @media (min-width: 768px) {
     .au-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
       gap: var(--rg-space-7);
+      align-items: start;
       padding: var(--rg-space-8) var(--rg-space-7) 0;
     }
+
+    .au-article { max-width: none; }
   }
 
   /* Credentials card */
@@ -225,16 +230,10 @@ const { person } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .au-cred-card { padding: var(--rg-space-6) 40px; }
-
-    .au-cred-group {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: var(--rg-space-5);
-      align-items: baseline;
+    .au-cred-card {
+      max-width: none;
+      padding: var(--rg-space-6) var(--rg-space-5);
     }
-
-    .au-cred-label { margin-bottom: 0; }
   }
 
   /* Posts section */
