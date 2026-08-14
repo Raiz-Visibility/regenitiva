@@ -108,6 +108,31 @@ only and may not reflect the results of any particular practice or patient."
 4. Do not surround an individual testimonial with copy that implies it represents typical results.
 5. For patient stories specifically, confirm HIPAA-compliant authorization for use of their information.
 
+## Financial & Practice-Growth Claims (provider-facing)
+
+**Summary: the site is very conservative — no specific dollar figures, ROI guarantees, or volume
+promises appear anywhere.** None of the high-risk phrasings are present: no "add $X per month,"
+"generate N new patients per month," "build a six-figure PRP program," "guaranteed ROI," "double
+your revenue," "make $X per procedure," or "add $X in annual revenue."
+
+For reference, the client's brand guide already prohibits this: "no projected revenue figures, no
+invented success rates, no 'up to' claims," and revenue/ROI/profit "may never appear in a hero
+headline, a page title, a meta title, a nav label, or an email subject line." The live copy adheres
+to that rule.
+
+**Flagged (all low-severity — qualitative, no numbers or guarantees):**
+
+| File | Line | Exact wording | Concern |
+|------|------|---------------|---------|
+| `src/pages/protocol.astro` | 58 | "…a staged treatment model — PRP protocols often involve a series rather than one-and-done, **supporting patient volume and revenue per case**" | Ties treatment to increased patient volume and revenue |
+| `src/components/home/FAQ.astro` | 13 | "We put a specific figure and a **projected return** in front of you during the assessment" | References a "projected return" (ROI-adjacent); delivered privately during assessment, not a published numeric promise |
+| `src/pages/services/growth-marketing.astro` | 11 | "A regenerative program only **pays off** if the right patients find it…" | Mild financial framing; self-hedged by "not inflated claims" in the same sentence |
+
+**Guidance:** keep financial language qualitative and hedged; never publish specific revenue, ROI,
+or patient-volume figures without substantiation; keep revenue/ROI out of headlines and titles (per
+the brand guide); any business-case numbers should stay in the private assessment conversation, not
+public marketing copy.
+
 ## Recommended next step
 
 Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
