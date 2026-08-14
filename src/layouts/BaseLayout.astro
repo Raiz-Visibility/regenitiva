@@ -23,8 +23,7 @@ const noindex = forceNoindex || import.meta.env.PUBLIC_NOINDEX !== 'false';
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const activePage = pathname === '/' ? 'home'
   : pathname.startsWith('/about') ? 'about'
-  : pathname.startsWith('/services') && !pathname.startsWith('/service-areas') ? 'services'
-  : pathname.startsWith('/service-areas') ? 'service-areas'
+  : pathname.startsWith('/services') ? 'services'
   : pathname.startsWith('/protocol') ? 'protocol'
   : pathname.startsWith('/contact') ? 'contact'
   : '';

@@ -118,9 +118,11 @@ service line without building it themselves.
   are correct — Central Time). Governing law in Terms set to Tennessee.
 - Service Areas page unlinked from nav/footer/homepage and force-noindexed (file kept), same
   treatment as the blog — hidden at launch.
-- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; excludes service-areas.
+- Sitemap added (@astrojs/sitemap) with site=https://regenitiva.com; includes all public pages.
   Generates /sitemap-index.xml. Site stays fully noindexed (robots Disallow + noindex meta) pending
   client review.
+- Service Areas page REMOVED entirely (no location pages being built). Homepage Training section now
+  states availability throughout the U.S. instead of listing state links.
 - /tokens internal design-system page removed.
 
 ## 🖼️ Third-party asset licensing (audited Aug 2026)
@@ -140,4 +142,4 @@ service line without building it themselves.
 1. Canonical domain confirmed: https://www.regenitiva.com (set in astro.config.mjs).
 2. Update `public/robots.txt` from `Disallow: /` to allow crawling + add `Sitemap:` line.
 3. Set `PUBLIC_NOINDEX=false` in the production build environment (Cloudflare Pages env var) to
-   drop the noindex meta on public pages (service-areas stays noindexed via per-page override).
+   drop the noindex meta so all public pages become indexable.
