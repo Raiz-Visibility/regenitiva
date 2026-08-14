@@ -37,6 +37,16 @@ const WEB3FORMS_KEY = '3376c1de-6dd8-4d99-b502-3db4339bcab0';
           <input type="tel" name="phone" />
         </label>
         <label class="ct-field">
+          Best Time to Reach You
+          <select name="bestTime" class="ct-select">
+            <option value="">Select one…</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Anytime">Anytime</option>
+          </select>
+        </label>
+        <label class="ct-field">
           Practice Type
           <select name="practiceType" class="ct-select">
             <option value="">Select one…</option>
@@ -576,7 +586,7 @@ const WEB3FORMS_KEY = '3376c1de-6dd8-4d99-b502-3db4339bcab0';
     const submitBtn = form.querySelector('.ct-submit') as HTMLButtonElement;
 
     // "Other" field toggle
-    const select = form.querySelector('.ct-select') as HTMLSelectElement | null;
+    const select = form.querySelector('select[name="practiceType"]') as HTMLSelectElement | null;
     const otherField = form.querySelector('.ct-field-other') as HTMLElement | null;
     if (select && otherField) {
       select.addEventListener('change', () => {
