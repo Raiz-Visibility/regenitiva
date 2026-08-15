@@ -3,8 +3,10 @@
 **Purpose:** Flag PRP / regenerative-medicine wording that may overstate clinical efficacy, so
 compliance/content review (and legal counsel) can decide whether to keep, soften, or revise it.
 
-**Status:** FLAGGED ONLY — no website copy has been changed. Every phrase below is still live as
-written, pending review.
+**Status:** DECISIONS APPLIED (August 2026). Section 3 of the client-facing review PDF was walked
+through item by item and the approved wording has been applied to the site. See
+[Decision Log](#decision-log) at the end of this document for what was kept, softened, or revised.
+The flag tables below are preserved as the original pre-change record.
 
 **Reviewed:** All public pages discussing PRP, regenerative treatments, injuries, recovery, healing,
 and treatment effectiveness. Date of review: August 2026.
@@ -91,6 +93,7 @@ grew back," "I avoided surgery because of this treatment," "my pain disappeared 
 "this treatment works better than surgery").
 
 These were removed over the course of the build:
+
 - The homepage patient story ("surgical candidate… left pain-free") was removed.
 - An invented physician testimonial on the Practice Development page was removed.
 - The blog (which contained an invented "— Physiatrist, California practice" quote) was deleted.
@@ -102,6 +105,7 @@ These were removed over the course of the build:
 only and may not reflect the results of any particular practice or patient."
 
 **Guidance if testimonials or case studies are added later:**
+
 1. Obtain a signed written release from the patient or physician before publishing.
 2. Avoid the high-risk phrasings above (cure, permanent, cartilage regrowth, surgery superiority).
 3. Place an "individual results vary; results are not typical" disclaimer adjacent to the testimonial.
@@ -150,6 +154,7 @@ only and may not reflect the results of any particular practice or patient" — 
 distinction and disclaimer this item calls for, should any results be added later.
 
 **Guidance if earnings examples or case studies are added later:**
+
 1. Label each clearly as one of: actual historical result, illustrative example, projection, or
    hypothetical scenario.
 2. Never present a prior client's result as guaranteed or typical for every partner.
@@ -163,11 +168,13 @@ A final full-source search was run for the old contact details, "physicians reta
 words: guarantee, cure, heal, regenerate, repair, 100%, no risk.
 
 **Confirmed removed — zero matches (earlier fixes held):**
+
 - `vincesurra@regenitiva.com` — none (now `vince@regenitiva.com` sitewide)
 - `805-896-7983` — none (now `931-300-2226` sitewide)
 - "physicians retain" — none (now "Healthcare providers retain sole responsibility and authority…")
 
 **No issue found:**
+
 - `100%` — appears only in CSS layout (width/height/gradients), never as a claim.
 - `guarantee` — appears only in **protective** legal disclaimers (Privacy: "cannot guarantee
   absolute security"; Terms: "do not constitute a promise or guarantee," and the "No Guarantees"
@@ -192,9 +199,56 @@ weakening" (49), "without sending patients to surgery" (57), "non-surgical care"
 contains historical contact info and draft copy, but it is **not part of the published site** —
 Astro builds only `src/pages/`, so nothing in that folder is served to visitors.
 
-## Recommended next step
+## Decision Log
 
-Have compliance/content review (and John/legal) decide, phrase by phrase, whether each flagged
-item should be **kept as-is, softened, or revised**. Once decisions are returned, the approved
-wording can be applied to the `/protocol` page and homepage in one pass. No changes should be made
-to this copy until those decisions are in.
+Section 3 of the client-facing review PDF (`RegenitivaWebsiteComplianceReview_1.pdf`) was worked
+through item by item. Item 1 was decided by the client; items 2–3 were client-approved softenings;
+items 4–16 were applied using the recommended fix at the client's direction. Line numbers are
+pre-change.
+
+| # | § | Original wording | Decision | New wording |
+|---|---|---|---|---|
+| 1 | 3.1 | "stimulate the body's natural repair process at the cellular level. It addresses the underlying injury, not just the symptom." (`protocol.astro:24`) | **Keep as-is** | unchanged |
+| 2 | 3.1 | "…but they don't repair damaged tissue —" (`protocol.astro:24`) | **Soften** | clause removed; sentence now "Steroid injections reduce inflammation and mask pain, and repeated use can weaken cartilage, tendons, and ligaments over time." |
+| 3 | 3.1 | "Treats the injury… supports actual tissue repair rather than only reducing pain" (`protocol.astro:48`) | **Soften** | "Targets the injury, not just the symptom — intended to support the body's own repair process rather than only reduce pain" |
+| 4 | 3.1 | "it works with the body's own healing response instead of overriding it" (`protocol.astro:21`) | **Soften** | "it is intended to work with the body's own healing response rather than override it" |
+| 5 | 3.1 | "A faster path back to normal activity — no surgical recovery, no long wait to heal" (`protocol.astro:45`) | **Soften** | "An alternative path back to normal activity — no surgical recovery period, though individual recovery times vary" |
+| 6 | 3.2 | "PRP offers a non-surgical alternative — no incisions, no anesthesia risk, no lengthy post-op recovery." (`protocol.astro:30`) | **Revise** | "PRP is a non-surgical option — no incisions and no general anesthesia." Added: "Whether PRP is appropriate in place of surgery is a determination for the treating physician." |
+| 7 | 3.2 | "an in-office injection instead of an operating room" (`protocol.astro:46`) | **Soften** | "Non-surgical and minimally invasive — delivered as an in-office injection" |
+| 8 | 3.2 | "…can refer into without sending patients to surgery" (`protocol.astro:57`) | **Soften** | trailing clause removed |
+| 9 | 3.2 | "A lower liability profile than surgical referral — autologous, in-office, non-surgical care" (`protocol.astro:59`) | **Revise** | "An office-based care model — autologous, in-office, and non-surgical" |
+| 10 | 3.2 | "…not ready for surgery…referred out or told to wait" (`home/Protocol.astro:16`) | **Keep as-is** | unchanged — describes a gap in care, does not claim PRP substitutes for surgery |
+| 11 | 3.3 | "most patients resume normal activity within a day or two" (`protocol.astro:30`) | **Soften** | "recovery time varies from patient to patient" |
+| 12 | 3.3 | "Fewer downstream complications — avoids the tissue weakening of repeated steroid use and the risks of surgery" (`protocol.astro:49`) | **Revise** | "No corticosteroid exposure and no surgical incision" |
+| 13 | 3.4 | "there's no foreign material and no risk of rejection — with a minimal side-effect profile compared to…" (`protocol.astro:27`) | **Revise** | "no foreign material is introduced and immune rejection is not a concern. As with any injection, side effects are possible and should be discussed with the treating provider." |
+| 14 | 3.5 | "…a series rather than one-and-done, supporting patient volume and revenue per case" (`protocol.astro:58`) | **Soften** | "…a series of treatments rather than a single visit, with the plan determined clinically for each patient" |
+| 15 | 3.5 | "a specific figure and a projected return" (`FAQ.astro:13`) | **Soften** | "a specific figure and a business-case analysis" |
+| 16 | 3.5 | "A regenerative program only pays off if…" (`growth-marketing.astro:11`) | **Soften** | "A regenerative program only works if…" |
+
+### Two comparative claims removed that the review had not flagged
+
+While applying items 9 and 13, two additional comparative claims were found in the same sentences
+and removed along with them. Both should be confirmed by compliance:
+
+1. **"A lower liability profile than surgical referral"** (`protocol.astro:59`) — a comparative
+   legal/risk claim, arguably stronger than the "non-surgical care" phrase the review flagged in
+   the same bullet.
+2. **"with a minimal side-effect profile compared to injected corticosteroids or synthetic
+   alternatives"** (`protocol.astro:27`) — an unsubstantiated comparative safety claim sitting
+   directly beside the flagged "no risk of rejection" phrase.
+
+### Still open — not part of Section 3
+
+- **`protocol.astro:7` meta description:** "…built for **consistent outcomes** and defensible
+  documentation." An outcomes claim in the field that renders in search results and social shares.
+  Not flagged in the review PDF and left unchanged; recommend adding it to the next review pass.
+- **`protocol.astro:47`:** "Uses their own biology — no synthetic drugs or foreign material, so the
+  side-effect profile is low." The "side-effect profile is low" clause is a safety claim that was
+  not flagged. Left unchanged.
+
+### Preserved protective language
+
+Unchanged and still in place: the treatment disclaimer callout at `protocol.astro:17` ("not medical
+advice… not appropriate for every patient… results vary from person to person… determined by the
+treating healthcare provider"), the "On Outcomes" section, the Terms of Service "No Guarantees"
+clause, and the hedging noted in the Summary above.
