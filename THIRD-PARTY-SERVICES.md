@@ -22,7 +22,15 @@ Format: **Service → Purpose → Data transmitted**
    Web3Forms processes the submission and forwards it to the destination email. Present on the
    contact page and every service/protocol page (the sidebar consultation form).
 
-3. **Cloudflare** (hosting + DNS — infrastructure)
+3. **Google Maps** (`maps.google.com`) — embedded on the Contact page
+   → **Purpose:** displays a map of the business location (1860 Wilma Rudolph Blvd, Clarksville, TN)
+   via an embedded iframe.
+   → **Data transmitted:** when a visitor loads the Contact page, the map iframe loads directly from
+   Google, which receives the visitor's **IP address, user-agent, and referring page**, and Google
+   Maps embeds may set cookies. (Added Aug 2026 — not present in the original audit.)
+   → **Privacy Policy action:** should be disclosed alongside Google Fonts.
+
+4. **Cloudflare** (hosting + DNS — infrastructure)
    → **Purpose:** hosts and serves the website (Cloudflare Pages) and provides DNS.
    → **Data transmitted:** as the host/CDN, Cloudflare processes **every** request to the site —
    visitor **IP address, request headers, and traffic metadata**. This is infrastructure-level, not
@@ -36,8 +44,7 @@ The site embeds **no** widgets, trackers, or third-party scripts beyond the thre
 confirmed absent:
 
 - ❌ YouTube / Vimeo / any video embeds
-- ❌ Google Maps / any map embed or Maps API (the contact page shows a static "map placeholder,"
-  not a live embed — no connection is made)
+- ✅ Google Maps — NOW PRESENT on the Contact page (see item 3 above); update the Privacy Policy.
 - ❌ Calendly / any scheduling platform
 - ❌ HubSpot / any CRM widget
 - ❌ Chat widgets (Intercom, Drift, etc.)
