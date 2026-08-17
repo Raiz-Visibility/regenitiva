@@ -137,9 +137,12 @@ service line without building it themselves.
 - All third-party assets confirmed properly licensed. IP clause ("owned by or licensed to
   Regenitiva") stands unchanged.
 
-## 🚀 Launch flip (do these together when client approves indexing)
+## 🚀 Launch flip — DONE (site is now indexable)
 
-1. Canonical domain confirmed: https://www.regenitiva.com (set in astro.config.mjs).
-2. Update `public/robots.txt` from `Disallow: /` to allow crawling + add `Sitemap:` line.
-3. Set `PUBLIC_NOINDEX=false` in the production build environment (Cloudflare Pages env var) to
-   drop the noindex meta so all public pages become indexable.
+1. Canonical domain: https://www.regenitiva.com (astro.config.mjs).
+2. robots.txt now allows crawling and references /sitemap-index.xml.
+3. Site is indexable by default — BaseLayout noindex logic flipped so a page is only noindexed if
+   `PUBLIC_NOINDEX=true` (staging/preview builds). No noindex meta on any live page.
+
+Post-launch to-do: submit the sitemap (https://www.regenitiva.com/sitemap-index.xml) in Google
+Search Console so indexing starts promptly.

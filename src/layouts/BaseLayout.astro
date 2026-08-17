@@ -16,8 +16,9 @@ const {
   noindex: forceNoindex = false,
 } = Astro.props;
 
-// Site-wide staging protection (PUBLIC_NOINDEX) OR a per-page override.
-const noindex = forceNoindex || import.meta.env.PUBLIC_NOINDEX !== 'false';
+// Indexable by default (site is live). Set PUBLIC_NOINDEX=true to force
+// noindex on a staging/preview build. Per-page override still honored.
+const noindex = forceNoindex || import.meta.env.PUBLIC_NOINDEX === 'true';
 
 // Derive active page from URL pathname
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
